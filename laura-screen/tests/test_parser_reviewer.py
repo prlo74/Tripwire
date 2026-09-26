@@ -213,3 +213,69 @@ def test_r2_combined_regressions(run_js, mini_map):
     res = run_js({"fn": "parse", "text": "Tsla, AAPL. NASDAQ:MSFT ＳＨＯＰ spy", "map": mini_map})
     assert [i.get("ticker") for i in items(res)] == ["TSLA", "AAPL", "MSFT", "SHOP", "SPY"], items(res)
     assert res["attention"] == 0
+
+
+# ---------------- Round 3: greedy name matching and prose detection ----------------
+
+# R3-1. One lowercase typo must not turn every lowercase ticker in the same line into an
+#       "ordinary word" that is dropped on save unless clicked.
+def test_r3_lowercase_list_with_typo_keeps_tickers(run_js, mini_map):
+    res = run_js({"fn": "parse", "text": "aapl msft tsla xyzq", "map": mini_map})
+    st = [(i["status"], i.get("ticker")) for i in items(res)]
+    assert st[:3] == [("stock", "AAPL"), ("stock", "MSFT"), ("stock", "TSLA")], items(res)
+    assert items(res)[3]["status"] == "notfound"
+
+
+# R3-2. Spec fixture with the typo in lowercase: FOX/FOXA must still get the share-class prompt,
+#       and spy/VOO must still be ETFs.
+def test_r3_spec_fixture_lowercase_typo(run_js):
+    text = "aapl, MSFT; brk.b $TSLA  Apple Inc.\nspy VOO\txyzq 123 fox foxa  Newsmax  SHOP"
+    res = run_js({"fn": "parse", "text": text})
+    fox = [i for i in items(res) if i.get("kind") == "classes"]
+    assert len(fox) == 1 and sorted(fox[0]["classes"]) == ["FOX", "FOXA"], items(res)
+    assert not [i for i in items(res) if i.get("kind") == "word"], items(res)
+
+
+# R3-3. "Fox News" is Fox Corp's network; it must not suggest News Corp (NWS/NWSA), which is
+#       a different company on the do-not-list.
+def test_r3_fox_news_does_not_suggest_news_corp(run_js):
+    res = run_js({"fn": "parse", "text": "Fox News"})
+    sugg = {s["ticker"] for i in items(res) for s in i.get("suggestions", [])}
+    assert not ({"NWS", "NWSA"} & sugg), items(res)
+
+
+# R3-4. A two-word company name whose SEC name has extra words ("WELLS FARGO & COMPANY/MN")
+#       is one item, not "Wells" + a not-found "Fargo".
+def test_r3_wells_fargo_one_item(run_js):
+    res = run_js({"fn": "parse", "text": "Wells Fargo"})
+    assert len(items(res)) == 1 and items(res)[0]["suggestions"][0]["ticker"] == "WFC", items(res)
+
+
+# R3-5. Regression: "The New York Times" worked in round 2; it must not produce a stray "The" chip.
+def test_r3_the_new_york_times(run_js):
+    res = run_js({"fn": "parse", "text": "The New York Times"})
+    assert len(items(res)) == 1 and items(res)[0]["suggestions"][0]["ticker"] == "NYT", items(res)
+
+
+# R3-6. Title-case heading words that happen to be tickers must not be silently accepted.
+def test_r3_heading_word_not_silent_ticker(run_js):
+    res = run_js({"fn": "parse", "text": "Top Picks"})
+    silent = [i["input"] for i in items(res) if i["status"] in ("stock", "etf")]
+    assert not silent, items(res)
+
+
+# R3-7. List headings pasted from the page itself ("Black List", "Watch List") must not
+#       suggest unrelated companies (Black Hills, etc.).
+def test_r3_list_headings_no_company_suggestions(run_js):
+    for text in ("Black List", "Watch List"):
+        res = run_js({"fn": "parse", "text": text})
+        sugg = [s["ticker"] for i in items(res) for s in i.get("suggestions", [])]
+        assert not sugg and not [i for i in items(res) if i["status"] in ("stock", "etf")], (text, items(res))
+
+
+# R3-8. Fund names for the page's own default ETFs.
+def test_r3_default_etf_names(run_js):
+    for text, want in (("Vanguard Total Stock Market ETF", "VTI"), ("SPDR S&P 500 ETF Trust", "SPY")):
+        res = run_js({"fn": "parse", "text": text})
+        assert len(items(res)) == 1, (text, items(res))
+        assert want in [s["ticker"] for s in items(res)[0].get("suggestions", [])], (text, items(res))

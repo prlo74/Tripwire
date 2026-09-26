@@ -222,3 +222,111 @@ Also: WBD values link downgraded to Low with a caveat about its pending Paramoun
 9. An SPDR issuer-file fallback to N-PORT is reported as a source problem.
 10. PP&E capex tags are summed; software-only capex is unknown.
 12. Layout: Paste card no longer stretches; values-fit table moved to a wider card beside the audit log.
+
+## Round 3 (2026-09-26)
+
+> # Laura Screen: QA round 3 (confirmatory, adversarial reviewer, 2026-09-26)
+>
+> This round grades commit fb08809: run-20260926T074411, the rebuilt `site/index.html`, and `data.json`.
+>
+> **How I checked**
+> - **Sources:** re-fetched every source fresh. SEC, courts, EEOC and CA AG went direct. justice.gov went through `pipeline.http.fetch(ttl_hours=0)`.
+> - **Financials:** re-computed from fresh XBRL companyfacts.
+> - **Pipeline runs:** made in an isolated copy (`/tmp/claude-0/qa/copy`), including runs with injected approval snapshots.
+> - **Page logic:** simulated with a fake `window.claude` (`fake3.js`).
+> - **ArtifactData:** not called, so M8 is graded from code only.
+> - **My test file:** the builder's commit only *added* my 12 round-2 tests to `tests/test_parser_reviewer.py`; no assertion was altered.
+>
+> ## MUST
+>
+> | # | Result | Reason |
+> |---|---|---|
+> | M1 Evidence | **PASS** | Re-opened all 6 Black and all 13 Watch sources, plus the WBD 10-Q and all 3 financial notes (NYT, SHOP, the new SCHL prepublication). All 25 quotes are verbatim and 50 words or fewer, and the dates are correct. |
+> | M2 Rule fidelity | **PASS** | No change since round 2. The Fox/Newsmax scope note is shown; every Watch entry has a tripwire; there is no Tier-2 source and no do-not-list trigger. Open questions 1 and 2 are documented. |
+> | M3 No fabrication | **PASS** | SCHL: the note quote "Prepublication expenditures ( 17.9 ) … Additions to property, plant and equipment ( 48.4 )" is verbatim. Units are millions (OCF 50.9 = XBRL 50,900,000). FCF = 50.9 − 48.4 − 17.9 = **−$15.4M**, which matches the page, so SCHL now fails. Capex tags are now summed; none of the 10 gate companies tags both PP&E and Other PP&E, so nothing is double-counted. Notes now carry `fy_end` and apply only to that year (tested in `test_pipeline_paths.py`). All other FCF and D/E figures match XBRL. |
+> | M4 Parser | **FAIL** | All 28 earlier reviewer tests pass, but the rewrite introduced a regression (defect 1). One lowercase typo in a line ("aapl msft tsla xyzq", or the spec fixture with a lowercase "xyzq") turns every lowercase ticker into an "Ordinary word?" chip. Those tickers are left out of Save unless clicked one by one, and **the FOX/FOXA share-class prompt disappears**. Greedy name matching also produces wrong suggestions. 8 of my 8 new round-3 tests fail. |
+> | M5 Look-through | **PASS** | Math is unchanged. The new per-$10K "if proposed approved" display is correct: QQQ $329.63 = 10,000 × 3.296348% (TSLA). SPY $163.48 = 10,000 × (0.019236 + 0.011576 + 1.604013)%. |
+> | M6 Human in loop | **PASS** (defects) | No label is approved without an approval record. But the evidence fingerprint is only half-applied. A stale-hash approval puts the card back in Pending with "Evidence changed…", yet the list still counts it as "approved", the look-through counts it as approved Black, the CSV says "Approved", and the Python labels treat it as approved (defect 2). An approval whose proposal a later run dropped (e.g. an Aligned company that now fails the gate) shows as plain "Approved" and has **no card in any tab**, so it cannot be reopened from the page (defect 3). |
+> | M7 Accessibility | **PASS** | Contrast tests pass. The 3px focus outline is visible. The new "Re-check" and "Evidence changed" chips have both an icon and a word. List-card buttons are real buttons. |
+> | M8 Privacy | **PASS** (code only) | Approval docs gain `evidence_hash` only. No emails in the page, data, `out/` or tracked files. `From` is sent to sec.gov only. |
+> | M9 Runs clean | **PASS** | Copy run: exit 0 in 23.1s with `errors: []`. There is no stale-cache fallback (`test_fetch_raises_instead_of_serving_stale_cache` plus my round-2 simulation). An SPDR issuer-file fallback to N-PORT is now reported as a source problem. |
+>
+> ## SHOULD
+>
+> | # | Score | Reason |
+> |---|---|---|
+> | S1 Clarity | 2 | The look-through now shows "If every proposed Black move is approved: up to $329.63 per $10,000 (QQQ)" plus a per-ETF "If proposed approved" column. The cards are self-explanatory. Nit: "Highest: IVV" is shown when every value is $0.00. |
+> | S2 Bento | 2 | The Paste card no longer stretches. Values-fit sits beside the Audit log and is readable. No horizontal page scroll at 375 (scrollWidth 375). The empty lower half of the Audit card is minor. |
+> | S3 Freshness | 2 | As-of lines on every data block. |
+> | S4 Speed | 2 | Cached run 23s. Page DCL 0.42s at 1280 and 0.45s at 375. Page is 924 KB. |
+> | S5 Discovery | 2 | Unchanged and sound: Ford, Accenture, Alphabet, and WBD (Low, with caveats). |
+> | S6 Explainability | 2 | RUNBOOK and Methodology are up to date. |
+> | S7 Export | 1 | The CSV status column says "Approved" for an approval whose evidence fingerprint no longer matches, while the page shows it back in Pending. There is no "evidence changed" column, so the Trading Notes export contradicts the page. |
+> | S8 Tone | 2 | Neutral and consistent. |
+>
+> **Should total: 15/16 = 93.75%** (round 2: 87.5%).
+>
+> ## Defects (most severe first)
+>
+> 1. **site/parser.js:191, 216 (prose rule regression):** `prose` becomes true when any lowercase word of 3 or more letters is neither a ticker nor a name. A single typo is enough, and then every lowercase ticker in the segment becomes a `word` item.
+>    - "aapl msft tsla xyzq" gives 3 "Ordinary word?" chips plus the not-found. `resolvedTickers` drops unclicked word items, so Save adds nothing.
+>    - Spec fixture with lowercase "xyzq": `fox` and `foxa` become separate word items, and the **share-class prompt is lost**. The class grouping only runs on `status: "stock"`.
+>    - "aapl mstf" (a typo) also flags aapl.
+>
+>    Fix: treat a segment as prose only when it has 2 or more non-ticker dictionary/stop words (e.g. "we", "like", "and"), not merely an unknown token. Never apply prose flags to tokens that look like tickers (4 letters or fewer, no vowels, etc.). Run share-class grouping on word items too.
+> 2. **site/page.html:519 (currentLabels), 882 (blackSet), 1065 (CSV); pipeline/run.py:56, 176:** the evidence fingerprint is checked only by `decisionOf`.
+>    - In the simulation, a stale-hash FOXA approval gives a Pending card, but the Black count is "3 approved", the look-through reads "Counting: FOXA, FOX, NMAX (approved only)", and the CSV reads "Approved".
+>    - Python `current_labels` and the proposal `decision` ignore the hash. In my copy run, a stale TSLA approval gives `labels.TSLA.approved = True` and `decision: approve`.
+>
+>    Fix: pick one rule. Either stale means pending everywhere (labels, gauge, CSV status "Approved – evidence changed", Python), or the label keeps with an explicit "Re-check" state in every output.
+> 3. **site/page.html (Decided/All tabs):** an approval whose proposal is no longer produced by a run still shows as "Approved" on the list, with no flag and no card. It therefore cannot be reopened or rejected from the page. Simulated: an ETSY Aligned approval shows as Approved Aligned although ETSY fails the gate, and ETSY is absent from the All tab. Fix: add a "No longer proposed by the latest run" group in the Decided tab with Reopen, and a "Not re-confirmed" chip on the list.
+> 4. **pipeline/run.py:164, 304 (`from` recomputed from approved labels):** after an approval the same proposal becomes Black→Black, so the "confirmed" alert branch **never fires**. My copy run with a valid TSLA approval sent 0 alerts, although `alerts.py`'s docstring promises a second email on confirmation. It also turns the Tesla CRD Watch proposal into **"Black → Watch"**, which looks like a downgrade, and approving it does nothing. Fix: keep `from` as stored on the approval (or exclude the proposal's own approval when computing `from`), and hide or label lower-severity proposals for a ticker already approved at a higher level as "context".
+> 5. **site/parser.js:172, 230 (greedy/prefix false positives):**
+>    - "Fox News" suggests **NWS/NWSA** (News Corp, a do-not-list company) for "News".
+>    - "Black List" suggests BKH/BDTX/BIII, and "Watch List" suggests ATCH.
+>    - "Top Picks" silently accepts **TOP** as a stock.
+>    - Single words like "Portfolio", "Total", "First", "United", "Energy" and "Monday" yield company suggestions.
+>
+>    Fix: in step 3, don't prefix-match single common English words (use a frequency list), and require the next word to continue the name before offering a prefix match. Treat Title-case single tokens that are tickers as `word` items when followed by other words.
+> 6. **site/parser.js:172 (longestName):**
+>    - "Wells Fargo" gives WFC for "Wells" plus a not-found "Fargo". The SEC name "WELLS FARGO & COMPANY/MN" normalizes to "wells fargo and", and prefix continuation doesn't record a best match.
+>    - "The New York Times" gives a stray "The" chip (it passed in round 2).
+>    - Fund names "Vanguard Total Stock Market ETF" (VTI) and "SPDR S&P 500 ETF Trust" (SPY) each split into 4–5 items.
+>
+>    Fix: strip trailing "and" in `normName`, accept the longest prefix match at the end of input, and skip leading "The".
+> 7. **site/page.html (look-through gauge):** "Highest: IVV" is shown when every ETF is $0.00. Show "None held" instead.
+> 8. **site/page.html (layout):** the Audit log card is about half empty at 1280 (height matched to values-fit). Cosmetic.
+>
+> ## M4 detail: `tests/test_parser_reviewer.py`, 28 pass / 8 fail
+>
+> | Test | Input | Result |
+> |---|---|---|
+> | 16 round-1 + 12 round-2 tests | | **all PASS** |
+> | r3_lowercase_list_with_typo_keeps_tickers | `aapl msft tsla xyzq` | FAIL: 3 word items |
+> | r3_spec_fixture_lowercase_typo | spec fixture with `xyzq` | FAIL: fox/foxa word items, no class prompt |
+> | r3_fox_news_does_not_suggest_news_corp | `Fox News` | FAIL: NWS/NWSA suggested |
+> | r3_wells_fargo_one_item | `Wells Fargo` | FAIL: 2 items |
+> | r3_the_new_york_times | `The New York Times` | FAIL: stray "The" (regression) |
+> | r3_heading_word_not_silent_ticker | `Top Picks` | FAIL: TOP silent stock |
+> | r3_list_headings_no_company_suggestions | `Black List`, `Watch List` | FAIL |
+> | r3_default_etf_names | VTI and SPY fund names | FAIL |
+>
+> Full suite: **166 passed, 8 failed**. All 8 failures are my new round-3 tests; `test_pipeline_paths.py` passes.
+>
+> ## Side effects of this review
+> - The only repo file changed is `tests/test_parser_reviewer.py` (8 tests appended; the 28 earlier tests are unchanged).
+> - Pipeline runs were made in `/tmp/claude-0/qa/copy`, with snapshots `snap_stale.json` and `snap_ok.json`.
+> - The forced-fresh justice.gov fetches rewrote the same content into `cache/http`.
+> - Screenshots in /tmp/claude-0/qa:
+>   - `r3-shot-1280.png`, `r3-shot-375.png`
+>   - `r3-c1.png`, `r3-c3.png`, `r3-c4.png`, `r3-c5.png`
+>   - `r3-m1.png`, `r3-m2.png`, `r3-paste.png`, `r3-live.png`
+> - Scripts in /tmp/claude-0/qa: `fake3.js`, `probe3.js`, `lay3.js`, `qa_lib.py`.
+
+### Fixes applied after round 3 (M4 had regressed)
+1. Prose detection needs 2+ real stopwords; a single lowercase typo no longer turns tickers into word chips (spec fixture with lowercase "xyzq" keeps the FOX/FOXA prompt).
+2. One fingerprint rule everywhere: stale approvals don't count in list counts, look-through, CSV, or the pipeline's labels and alerts.
+3. Approvals on proposals a later run dropped appear under Decided with a "No longer proposed" chip and a Reopen button.
+4. `from` comes from the approval record, so "confirmed" alerts fire; a lower-severity record for a company already approved stricter is shown as context, not pending. End-to-end test in tests/test_pipeline_paths.py.
+5–6. Name matching: "new" is no longer stripped from names (NYT), "& Company" normalizes (Wells Fargo), renamed fund names match by ordered words (VTI, SPY), short trailing words attach to the preceding name ("Fox News" → Fox Corp), Title-case words are silent tickers only in all-ticker lines ("Top Picks"), and words inside a phrase get no guessed suggestions ("Black List").
+7. Look-through no longer shows "Highest" when every ETF is $0.00.

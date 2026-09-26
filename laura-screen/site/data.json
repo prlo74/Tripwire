@@ -1,9 +1,9 @@
 {
  "run": {
-  "id": "run-20260926T074411",
-  "started": "2026-09-26T07:44:11+00:00",
-  "finished": "2026-09-26T07:44:33+00:00",
-  "duration_s": 22.9,
+  "id": "run-20260926T075808",
+  "started": "2026-09-26T07:58:08+00:00",
+  "finished": "2026-09-26T07:58:30+00:00",
+  "duration_s": 22.5,
   "today": "2026-09-26",
   "errors": [],
   "discovery_since": "2025-08-22",
@@ -167,7 +167,8 @@
    ],
    "decision": null,
    "discovery": true,
-   "evidence_hash": "baa36ea46d84c620"
+   "evidence_hash": "baa36ea46d84c620",
+   "evidence_changed": false
   },
   {
    "id": "p-ACN-watch-accenture-doj-fca-2026",
@@ -208,7 +209,8 @@
    ],
    "decision": null,
    "discovery": true,
-   "evidence_hash": "345aa355b518be9e"
+   "evidence_hash": "345aa355b518be9e",
+   "evidence_changed": false
   },
   {
    "id": "p-FOXA-FOX-black-fox-dominion-falsity-2023",
@@ -250,7 +252,8 @@
    ],
    "decision": null,
    "discovery": false,
-   "evidence_hash": "afd0b9938d22cdef"
+   "evidence_hash": "afd0b9938d22cdef",
+   "evidence_changed": false
   },
   {
    "id": "p-NMAX-black-newsmax-dominion-falsity-2025",
@@ -291,7 +294,8 @@
    ],
    "decision": null,
    "discovery": false,
-   "evidence_hash": "c448f199a0bbe957"
+   "evidence_hash": "c448f199a0bbe957",
+   "evidence_changed": false
   },
   {
    "id": "p-TSLA-black-tesla-diaz-verdict-2021",
@@ -332,7 +336,8 @@
    ],
    "decision": null,
    "discovery": false,
-   "evidence_hash": "6f39410e420df6c0"
+   "evidence_hash": "6f39410e420df6c0",
+   "evidence_changed": false
   },
   {
    "id": "p-TSLA-watch-tesla-crd-eeoc-open-2026",
@@ -373,7 +378,8 @@
    ],
    "decision": null,
    "discovery": false,
-   "evidence_hash": "f45e18972047e5b6"
+   "evidence_hash": "f45e18972047e5b6",
+   "evidence_changed": false
   },
   {
    "id": "p-META-watch-meta-doj-fha-settlement-2022",
@@ -399,7 +405,7 @@
      "doc_date": "2022-06-27",
      "quote": "this Settlement Agreement is for settlement purposes only and does not constitute an admission by Meta of any of the allegations contained in the HUD Charge or the Complaint, nor does it constitute any finding of liability against Meta",
      "tier": 1,
-     "opened_at": "2026-09-26T07:35:44+00:00",
+     "opened_at": "2026-09-26T07:48:13+00:00",
      "quote_found": true
     },
     {
@@ -408,13 +414,14 @@
      "doc_date": "2022-06-27",
      "quote": "alleged that Meta's housing advertising system discriminated against Facebook users based on their race, color, religion, sex, disability, familial status, and national origin, in violation of the Fair Housing Act (FHA).",
      "tier": 1,
-     "opened_at": "2026-09-26T06:41:00+00:00",
+     "opened_at": "2026-09-26T07:48:14+00:00",
      "quote_found": true
     }
    ],
    "decision": null,
    "discovery": false,
-   "evidence_hash": "a359505a7578ace7"
+   "evidence_hash": "a359505a7578ace7",
+   "evidence_changed": false
   },
   {
    "id": "p-META-watch-meta-states-youth-case-2026",
@@ -464,7 +471,8 @@
    ],
    "decision": null,
    "discovery": false,
-   "evidence_hash": "fa24492d1e417b3c"
+   "evidence_hash": "fa24492d1e417b3c",
+   "evidence_changed": false
   },
   {
    "id": "p-ADBE-aligned-adbe-values",
@@ -546,7 +554,8 @@
    },
    "decision": null,
    "discovery": false,
-   "evidence_hash": "56aa98c1829d12dd"
+   "evidence_hash": "56aa98c1829d12dd",
+   "evidence_changed": false
   },
   {
    "id": "p-GOOG-GOOGL-aligned-alphabet-values",
@@ -620,7 +629,8 @@
    },
    "decision": null,
    "discovery": true,
-   "evidence_hash": "e63f8ce4ac82c3bd"
+   "evidence_hash": "e63f8ce4ac82c3bd",
+   "evidence_changed": false
   },
   {
    "id": "p-NYT-aligned-nyt-values",
@@ -693,7 +703,8 @@
    },
    "decision": null,
    "discovery": false,
-   "evidence_hash": "12455595c4154555"
+   "evidence_hash": "12455595c4154555",
+   "evidence_changed": false
   },
   {
    "id": "p-SHOP-aligned-shop-values",
@@ -766,7 +777,8 @@
    },
    "decision": null,
    "discovery": false,
-   "evidence_hash": "391b219b5d7d08f2"
+   "evidence_hash": "391b219b5d7d08f2",
+   "evidence_changed": false
   },
   {
    "id": "p-TRI-aligned-tri-values",
@@ -840,7 +852,8 @@
    },
    "decision": null,
    "discovery": false,
-   "evidence_hash": "d41de23e14156e7a"
+   "evidence_hash": "d41de23e14156e7a",
+   "evidence_changed": false
   },
   {
    "id": "p-WBD-aligned-wbd-values",
@@ -922,7 +935,8 @@
    },
    "decision": null,
    "discovery": true,
-   "evidence_hash": "eecd08788e9e0978"
+   "evidence_hash": "eecd08788e9e0978",
+   "evidence_changed": false
   }
  ],
  "aligned": [

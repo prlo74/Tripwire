@@ -9,7 +9,7 @@
 (function (root) {
   "use strict";
 
-  var SUFFIXES = /\b(incorporated|inc|corporation|corp|companies|company|co|ltd|limited|plc|llc|holdings?|group|sa|nv|ag|the|class [a-c]|new|del|de|cl [a-c])\b/g;
+  var SUFFIXES = /\b(incorporated|inc|corporation|corp|companies|company|co|ltd|limited|plc|llc|holdings?|group|sa|nv|ag|the|class [a-c]|del|de|cl [a-c])\b/g;
   var CORP_WORD = /^(inc|corp|co|ltd|plc|llc|corporation|company|incorporated|holdings?|group)\.?$/i;
   // Everyday words that also happen to be tickers; flagged instead of silently accepted.
   var STOPWORDS = ["a", "i", "an", "the", "and", "or", "for", "of", "in", "on", "at", "to", "is", "it", "my",
@@ -33,7 +33,8 @@
       .replace(/&/g, " and ")
       .replace(/[^a-z0-9 ]+/g, " ")
       .replace(SUFFIXES, " ")
-      .replace(/\s+/g, " ").trim();
+      .replace(/\s+/g, " ").trim()
+      .replace(/^(the|and) /, "").replace(/ (and|the)$/, "");   // "WELLS FARGO & COMPANY" -> "wells fargo"
   }
 
   // Title-case word with a lowercase letter after the first ("Apple", "Inc.", "Newsmax"),
@@ -107,9 +108,22 @@
   function sugg(ts, map) { return ts.map(function (t) { return { ticker: t, name: map[t][0] }; }); }
 
   function exactName(phrase, map) {
-    var p = normName(phrase);
+    var p = normName(phrase), idx = makeIndex(map);
     if (!p || p.length < 3) { return []; }
-    return rank(makeIndex(map).byName[p] || [], map);
+    if (idx.byName[p]) { return rank(idx.byName[p], map); }
+    // Fund names get renamed ("Vanguard Morningstar Total Stock Market ETF"): for 3+ words, accept a
+    // listed name that contains every word, in order, with at most 3 extra words.
+    var words = p.split(" ");
+    if (words.length < 3) { return []; }
+    var hits = [];
+    idx.names.forEach(function (n) {
+      var nw = n.split(" ");
+      if (nw.length > words.length + 3 || nw.length < words.length) { return; }
+      var k = 0;
+      for (var x = 0; x < nw.length && k < words.length; x++) { if (nw[x] === words[k]) { k++; } }
+      if (k === words.length) { hits = hits.concat(idx.byName[n]); }
+    });
+    return hits.length && hits.length <= 5 ? rank(hits, map) : [];
   }
 
   function prefixName(phrase, map) {
@@ -172,11 +186,15 @@
   function longestName(words, i, map) {
     var best = null;
     for (var j = i + 1; j <= words.length && j - i <= 8; j++) {
+      if (!/^[\p{L}0-9&'.\-]+$/u.test(words[j - 1])) { break; }
       var ph = words.slice(i, j).join(" ");
       var ex = exactName(ph, map);
-      if (ex.length) { best = { j: j, phrase: ph, tickers: ex }; continue; }
-      if (/^class$/i.test(words[j - 1]) || (j >= 2 && /^class$/i.test(words[j - 2] || ""))) { continue; }
-      if (!prefixName(ph, map).length && j > i + 1) { break; }
+      if (ex.length) { best = { j: j, phrase: ph, tickers: ex }; }
+    }
+    // A short trailing word right after a name belongs to it ("Fox News" is Fox, not News Corp).
+    if (best && best.j < words.length && isNameWord(words[best.j]) && words[best.j].replace(/\W/g, "").length <= 4 &&
+        !map[canon(words[best.j])]) {
+      best = { j: best.j + 1, phrase: best.phrase + " " + words[best.j], tickers: best.tickers };
     }
     return best;
   }
@@ -188,9 +206,9 @@
     var i = 0, multi = words.length > 1;
     // Prose: a lowercase word that is neither a ticker nor part of a name means this segment is a
     // sentence, so lowercase words that happen to be tickers ("love", "car") need confirmation.
-    var prose = multi && words.some(function (w) {
-      return /^[a-z]{3,}$/.test(w) && !map[canon(w)] && !exactName(w, map).length;
-    });
+    var prose = multi && words.filter(function (w) { return STOP[w.toLowerCase()] && w !== w.toUpperCase(); }).length >= 2;
+    // Title-case words that are tickers ("Tsla") count as tickers only when the whole segment is tickers.
+    var allTickers = words.every(function (w) { return map[canon(w)] && !CORP_WORD.test(w); });
     while (i < words.length) {
       var w = words[i];
       // "BRK B" -> BRK-B
@@ -213,7 +231,8 @@
       // 2. A ticker, in any case ("aapl", "Tsla").
       if (/^[A-Z0-9-]+$/.test(t) && map[t] && !CORP_WORD.test(w)) {
         var lower = w === w.toLowerCase();
-        var isWord = multi && ((STOP[w.toLowerCase()] && w !== w.toUpperCase()) || t.length === 1 || (prose && lower));
+        var title = /^[A-Z][a-z]/.test(w);
+        var isWord = multi && ((STOP[w.toLowerCase()] && w !== w.toUpperCase()) || t.length === 1 || (prose && lower) || (title && !allTickers));
         out.push(isWord ? wordItem(w, t, map) : tickerItem(w, t, map));
         i++; continue;
       }
@@ -227,9 +246,10 @@
         i++; continue;
       }
       // 3. Start of a longer name ("Newsm" ...) for words of 4+ letters.
-      var pre = t.length >= 4 ? prefixName(w, map) : [];
+      var pre = t.length >= 4 && !multi ? prefixName(w, map) : [];
       if (pre.length) { out.push(nameItem(w, pre, map)); i++; continue; }
-      out.push({ input: w, status: "notfound", suggestions: closeTickers(t, map),
+      var wordy = multi && /^[A-Z]?[a-z]+$/.test(w);   // an ordinary word inside a phrase: no ticker guesses
+      out.push({ input: w, status: "notfound", suggestions: wordy ? [] : closeTickers(t, map),
                  note: prose && /^[a-z]+$/.test(w) ? "Not a ticker or company name (looks like an ordinary word). Skip it." :
                    "Not found: a typo, a delisted company, or not listed on a US exchange." });
       i++;

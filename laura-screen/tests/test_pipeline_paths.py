@@ -107,3 +107,35 @@ def test_approved_label_survives_and_most_severe_wins():
 ])
 def test_first_sentence(text, want):
     assert first_sentence(text) == want
+
+
+def _run_with(tmp_path, approvals):
+    import subprocess, sys
+    snap = tmp_path / "snap.json"
+    snap.write_text(json.dumps({"universe": [], "approvals": approvals, "runs": []}))
+    root = __import__("pathlib").Path(__file__).resolve().parent.parent
+    r = subprocess.run([sys.executable, "-m", "pipeline.run", "--db", str(snap), "--no-discovery"],
+                       cwd=root, capture_output=True, text=True, timeout=900)
+    assert r.returncode == 0, r.stderr[-2000:]
+    return json.loads((root / "site" / "data.json").read_text()), json.loads((root / "out" / "alerts.json").read_text())
+
+
+@pytest.mark.slow
+def test_run_fingerprint_confirmed_alert_and_context(tmp_path):
+    data, _ = _run_with(tmp_path, [])
+    tsla = next(p for p in data["proposals"] if p["id"].startswith("p-TSLA-black"))
+    good = {"proposal_id": tsla["id"], "tickers": ["TSLA"], "from": "watch", "to": "black", "decision": "approve",
+            "decided_at": "2026-09-27T00:00:00Z", "evidence_hash": tsla["evidence_hash"]}
+    data, alerts = _run_with(tmp_path, [good])
+    assert data["labels"]["TSLA"]["label"] == "black" and data["labels"]["TSLA"]["approved"]
+    t = next(p for p in data["proposals"] if p["id"] == tsla["id"])
+    assert t["from"] == "watch" and t["decision"] == "approve"
+    assert any(a["status"] == "confirmed" and a["ticker"] == "TSLA" for a in alerts)
+    w = next(p for p in data["proposals"] if p["id"].startswith("p-TSLA-watch"))
+    assert w.get("context")
+    stale = dict(good, evidence_hash="0000000000000000")
+    data, alerts = _run_with(tmp_path, [stale])
+    assert not data["labels"].get("TSLA", {}).get("approved")
+    t = next(p for p in data["proposals"] if p["id"] == tsla["id"])
+    assert t["evidence_changed"] and t["decision"] is None
+    _run_with(tmp_path, [])  # restore normal outputs

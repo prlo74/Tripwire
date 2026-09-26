@@ -229,6 +229,30 @@ def main(argv=None) -> int:
                             [(e.get("url"), e.get("quote")) for e in p.get("evidence", [])]], sort_keys=True)
         p["evidence_hash"] = hashlib.sha256(basis.encode()).hexdigest()[:16]
 
+    # One rule everywhere: an approval counts only if it was made on the evidence shown now.
+    approvals = db.get("approvals", [])
+    live = {p["id"]: p for p in proposals}
+
+    def stale(a):
+        p = live.get(a.get("proposal_id"))
+        return bool(p and a.get("evidence_hash") and a["evidence_hash"] != p["evidence_hash"])
+    valid = [a for a in approvals if not stale(a)]
+    labels = current_labels(baseline, valid)
+    by_pid = {a.get("proposal_id"): a for a in approvals}
+    for p in proposals:
+        a = by_pid.get(p["id"])
+        p["evidence_changed"] = bool(a and stale(a))
+        p["decision"] = a.get("decision") if a and not p["evidence_changed"] else None
+        if a and not p["evidence_changed"] and a.get("from"):
+            p["from"] = a["from"]          # the state the team approved the move from
+        else:
+            cur = labels.get(p["tickers"][0], {}).get("label")
+            if cur:
+                p["from"] = cur
+        cur = labels.get(p["tickers"][0], {})
+        if not p["decision"] and cur.get("approved") and RANK_TO.get(cur["label"], 0) > RANK_TO.get(p["to"], 0):
+            p["context"] = f"{p['tickers'][0]} is already approved {cur['label'].title()}; this record is context."
+
     # Cap discovery proposals per run; the rest wait in the collapsed "more" list.
     cap = rules["discovery"].get("max_proposals_per_run", 10)
     conf_rank = {"High": 0, "Medium": 1, "Low": 2}
