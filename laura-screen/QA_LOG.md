@@ -330,3 +330,128 @@ Also: WBD values link downgraded to Low with a caveat about its pending Paramoun
 4. `from` comes from the approval record, so "confirmed" alerts fire; a lower-severity record for a company already approved stricter is shown as context, not pending. End-to-end test in tests/test_pipeline_paths.py.
 5–6. Name matching: "new" is no longer stripped from names (NYT), "& Company" normalizes (Wells Fargo), renamed fund names match by ordered words (VTI, SPY), short trailing words attach to the preceding name ("Fox News" → Fox Corp), Title-case words are silent tickers only in all-ticker lines ("Top Picks"), and words inside a phrase get no guessed suggestions ("Black List").
 7. Look-through no longer shows "Highest" when every ETF is $0.00.
+
+## Round 4 (2026-09-26): stop rule met
+
+> # Laura Screen: QA round 4 (adversarial reviewer, 2026-09-26)
+>
+> **What I graded:** commit 2425ee1: run-20260926T075808, the rebuilt `site/index.html`, and `data.json`.
+>
+> **How I checked:**
+> - **Sources:** re-fetched every source fresh. SEC, courts, EEOC and CA AG direct; justice.gov through `pipeline.http.fetch(ttl_hours=0)`.
+> - **Pipeline runs and full pytest:** all in an isolated copy (`/tmp/claude-0/qa/copy`), including the slow end-to-end test and my approval snapshots (valid, stale, orphan).
+> - **Page logic:** simulated with a fake `window.claude` (`fake4.js`).
+> - **ArtifactData:** not called, so M8 is graded from code.
+> - **Test integrity:** the builder's commit only *added* my round-3 tests to `tests/test_parser_reviewer.py`; no assertion was changed.
+>
+> ## MUST
+>
+> | # | Result | Reason |
+> |---|---|---|
+> | M1 Evidence | **PASS** | Evidence files are unchanged since round 3. I re-opened them all fresh anyway: 6 Black, 13 Watch, the WBD 10-Q and 3 financial notes. **All 22 distinct quote checks are verbatim** and 50 words or fewer; dates were confirmed in rounds 2–3. |
+> | M2 Rule fidelity | **PASS** | No rule changes. Fox/Newsmax scope and open questions are shown, every Watch entry has a tripwire, and there is no Tier-2 or do-not-list trigger. |
+> | M3 No fabrication | **PASS** | Gate output is identical to round 3, which I verified against fresh XBRL and the 10-K. SCHL FCF is −$15.4M; NYT and SHOP D/E is 0 via verified, FY-bound notes. |
+> | M4 Parser | **PASS** (defects) | All 36 of my earlier tests pass. The spec fixture, exactly as written, passes on the live map (my new `test_r4_spec_fixture_exact_live`): the items are exactly AAPL, MSFT, BRK-B, TSLA, SPY (ETF), VOO (ETF), XYZQ not found, 123 not found, FOX+FOXA class prompt, Newsmax→NMAX and SHOP. "Apple Inc." is an alias on AAPL, and attention is 4. The round-3 lowercase-typo regression is fixed. I added 8 new realistic-paste tests: 2 guards pass and **6 fail**. All 6 failures are *flagged* chips (attention badge). None silently saves a wrong ticker or silently drops a valid one. Details are in defects 2–6. |
+> | M5 Look-through | **PASS** | Math is unchanged. Simulation with TSLA approved: approved-only headline $329.63 (QQQ = 3.296348% TSLA) ✓; SPY $160.40 = 1.604013% ✓; SPY if proposed $163.48 ✓. The "Highest" line is now hidden when everything is $0.00. |
+> | M6 Human in loop | **PASS** | **One fingerprint rule everywhere:** see the Page and Pipeline rows below. **Orphan approval:** it appears under Decided with "No longer proposed by the latest run", and Reopen → "Move back to pending" called `delete` once. |
+> | M7 Accessibility | **PASS** | Contrast tests 82/82. Focus outline visible. New chips use icon plus word. Minor: orphan cards lack the `aria-label` that other proposal cards have. |
+> | M8 Privacy | **PASS** (code only) | No change; no emails in the page, data, `out/` or tracked files. |
+> | M9 Runs clean | **PASS** (defect 1) | Default copy run: exit 0 in 24.8s with no source problems. Snapshot runs took 22–23s. The full suite in the copy passed: **175 passed**, including the slow test. But see defect 1: a plain `pytest` now runs the pipeline against the repo. |
+>
+> **M6 fingerprint check, page (simulated):**
+> - A stale-hash FOXA approval is Pending (card chip "Evidence changed…").
+> - It is left out of list counts ("2 approved": NMAX and TSLA), the look-through ("Counting: NMAX, TSLA"), and the pending count (11 is correct).
+> - The CSV reads "Proposed (evidence changed since decision)".
+>
+> **M6 fingerprint check, pipeline (copy runs):**
+> - **Valid TSLA approval:** `labels.TSLA` is approved Black; the proposal shows `from: watch`, `decision: approve`; **alert `('TSLA','confirmed','watch')`**; the TSLA Watch record gets `context` and is out of Pending.
+> - **Stale hash:** the label is not approved, the decision is None, `evidence_changed: true`, and the alert status is "proposed".
+>
+> ## SHOULD
+>
+> | # | Score | Reason |
+> |---|---|---|
+> | S1 Clarity | 2 | Cards are clear. Nit: in the look-through gauge, the "If every proposed Black move is approved: $329.63" line now sits *above* the big "$0.00", so the $0.00 reads as its value. |
+> | S2 Bento | 2 | Radius and spacing are consistent. No page horizontal scroll at 375 (scrollWidth 375; the ETF table scrolls inside its wrap). |
+> | S3 Freshness | 2 | Every block shows an as-of date. |
+> | S4 Speed | 2 | Cached run takes 22–25s. Page DCL about 0.45s at both widths. The page is 928 KB. |
+> | S5 Discovery | 2 | Unchanged and sound. |
+> | S6 Explainability | 1 | RUNBOOK and CLAUDE.md both tell teammates to run `python -m pytest -q`. That now runs the slow pipeline test, which rewrites the repo's `site/data.json` and `out/state.json` with a `--no-discovery` run (defect 1). |
+> | S7 Export | 2 | The CSV status now matches the page: "Proposed (evidence changed since decision)", approved, rejected, and orphan rows. The injection guard is kept. |
+> | S8 Tone | 2 | Neutral and consistent. |
+>
+> **Should total: 15/16 = 93.75%.**
+>
+> ## Defects (most severe first)
+>
+> 1. **pytest.ini / tests/test_pipeline_paths.py:124-141 — the default test run mutates published outputs.**
+>    - **What happens:** `slow` is only registered, never deselected, so `python -m pytest -q` (as RUNBOOK:48 and CLAUDE.md:74 instruct) runs `pipeline.run` in the repo. The final "restore" is `pipeline.run --no-discovery`.
+>    - **Measured in the copy:** `site/data.json` changed to a new run id. Discovery themes went from 2 to 0 and `discovery.since` became None. Six status entries were lost (DOJ, EEOC, FTC, CourtListener, agencies and courts, SEC full-text).
+>    - **Why it matters:** a teammate who runs the tests between `pipeline.run` and `dbsync export` publishes a degraded page. If the test fails midway, the outputs are left holding test approvals, e.g. TSLA approved Black.
+>    - **Fix:** add `addopts = -m "not slow"` to `pytest.ini` (run slow explicitly), and have `_run_with` run in a `tmp_path` copy or with an output-dir flag, never against `site/` and `out/`.
+> 2. **site/parser.js, `isWord` for single letters (medium, realistic).** In a typed, space-separated uppercase list, one-letter tickers are flagged "Ordinary word?" and left out of Save until clicked.
+>    - "AAPL MSFT F GM T" flags F and T; F (Ford) is a current Watch proposal.
+>    - Comma, tab and newline lists are fine.
+>    - **Fix:** when every token in the segment is uppercase and a ticker, accept single letters silently (same rule as Title-case in all-ticker lines).
+> 3. **Broker CSV exports (low–medium, realistic; noise, not wrong saves).**
+>    - "Symbol,Description,Quantity,Price …" makes the header word "Price" suggest **TROW** (T. Rowe Price).
+>    - Every quantity and price (10, 227.50, 5, 510.12 …) is its own "Numbers are not tickers" chip; 10 need attention for 3 holdings.
+>    - A Schwab-style "Cash & Cash Investments" row gives a CASH word chip.
+>    - **Fix:** detect a header row or comma-delimited table and skip header words and purely numeric/decimal cells. Standalone "123" in free text can stay flagged, per spec.
+> 4. **Apostrophe names (low–medium, realistic):** "Lowe's, McDonald's" are both not found, because `normName` turns `'` into a space ("lowe s" ≠ "lowes"). **Fix:** delete apostrophes instead of spacing them.
+> 5. **"Exxon Mobil" (low, realistic, data quirk):** SEC now lists XOM as "ExxonMobil Holdings Corp", so "Exxon Mobil" gives two not-found chips (while "ExxonMobil" works). **Fix:** compare names with spaces removed as a fallback.
+> 6. **"Name (TICKER)" with a short name (low, realistic; noise):** "Berkshire (BRK.B)" gives BRK-B plus a not-found "Berkshire" chip, although "Berkshire" alone resolves to BRK-A/BRK-B. **Fix:** in a segment that also holds a ticker, try prefix matching for the name and alias it to that ticker.
+> 7. **site/page.html (look-through gauge order, cosmetic):** the what-if line renders above the big "$0.00". Put the $0.00 first, or label it "Approved Black: $0.00".
+> 8. **site/page.html (orphan cards, minor a11y):** orphan `<article>`s have no `aria-label`. The ETSY entry on the Aligned list card also shows plain "Approved" without the "No longer proposed" hint that the Decided card has.
+> 9. **Contrived, not realistic (informational only):** "T. Rowe Price" → a T word chip plus two not-founds; "Holdings as of 9/26/2026" → an AS word chip.
+>
+> ## M4 detail: `tests/test_parser_reviewer.py`, 38 pass / 6 fail
+>
+> | Test | Input | Realistic? | Result |
+> |---|---|---|---|
+> | 16 round-1 + 12 round-2 + 8 round-3 | | | **all PASS** |
+> | r4_company_name_list_guard | 12-name newline list (Apple … The Walt Disney Company) | yes | PASS |
+> | r4_spec_fixture_exact_live | spec fixture as written | spec | PASS |
+> | r4_space_list_with_single_letter_tickers | `AAPL MSFT F GM T` | yes | FAIL: F, T word chips |
+> | r4_broker_export_headers | broker CSV with header | yes | FAIL: "Price"→TROW |
+> | r4_broker_export_numbers_not_attention | broker CSV rows | yes (design judgment) | FAIL: 4 number chips |
+> | r4_apostrophe_names | `Lowe's, McDonald's` | yes | FAIL: not found |
+> | r4_exxon_mobil | `Exxon Mobil` | yes | FAIL: 2 not-found |
+> | r4_short_name_with_ticker_in_parens | `Berkshire (BRK.B), Alphabet (GOOGL)` | yes | FAIL: stray not-found |
+>
+> **Full suite:** 175 passed in the copy before my round-4 additions (my 36 tests plus the slow test). With the round-4 tests the parser files give 54 pass / 6 fail.
+>
+> ## Side effects of this review
+> - **Repo files changed:** only `tests/test_parser_reviewer.py`. I appended 8 round-4 tests and fixed a bug in my own `r4_spec_fixture_exact_live` before recording results. The earlier 36 tests are unchanged.
+> - **Pipeline and pytest runs:** made in `/tmp/claude-0/qa/copy`.
+> - **Cache:** fresh justice.gov fetches rewrote the same content in `cache/http`.
+> - **Screenshots** (in /tmp/claude-0/qa):
+>   - `r4-shot-1280.png`
+>   - `r4-shot-375.png`
+>   - `r4-dlg-black.png`
+>   - `r4-c1.png`, `r4-c3.png`, `r4-c4.png`, `r4-c5.png`
+>   - `r4-m1.png`, `r4-m2.png`
+>   - `r4-paste.png`
+>   - `r4-live.png`
+> - **Scripts and snapshots** (in /tmp/claude-0/qa): `fake4.js`, `probe4.js`, `snap4_ok.json`, `snap4_stale.json`, `snap4_orphan.json`, `pytest4.log`.
+
+### Fixes applied after round 4 (verified by the test suite, including the reviewer's own tests; no round 5 grading, since round 4 met the stop rule)
+1. `pytest -q` no longer runs the pipeline in the repo: slow tests are deselected by default (`pytest -m slow` runs them) and run in a temporary copy of the project; verified `site/data.json` is byte-identical afterwards.
+2. A line of uppercase tickers ("AAPL MSFT F GM T") accepts single letters.
+3. Broker/spreadsheet exports: header row and numeric cells are dropped; description cells become aliases.
+4. Apostrophes removed in name matching (Lowe's, McDonald's).
+5. Space-insensitive name fallback ("Exxon Mobil").
+6. "Berkshire (BRK.B)" folds the name into the ticker.
+7. ETF card shows "$0.00" before the what-if line.
+8. Orphan cards have an aria-label; list cards mark "Approved · not re-proposed".
+
+Final state: 182 fast tests + 1 slow end-to-end test pass (reviewer's 44 parser tests included).
+
+## Final scorecard (round 4)
+| Must | M1 | M2 | M3 | M4 | M5 | M6 | M7 | M8 | M9 |
+|---|---|---|---|---|---|---|---|---|---|
+| Result | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS (code + as_level read) | PASS |
+
+| Should | S1 | S2 | S3 | S4 | S5 | S6 | S7 | S8 | Total |
+|---|---|---|---|---|---|---|---|---|---|
+| Score | 2 | 2 | 2 | 2 | 2 | 1 → fixed | 2 | 2 | 15/16 = 93.75% |

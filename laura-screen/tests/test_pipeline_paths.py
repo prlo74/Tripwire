@@ -109,15 +109,26 @@ def test_first_sentence(text, want):
     assert first_sentence(text) == want
 
 
+def _project_copy(tmp_path):
+    """Copy the project (sharing the HTTP cache) so the test never rewrites the repo's outputs."""
+    import shutil
+    root = __import__("pathlib").Path(__file__).resolve().parent.parent
+    dst = tmp_path / "proj"
+    if not dst.exists():
+        shutil.copytree(root, dst, ignore=shutil.ignore_patterns("cache", ".pytest_cache", "__pycache__", "*.png"))
+        (dst / "cache").symlink_to(root / "cache")
+    return dst
+
+
 def _run_with(tmp_path, approvals):
     import subprocess, sys
+    proj = _project_copy(tmp_path)
     snap = tmp_path / "snap.json"
     snap.write_text(json.dumps({"universe": [], "approvals": approvals, "runs": []}))
-    root = __import__("pathlib").Path(__file__).resolve().parent.parent
     r = subprocess.run([sys.executable, "-m", "pipeline.run", "--db", str(snap), "--no-discovery"],
-                       cwd=root, capture_output=True, text=True, timeout=900)
+                       cwd=proj, capture_output=True, text=True, timeout=900)
     assert r.returncode == 0, r.stderr[-2000:]
-    return json.loads((root / "site" / "data.json").read_text()), json.loads((root / "out" / "alerts.json").read_text())
+    return json.loads((proj / "site" / "data.json").read_text()), json.loads((proj / "out" / "alerts.json").read_text())
 
 
 @pytest.mark.slow
@@ -138,4 +149,3 @@ def test_run_fingerprint_confirmed_alert_and_context(tmp_path):
     assert not data["labels"].get("TSLA", {}).get("approved")
     t = next(p for p in data["proposals"] if p["id"] == tsla["id"])
     assert t["evidence_changed"] and t["decision"] is None
-    _run_with(tmp_path, [])  # restore normal outputs

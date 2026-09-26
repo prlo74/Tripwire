@@ -45,7 +45,7 @@ state for the first proposals.
    that returns `{source, date, title, url, text}` items (see `eeoc_since`), and call it from
    `legal_candidates`. Be polite: `pipeline/http.py` handles caching, rate limits, robots.txt and
    one retry.
-3. Run `python -m pytest -q`.
+3. Run `python -m pytest -q` (and `python -m pytest -m slow` for the end-to-end check).
 
 ## How evidence works
 Each finding lives in `evidence/*.yaml` with the source URL, date, and a verbatim quote of 50

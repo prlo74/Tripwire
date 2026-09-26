@@ -279,3 +279,80 @@ def test_r3_default_etf_names(run_js):
         res = run_js({"fn": "parse", "text": text})
         assert len(items(res)) == 1, (text, items(res))
         assert want in [s["ticker"] for s in items(res)[0].get("suggestions", [])], (text, items(res))
+
+
+# ---------------- Round 4: realistic team pastes ----------------
+
+# R4-1 (realistic). A typed, space-separated uppercase ticker list with one-letter tickers
+#       (F = Ford, a current Watch proposal; T = AT&T). Comma/tab lists already work.
+def test_r4_space_list_with_single_letter_tickers(run_js):
+    res = run_js({"fn": "parse", "text": "AAPL MSFT F GM T"})
+    assert [(i["status"], i.get("ticker")) for i in items(res)] == [
+        ("stock", "AAPL"), ("stock", "MSFT"), ("stock", "F"), ("stock", "GM"), ("stock", "T")], items(res)
+
+
+# R4-2 (realistic). Broker CSV export: tickers found, and header words must not suggest
+#       companies ("Price" -> T. Rowe Price).
+def test_r4_broker_export_headers(run_js):
+    text = ("Symbol,Description,Quantity,Price\nAAPL,APPLE INC,10,227.50\n"
+            "VOO,VANGUARD S&P 500 ETF,5,510.12\nBRK/B,BERKSHIRE HATHAWAY INC CL B,2,480.00")
+    res = run_js({"fn": "parse", "text": text})
+    got = {i.get("ticker") for i in items(res) if i["status"] in ("stock", "etf")}
+    assert {"AAPL", "VOO", "BRK-B"} <= got, items(res)
+    sugg = {s["ticker"] for i in items(res) for s in i.get("suggestions", [])}
+    assert "TROW" not in sugg, items(res)
+
+
+# R4-3 (realistic, design judgment). In a multi-column broker export, prices and quantities
+#       are not tickers and should not each need a "Skip" click.
+def test_r4_broker_export_numbers_not_attention(run_js):
+    text = "AAPL,APPLE INC,10,227.50\nVOO,VANGUARD S&P 500 ETF,5,510.12"
+    res = run_js({"fn": "parse", "text": text})
+    nums = [i["input"] for i in items(res) if __import__("re").fullmatch(r"[\d.,]+", i["input"])]
+    assert not nums, items(res)
+
+
+# R4-4 (realistic). Apostrophes in everyday company names.
+def test_r4_apostrophe_names(run_js):
+    res = run_js({"fn": "parse", "text": "Lowe's, McDonald's"})
+    top = [i["suggestions"][0]["ticker"] if i.get("suggestions") else None for i in items(res)]
+    assert top == ["LOW", "MCD"], items(res)
+
+
+# R4-5 (realistic). "Exxon Mobil" (SEC now lists "ExxonMobil Holdings Corp").
+def test_r4_exxon_mobil(run_js):
+    res = run_js({"fn": "parse", "text": "Exxon Mobil"})
+    assert len(items(res)) == 1 and items(res)[0]["suggestions"][0]["ticker"] == "XOM", items(res)
+
+
+# R4-6 (realistic). "Name (TICKER)" with a short name: the name is an alias, not a
+#       separate not-found chip.
+def test_r4_short_name_with_ticker_in_parens(run_js):
+    res = run_js({"fn": "parse", "text": "Berkshire (BRK.B), Alphabet (GOOGL)"})
+    assert not [i for i in items(res) if i["status"] == "notfound"], items(res)
+    assert len(items(res)) == 2, items(res)
+
+
+# R4-7 (guard). Newline company-name lists the team actually uses resolve with the right
+#       first suggestion.
+def test_r4_company_name_list_guard(run_js):
+    text = "Apple\nMicrosoft\nNvidia\nMeta Platforms\nTesla\nJPMorgan Chase\nAdobe\nThomson Reuters\nNew York Times\nShopify\nWells Fargo\nThe Walt Disney Company"
+    res = run_js({"fn": "parse", "text": text})
+    top = [i.get("ticker") or i["suggestions"][0]["ticker"] for i in items(res)]
+    assert top == ["AAPL", "MSFT", "NVDA", "META", "TSLA", "JPM", "ADBE", "TRI", "NYT", "SHOP", "WFC", "DIS"], items(res)
+
+
+# R4-8 (guard). Spec fixture exactly as written in the build prompt, live map: exactly the
+#       expected items and nothing else.
+def test_r4_spec_fixture_exact_live(run_js):
+    text = "aapl, MSFT; brk.b $TSLA  Apple Inc.\nspy VOO\tXYZQ 123 fox foxa  Newsmax  SHOP"
+    res = run_js({"fn": "parse", "text": text})
+    summary = [(i["status"], i["input"] if i["status"] == "notfound" else
+                i.get("ticker") or (i.get("suggestions") or [{}])[0].get("ticker") or
+                "+".join(sorted(i.get("classes", [])))) for i in items(res)]
+    assert summary == [("stock", "AAPL"), ("stock", "MSFT"), ("stock", "BRK-B"), ("stock", "TSLA"),
+                       ("etf", "SPY"), ("etf", "VOO"), ("notfound", "XYZQ"), ("notfound", "123"),
+                       ("ambiguous", "FOX+FOXA"), ("name", "NMAX"), ("stock", "SHOP")], summary
+    aapl = items(res)[0]
+    assert "Apple Inc." in aapl.get("aliases", []), aapl
+    assert res["attention"] == 4

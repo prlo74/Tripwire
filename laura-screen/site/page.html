@@ -600,7 +600,8 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
       if (!rows.length) { ul.appendChild(el("li", { class: "muted small", style: "display:block" }, ["Nothing here yet."])); return; }
       rows.slice(0, 5).forEach(function (r) {
         var changed = r.st === "approve" && r.p.evidence_hash && evidenceChanged(r.p);
-        ul.appendChild(el("li", {}, [el("span", { class: "tk", text: r.t }), el("span", { class: "co", text: r.p.company }), changed ? chip("watch", "Re-check", "warn") : r.st === "approve" ? chip("approved", "Approved", "aligned") : chip("proposed", "Proposed", "pending")]));
+        var dropped = r.st === "approve" && !S.proposals.some(function (x) { return x.id === r.p.id; });
+        ul.appendChild(el("li", {}, [el("span", { class: "tk", text: r.t }), el("span", { class: "co", text: r.p.company }), changed ? chip("watch", "Re-check", "warn") : dropped ? chip("watch", "Approved · not re-proposed", "warn") : r.st === "approve" ? chip("approved", "Approved", "aligned") : chip("proposed", "Proposed", "pending")]));
       });
       if (rows.length > 5) ul.appendChild(el("li", { class: "muted small", style: "display:block" }, ["+" + (rows.length - 5) + " more"]));
     });
@@ -673,7 +674,7 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
       var a = S.approvals[id];
       var p = { id: id, tickers: a.tickers || [], company: a.company || "", from: a.from || "none", to: a.to, clause_text: a.clause || "",
                 evidence: a.evidence || [], record_id: a.record_id };
-      var card = el("article", { class: "prop to-" + a.to }, [
+      var card = el("article", { class: "prop to-" + a.to, "aria-label": (a.tickers || []).join(" and ") + ": decision on a proposal the latest run no longer makes" }, [
         el("div", { class: "top" }, [el("span", { class: "tks", text: p.tickers.join(" · ") }), el("span", { class: "muted small", text: p.company }), statusChip(a.decision),
           chip("watch", "No longer proposed by the latest run", "warn")]),
         el("div", { class: "top" }, [labelChip(p.from === "none" ? null : p.from), el("span", { class: "arrow", "aria-hidden": "true", text: "→" }), labelChip(p.to)]),
@@ -942,6 +943,7 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
       g.appendChild(el("div", { class: "eyebrow", text: "No ETF weights entered yet" }));
       g.appendChild(el("p", { class: "small", text: "Showing Black-list dollars per $" + (r.perAmountUsd).toLocaleString() + " invested in each ETF. Enter each ETF's % of the total portfolio below to see whole-portfolio exposure against the " + r.thresholdPct + "% line." }));
       var worst = r.perEtf.slice().sort(function (a, b) { return b.perAmountUsd - a.perAmountUsd; })[0];
+      if (!r.perEtf.some(function (e) { return e.perAmountUsd > 0; })) g.appendChild(el("div", { class: "num", style: "font-size:2rem;color:var(--ink)", text: "$0.00" }));
       if (worst && worst.perAmountUsd > 0) { g.appendChild(el("div", { class: "num", style: "font-size:2rem;color:var(--ink)", text: "$" + worst.perAmountUsd.toFixed(2) })); g.appendChild(el("p", { class: "small muted", text: "Highest: " + worst.ticker + ", per $" + r.perAmountUsd.toLocaleString() + ($("lt-proposed").checked ? " (approved + proposed Black)" : " (approved Black only)") })); }
       if (!$("lt-proposed").checked) {
         var rp = window.LauraLookthrough.compute({ rows: rows, etfData: S.data.etf || {}, black: blackSet(true), thresholdPct: r.thresholdPct, perAmount: r.perAmountUsd });
@@ -949,7 +951,6 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
         if (wp && wp.perAmountUsd > 0) g.appendChild(el("p", { class: "small", text: "If every proposed Black move is approved: up to $" + wp.perAmountUsd.toFixed(2) + " per $" + r.perAmountUsd.toLocaleString() + " (" + wp.ticker + ")." }));
       }
     }
-    if (r.mode !== "portfolio" && !r.perEtf.some(function (e) { return e.perAmountUsd > 0; })) g.appendChild(el("div", { class: "num", style: "font-size:2rem;color:var(--ink)", text: "$0.00" }));
     g.appendChild(el("p", { class: "small muted", text: "Counting: " + (black.length ? black.join(", ") : "no approved Black-list stocks yet") + ($("lt-proposed").checked ? " (approved + proposed)" : " (approved only)") + "." }));
     if (!$("lt-proposed").checked && r.mode === "portfolio") {
       var withP = blackSet(true);

@@ -71,4 +71,5 @@ email to Leo only, and only after he says yes.
 What changed, what needs approval, errors/sources down, alerts sent.
 
 ## Tests
-`python -m pytest -q` (parser, look-through math, rule logic, financial gate, WCAG contrast).
+`python -m pytest -q` (parser, look-through math, rule logic, financial gate, WCAG contrast; about 6s).
+`python -m pytest -m slow` runs the full pipeline end to end in a temporary copy (about 90s); it never touches the repo's outputs.

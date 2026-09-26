@@ -29,6 +29,7 @@
     s = String(s);
     if (s.normalize) { s = s.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }  // Estée -> Estee
     return s.toLowerCase()
+      .replace(/['\u2019]/g, "")                 // Lowe's -> lowes, McDonald's -> mcdonalds
       .replace(/\/[a-z]{2,4}\/?$/i, " ")        // SEC state suffixes like /CAN/, /DE/
       .replace(/&/g, " and ")
       .replace(/[^a-z0-9 ]+/g, " ")
@@ -91,7 +92,9 @@
       if (r[1] === "S" && r[2] != null && r[3] === 1) { (byCik[r[2]] = byCik[r[2]] || []).push(t); }
     });
     Object.keys(byCik).forEach(function (c) { byCik[c].sort(); });
-    var idx = { byName: byName, byCik: byCik, keys: keys, names: Object.keys(byName) };
+    var byCompact = {};
+    Object.keys(byName).forEach(function (n) { var c = n.replace(/ /g, ""); (byCompact[c] = byCompact[c] || []).push.apply(byCompact[c] || (byCompact[c] = []), byName[n]); });
+    var idx = { byName: byName, byCik: byCik, keys: keys, names: Object.keys(byName), byCompact: byCompact };
     Object.defineProperty(map, "__idx", { value: idx, enumerable: false });
     return idx;
   }
@@ -111,6 +114,8 @@
     var p = normName(phrase), idx = makeIndex(map);
     if (!p || p.length < 3) { return []; }
     if (idx.byName[p]) { return rank(idx.byName[p], map); }
+    var compact = p.replace(/ /g, "");                   // "Exxon Mobil" vs "ExxonMobil"
+    if (compact.length >= 6 && idx.byCompact[compact]) { return rank(idx.byCompact[compact], map); }
     // Fund names get renamed ("Vanguard Morningstar Total Stock Market ETF"): for 3+ words, accept a
     // listed name that contains every word, in order, with at most 3 extra words.
     var words = p.split(" ");
@@ -209,6 +214,8 @@
     var prose = multi && words.filter(function (w) { return STOP[w.toLowerCase()] && w !== w.toUpperCase(); }).length >= 2;
     // Title-case words that are tickers ("Tsla") count as tickers only when the whole segment is tickers.
     var allTickers = words.every(function (w) { return map[canon(w)] && !CORP_WORD.test(w); });
+    // A line of UPPERCASE tickers ("AAPL MSFT F GM T") is a ticker list: single letters are fine there.
+    var tickerLine = allTickers && words.every(function (w) { return w === w.toUpperCase(); });
     while (i < words.length) {
       var w = words[i];
       // "BRK B" -> BRK-B
@@ -232,7 +239,7 @@
       if (/^[A-Z0-9-]+$/.test(t) && map[t] && !CORP_WORD.test(w)) {
         var lower = w === w.toLowerCase();
         var title = /^[A-Z][a-z]/.test(w);
-        var isWord = multi && ((STOP[w.toLowerCase()] && w !== w.toUpperCase()) || t.length === 1 || (prose && lower) || (title && !allTickers));
+        var isWord = multi && !tickerLine && ((STOP[w.toLowerCase()] && w !== w.toUpperCase()) || t.length === 1 || (prose && lower) || (title && !allTickers));
         out.push(isWord ? wordItem(w, t, map) : tickerItem(w, t, map));
         i++; continue;
       }
@@ -256,9 +263,23 @@
     }
   }
 
+  // Spreadsheet / broker export: 2+ lines with 3+ comma- or tab-separated cells. Drop a header row
+  // (first row with no ticker) and numeric cells (prices, quantities); keep every other cell.
+  function untable(text, map) {
+    var lines = String(text || "").split(/\r?\n/).filter(function (l) { return l.trim(); });
+    var rows = lines.map(function (l) { return l.split(/[,\t]/).map(function (c) { return c.trim(); }); });
+    if (rows.length < 2 || rows.filter(function (r) { return r.length >= 3; }).length < 2) { return text; }
+    var out = rows.filter(function (r, i) {
+      return !(i === 0 && !r.some(function (c) { return map[canon(c.replace(/^\$/, ""))]; }));
+    }).map(function (r) {
+      return r.filter(function (c) { return c && !/^[\s$€£¥()+\-.,%\d]+$/.test(c); }).join(",");
+    });
+    return out.join("\n");
+  }
+
   function parse(text, map) {
     var raw = [], idx = makeIndex(map);
-    segments(text).forEach(function (words) { parseSegment(words, map, raw); });
+    segments(untable(text, map)).forEach(function (words) { parseSegment(words, map, raw); });
 
     // De-duplicate, keeping first appearance.
     var items = [], seen = {};
@@ -284,6 +305,19 @@
       if (it.status !== "name" || !it.suggestions.length) { return true; }
       var top = it.suggestions[0].ticker;
       var host = byTicker[top] || (map[top][2] != null ? byCompany[map[top][2]] : null);
+      if (!host) { return true; }
+      (host.aliases = host.aliases || []).push(it.input);
+      host.note = "Also pasted as “" + host.aliases.join("”, “") + "”";
+      return false;
+    });
+
+    // A leftover name word pasted next to that company's ticker ("Berkshire (BRK.B)") is an alias.
+    items = items.filter(function (it) {
+      if (it.status !== "notfound" || !isNameWord(it.input)) { return true; }
+      var w = normName(it.input);
+      if (w.length < 4) { return true; }
+      var host = null;
+      Object.keys(byTicker).forEach(function (t) { if (!host && normName(map[t][0]).indexOf(w) === 0) { host = byTicker[t]; } });
       if (!host) { return true; }
       (host.aliases = host.aliases || []).push(it.input);
       host.note = "Also pasted as “" + host.aliases.join("”, “") + "”";
