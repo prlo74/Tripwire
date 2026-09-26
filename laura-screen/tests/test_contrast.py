@@ -53,6 +53,8 @@ PAIRS = [
     ("black-list", "tint-black", 3.0),   # 3rem count numerals: large text
     ("aligned", "tint-aligned", 3.0), ("watch-text", "tint-watch", 3.0),
     ("bg", "ink", 4.5),  # toast / pressed tab
+    ("alert", "card", 4.5), ("alert-ink", "alert", 4.5),   # reject buttons, over-threshold
+    ("ink", "bg", 4.5), ("muted", "card-2", 4.5), ("primary", "card-2", 4.5),
 ]
 
 
