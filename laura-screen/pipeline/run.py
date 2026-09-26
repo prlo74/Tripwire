@@ -10,6 +10,7 @@ Outputs: site/data.json (embedded in the page; no secrets), out/state.json (full
 from __future__ import annotations
 
 import argparse
+import re
 import json
 import sys
 import time
@@ -28,6 +29,18 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "out"
 SITE = ROOT / "site"
 LABEL_RANK = {"black": 3, "watch": 2, "aligned": 1}
+RANK_TO = LABEL_RANK
+
+
+ABBREV = re.compile(r"(?:\b(?:[A-Z]\.)+[A-Z]|\b(?:Cal|Inc|Corp|Co|Ltd|No|v|vs|St|Mr|Ms|Dr|Jr|Sr))\.$")
+
+
+def first_sentence(text: str) -> str:
+    """First sentence, not fooled by abbreviations such as "N.D. Cal." or "U.S."."""
+    for m in re.finditer(r"\.\s+(?=[A-Z(])", text):
+        if not ABBREV.search(text[: m.start() + 1]):
+            return text[: m.start() + 1]
+    return text
 
 
 def now_iso():
@@ -47,15 +60,18 @@ def current_labels(baseline: dict, approvals: list[dict]) -> dict:
         labels[t] = {"label": "black", "approved": False, "basis": "starting list (Sept 2026), not yet approved"}
     for t in baseline.get("watch", []):
         labels[t] = {"label": "watch", "approved": False, "basis": "starting list (Sept 2026), not yet approved"}
-    for a in sorted(approvals, key=lambda a: a.get("decided_at", "")):
+    # Approved labels: the most severe approved label wins (black > watch > aligned), so
+    # approving a Watch record after a Black one never downgrades a company.
+    approved: dict[str, dict] = {}
+    for a in approvals:
         if a.get("decision") != "approve":
             continue
         for t in a.get("tickers", []):
-            if a.get("to") == "none":
-                labels.pop(t, None)
-            else:
-                labels[t] = {"label": a["to"], "approved": True, "basis": f"approved {a.get('decided_at', '')[:10]}",
-                             "proposal_id": a.get("proposal_id")}
+            cur = approved.get(t)
+            if cur is None or LABEL_RANK.get(a["to"], 0) > LABEL_RANK.get(cur["label"], 0):
+                approved[t] = {"label": a["to"], "approved": True,
+                               "basis": f"approved {a.get('decided_at', '')[:10]}", "proposal_id": a.get("proposal_id")}
+    labels.update(approved)
     return labels
 
 
@@ -198,6 +214,15 @@ def main(argv=None) -> int:
                           "decision": decided.get(pid, {}).get("decision"),
                           "discovery": bool(rec.get("discovered"))})
 
+    # Cap discovery proposals per run; the rest wait in the collapsed "more" list.
+    cap = rules["discovery"].get("max_proposals_per_run", 10)
+    conf_rank = {"High": 0, "Medium": 1, "Low": 2}
+    disc_props = sorted([p for p in proposals if p.get("discovery")],
+                        key=lambda p: (conf_rank.get(p.get("confidence"), 3), -RANK_TO.get(p["to"], 0)))
+    overflow = {p["id"] for p in disc_props[cap:]}
+    held_back = [p for p in proposals if p["id"] in overflow]
+    proposals = [p for p in proposals if p["id"] not in overflow]
+
     # 5. ETF look-through data.
     etf_list = sorted(set(baseline.get("default_etfs", [])) | team_etfs)
     targets = {}
@@ -257,16 +282,17 @@ def main(argv=None) -> int:
     # 7. Alerts: Aligned/Watch -> Black proposals (and confirmations after approval).
     alerts = []
     for p in proposals:
-        if p["to"] == "black" and p["from"] in ("aligned", "watch"):
+        if p["to"] == "black" and p["from"] != "black":
             status_word = "confirmed" if p.get("decision") == "approve" else "proposed"
             if p.get("decision") == "reject":
                 continue
             ev = p["evidence"][0] if p["evidence"] else {}
             for t in p["tickers"]:
                 alerts.append({"key": f"{t}|{p['from']}|black|{p['record_id']}|{status_word}", "ticker": t,
+                               "core": p["from"] in ("aligned", "watch"),
                                "from": p["from"], "to": "black", "status": status_word, "proposal_id": p["id"],
                                "subject": f"[Laura Screen] {t} {status_word}: {p['from'].title()} → Black",
-                               "clause": p["clause_text"], "reason": p["summary"].split(". ")[0] + ".",
+                               "clause": p["clause_text"], "reason": first_sentence(p["summary"]),
                                "source_url": ev.get("url"), "source_date": ev.get("doc_date")})
 
     finished = now_iso()
@@ -284,7 +310,8 @@ def main(argv=None) -> int:
                   for r in leads],
         "etf": etf_data, "etfDefaults": baseline.get("default_etfs", []),
         "blackCandidates": sorted(targets),
-        "discovery": {"legal": disc["legal"], "legalKnown": disc.get("legal_known", []),
+        "discovery": {"heldBack": [{"id": p["id"], "tickers": p["tickers"], "to": p["to"], "confidence": p["confidence"]} for p in held_back],
+                      "legal": disc["legal"], "legalKnown": disc.get("legal_known", []),
                       "themes": disc["themes"][:40], "since": disc.get("legal_since")},
         "universe": {"sp500": sum(1 for v in universe.values() if v["origin"] == "S&P 500"),
                      "team": sum(1 for v in universe.values() if v["origin"] == "team list"),
