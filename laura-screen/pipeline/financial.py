@@ -19,9 +19,9 @@ TAGS = {
     "ocf": [("us-gaap", "NetCashProvidedByUsedInOperatingActivities"),
             ("us-gaap", "NetCashProvidedByUsedInOperatingActivitiesContinuingOperations"),
             ("ifrs-full", "CashFlowsFromUsedInOperatingActivities")],
+    # PP&E capex tags that are summed (they are disjoint line items):
     "capex": [("us-gaap", "PaymentsToAcquirePropertyPlantAndEquipment"),
               ("us-gaap", "PaymentsToAcquireOtherPropertyPlantAndEquipment"),
-              ("us-gaap", "PaymentsToAcquireProductiveAssets"),
               ("ifrs-full", "PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities")],
     "capex_software": [("us-gaap", "PaymentsToDevelopSoftware"), ("us-gaap", "PaymentsForSoftware"),
                        ("ifrs-full", "PurchaseOfIntangibleAssetsClassifiedAsInvestingActivities")],
@@ -94,6 +94,17 @@ def latest_fy_end(facts) -> str | None:
     return max(ends) if ends else None
 
 
+def _flow_sum(facts, key, end):
+    """Sum every tag in TAGS[key] reported for this fiscal year."""
+    total, tags = None, []
+    for tax, tag in TAGS[key]:
+        v = _annual_flows(facts, tax, tag).get(end)
+        if v is not None:
+            total = (total or 0) + v["val"]
+            tags.append(f"{tax}:{tag}")
+    return total, ", ".join(tags) if tags else None
+
+
 def _flow(facts, key, end):
     for tax, tag in TAGS[key]:
         v = _annual_flows(facts, tax, tag).get(end)
@@ -142,13 +153,22 @@ def financial_gate(cik: int, rules: dict, notes: dict | None = None) -> dict:
                             "pass": None if ni is None else ni > 0}
 
     ocf, ocf_tag = _flow(facts, "ocf", end)
-    capex, capex_tag = _flow(facts, "capex", end)
+    capex, capex_tag = _flow_sum(facts, "capex", end)
+    if capex is None:  # fall back to the aggregate tag only when no PP&E line is tagged
+        for tax, tag in (("us-gaap", "PaymentsToAcquireProductiveAssets"),):
+            v = _annual_flows(facts, tax, tag).get(end)
+            if v is not None:
+                capex, capex_tag = v["val"], f"{tax}:{tag}"
+    extra = notes.get("capex_extra") if notes.get("capex_extra", {}).get("fy_end") == end else None
+    if extra:
+        capex = (capex or 0) + extra["value"]
+        capex_tag = (capex_tag + ", " if capex_tag else "") + f"company filing: {extra['label']}"
     sw, sw_tag = _flow(facts, "capex_software", end)
     if ocf is None:
         checks["fcf"] = {"value": None, "pass": None, "note": "Unknown: operating cash flow not tagged."}
-    elif capex is None and sw is None:
+    elif capex is None:
         checks["fcf"] = {"value": None, "ocf": ocf, "pass": None, "as_of": end, "tag": ocf_tag,
-                         "note": "Unknown: no capital-expenditure tag found in XBRL, so free cash flow cannot be computed."}
+                         "note": "Unknown: no property-and-equipment capex tag in XBRL for this year, so free cash flow cannot be computed."}
     else:
         spent = (capex or 0) + (sw or 0)
         fcf = ocf - spent
@@ -181,7 +201,7 @@ def financial_gate(cik: int, rules: dict, notes: dict | None = None) -> dict:
             debt = (debt or 0) + v
             debt_tags.append(f"{t[0]}:{t[1]}")
     debt_note = None
-    if debt is None and "debt" in notes:
+    if debt is None and notes.get("debt", {}).get("fy_end") == end:
         n = notes["debt"]
         debt = n["value"]
         debt_note = f"No debt tag in XBRL; the company's filing states it: \"{n['quote']}\""

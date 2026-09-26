@@ -9,8 +9,8 @@
 (function (root) {
   "use strict";
 
-  var SUFFIXES = /\b(incorporated|inc|corporation|corp|company|co|ltd|limited|plc|llc|holdings?|group|sa|nv|ag|the|class [a-c]|new|del|de|cl [a-c])\b/g;
-  var CORP_WORD = /^(inc|corp|co|ltd|plc|llc|corporation|company|incorporated|holdings?|group)$/i;
+  var SUFFIXES = /\b(incorporated|inc|corporation|corp|companies|company|co|ltd|limited|plc|llc|holdings?|group|sa|nv|ag|the|class [a-c]|new|del|de|cl [a-c])\b/g;
+  var CORP_WORD = /^(inc|corp|co|ltd|plc|llc|corporation|company|incorporated|holdings?|group)\.?$/i;
   // Everyday words that also happen to be tickers; flagged instead of silently accepted.
   var STOPWORDS = ["a", "i", "an", "the", "and", "or", "for", "of", "in", "on", "at", "to", "is", "it", "my",
     "me", "we", "us", "our", "you", "own", "all", "new", "big", "key", "now", "low", "high", "cash", "plus",
@@ -26,6 +26,8 @@
   }
 
   function normName(s) {
+    s = String(s);
+    if (s.normalize) { s = s.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }  // Estée -> Estee
     return s.toLowerCase()
       .replace(/\/[a-z]{2,4}\/?$/i, " ")        // SEC state suffixes like /CAN/, /DE/
       .replace(/&/g, " and ")
@@ -45,6 +47,9 @@
     if (s.normalize) { s = s.normalize("NFKC"); }                     // full-width -> ASCII
     s = s.replace(/[​-‍⁠﻿]/g, " ")                // zero-width characters
       .replace(/[‒-―−]/g, " ")                        // figure/en/em dashes, minus
+      .replace(/[、。､]/g, ",")                          // ideographic comma / full stop
+      .replace(/,\s*(Inc|Corp|Ltd|LLC|Co|Plc)\b\.?/gi, " $1")            // "Tesla, Inc." is one name
+      .replace(/\b[A-Za-z]{2,5}(?:\/[A-Za-z]{2,5})+\b/g, function (m) { return m.split("/").join(" "); }) // AAPL/MSFT/TSLA
       .replace(/\b(?:NASDAQ|NYSE|NYSEARCA|NYSEAMERICAN|NYSEMKT|AMEX|ARCA|BATS|CBOE|OTC|OTCMKTS)\s*:\s*/gi, "")
       .replace(/\b([A-Za-z][A-Za-z.\-\/]{0,6})\s*:\s*US\b/g, "$1")      // AAPL:US
       .replace(/\b([A-Za-z][A-Za-z.\-\/]{0,6})\s+US\s+Equity\b/g, "$1"); // AAPL US Equity (Bloomberg)
@@ -139,15 +144,53 @@
              note: "“" + input + "” is an ordinary word or single letter. Did you mean the ticker " + t + " (" + map[t][0] + ")?" };
   }
 
-  function nameItem(input, cands, map, extraTicker) {
-    var s = cands.slice(0, 3);
-    if (extraTicker && s.indexOf(extraTicker) < 0) { s.push(extraTicker); }
-    return { input: input, status: "name", suggestions: sugg(s, map), note: "Looks like a company name." };
+
+  function classOf(t, map) {
+    var r = map[t];
+    return (r && r[4]) || ((t.match(/-([A-C])$/) || [])[1]) || null;
   }
+
+  // Order name matches: the requested share class first, common classes only when any exist.
+  function orderForClass(ts, map, want) {
+    var common = ts.filter(function (t) { return map[t][1] !== "S" || map[t][3] === 1; });
+    var list = common.length ? common : ts;
+    if (!want) { return list; }
+    return list.slice().sort(function (a, b) { return (classOf(b, map) === want ? 1 : 0) - (classOf(a, map) === want ? 1 : 0); });
+  }
+
+  function nameItem(input, cands, map, extraTicker) {
+    var want = (input.match(/\bclass\s+([abc])\b/i) || [])[1];
+    var ordered = orderForClass(cands, map, want ? want.toUpperCase() : null).slice(0, 3);
+    if (extraTicker && ordered.indexOf(extraTicker) < 0) { ordered.push(extraTicker); }
+    return { input: input, status: "name", suggestions: ordered.map(function (t) {
+      var c = classOf(t, map), sibs = map[t][2] != null ? (makeIndex(map).byCik[map[t][2]] || []) : [];
+      return { ticker: t, name: map[t][0] + (c && sibs.length > 1 ? " (Class " + c + ")" : "") };
+    }), note: "Looks like a company name." };
+  }
+
+  // Longest run of words starting at i that names a company exactly; null if none.
+  function longestName(words, i, map) {
+    var best = null;
+    for (var j = i + 1; j <= words.length && j - i <= 8; j++) {
+      var ph = words.slice(i, j).join(" ");
+      var ex = exactName(ph, map);
+      if (ex.length) { best = { j: j, phrase: ph, tickers: ex }; continue; }
+      if (/^class$/i.test(words[j - 1]) || (j >= 2 && /^class$/i.test(words[j - 2] || ""))) { continue; }
+      if (!prefixName(ph, map).length && j > i + 1) { break; }
+    }
+    return best;
+  }
+
+  function isAlphaWord(w) { return /^\p{L}[\p{L}&'.\-]*$/u.test(w); }
 
   // Parse one segment of whitespace-separated words into raw items.
   function parseSegment(words, map, out) {
     var i = 0, multi = words.length > 1;
+    // Prose: a lowercase word that is neither a ticker nor part of a name means this segment is a
+    // sentence, so lowercase words that happen to be tickers ("love", "car") need confirmation.
+    var prose = multi && words.some(function (w) {
+      return /^[a-z]{3,}$/.test(w) && !map[canon(w)] && !exactName(w, map).length;
+    });
     while (i < words.length) {
       var w = words[i];
       // "BRK B" -> BRK-B
@@ -156,63 +199,39 @@
         out.push(tickerItem(w + " " + words[i + 1], canon(w) + "-" + words[i + 1].toUpperCase(), map));
         i += 2; continue;
       }
-      // Company-name phrase: Title-case words (+ "Class X", "&", corporate suffixes).
-      if (isNameWord(w)) {
-        var j = i, parts = [];
-        while (j < words.length) {
-          if (isNameWord(words[j])) { parts.push(words[j]); j++; }
-          else if (/^Class$/i.test(words[j - 1] || "") && /^[A-Ca-c]$/.test(words[j])) { parts.push(words[j]); j++; }
-          else if (/^class$/i.test(words[j]) && j + 1 < words.length && /^[A-Ca-c]$/.test(words[j + 1])) { parts.push(words[j]); j++; }
-          else { break; }
-        }
-        var phrase = parts.join(" ");
-        var exact = exactName(phrase, map);
-        if (exact.length) {
-          var tk = parts.length === 1 && map[canon(w)] && exact.indexOf(canon(w)) < 0 ? canon(w) : null;
-          out.push(nameItem(phrase, exact, map, tk));
-        } else if (parts.every(function (p) { return map[canon(p)] && !CORP_WORD.test(p); })) {
-          // "Aapl Msft", "Tsla": tickers typed in Title case.
-          parts.forEach(function (p) {
-            var t = canon(p);
-            out.push(STOP[p.toLowerCase()] && multi ? wordItem(p, t, map) : tickerItem(p, t, map));
-          });
-        } else {
-          var pre = prefixName(phrase, map);
-          if (pre.length) { out.push(nameItem(phrase, pre, map)); }
-          else { out.push({ input: phrase, status: "notfound", suggestions: [], note: "No US-listed company or ETF matches this name." }); }
-        }
-        i = j; continue;
-      }
       var t = canon(w);
-      if (!/^[A-Z0-9-]+$/.test(t)) {
-        out.push({ input: w, status: "notfound", suggestions: [], note: "Not a ticker format." });
+      var looksTicker = w === w.toUpperCase() || w === w.toLowerCase();
+      // 1. A company or fund name (longest exact match wins): "Apple Inc.", "AT&T", "Vanguard S&P 500 ETF".
+      if (isAlphaWord(w) && (!map[t] || isNameWord(w) || /&/.test(w)) && !(looksTicker && map[t] && !/&/.test(w))) {
+        var ln = longestName(words, i, map);
+        if (ln) {
+          var tk = ln.j === i + 1 && map[t] && ln.tickers.indexOf(t) < 0 ? t : null;
+          out.push(nameItem(ln.phrase, ln.tickers, map, tk));
+          i = ln.j; continue;
+        }
+      }
+      // 2. A ticker, in any case ("aapl", "Tsla").
+      if (/^[A-Z0-9-]+$/.test(t) && map[t] && !CORP_WORD.test(w)) {
+        var lower = w === w.toLowerCase();
+        var isWord = multi && ((STOP[w.toLowerCase()] && w !== w.toUpperCase()) || t.length === 1 || (prose && lower));
+        out.push(isWord ? wordItem(w, t, map) : tickerItem(w, t, map));
         i++; continue;
       }
-      if (map[t]) {
-        var isWord = multi && (STOP[w.toLowerCase()] && w !== w.toUpperCase() || (t.length === 1));
-        out.push(isWord ? wordItem(w, t, map) : tickerItem(w, t, map));
+      if (CORP_WORD.test(w)) { i++; continue; }   // stray "Inc" / "CORP" next to a name
+      if (!/^[A-Z0-9-]+$/.test(t)) {
+        out.push({ input: w, status: "notfound", suggestions: [], note: "Not a ticker format." });
         i++; continue;
       }
       if (/^[0-9-]+$/.test(t)) {
         out.push({ input: w, status: "notfound", suggestions: [], note: "Numbers are not tickers." });
         i++; continue;
       }
-      // Unknown word: try it together with the following unknown words as a company name ("APPLE INC").
-      var k = i, run = [];
-      while (k < words.length && /^[A-Za-z&.'-]+$/.test(words[k]) && (!map[canon(words[k])] || CORP_WORD.test(words[k]))) {
-        run.push(words[k]); k++;
-      }
-      var matched = false;
-      for (var len = run.length; len >= 1 && !matched; len--) {
-        var ph = run.slice(0, len).join(" ");
-        if (len === 1 && t.length < 4) { break; }
-        var ex = exactName(ph, map), pr = ex.length ? ex : (len === 1 && t.length >= 4 ? prefixName(ph, map) : []);
-        if (pr.length) { out.push(nameItem(ph, pr, map)); i += len; matched = true; }
-      }
-      if (matched) { continue; }
-      if (CORP_WORD.test(w)) { i++; continue; }   // stray "INC" after a name
+      // 3. Start of a longer name ("Newsm" ...) for words of 4+ letters.
+      var pre = t.length >= 4 ? prefixName(w, map) : [];
+      if (pre.length) { out.push(nameItem(w, pre, map)); i++; continue; }
       out.push({ input: w, status: "notfound", suggestions: closeTickers(t, map),
-                 note: "Not found: a typo, a delisted company, or not listed on a US exchange." });
+                 note: prose && /^[a-z]+$/.test(w) ? "Not a ticker or company name (looks like an ordinary word). Skip it." :
+                   "Not found: a typo, a delisted company, or not listed on a US exchange." });
       i++;
     }
   }
@@ -225,21 +244,29 @@
     var items = [], seen = {};
     raw.forEach(function (it) {
       if (!it) { return; }
-      var key = it.ticker ? it.ticker : it.status + ":" + normName(it.input) + ":" + it.input.toUpperCase();
+      var key = it.ticker ? it.ticker :
+        it.status === "name" && it.suggestions.length ? "name:" + it.suggestions[0].ticker :
+        it.status + ":" + normName(it.input) + ":" + it.input.toUpperCase();
       if (seen[key]) { return; }
       seen[key] = true;
       items.push(it);
     });
 
     // A company name whose best match is also pasted as a ticker becomes an alias of that ticker.
-    var byTicker = {};
-    items.forEach(function (it) { if (it.ticker && (it.status === "stock" || it.status === "etf")) { byTicker[it.ticker] = it; } });
+    var byTicker = {}, byCompany = {};
+    items.forEach(function (it) {
+      if (it.ticker && (it.status === "stock" || it.status === "etf")) {
+        byTicker[it.ticker] = it;
+        if (map[it.ticker][2] != null && !byCompany[map[it.ticker][2]]) { byCompany[map[it.ticker][2]] = it; }
+      }
+    });
     items = items.filter(function (it) {
       if (it.status !== "name" || !it.suggestions.length) { return true; }
-      var host = byTicker[it.suggestions[0].ticker];
+      var top = it.suggestions[0].ticker;
+      var host = byTicker[top] || (map[top][2] != null ? byCompany[map[top][2]] : null);
       if (!host) { return true; }
       (host.aliases = host.aliases || []).push(it.input);
-      host.note = "Also pasted as “" + host.aliases.join("”, “") + "”.";
+      host.note = "Also pasted as “" + host.aliases.join("”, “") + "”";
       return false;
     });
 

@@ -348,7 +348,7 @@ footer.foot { margin-top: 28px; color: var(--muted); font-size: 0.85rem; display
       <div class="tbl-wrap">
         <table>
           <caption class="sr">ETF weights and look-through detail</caption>
-          <thead><tr><th scope="col">Holding</th><th scope="col" class="num">% of portfolio</th><th scope="col" class="num">Black share</th><th scope="col" class="num">Contribution</th><th scope="col" class="num">Per $10,000</th><th scope="col">Holdings as of</th></tr></thead>
+          <thead><tr><th scope="col">Holding</th><th scope="col" class="num">% of portfolio</th><th scope="col" class="num">Black share</th><th scope="col" class="num">Contribution</th><th scope="col" class="num">Per $10,000</th><th scope="col" class="num">If proposed approved</th><th scope="col">Holdings as of</th></tr></thead>
           <tbody id="lt-rows"></tbody>
         </table>
       </div>
@@ -361,7 +361,7 @@ footer.foot { margin-top: 28px; color: var(--muted); font-size: 0.85rem; display
     </section>
 
     <!-- 6. paste -->
-    <section class="card s8" aria-labelledby="h-paste">
+    <section class="card s8" aria-labelledby="h-paste" style="align-self:start">
       <header><div><h2 id="h-paste">Paste tickers</h2><p class="purpose">Add stocks or ETFs to what the screen monitors. Paste anything; fix the flagged chips; save.</p></div><span id="p-badge"></span></header>
       <label class="lbl" for="p-input">Tickers or company names</label>
       <textarea id="p-input" rows="4" spellcheck="false">aapl, MSFT; brk.b $TSLA  Apple Inc.
@@ -377,13 +377,6 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
     </section>
 
     <div class="stack s4">
-    <!-- 8. values fit, fails financial -->
-    <section class="card" aria-labelledby="h-vf">
-      <header><div><h2 id="h-vf">Values fit, fails financial screen</h2><p class="purpose">Good values link, but a financial gate failed or could not be checked. Shown to document the discipline.</p></div></header>
-      <div class="tbl-wrap"><table><thead><tr><th scope="col">Ticker</th><th scope="col">Gate</th><th scope="col">Why</th></tr></thead><tbody id="vf-rows"></tbody></table></div>
-      <p class="small muted" id="vf-note"></p>
-    </section>
-
     <!-- 9. leads -->
     <section class="card" aria-labelledby="h-leads">
       <header><div><h2 id="h-leads">Leads</h2><p class="purpose">Items that still need a primary source. A lead never changes a list.</p></div></header>
@@ -407,8 +400,15 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
 
     </div>
 
+    <!-- 8. values fit, fails financial -->
+    <section class="card s6" aria-labelledby="h-vf">
+      <header><div><h2 id="h-vf">Values fit, fails financial screen</h2><p class="purpose">Good values link, but a financial gate failed or could not be checked. Shown to document the discipline.</p></div></header>
+      <div class="tbl-wrap"><table><thead><tr><th scope="col">Ticker</th><th scope="col">Gate</th><th scope="col">Why</th></tr></thead><tbody id="vf-rows"></tbody></table></div>
+      <p class="small muted" id="vf-note"></p>
+    </section>
+
     <!-- 11. audit -->
-    <section class="card s12" aria-labelledby="h-audit">
+    <section class="card s6" aria-labelledby="h-audit">
       <header><div><h2 id="h-audit">Audit log</h2><p class="purpose">Every decision and comment: who, when, from → to, and why.</p></div></header>
       <label class="sr" for="au-filter">Filter the audit log</label>
       <input type="search" id="au-filter" placeholder="Filter by ticker, action or text">
@@ -514,7 +514,8 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
   }
 
   // ---------- derived state ----------
-  function decisionOf(p) { var a = S.approvals[p.id]; return a ? a.decision : null; }
+  function evidenceChanged(p) { var a = S.approvals[p.id]; return !!(a && a.evidence_hash && p.evidence_hash && a.evidence_hash !== p.evidence_hash); }
+  function decisionOf(p) { var a = S.approvals[p.id]; return a && !evidenceChanged(p) ? a.decision : null; }
   function currentLabels() {
     // Built from the approval records themselves (not the live proposal list), so an approved
     // label survives even when a later run no longer proposes it. Most severe label wins.
@@ -590,7 +591,8 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
       c.appendChild(el("small", { text: "approved · " + (rows.length - approved) + " proposed" }));
       if (!rows.length) { ul.appendChild(el("li", { class: "muted small", style: "display:block" }, ["Nothing here yet."])); return; }
       rows.slice(0, 5).forEach(function (r) {
-        ul.appendChild(el("li", {}, [el("span", { class: "tk", text: r.t }), el("span", { class: "co", text: r.p.company }), r.st === "approve" ? chip("approved", "Approved", "aligned") : chip("proposed", "Proposed", "pending")]));
+        var changed = r.st === "approve" && r.p.evidence_hash && evidenceChanged(r.p);
+        ul.appendChild(el("li", {}, [el("span", { class: "tk", text: r.t }), el("span", { class: "co", text: r.p.company }), changed ? chip("watch", "Re-check", "warn") : r.st === "approve" ? chip("approved", "Approved", "aligned") : chip("proposed", "Proposed", "pending")]));
       });
       if (rows.length > 5) ul.appendChild(el("li", { class: "muted small", style: "display:block" }, ["+" + (rows.length - 5) + " more"]));
     });
@@ -663,7 +665,8 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
         el("span", { class: "tks", text: p.tickers.join(" · ") }),
         el("span", { class: "muted small", text: p.company }),
         statusChip(d),
-        p.discovery ? chip("conf", "New this run", "warn") : null
+        p.discovery ? chip("conf", "New this run", "warn") : null,
+        evidenceChanged(p) ? chip("watch", "Evidence changed since the team's decision: review again", "warn") : null
       ]));
       card.appendChild(el("div", { class: "top" }, [
         labelChip(p.from === "none" ? null : p.from), el("span", { class: "arrow", "aria-hidden": "true", text: "→" }), el("span", { class: "sr", text: "to" }), labelChip(p.to),
@@ -731,6 +734,7 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
           proposal_id: p.id, record_id: p.record_id, tickers: p.tickers, from: p.from, to: p.to,
           company: p.company, clause: p.clause_text, tripwire: p.tripwire || "", event_date: p.event_date || null,
           evidence: (p.evidence || []).slice(0, 3).map(function (e) { return { publisher: e.publisher, url: e.url, doc_date: e.doc_date, quote: e.quote }; }),
+          evidence_hash: p.evidence_hash || null,
           decision: kind, reason: reason || "", decided_by: S.uid, decided_at: now
         });
       } else if (kind === "reopen") {
@@ -912,7 +916,12 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
       g.appendChild(el("div", { class: "eyebrow", text: "No ETF weights entered yet" }));
       g.appendChild(el("p", { class: "small", text: "Showing Black-list dollars per $" + (r.perAmountUsd).toLocaleString() + " invested in each ETF. Enter each ETF's % of the total portfolio below to see whole-portfolio exposure against the " + r.thresholdPct + "% line." }));
       var worst = r.perEtf.slice().sort(function (a, b) { return b.perAmountUsd - a.perAmountUsd; })[0];
-      if (worst) { g.appendChild(el("div", { class: "num", style: "font-size:2rem;color:var(--ink)", text: "$" + worst.perAmountUsd.toFixed(2) })); g.appendChild(el("p", { class: "small muted", text: "Highest: " + worst.ticker + ", per $" + r.perAmountUsd.toLocaleString() })); }
+      if (worst) { g.appendChild(el("div", { class: "num", style: "font-size:2rem;color:var(--ink)", text: "$" + worst.perAmountUsd.toFixed(2) })); g.appendChild(el("p", { class: "small muted", text: "Highest: " + worst.ticker + ", per $" + r.perAmountUsd.toLocaleString() + ($("lt-proposed").checked ? " (approved + proposed Black)" : " (approved Black only)") })); }
+      if (!$("lt-proposed").checked) {
+        var rp = window.LauraLookthrough.compute({ rows: rows, etfData: S.data.etf || {}, black: blackSet(true), thresholdPct: r.thresholdPct, perAmount: r.perAmountUsd });
+        var wp = rp.perEtf.slice().sort(function (a, b) { return b.perAmountUsd - a.perAmountUsd; })[0];
+        if (wp && wp.perAmountUsd > 0) g.appendChild(el("p", { class: "small", text: "If every proposed Black move is approved: up to $" + wp.perAmountUsd.toFixed(2) + " per $" + r.perAmountUsd.toLocaleString() + " (" + wp.ticker + ")." }));
+      }
     }
     g.appendChild(el("p", { class: "small muted", text: "Counting: " + (black.length ? black.join(", ") : "no approved Black-list stocks yet") + ($("lt-proposed").checked ? " (approved + proposed)" : " (approved only)") + "." }));
     if (!$("lt-proposed").checked && r.mode === "portfolio") {
@@ -934,6 +943,7 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
 
     // table
     var tb = clear($("lt-rows")), etfd = S.data.etf || {};
+    var rAll = window.LauraLookthrough.compute({ rows: rows, etfData: etfd, black: blackSet(true), thresholdPct: r.thresholdPct, perAmount: r.perAmountUsd });
     rows.forEach(function (row) {
       var info = r.perEtf.filter(function (e) { return e.ticker === row.ticker; })[0];
       var d = etfd[row.ticker];
@@ -946,6 +956,7 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
         el("td", { class: "num", text: info ? pct(info.blackSharePct, 4) : direct ? "100%" : "–" }),
         el("td", { class: "num", text: info && info.contributionPct != null ? pct(info.contributionPct, 4) : direct && row.weightPct ? pct(row.weightPct, 4) : "–" }),
         el("td", { class: "num", text: info ? "$" + info.perAmountUsd.toFixed(2) : "–" }),
+        el("td", { class: "num muted", text: (function () { var x = rAll.perEtf.filter(function (e) { return e.ticker === row.ticker; })[0]; return x ? pct(x.blackSharePct, 4) + " · $" + x.perAmountUsd.toFixed(2) : "–"; })() }),
         el("td", { class: "small" }, d && d.asOf ? [fmtDate(d.asOf) + " · ", el("a", { href: d.source, target: "_blank", rel: "noopener", text: /N-PORT/.test(d.sourceKind) ? "SEC N-PORT" : "Issuer file" })] : [direct ? "Held directly" : (d && d.error ? "Unavailable this run" : "Fetched on next run")])
       ]));
     });

@@ -157,7 +157,8 @@ def main(argv=None) -> int:
         if chk["outcome"] == "financial_note":
             for t in r["tickers"]:
                 src = next(x for x in r["sources"] if x["quote_found"])
-                fin_notes.setdefault(t, {})[r["field"]] = {"value": r["value"], "url": src["url"], "quote": src["quote"]}
+                fin_notes.setdefault(t, {})[r["field"]] = {"value": r["value"], "url": src["url"], "quote": src["quote"],
+                                                           "fy_end": str(r.get("fy_end")), "label": r.get("label", r["field"])}
             continue
         to = chk["outcome"]
         frm = labels.get(r["tickers"][0], {}).get("label", "none")
@@ -220,6 +221,14 @@ def main(argv=None) -> int:
                           "decision": decided.get(pid, {}).get("decision"),
                           "discovery": bool(rec.get("discovered"))})
 
+    # Fingerprint the evidence behind each proposal; an approval made on different evidence
+    # returns to "pending" in the page.
+    import hashlib
+    for p in proposals:
+        basis = json.dumps([p["to"], p["clause_text"], p.get("summary"), p.get("caveat"), p.get("tripwire"),
+                            [(e.get("url"), e.get("quote")) for e in p.get("evidence", [])]], sort_keys=True)
+        p["evidence_hash"] = hashlib.sha256(basis.encode()).hexdigest()[:16]
+
     # Cap discovery proposals per run; the rest wait in the collapsed "more" list.
     cap = rules["discovery"].get("max_proposals_per_run", 10)
     conf_rank = {"High": 0, "Medium": 1, "Low": 2}
@@ -242,6 +251,8 @@ def main(argv=None) -> int:
         if not h:
             etf_data[e] = {"asOf": None, "error": status.get(f"ETF holdings {e}", {}).get("error", "unavailable")}
             continue
+        if h.get("note"):
+            status[f"ETF holdings {e}"] = {"ok": False, "error": f"issuer file unavailable, used SEC N-PORT instead ({h['note']})"}
         shares = etf.black_share(h, targets)
         etf_data[e] = {"asOf": h["as_of"], "source": h["source"], "sourceKind": h["source_kind"],
                        "holdings": {k: v for k, v in shares.items() if v}, "positions": len(h["holdings"]),

@@ -1,9 +1,9 @@
 {
  "run": {
-  "id": "run-20260926T073050",
-  "started": "2026-09-26T07:30:50+00:00",
-  "finished": "2026-09-26T07:31:13+00:00",
-  "duration_s": 23.0,
+  "id": "run-20260926T074411",
+  "started": "2026-09-26T07:44:11+00:00",
+  "finished": "2026-09-26T07:44:33+00:00",
+  "duration_s": 22.9,
   "today": "2026-09-26",
   "errors": [],
   "discovery_since": "2025-08-22",
@@ -23,8 +23,8 @@
   },
   "Evidence re-check": {
    "ok": true,
-   "records": 20,
-   "sources_opened": 30
+   "records": 21,
+   "sources_opened": 31
   },
   "XBRL companyfacts ADBE": {
    "ok": true
@@ -166,7 +166,8 @@
     }
    ],
    "decision": null,
-   "discovery": true
+   "discovery": true,
+   "evidence_hash": "baa36ea46d84c620"
   },
   {
    "id": "p-ACN-watch-accenture-doj-fca-2026",
@@ -206,7 +207,8 @@
     }
    ],
    "decision": null,
-   "discovery": true
+   "discovery": true,
+   "evidence_hash": "345aa355b518be9e"
   },
   {
    "id": "p-FOXA-FOX-black-fox-dominion-falsity-2023",
@@ -247,7 +249,8 @@
     }
    ],
    "decision": null,
-   "discovery": false
+   "discovery": false,
+   "evidence_hash": "afd0b9938d22cdef"
   },
   {
    "id": "p-NMAX-black-newsmax-dominion-falsity-2025",
@@ -287,7 +290,8 @@
     }
    ],
    "decision": null,
-   "discovery": false
+   "discovery": false,
+   "evidence_hash": "c448f199a0bbe957"
   },
   {
    "id": "p-TSLA-black-tesla-diaz-verdict-2021",
@@ -327,7 +331,8 @@
     }
    ],
    "decision": null,
-   "discovery": false
+   "discovery": false,
+   "evidence_hash": "6f39410e420df6c0"
   },
   {
    "id": "p-TSLA-watch-tesla-crd-eeoc-open-2026",
@@ -367,7 +372,8 @@
     }
    ],
    "decision": null,
-   "discovery": false
+   "discovery": false,
+   "evidence_hash": "f45e18972047e5b6"
   },
   {
    "id": "p-META-watch-meta-doj-fha-settlement-2022",
@@ -393,7 +399,7 @@
      "doc_date": "2022-06-27",
      "quote": "this Settlement Agreement is for settlement purposes only and does not constitute an admission by Meta of any of the allegations contained in the HUD Charge or the Complaint, nor does it constitute any finding of liability against Meta",
      "tier": 1,
-     "opened_at": "2026-09-26T06:41:20+00:00",
+     "opened_at": "2026-09-26T07:35:44+00:00",
      "quote_found": true
     },
     {
@@ -407,7 +413,8 @@
     }
    ],
    "decision": null,
-   "discovery": false
+   "discovery": false,
+   "evidence_hash": "a359505a7578ace7"
   },
   {
    "id": "p-META-watch-meta-states-youth-case-2026",
@@ -456,7 +463,8 @@
     }
    ],
    "decision": null,
-   "discovery": false
+   "discovery": false,
+   "evidence_hash": "fa24492d1e417b3c"
   },
   {
    "id": "p-ADBE-aligned-adbe-values",
@@ -537,7 +545,8 @@
     "unknown": []
    },
    "decision": null,
-   "discovery": false
+   "discovery": false,
+   "evidence_hash": "56aa98c1829d12dd"
   },
   {
    "id": "p-GOOG-GOOGL-aligned-alphabet-values",
@@ -610,7 +619,8 @@
     "unknown": []
    },
    "decision": null,
-   "discovery": true
+   "discovery": true,
+   "evidence_hash": "e63f8ce4ac82c3bd"
   },
   {
    "id": "p-NYT-aligned-nyt-values",
@@ -682,7 +692,8 @@
     "unknown": []
    },
    "decision": null,
-   "discovery": false
+   "discovery": false,
+   "evidence_hash": "12455595c4154555"
   },
   {
    "id": "p-SHOP-aligned-shop-values",
@@ -754,7 +765,8 @@
     "unknown": []
    },
    "decision": null,
-   "discovery": false
+   "discovery": false,
+   "evidence_hash": "391b219b5d7d08f2"
   },
   {
    "id": "p-TRI-aligned-tri-values",
@@ -827,7 +839,8 @@
     "unknown": []
    },
    "decision": null,
-   "discovery": false
+   "discovery": false,
+   "evidence_hash": "d41de23e14156e7a"
   },
   {
    "id": "p-WBD-aligned-wbd-values",
@@ -908,7 +921,8 @@
     "unknown": []
    },
    "decision": null,
-   "discovery": true
+   "discovery": true,
+   "evidence_hash": "eecd08788e9e0978"
   }
  ],
  "aligned": [
@@ -1487,13 +1501,13 @@
       "pass": true
      },
      "fcf": {
-      "value": 2500000,
+      "value": -15400000,
       "as_of": "2026-05-31",
       "ocf": 50900000,
-      "capex": 48400000,
+      "capex": 66300000,
       "capitalized_software": null,
-      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquireOtherPropertyPlantAndEquipment",
-      "pass": true
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquireOtherPropertyPlantAndEquipment, company filing: prepublication expenditures",
+      "pass": false
      },
      "debt_to_equity": {
       "value": 0.107,
@@ -1509,7 +1523,8 @@
     "fy_end": "2026-05-31",
     "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000866729.json",
     "failed": [
-     "market_cap"
+     "market_cap",
+     "fcf"
     ],
     "unknown": []
    }

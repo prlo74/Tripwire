@@ -125,3 +125,91 @@ def test_spec_fox_live_map(run_js):
 def test_resolve_name_without_choice(run_js, mini_map):
     res = run_js({"fn": "parse", "text": "Newsmax", "map": mini_map})
     assert run_js({"fn": "resolve", "item": items(res)[0]}) == []
+
+
+# ---------------- Round 2: tests against the rewritten parser ----------------
+
+# R2-1. SEC-style company names contain a comma ("Tesla, Inc."). The comma must not split off
+#       "Inc." as a separate not-found chip.
+def test_r2_sec_style_name_with_comma(run_js):
+    res = run_js({"fn": "parse", "text": "Tesla, Inc."})
+    assert len(items(res)) == 1, items(res)
+    assert items(res)[0]["suggestions"][0]["ticker"] == "TSLA"
+
+
+# R2-2. Space-separated company names are separate companies, not one unknown phrase.
+def test_r2_space_separated_company_names(run_js):
+    res = run_js({"fn": "parse", "text": "Apple Microsoft Tesla"})
+    got = {s["ticker"] for i in items(res) for s in i.get("suggestions", [])[:1]} | \
+          {i.get("ticker") for i in items(res) if i.get("ticker")}
+    assert {"AAPL", "MSFT", "TSLA"} <= got, items(res)
+
+
+# R2-3. "Class A/B/C" in a name should rank that class first; non-common classes (GOOGM notes)
+#       should not be offered.
+def test_r2_class_word_ranks_that_class(run_js):
+    a = items(run_js({"fn": "parse", "text": "Alphabet Class A"}))[0]
+    b = items(run_js({"fn": "parse", "text": "Berkshire Hathaway Class B"}))[0]
+    assert a["suggestions"][0]["ticker"] == "GOOGL", a
+    assert "GOOGM" not in [s["ticker"] for s in a["suggestions"]], a
+    assert b["suggestions"][0]["ticker"] == "BRK-B", b
+
+
+# R2-4. A name pasted next to one of that company's class tickers is the same company.
+def test_r2_name_plus_class_ticker_merge(run_js, mini_map):
+    res = run_js({"fn": "parse", "text": "GOOGL Alphabet Inc.", "map": mini_map})
+    assert len(items(res)) == 1, items(res)
+
+
+# R2-5. Slash-separated ticker lists.
+def test_r2_slash_separated_list(run_js, mini_map):
+    res = run_js({"fn": "parse", "text": "AAPL/MSFT/TSLA", "map": mini_map})
+    assert [i.get("ticker") for i in items(res)] == ["AAPL", "MSFT", "TSLA"], items(res)
+
+
+# R2-6. Accented letters in a company name (NFKC keeps é) must still match "ESTEE LAUDER".
+def test_r2_accented_company_name(run_js):
+    res = run_js({"fn": "parse", "text": "Estée Lauder"})
+    assert len(items(res)) == 1 and items(res)[0]["suggestions"][0]["ticker"] == "EL", items(res)
+
+
+# R2-7. In an obvious sentence, everyday words that happen to be tickers (love=LOVE,
+#       car=CAR) must not be silently accepted.
+def test_r2_prose_words_not_silently_tickers(run_js):
+    res = run_js({"fn": "parse", "text": "I really love my new car"})
+    silent = [i["input"] for i in items(res) if i["status"] in ("stock", "etf")]
+    assert not silent, items(res)
+
+
+# R2-8. Ideographic comma (Chinese/Japanese input) is a separator.
+def test_r2_ideographic_comma(run_js, mini_map):
+    res = run_js({"fn": "parse", "text": "AAPL、MSFT", "map": mini_map})
+    assert [i.get("ticker") for i in items(res)] == ["AAPL", "MSFT"], items(res)
+
+
+# R2-9. ETF by its fund name.
+def test_r2_etf_by_name(run_js):
+    res = run_js({"fn": "parse", "text": "Vanguard S&P 500 ETF"})
+    assert len(items(res)) == 1, items(res)
+    assert "VOO" in [s["ticker"] for s in items(res)[0].get("suggestions", [])], items(res)
+
+
+# R2-10. The same company name typed twice in different forms is one item.
+def test_r2_duplicate_name_forms(run_js, mini_map):
+    res = run_js({"fn": "parse", "text": "Apple Inc.\nApple\nAPPLE INC", "map": mini_map})
+    assert len(items(res)) == 1, items(res)
+
+
+# R2-11. "AT&T" is a well-known company written with "&"; it should reach T.
+def test_r2_ampersand_company(run_js):
+    res = run_js({"fn": "parse", "text": "AT&T"})
+    it = items(res)[0]
+    got = [it.get("ticker")] + [s["ticker"] for s in it.get("suggestions", [])]
+    assert "T" in got, it
+
+
+# R2-12. Regression guard: things round 1 fixed must stay fixed together in one paste.
+def test_r2_combined_regressions(run_js, mini_map):
+    res = run_js({"fn": "parse", "text": "Tsla, AAPL. NASDAQ:MSFT ＳＨＯＰ spy", "map": mini_map})
+    assert [i.get("ticker") for i in items(res)] == ["TSLA", "AAPL", "MSFT", "SHOP", "SPY"], items(res)
+    assert res["attention"] == 0

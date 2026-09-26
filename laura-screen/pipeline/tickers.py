@@ -50,7 +50,8 @@ def build() -> dict:
             continue  # ETF already, or not currently traded on a US exchange
         secname = traded[t][0]
         cls = 0 if NOT_COMMON.search(secname) else 1  # 1 = common/ordinary share class
-        out[t] = [name, "S", cik, cls]
+        m = re.search(r"\bClass ([A-Z])\b", secname)
+        out[t] = [name, "S", cik, cls, m.group(1) if m else None]
     m = re.search(r"(\d{2})(\d{2})(\d{4})(\d{2}):(\d{2})", created)
     as_of = f"{m.group(3)}-{m.group(1)}-{m.group(2)}" if m else None
     return {"asOf": as_of, "sources": [SEC_URL, NASDAQ_URL], "t": out}
