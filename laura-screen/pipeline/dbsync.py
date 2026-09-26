@@ -15,6 +15,7 @@ from __future__ import annotations
 import json
 import shutil
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -94,6 +95,9 @@ def export() -> Path:
         for t in p["tickers"]:
             by_ticker.setdefault(t, []).append(f"{p['to'].title()} ({state})")
     fails = {r["ticker"]: r for r in data.get("valuesFail", [])}
+    # The check finishes when its results are written (after Claude reads the evidence), not when
+    # the pipeline's fetch step ended, so stamp the export time.
+    done_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     for c in data.get("newTickerChecks", []):
         t = c["ticker"]
         if c.get("kind") == "etf":
@@ -107,7 +111,7 @@ def export() -> Path:
         else:
             g = (c.get("gate") or {}).get("result", "unknown")
             summary = "No values link or qualifying legal finding found" + (f" (financial gate: {g})" if g != "pass" else "")
-        body = {"checked_at": data["run"]["finished"], "check_run": data["run"]["id"], "check_summary": summary}
+        body = {"checked_at": done_at, "check_run": data["run"]["id"], "check_summary": summary}
         f = wdir / f"universe__{t}.json"
         f.write_text(json.dumps(body))
         w = {"op": "update", "collection": "universe", "doc_id": t, "file_path": str(f)}

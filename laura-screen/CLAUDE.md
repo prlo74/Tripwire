@@ -85,8 +85,10 @@ list the alerts in the run summary instead. Before the first real alert ever, se
 email to Leo only, and only after he says yes. (Done: Leo approved and received the test on 2026-09-26.)
 
 ## 5b. Weekly run bookkeeping
-If this is a scheduled run, update `settings/weekly` (pinned to its version) with `last_run_at`
-and a one-line `last_run_summary`. The page's Weekly run card reads it.
+After every run (scheduled or Check now), update `settings/weekly` (pinned to its version) with
+`last_run_at`, a one-line `last_run_summary`, and `check_completed_at` (the current UTC time, as the
+last write of the run). The page's elapsed timer stops at `check_completed_at` and shows how long
+the check took; a request with no completion after 45 minutes is shown as unfinished.
 
 ## 6. Print a short run summary
 What changed, what needs approval, errors/sources down, alerts sent.

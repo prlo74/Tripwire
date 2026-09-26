@@ -150,6 +150,10 @@ a { color: var(--primary); text-underline-offset: 3px; }
 .btn:disabled { opacity: 0.45; cursor: not-allowed; }
 .btn.sm { padding: 6px 10px; min-height: 30px; font-size: 0.8rem; }
 .actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.timer { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-size: 0.8rem; font-weight: 600; padding: 4px 7px; border: 1px solid var(--line-strong); background: var(--field); color: var(--ink); white-space: nowrap; }
+.timer.run { border-color: var(--watch); background: var(--well); }
+.timer:empty { display: none; }
+.when { display: block; margin-top: 3px; color: var(--muted); font-variant-numeric: tabular-nums; }
 textarea, input[type="text"], input[type="email"], input[type="number"], input[type="search"], .sel {
   font: 400 0.92rem/1.4 var(--font-body); color: var(--ink); background: var(--field); width: 100%;
   border: 1px solid var(--line-strong); padding: 8px 10px; min-height: 38px; }
@@ -334,7 +338,7 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
       <p class="small muted" id="p-example-note">Example text. Replace it with your own list.</p>
       <div class="chips" id="p-chips" aria-live="polite"></div>
       <div class="actions"><button class="btn primary" type="button" id="p-save" disabled>Save valid tickers</button><span class="small muted" id="p-save-note"></span></div>
-      <div class="actions"><button class="btn" type="button" id="p-check" disabled>Check now</button><span class="small muted" id="p-check-note"></span></div>
+      <div class="actions"><button class="btn" type="button" id="p-check" disabled>Check now</button><span class="timer" id="p-timer" role="timer" aria-live="off"></span><span class="small muted" id="p-check-note"></span></div>
       <div>
         <div class="eyebrow" style="margin-bottom:6px">Team list <span id="u-count"></span></div>
         <div class="tbl-wrap"><table><thead><tr><th scope="col">Ticker</th><th scope="col">Check result</th><th scope="col"><span class="sr">Remove</span></th></tr></thead><tbody id="u-list"><tr><td colspan="3" class="small muted">Loading…</td></tr></tbody></table></div>
@@ -347,6 +351,7 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
       <header><div><h2 id="h-weekly">Scheduled run</h2><p class="purpose">Run the screen automatically every 1 to 7 days, or right now. Alerts are only as fast as the schedule.</p></div><span id="wk-badge"></span></header>
       <div class="actions">
         <button class="btn primary" type="button" id="wk-now">Check now</button>
+        <span class="timer" id="wk-timer" role="timer" aria-live="off"></span>
         <span class="small muted" id="wk-now-note"></span>
       </div>
       <form id="wk-form" class="evid" novalidate>
@@ -546,6 +551,15 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
   function fmtDateTime(s) {
     var d = new Date(s); if (isNaN(d)) return s || "unknown";
     return d.toLocaleString(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
+  }
+  function fmtStamp(s) {
+    var d = new Date(s); if (isNaN(d)) return s || "unknown";
+    return d.toLocaleString(undefined, { year: "numeric", month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZoneName: "short" });
+  }
+  function fmtDur(ms) {
+    var t = Math.max(0, Math.floor(ms / 1000)), h = Math.floor(t / 3600), m = Math.floor(t % 3600 / 60), sec = t % 60;
+    function p(n) { return n < 10 ? "0" + n : String(n); }
+    return (h ? h + ":" + p(m) : p(m)) + ":" + p(sec);
   }
   function fmtMoney(v) {
     if (v == null) return "unknown";
@@ -950,6 +964,11 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
     renderPaste();
   }
   function tickerStatus(u) {
+    var st = tickerState(u);
+    if (u.checked_at) st.push(el("span", { class: "when", text: "Check finished " + fmtStamp(u.checked_at) }));
+    return st;
+  }
+  function tickerState(u) {
     var t = u.ticker, props = S.proposals.filter(function (p) { return p.tickers.indexOf(t) >= 0; });
     if (props.length) {
       var p = props.slice().sort(function (a, b) { return RANK[b.to] - RANK[a.to]; })[0], d = decisionOf(p);
@@ -957,7 +976,7 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
               " ", d === "approve" ? "approved" : d === "reject" ? "rejected" : "proposed, see Needs approval"];
     }
     if ((S.data.valuesFail || []).some(function (r) { return r.ticker === t; })) return [chip("none", "Values fit", "none"), " fails the financial screen"];
-    if (u.checked_at) return [chip("none", "Checked", "none"), " " + fmtDate(u.checked_at) + ": " + (u.check_summary || "no proposal")];
+    if (u.checked_at) return [chip("none", "Checked", "none"), " " + (u.check_summary || "no proposal")];
     if (checkRunning(S.weekly)) return [chip("watch", "Checking", "pending"), " check in progress"];
     return [chip("proposed", "Waiting", "pending"), " for the next run or Check now"];
   }
@@ -1145,6 +1164,16 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
     var req = Date.parse(w.check_requested_at), done = w.check_completed_at ? Date.parse(w.check_completed_at) : 0;
     return done < req && Date.now() - req < 45 * 60 * 1000;
   }
+  // Elapsed timer next to both Check now buttons. Ticks every second while a check runs; afterwards
+  // shows when the last check finished and how long it took (request -> check_completed_at).
+  function renderTimer() {
+    var w = S.weekly || {}, txt = "", run = false, title = "";
+    var req = w.check_requested_at ? Date.parse(w.check_requested_at) : 0, done = w.check_completed_at ? Date.parse(w.check_completed_at) : 0;
+    if (checkRunning(w)) { run = true; txt = "Running " + fmtDur(Date.now() - req); title = "Started " + fmtStamp(w.check_requested_at); }
+    else if (req && done < req) { txt = "No finish recorded"; title = "Check started " + fmtStamp(w.check_requested_at) + " has not reported back after 45 minutes."; }
+    else if (done) { txt = "Finished " + fmtDateTime(w.check_completed_at) + (req && done - req < 3 * 3600 * 1000 ? " · took " + fmtDur(done - req) : ""); title = fmtStamp(w.check_completed_at); }
+    ["wk-timer", "p-timer"].forEach(function (id) { var e = $(id); if (!e) return; e.textContent = txt; e.title = title; e.classList.toggle("run", run); });
+  }
   function pendingTeamTickers() {
     return S.universe.filter(function (u) { return !u.checked_at; }).map(function (u) { return u.ticker; }).sort();
   }
@@ -1162,12 +1191,13 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
     $("wk-now").disabled = !ready || S.wkBusy || running;
     $("p-check").disabled = $("wk-now").disabled;
     var pend = pendingTeamTickers();
-    var nowNote = running ? "Check running since " + fmtDateTime(w.check_requested_at) + ". Results appear here in about 5–10 minutes." :
+    var nowNote = running ? "Started " + fmtDateTime(w.check_requested_at) + ". Results usually land in 5–10 minutes." :
       !S.db ? "Needs the live database." : !admin ? "Only the team's editors can start a check." :
       !S.mcp ? "Needs the Claude Code Remote connector in this view." :
       pend.length ? "Checks " + pend.join(", ") + " and runs the full screen." : "Runs the full screen now.";
     $("wk-now-note").textContent = S.nowMsg || nowNote;
-    $("p-check-note").textContent = S.nowMsg || (running ? "Check running…" : pend.length ? pend.length + " ticker" + (pend.length > 1 ? "s" : "") + " waiting for a check." : "");
+    renderTimer();
+    $("p-check-note").textContent = S.nowMsg || (running ? "" : pend.length ? pend.length + " ticker" + (pend.length > 1 ? "s" : "") + " waiting for a check." : "");
     var b = clear($("wk-badge"));
     b.appendChild(running ? chip("watch", "Checking now", "pending") : w.enabled ? chip("aligned", "On", "aligned") : chip("none", "Off", "none"));
     $("wk-note").textContent = S.wkMsg || (!S.db ? "Schedule changes need the live database." :
@@ -1238,7 +1268,8 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
   $("wk-every").addEventListener("change", function () { $("wk-day").disabled = parseInt($("wk-every").value, 10) !== 7; });
   $("wk-now").addEventListener("click", checkNow);
   $("p-check").addEventListener("click", checkNow);
-  setInterval(function () { if (S.weekly && S.weekly.check_requested_at) renderWeekly(); }, 60000);
+  setInterval(function () { if (checkRunning(S.weekly)) renderTimer(); }, 1000);
+  setInterval(function () { if (S.weekly && S.weekly.check_requested_at) { var r = checkRunning(S.weekly); if (r !== S.wasRunning) { S.wasRunning = r; renderWeekly(); renderUniverse(); } } }, 5000);
 
   // ---------- audit + CSV ----------
   function auditText(a) {
