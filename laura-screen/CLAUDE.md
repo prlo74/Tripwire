@@ -14,7 +14,9 @@ Artifact: https://claude.ai/artifact/8uEh8baXjRBYo7BYLL4SHr  (page source: `site
 
 ## 1. Read the team's state from the Artifact database (ArtifactData tool)
 `list` each of `universe`, `approvals`, `runs`, `proposals` with `out_dir: cache/db`
-(use `query.limit: 1000`), then:
+(use `query.limit: 1000`). The saved files hold only document data, so also write
+`cache/db/versions.json` as `{"<collection>/<doc_id>": <version>}` from the versions the list
+results print (needed to pin overwrites). Then:
 ```
 python -m pipeline.dbsync snapshot cache/db
 ```

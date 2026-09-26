@@ -1,13 +1,13 @@
 {
  "run": {
-  "id": "run-20260926T134117",
-  "started": "2026-09-26T13:41:17+00:00",
-  "finished": "2026-09-26T13:41:45+00:00",
-  "duration_s": 27.7,
+  "id": "run-20260926T142541",
+  "started": "2026-09-26T14:25:41+00:00",
+  "finished": "2026-09-26T14:27:12+00:00",
+  "duration_s": 90.7,
   "today": "2026-09-26",
   "errors": [],
-  "discovery_since": "2025-08-22",
-  "legal_discovery_since": "2026-08-12"
+  "discovery_since": "2026-09-25",
+  "legal_discovery_since": "2026-09-25"
  },
  "status": {
   "SEC + Nasdaq ticker lists": {
@@ -56,6 +56,39 @@
   "XBRL companyfacts WBTN": {
    "ok": true
   },
+  "New ticker check AAPL": {
+   "ok": true
+  },
+  "New ticker check AKAM": {
+   "ok": true
+  },
+  "New ticker check BRK-B": {
+   "ok": true
+  },
+  "New ticker check FOX": {
+   "ok": true
+  },
+  "New ticker check FOXA": {
+   "ok": true
+  },
+  "New ticker check MSFT": {
+   "ok": true
+  },
+  "New ticker check NMAX": {
+   "ok": true
+  },
+  "New ticker check SHOP": {
+   "ok": true
+  },
+  "New ticker check SPY": {
+   "ok": true
+  },
+  "New ticker check TSLA": {
+   "ok": true
+  },
+  "New ticker check VOO": {
+   "ok": true
+  },
   "ETF holdings IVV": {
    "ok": true
   },
@@ -74,26 +107,26 @@
   "DOJ releases": {
    "ok": true,
    "error": null,
-   "items": 2500,
-   "since": "2026-08-12"
+   "items": 5,
+   "since": "2026-09-25"
   },
   "EEOC releases": {
    "ok": true,
    "error": null,
-   "items": 39,
-   "since": "2026-08-12"
+   "items": 5,
+   "since": "2026-09-25"
   },
   "FTC releases": {
    "ok": true,
    "error": null,
-   "items": 25,
-   "since": "2026-08-12"
+   "items": 0,
+   "since": "2026-09-25"
   },
   "CourtListener releases": {
    "ok": true,
    "error": null,
-   "items": 20,
-   "since": "2026-08-12"
+   "items": 3,
+   "since": "2026-09-25"
   },
   "Discovery: SEC full-text search (themes)": {
    "ok": true
@@ -103,28 +136,33 @@
  "labels": {
   "FOXA": {
    "label": "black",
-   "approved": false,
-   "basis": "starting list (Sept 2026), not yet approved"
+   "approved": true,
+   "basis": "approved 2026-09-26",
+   "proposal_id": "p-FOXA-FOX-black-fox-dominion-falsity-2023"
   },
   "FOX": {
    "label": "black",
-   "approved": false,
-   "basis": "starting list (Sept 2026), not yet approved"
+   "approved": true,
+   "basis": "approved 2026-09-26",
+   "proposal_id": "p-FOXA-FOX-black-fox-dominion-falsity-2023"
   },
   "NMAX": {
    "label": "black",
-   "approved": false,
-   "basis": "starting list (Sept 2026), not yet approved"
+   "approved": true,
+   "basis": "approved 2026-09-26",
+   "proposal_id": "p-NMAX-black-newsmax-dominion-falsity-2025"
   },
   "TSLA": {
    "label": "watch",
-   "approved": false,
-   "basis": "starting list (Sept 2026), not yet approved"
+   "approved": true,
+   "basis": "approved 2026-09-26",
+   "proposal_id": "p-TSLA-watch-tesla-crd-eeoc-open-2026"
   },
   "META": {
    "label": "watch",
-   "approved": false,
-   "basis": "starting list (Sept 2026), not yet approved"
+   "approved": true,
+   "basis": "approved 2026-09-26",
+   "proposal_id": "p-META-watch-meta-doj-fha-settlement-2022"
   }
  },
  "proposals": [
@@ -250,7 +288,7 @@
      "quote_found": true
     }
    ],
-   "decision": null,
+   "decision": "approve",
    "discovery": false,
    "evidence_hash": "afd0b9938d22cdef",
    "evidence_changed": false
@@ -292,7 +330,7 @@
      "quote_found": true
     }
    ],
-   "decision": null,
+   "decision": "approve",
    "discovery": false,
    "evidence_hash": "c448f199a0bbe957",
    "evidence_changed": false
@@ -376,7 +414,7 @@
      "quote_found": true
     }
    ],
-   "decision": null,
+   "decision": "approve",
    "discovery": false,
    "evidence_hash": "f45e18972047e5b6",
    "evidence_changed": false
@@ -418,7 +456,7 @@
      "quote_found": true
     }
    ],
-   "decision": null,
+   "decision": "approve",
    "discovery": false,
    "evidence_hash": "a359505a7578ace7",
    "evidence_changed": false
@@ -1631,7 +1669,1074 @@
    ]
   }
  ],
- "newTickerChecks": [],
+ "newTickerChecks": [
+  {
+   "ticker": "AAPL",
+   "company": "Apple Inc.",
+   "cik": 320193,
+   "errors": [],
+   "kind": "stock",
+   "gate": {
+    "cik": 320193,
+    "checks": {
+     "market_cap": {
+      "value": 3253431000000,
+      "as_of": "2025-03-28",
+      "tag": "dei:EntityPublicFloat",
+      "pass": true,
+      "note": "Public float (non-affiliate shares) used as a floor for market cap."
+     },
+     "net_income": {
+      "value": 112010000000,
+      "as_of": "2025-09-27",
+      "tag": "us-gaap:NetIncomeLoss",
+      "pass": true
+     },
+     "fcf": {
+      "value": 98767000000,
+      "as_of": "2025-09-27",
+      "ocf": 111482000000,
+      "capex": 12715000000,
+      "capitalized_software": null,
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "pass": true
+     },
+     "debt_to_equity": {
+      "value": 1.338,
+      "debt": 98657000000,
+      "equity": 73733000000,
+      "as_of": "2025-09-27",
+      "tag": "us-gaap:LongTermDebt, us-gaap:CommercialPaper, us-gaap:StockholdersEquity",
+      "pass": true,
+      "note": null
+     }
+    },
+    "result": "pass",
+    "fy_end": "2025-09-27",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json",
+    "failed": [],
+    "unknown": []
+   },
+   "annual_report": {
+    "form": "10-K",
+    "filed": "2025-10-31",
+    "accession": "0000320193-25-000079",
+    "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm"
+   },
+   "theme_snippets": {
+    "storytelling_education": [
+     {
+      "term": "reading",
+      "snippet": " than not to be sustained and the related measurement of the amount of tax benefit that qualifies for recognition. Our audit procedures included, among others, reading and evaluating management's assumptions and analysis, and, as applicable, the Company's communications with taxing authorities, that detailed the basis and tec"
+     }
+    ]
+   },
+   "legal_hits": [
+    {
+     "accession": "0000320193-21-000105",
+     "form": "10-K",
+     "filed": "2021-10-29",
+     "terms": [
+      "national origin"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019321000105/aapl-20210925.htm"
+    },
+    {
+     "accession": "0001193125-22-066169",
+     "form": "8-K",
+     "filed": "2022-03-04",
+     "terms": [
+      "Civil Rights"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000119312522066169/d294699d8k.htm"
+    },
+    {
+     "accession": "0000320193-22-000108",
+     "form": "10-K",
+     "filed": "2022-10-28",
+     "terms": [
+      "Civil Rights"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019322000108/aapl-20220924.htm"
+    },
+    {
+     "accession": "0001140361-23-011192",
+     "form": "8-K",
+     "filed": "2023-03-10",
+     "terms": [
+      "Civil Rights"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000114036123011192/brhc10049413_8k.htm"
+    },
+    {
+     "accession": "0000320193-23-000106",
+     "form": "10-K",
+     "filed": "2023-11-03",
+     "terms": [
+      "Civil Rights"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019323000106/aapl-20230930.htm"
+    },
+    {
+     "accession": "0000320193-24-000123",
+     "form": "10-K",
+     "filed": "2024-11-01",
+     "terms": [
+      "Civil Rights"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm"
+    }
+   ]
+  },
+  {
+   "ticker": "AKAM",
+   "company": "AKAMAI TECHNOLOGIES INC",
+   "cik": 1086222,
+   "errors": [],
+   "kind": "stock",
+   "gate": {
+    "cik": 1086222,
+    "checks": {
+     "market_cap": {
+      "value": 11183900000,
+      "as_of": "2025-06-30",
+      "tag": "dei:EntityPublicFloat",
+      "pass": true,
+      "note": "Public float (non-affiliate shares) used as a floor for market cap."
+     },
+     "net_income": {
+      "value": 452031000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:NetIncomeLoss",
+      "pass": true
+     },
+     "fcf": {
+      "value": 699265000,
+      "as_of": "2025-12-31",
+      "ocf": 1518765000,
+      "capex": 507786000,
+      "capitalized_software": 311714000,
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquirePropertyPlantAndEquipment, us-gaap:PaymentsForSoftware",
+      "pass": true
+     },
+     "debt_to_equity": {
+      "value": null,
+      "pass": null,
+      "equity": 4977371000,
+      "note": "Unknown: no debt tags in XBRL for this year and no verified statement of zero debt."
+     }
+    },
+    "result": "unknown",
+    "fy_end": "2025-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001086222.json",
+    "failed": [],
+    "unknown": [
+     "debt_to_equity"
+    ]
+   },
+   "annual_report": {
+    "form": "10-K",
+    "filed": "2026-02-20",
+    "accession": "0001086222-26-000022",
+    "url": "https://www.sec.gov/Archives/edgar/data/1086222/000108622226000022/akam-20251231.htm"
+   },
+   "theme_snippets": {},
+   "legal_hits": []
+  },
+  {
+   "ticker": "BRK-B",
+   "company": "BERKSHIRE HATHAWAY INC",
+   "cik": 1067983,
+   "errors": [],
+   "kind": "stock",
+   "gate": {
+    "cik": 1067983,
+    "checks": {
+     "market_cap": {
+      "value": 902700000000,
+      "as_of": "2025-06-30",
+      "tag": "dei:EntityPublicFloat",
+      "pass": true,
+      "note": "Public float (non-affiliate shares) used as a floor for market cap."
+     },
+     "net_income": {
+      "value": 66968000000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:NetIncomeLoss",
+      "pass": true
+     },
+     "fcf": {
+      "value": 25042000000,
+      "as_of": "2025-12-31",
+      "ocf": 45969000000,
+      "capex": 20927000000,
+      "capitalized_software": null,
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "pass": true
+     },
+     "debt_to_equity": {
+      "value": null,
+      "pass": null,
+      "equity": 717419000000,
+      "note": "Unknown: no debt tags in XBRL for this year and no verified statement of zero debt."
+     }
+    },
+    "result": "unknown",
+    "fy_end": "2025-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001067983.json",
+    "failed": [],
+    "unknown": [
+     "debt_to_equity"
+    ]
+   },
+   "annual_report": {
+    "form": "10-K",
+    "filed": "2026-03-02",
+    "accession": "0001193125-26-083899",
+    "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526083899/brka-20251231.htm"
+   },
+   "theme_snippets": {},
+   "legal_hits": [
+    {
+     "accession": "0001193125-25-113900",
+     "form": "8-K",
+     "filed": "2025-05-06",
+     "terms": [
+      "racial discrimination",
+      "Civil Rights"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312525113900/d910967d8k.htm"
+    },
+    {
+     "accession": "0000950170-23-004451",
+     "form": "10-K",
+     "filed": "2023-02-27",
+     "terms": [
+      "Equal Employment Opportunity Commission"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1067983/000095017023004451/brka-20221231.htm"
+    },
+    {
+     "accession": "0000950170-24-019719",
+     "form": "10-K",
+     "filed": "2024-02-26",
+     "terms": [
+      "Equal Employment Opportunity Commission"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1067983/000095017024019719/brka-20231231.htm"
+    },
+    {
+     "accession": "0000950170-25-025210",
+     "form": "10-K",
+     "filed": "2025-02-24",
+     "terms": [
+      "Equal Employment Opportunity Commission"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1067983/000095017025025210/brka-20241231.htm"
+    },
+    {
+     "accession": "0001193125-26-083899",
+     "form": "10-K",
+     "filed": "2026-03-02",
+     "terms": [
+      "Equal Employment Opportunity Commission"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526083899/brka-20251231.htm"
+    }
+   ]
+  },
+  {
+   "ticker": "FOX",
+   "company": "Fox Corp",
+   "cik": 1754301,
+   "errors": [],
+   "kind": "stock",
+   "gate": {
+    "cik": 1754301,
+    "checks": {
+     "market_cap": {
+      "value": 0,
+      "as_of": "2020-12-31",
+      "tag": "dei:EntityPublicFloat",
+      "pass": false,
+      "note": "Public float (non-affiliate shares) used as a floor for market cap. Float excludes insider holdings, so true market cap may be higher; team should confirm."
+     },
+     "net_income": {
+      "value": 1727000000,
+      "as_of": "2026-06-30",
+      "tag": "us-gaap:ProfitLoss",
+      "pass": true
+     },
+     "fcf": {
+      "value": 1468000000,
+      "as_of": "2026-06-30",
+      "ocf": 1970000000,
+      "capex": 502000000,
+      "capitalized_software": null,
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "pass": true
+     },
+     "debt_to_equity": {
+      "value": 0.568,
+      "debt": 6606000000,
+      "equity": 11628000000,
+      "as_of": "2026-06-30",
+      "tag": "us-gaap:LongTermDebt, us-gaap:StockholdersEquity",
+      "pass": true,
+      "note": null
+     }
+    },
+    "result": "fail",
+    "fy_end": "2026-06-30",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001754301.json",
+    "failed": [
+     "market_cap"
+    ],
+    "unknown": []
+   },
+   "annual_report": {
+    "form": "10-K",
+    "filed": "2026-08-06",
+    "accession": "0001628280-26-053960",
+    "url": "https://www.sec.gov/Archives/edgar/data/1754301/000162828026053960/fox-20260630.htm"
+   },
+   "theme_snippets": {
+    "trustworthy_information": [
+     {
+      "term": "journalism",
+      "snippet": "ld be damaged in the future, by incidents that erode consumer, advertiser or business partner trust or a perception that the Company's offerings, including its journalism, programming and other content, are low quality, unreliable or fail to attract and retain audiences. For example, the manipulation of content by bad actors, in"
+     }
+    ]
+   },
+   "legal_hits": [
+    {
+     "accession": "0001564590-21-043103",
+     "form": "10-K",
+     "filed": "2021-08-10",
+     "terms": [
+      "defamation",
+      "Equal Employment Opportunity Commission",
+      "Fair Housing Act"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1754301/000156459021043103/fox-10k_20210630.htm"
+    },
+    {
+     "accession": "0001193125-23-210780",
+     "form": "8-K",
+     "filed": "2023-08-11",
+     "terms": [
+      "national origin",
+      "Civil Rights",
+      "Equal Employment Opportunity Commission"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1754301/000119312523210780/d483179dex101.htm"
+    },
+    {
+     "accession": "0001628280-22-022584",
+     "form": "10-K",
+     "filed": "2022-08-12",
+     "terms": [
+      "defamation",
+      "Fair Housing Act"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1754301/000162828022022584/fox-20220630.htm"
+    },
+    {
+     "accession": "0001628280-23-029065",
+     "form": "10-K",
+     "filed": "2023-08-11",
+     "terms": [
+      "defamation",
+      "Fair Housing Act"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1754301/000162828023029065/fox-20230630.htm"
+    },
+    {
+     "accession": "0001628280-24-036123",
+     "form": "10-K",
+     "filed": "2024-08-08",
+     "terms": [
+      "defamation",
+      "Fair Housing Act"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1754301/000162828024036123/fox-20240630.htm"
+    },
+    {
+     "accession": "0001628280-25-038077",
+     "form": "10-K",
+     "filed": "2025-08-06",
+     "terms": [
+      "defamation",
+      "Fair Housing Act"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1754301/000162828025038077/fox-20250630.htm"
+    },
+    {
+     "accession": "0001628280-26-053960",
+     "form": "10-K",
+     "filed": "2026-08-06",
+     "terms": [
+      "defamation",
+      "Fair Housing Act"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1754301/000162828026053960/fox-20260630.htm"
+    },
+    {
+     "accession": "0001564590-19-041135",
+     "form": "10-Q",
+     "filed": "2019-11-06",
+     "terms": [
+      "racial discrimination"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1754301/000156459019041135/fox-10q_20190930.htm"
+    }
+   ]
+  },
+  {
+   "ticker": "FOXA",
+   "company": "Fox Corp",
+   "cik": 1754301,
+   "errors": [],
+   "kind": "stock",
+   "gate": {
+    "cik": 1754301,
+    "checks": {
+     "market_cap": {
+      "value": 0,
+      "as_of": "2020-12-31",
+      "tag": "dei:EntityPublicFloat",
+      "pass": false,
+      "note": "Public float (non-affiliate shares) used as a floor for market cap. Float excludes insider holdings, so true market cap may be higher; team should confirm."
+     },
+     "net_income": {
+      "value": 1727000000,
+      "as_of": "2026-06-30",
+      "tag": "us-gaap:ProfitLoss",
+      "pass": true
+     },
+     "fcf": {
+      "value": 1468000000,
+      "as_of": "2026-06-30",
+      "ocf": 1970000000,
+      "capex": 502000000,
+      "capitalized_software": null,
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "pass": true
+     },
+     "debt_to_equity": {
+      "value": 0.568,
+      "debt": 6606000000,
+      "equity": 11628000000,
+      "as_of": "2026-06-30",
+      "tag": "us-gaap:LongTermDebt, us-gaap:StockholdersEquity",
+      "pass": true,
+      "note": null
+     }
+    },
+    "result": "fail",
+    "fy_end": "2026-06-30",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001754301.json",
+    "failed": [
+     "market_cap"
+    ],
+    "unknown": []
+   },
+   "annual_report": {
+    "form": "10-K",
+    "filed": "2026-08-06",
+    "accession": "0001628280-26-053960",
+    "url": "https://www.sec.gov/Archives/edgar/data/1754301/000162828026053960/fox-20260630.htm"
+   },
+   "theme_snippets": {
+    "trustworthy_information": [
+     {
+      "term": "journalism",
+      "snippet": "ld be damaged in the future, by incidents that erode consumer, advertiser or business partner trust or a perception that the Company's offerings, including its journalism, programming and other content, are low quality, unreliable or fail to attract and retain audiences. For example, the manipulation of content by bad actors, in"
+     }
+    ]
+   },
+   "legal_hits": [
+    {
+     "accession": "0001564590-21-043103",
+     "form": "10-K",
+     "filed": "2021-08-10",
+     "terms": [
+      "defamation",
+      "Equal Employment Opportunity Commission",
+      "Fair Housing Act"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1754301/000156459021043103/fox-10k_20210630.htm"
+    },
+    {
+     "accession": "0001193125-23-210780",
+     "form": "8-K",
+     "filed": "2023-08-11",
+     "terms": [
+      "national origin",
+      "Civil Rights",
+      "Equal Employment Opportunity Commission"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1754301/000119312523210780/d483179dex101.htm"
+    },
+    {
+     "accession": "0001628280-22-022584",
+     "form": "10-K",
+     "filed": "2022-08-12",
+     "terms": [
+      "defamation",
+      "Fair Housing Act"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1754301/000162828022022584/fox-20220630.htm"
+    },
+    {
+     "accession": "0001628280-23-029065",
+     "form": "10-K",
+     "filed": "2023-08-11",
+     "terms": [
+      "defamation",
+      "Fair Housing Act"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1754301/000162828023029065/fox-20230630.htm"
+    },
+    {
+     "accession": "0001628280-24-036123",
+     "form": "10-K",
+     "filed": "2024-08-08",
+     "terms": [
+      "defamation",
+      "Fair Housing Act"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1754301/000162828024036123/fox-20240630.htm"
+    },
+    {
+     "accession": "0001628280-25-038077",
+     "form": "10-K",
+     "filed": "2025-08-06",
+     "terms": [
+      "defamation",
+      "Fair Housing Act"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1754301/000162828025038077/fox-20250630.htm"
+    },
+    {
+     "accession": "0001628280-26-053960",
+     "form": "10-K",
+     "filed": "2026-08-06",
+     "terms": [
+      "defamation",
+      "Fair Housing Act"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1754301/000162828026053960/fox-20260630.htm"
+    },
+    {
+     "accession": "0001564590-19-041135",
+     "form": "10-Q",
+     "filed": "2019-11-06",
+     "terms": [
+      "racial discrimination"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1754301/000156459019041135/fox-10q_20190930.htm"
+    }
+   ]
+  },
+  {
+   "ticker": "MSFT",
+   "company": "MICROSOFT CORP",
+   "cik": 789019,
+   "errors": [],
+   "kind": "stock",
+   "gate": {
+    "cik": 789019,
+    "checks": {
+     "market_cap": {
+      "value": 3600000000000,
+      "as_of": "2025-12-31",
+      "tag": "dei:EntityPublicFloat",
+      "pass": true,
+      "note": "Public float (non-affiliate shares) used as a floor for market cap."
+     },
+     "net_income": {
+      "value": 133749000000,
+      "as_of": "2026-06-30",
+      "tag": "us-gaap:NetIncomeLoss",
+      "pass": true
+     },
+     "fcf": {
+      "value": 66987000000,
+      "as_of": "2026-06-30",
+      "ocf": 182935000000,
+      "capex": 115948000000,
+      "capitalized_software": null,
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "pass": true
+     },
+     "debt_to_equity": {
+      "value": 0.091,
+      "debt": 40294000000,
+      "equity": 442387000000,
+      "as_of": "2026-06-30",
+      "tag": "us-gaap:LongTermDebt, us-gaap:StockholdersEquity",
+      "pass": true,
+      "note": null
+     }
+    },
+    "result": "pass",
+    "fy_end": "2026-06-30",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+    "failed": [],
+    "unknown": []
+   },
+   "annual_report": {
+    "form": "10-K",
+    "filed": "2026-07-29",
+    "accession": "0001193125-26-323660",
+    "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm"
+   },
+   "theme_snippets": {},
+   "legal_hits": [
+    {
+     "accession": "0001564590-21-051992",
+     "form": "10-Q",
+     "filed": "2021-10-26",
+     "terms": [
+      "national origin",
+      "defamation",
+      "Civil Rights"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/789019/000156459021051992/msft-ex1027_334.htm"
+    }
+   ]
+  },
+  {
+   "ticker": "NMAX",
+   "company": "Newsmax Inc.",
+   "cik": 2026478,
+   "errors": [],
+   "kind": "stock",
+   "gate": {
+    "cik": 2026478,
+    "checks": {
+     "market_cap": {
+      "value": null,
+      "pass": null,
+      "note": "Unknown: no public float or shares outstanding in XBRL."
+     },
+     "net_income": {
+      "value": -99495119,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:NetIncomeLoss",
+      "pass": false
+     },
+     "fcf": {
+      "value": -107105393,
+      "as_of": "2025-12-31",
+      "ocf": -104454878,
+      "capex": 2650515,
+      "capitalized_software": null,
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "pass": false
+     },
+     "debt_to_equity": {
+      "value": null,
+      "pass": null,
+      "equity": 106048552,
+      "note": "Unknown: no debt tags in XBRL for this year and no verified statement of zero debt."
+     }
+    },
+    "result": "fail",
+    "fy_end": "2025-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0002026478.json",
+    "failed": [
+     "net_income",
+     "fcf"
+    ],
+    "unknown": [
+     "market_cap",
+     "debt_to_equity"
+    ]
+   },
+   "annual_report": {
+    "form": "10-K",
+    "filed": "2026-03-26",
+    "accession": "0002026478-26-000026",
+    "url": "https://www.sec.gov/Archives/edgar/data/2026478/000202647826000026/nmax-20251231.htm"
+   },
+   "theme_snippets": {
+    "storytelling_education": [
+     {
+      "term": "publishing",
+      "snippet": "sidiaries\"): Newsmax Broadcasting, LLC (\"Newsmax Broadcasting\"), Newsmax Radio LLC (\"Newsmax Radio\"), Crown Atlantic Insurance, LLC (\"Crown Atlantic\"), Humanix Publishing, LLC (\"Humanix Publishing\"), Medix Select, LLC (\"Medix Select\"), and ROI Media Strategies, LLC (\"ROI Media Strategies\"). Newsmax Media was incorporated as Sequ"
+     }
+    ]
+   },
+   "legal_hits": [
+    {
+     "accession": "0002026478-25-000013",
+     "form": "10-K",
+     "filed": "2025-03-31",
+     "terms": [
+      "defamation"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/2026478/000202647825000013/nmax-20241231x10k1.htm"
+    },
+    {
+     "accession": "0002026478-25-000015",
+     "form": "10-K/A",
+     "filed": "2025-04-02",
+     "terms": [
+      "defamation"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/2026478/000202647825000015/nmax-20241231x10ka11.htm"
+    },
+    {
+     "accession": "0002026478-25-000018",
+     "form": "10-Q",
+     "filed": "2025-05-15",
+     "terms": [
+      "defamation"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/2026478/000202647825000018/nmax-20250331.htm"
+    },
+    {
+     "accession": "0001213900-25-053483",
+     "form": "8-K",
+     "filed": "2025-06-11",
+     "terms": [
+      "Civil Rights"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/2026478/000121390025053483/ea0245399ex99-1_newsmax.htm"
+    },
+    {
+     "accession": "0002026478-25-000032",
+     "form": "10-Q",
+     "filed": "2025-08-19",
+     "terms": [
+      "defamation"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/2026478/000202647825000032/nmax-20250630.htm"
+    },
+    {
+     "accession": "0001213900-25-078700",
+     "form": "8-K",
+     "filed": "2025-08-20",
+     "terms": [
+      "defamation"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/2026478/000121390025078700/ea025399101ex99-1_newsmax.htm"
+    },
+    {
+     "accession": "0002026478-25-000042",
+     "form": "10-Q",
+     "filed": "2025-11-13",
+     "terms": [
+      "defamation"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/2026478/000202647825000042/nmax-20250930.htm"
+    },
+    {
+     "accession": "0002026478-26-000026",
+     "form": "10-K",
+     "filed": "2026-03-26",
+     "terms": [
+      "defamation"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/2026478/000202647826000026/nmax-20251231.htm"
+    }
+   ]
+  },
+  {
+   "ticker": "SHOP",
+   "company": "SHOPIFY INC.",
+   "cik": 1594805,
+   "errors": [],
+   "kind": "stock",
+   "gate": {
+    "cik": 1594805,
+    "checks": {
+     "market_cap": {
+      "value": 140315345495,
+      "as_of": "2025-06-30",
+      "tag": "dei:EntityPublicFloat",
+      "pass": true,
+      "note": "Public float (non-affiliate shares) used as a floor for market cap."
+     },
+     "net_income": {
+      "value": 1231000000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:NetIncomeLoss",
+      "pass": true
+     },
+     "fcf": {
+      "value": 2007000000,
+      "as_of": "2025-12-31",
+      "ocf": 2033000000,
+      "capex": 26000000,
+      "capitalized_software": null,
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "pass": true
+     },
+     "debt_to_equity": {
+      "value": 0.0,
+      "debt": 0,
+      "equity": 13473000000,
+      "as_of": "2025-12-31",
+      "tag": "company filing (verified quote), us-gaap:StockholdersEquity",
+      "pass": true,
+      "note": "No debt tag in XBRL; the company's filing states it: \"The Notes matured on November 1, 2025. ... On November 3, 2025, the Company settled the Notes and the embedded derivative for $ 1.0 billion in cash\""
+     }
+    },
+    "result": "pass",
+    "fy_end": "2025-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001594805.json",
+    "failed": [],
+    "unknown": []
+   },
+   "annual_report": {
+    "form": "10-K",
+    "filed": "2026-02-11",
+    "accession": "0001594805-26-000007",
+    "url": "https://www.sec.gov/Archives/edgar/data/1594805/000159480526000007/shop-20251231.htm"
+   },
+   "theme_snippets": {},
+   "legal_hits": [
+    {
+     "accession": "0001594805-26-000007",
+     "form": "10-K",
+     "filed": "2026-02-11",
+     "terms": [
+      "defamation",
+      "Civil Rights"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1594805/000159480526000007/jeanniehaus-employmentagre.htm"
+    },
+    {
+     "accession": "0001594805-20-000010",
+     "form": "40-F",
+     "filed": "2020-02-12",
+     "terms": [
+      "defamation"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1594805/000159480520000010/exhibit11annualinforma.htm"
+    },
+    {
+     "accession": "0001594805-20-000020",
+     "form": "6-K",
+     "filed": "2020-04-21",
+     "terms": [
+      "national origin"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1594805/000159480520000020/ex991shopify2020circular.htm"
+    },
+    {
+     "accession": "0001594805-21-000008",
+     "form": "40-F",
+     "filed": "2021-02-17",
+     "terms": [
+      "defamation"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1594805/000159480521000008/exhibit11annualinformation.htm"
+    },
+    {
+     "accession": "0001594805-21-000016",
+     "form": "6-K",
+     "filed": "2021-04-23",
+     "terms": [
+      "national origin"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1594805/000159480521000016/ex991shopify2020circular.htm"
+    },
+    {
+     "accession": "0001594805-22-000011",
+     "form": "40-F",
+     "filed": "2022-02-16",
+     "terms": [
+      "defamation"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1594805/000159480522000011/exhibit11annualinformation.htm"
+    },
+    {
+     "accession": "0001140361-22-014040",
+     "form": "6-K",
+     "filed": "2022-04-12",
+     "terms": [
+      "national origin"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1594805/000114036122014040/ny20003814x1_ex99-1.htm"
+    },
+    {
+     "accession": "0001594805-23-000011",
+     "form": "40-F",
+     "filed": "2023-02-16",
+     "terms": [
+      "defamation"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1594805/000159480523000011/exhibit11annualinformation.htm"
+    }
+   ]
+  },
+  {
+   "ticker": "SPY",
+   "company": "State Street SPDR S&P 500 ETF Trust",
+   "cik": null,
+   "errors": [],
+   "kind": "etf"
+  },
+  {
+   "ticker": "TSLA",
+   "company": "Tesla, Inc.",
+   "cik": 1318605,
+   "errors": [],
+   "kind": "stock",
+   "gate": {
+    "cik": 1318605,
+    "checks": {
+     "market_cap": {
+      "value": 892930000000,
+      "as_of": "2025-06-30",
+      "tag": "dei:EntityPublicFloat",
+      "pass": true,
+      "note": "Public float (non-affiliate shares) used as a floor for market cap."
+     },
+     "net_income": {
+      "value": 3794000000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:NetIncomeLoss",
+      "pass": true
+     },
+     "fcf": {
+      "value": 6220000000,
+      "as_of": "2025-12-31",
+      "ocf": 14747000000,
+      "capex": 8527000000,
+      "capitalized_software": null,
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "pass": true
+     },
+     "debt_to_equity": {
+      "value": 0.08,
+      "debt": 6584000000,
+      "equity": 82137000000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:LongTermDebt, us-gaap:StockholdersEquity",
+      "pass": true,
+      "note": null
+     }
+    },
+    "result": "pass",
+    "fy_end": "2025-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json",
+    "failed": [],
+    "unknown": []
+   },
+   "annual_report": {
+    "form": "10-K",
+    "filed": "2026-01-29",
+    "accession": "0001628280-26-003952",
+    "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm"
+   },
+   "theme_snippets": {},
+   "legal_hits": [
+    {
+     "accession": "0000950170-23-001409",
+     "form": "10-K",
+     "filed": "2023-01-31",
+     "terms": [
+      "race discrimination",
+      "national origin",
+      "Civil Rights",
+      "Equal Employment Opportunity Commission"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000095017023001409/tsla-20221231.htm"
+    },
+    {
+     "accession": "0001628280-23-034847",
+     "form": "10-Q",
+     "filed": "2023-10-23",
+     "terms": [
+      "race discrimination",
+      "defamation",
+      "Civil Rights",
+      "Equal Employment Opportunity Commission"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828023034847/tsla-20230930.htm"
+    },
+    {
+     "accession": "0001628280-24-002390",
+     "form": "10-K",
+     "filed": "2024-01-29",
+     "terms": [
+      "race discrimination",
+      "national origin",
+      "Civil Rights",
+      "Equal Employment Opportunity Commission"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828024002390/tsla-20231231.htm"
+    },
+    {
+     "accession": "0000950170-22-019867",
+     "form": "10-Q",
+     "filed": "2022-10-24",
+     "terms": [
+      "race discrimination",
+      "Civil Rights",
+      "Equal Employment Opportunity Commission"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000095017022019867/tsla-20220930.htm"
+    },
+    {
+     "accession": "0000950170-23-013890",
+     "form": "10-Q",
+     "filed": "2023-04-24",
+     "terms": [
+      "race discrimination",
+      "Civil Rights",
+      "Equal Employment Opportunity Commission"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000095017023013890/tsla-20230331.htm"
+    },
+    {
+     "accession": "0000950170-23-033872",
+     "form": "10-Q",
+     "filed": "2023-07-24",
+     "terms": [
+      "race discrimination",
+      "Civil Rights",
+      "Equal Employment Opportunity Commission"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000095017023033872/tsla-20230630.htm"
+    },
+    {
+     "accession": "0001628280-24-017503",
+     "form": "10-Q",
+     "filed": "2024-04-24",
+     "terms": [
+      "race discrimination",
+      "Civil Rights",
+      "Equal Employment Opportunity Commission"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828024017503/tsla-20240331.htm"
+    },
+    {
+     "accession": "0001628280-24-032662",
+     "form": "10-Q",
+     "filed": "2024-07-24",
+     "terms": [
+      "race discrimination",
+      "Civil Rights",
+      "Equal Employment Opportunity Commission"
+     ],
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828024032662/tsla-20240630.htm"
+    }
+   ]
+  },
+  {
+   "ticker": "VOO",
+   "company": "Vanguard S&P 500 ETF",
+   "cik": null,
+   "errors": [],
+   "kind": "etf"
+  }
+ ],
  "etf": {
   "SPY": {
    "asOf": "2026-09-24",
@@ -1725,64 +2830,17 @@
  "discovery": {
   "heldBack": [],
   "legal": [],
-  "legalKnown": [
-   {
-    "source": "DOJ",
-    "date": "2026-09-14",
-    "title": "Accenture Agrees to Pay $25M to Resolve Alleged Employment Discrimination Violations",
-    "url": "https://www.justice.gov/opa/pr/accenture-agrees-pay-25m-resolve-alleged-employment-discrimination-violations",
-    "components": [
-     "Civil Division",
-     "Office of the Associate Attorney General"
-    ],
-    "tickers": [
-     "ACN"
-    ]
-   },
-   {
-    "source": "EEOC",
-    "date": "2026-09-01",
-    "title": "Ford Motor Company to Pay $2.3 Million to Resolve EEOC Race and National Origin Harassment Charge",
-    "url": "https://www.eeoc.gov/newsroom/ford-motor-company-pay-23-million-resolve-eeoc-race-and-national-origin-harassment-charge",
-    "tickers": [
-     "F"
-    ]
-   }
-  ],
-  "themes": [
-   {
-    "ticker": "STX",
-    "company": "Seagate Technology Holdings plc",
-    "themes": {
-     "creative_entrepreneurship": [
-      "creative professionals"
-     ]
-    },
-    "sic": 3572,
-    "sic_desc": "Computer Storage Devices",
-    "industry_fit": false,
-    "score": 3
-   },
-   {
-    "ticker": "TRMB",
-    "company": "TRIMBLE INC.",
-    "themes": {
-     "creative_entrepreneurship": [
-      "creative professionals"
-     ]
-    },
-    "sic": 3829,
-    "sic_desc": "Measuring & Controlling Devices, NEC",
-    "industry_fit": false,
-    "score": 3
-   }
-  ],
-  "since": "2026-08-12"
+  "legalKnown": [],
+  "themes": [],
+  "since": "2026-09-25"
  },
  "universe": {
   "sp500": 503,
-  "team": 0,
-  "teamEtfs": []
+  "team": 2,
+  "teamEtfs": [
+   "SPY",
+   "VOO"
+  ]
  },
  "doNotList": {
   "DJT": "No qualifying legal finding; excluding it would look partisan.",

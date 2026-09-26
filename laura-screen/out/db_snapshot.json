@@ -1,1 +1,332 @@
-{"universe":[],"approvals":[],"runs":[]}
+{
+ "universe": [
+  {
+   "added_at": "2026-09-26T13:32:23.004Z",
+   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "name": "Apple Inc.",
+   "ticker": "AAPL",
+   "type": "stock",
+   "_id": "AAPL",
+   "_version": null
+  },
+  {
+   "added_at": "2026-09-26T13:34:00.520Z",
+   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "name": "AKAMAI TECHNOLOGIES INC",
+   "ticker": "AKAM",
+   "type": "stock",
+   "_id": "AKAM",
+   "_version": null
+  },
+  {
+   "added_at": "2026-09-26T13:32:23.850Z",
+   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "name": "BERKSHIRE HATHAWAY INC",
+   "ticker": "BRK-B",
+   "type": "stock",
+   "_id": "BRK-B",
+   "_version": null
+  },
+  {
+   "added_at": "2026-09-26T13:32:25.296Z",
+   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "name": "Fox Corp",
+   "ticker": "FOX",
+   "type": "stock",
+   "_id": "FOX",
+   "_version": null
+  },
+  {
+   "added_at": "2026-09-26T13:32:25.695Z",
+   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "name": "Fox Corp",
+   "ticker": "FOXA",
+   "type": "stock",
+   "_id": "FOXA",
+   "_version": null
+  },
+  {
+   "added_at": "2026-09-26T13:32:23.357Z",
+   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "name": "MICROSOFT CORP",
+   "ticker": "MSFT",
+   "type": "stock",
+   "_id": "MSFT",
+   "_version": null
+  },
+  {
+   "added_at": "2026-09-26T13:46:28.840Z",
+   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "name": "Newsmax Inc.",
+   "ticker": "NMAX",
+   "type": "stock",
+   "_id": "NMAX",
+   "_version": null
+  },
+  {
+   "added_at": "2026-09-26T13:32:26.104Z",
+   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "name": "SHOPIFY INC.",
+   "ticker": "SHOP",
+   "type": "stock",
+   "_id": "SHOP",
+   "_version": null
+  },
+  {
+   "added_at": "2026-09-26T13:32:24.590Z",
+   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "name": "State Street SPDR S&P 500 ETF Trust",
+   "ticker": "SPY",
+   "type": "etf",
+   "_id": "SPY",
+   "_version": null
+  },
+  {
+   "added_at": "2026-09-26T13:32:24.262Z",
+   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "name": "Tesla, Inc.",
+   "ticker": "TSLA",
+   "type": "stock",
+   "_id": "TSLA",
+   "_version": null
+  },
+  {
+   "added_at": "2026-09-26T13:32:24.967Z",
+   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "name": "Vanguard S&P 500 ETF",
+   "ticker": "VOO",
+   "type": "etf",
+   "_id": "VOO",
+   "_version": null
+  }
+ ],
+ "approvals": [
+  {
+   "clause": "Black (a) Knowingly spread false information to the public: Court ruling on the merits (including summary judgment on falsity), 2023-03-31 (within 7 years). Scope: court found the statements false; knowledge (actual malice) was not adjudicated",
+   "company": "Fox Corporation",
+   "decided_at": "2026-09-26T13:30:13.670Z",
+   "decided_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "decision": "approve",
+   "event_date": "2023-03-31",
+   "evidence": [
+    {
+     "doc_date": "2023-03-31",
+     "publisher": "Superior Court of the State of Delaware (C.A. No. N21C-03-257 EMD)",
+     "quote": "The evidence developed in this civil proceeding demonstrates that is CRYSTAL clear that none of the Statements relating to Dominion about the 2020 election are true. Therefore, the Court will grant summary judgment in favor of Dominion on the element of falsity.",
+     "url": "https://courts.delaware.gov/Opinions/Download.aspx?id=345820"
+    },
+    {
+     "doc_date": "2025-05-12",
+     "publisher": "Fox Corporation Form 10-Q (SEC EDGAR)",
+     "quote": "On March 31, 2023, the court in the Dominion case issued its rulings on summary judgment motions that were unfavorable to the Company. Following these rulings, on April 18, 2023, the Company and its subsidiary, Fox News Network, LLC, entered into a Release and Settlement Agreement with Dominion",
+     "url": "https://www.sec.gov/Archives/edgar/data/1754301/000162828025024466/fox-20250331.htm"
+    }
+   ],
+   "evidence_hash": "afd0b9938d22cdef",
+   "from": "black",
+   "proposal_id": "p-FOXA-FOX-black-fox-dominion-falsity-2023",
+   "reason": "",
+   "record_id": "fox-dominion-falsity-2023",
+   "tickers": [
+    "FOXA",
+    "FOX"
+   ],
+   "to": "black",
+   "tripwire": "",
+   "_id": "p-FOXA-FOX-black-fox-dominion-falsity-2023",
+   "_version": null
+  },
+  {
+   "clause": "Watch (b): Settlement with no admission of wrongdoing",
+   "company": "Meta Platforms, Inc.",
+   "decided_at": "2026-09-26T13:38:26.254Z",
+   "decided_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "decision": "approve",
+   "event_date": "2022-06-27",
+   "evidence": [
+    {
+     "doc_date": "2022-06-27",
+     "publisher": "U.S. Department of Justice, Civil Rights Division (settlement agreement, 22 Civ. 5187)",
+     "quote": "this Settlement Agreement is for settlement purposes only and does not constitute an admission by Meta of any of the allegations contained in the HUD Charge or the Complaint, nor does it constitute any finding of liability against Meta",
+     "url": "https://www.justice.gov/crt/case-document/file/1516666/dl"
+    },
+    {
+     "doc_date": "2022-06-27",
+     "publisher": "U.S. Department of Justice, Civil Rights Division (case page)",
+     "quote": "alleged that Meta's housing advertising system discriminated against Facebook users based on their race, color, religion, sex, disability, familial status, and national origin, in violation of the Fair Housing Act (FHA).",
+     "url": "https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny"
+    }
+   ],
+   "evidence_hash": "a359505a7578ace7",
+   "from": "watch",
+   "proposal_id": "p-META-watch-meta-doj-fha-settlement-2022",
+   "reason": "following claude judgement",
+   "record_id": "meta-doj-fha-settlement-2022",
+   "tickers": [
+    "META"
+   ],
+   "to": "watch",
+   "tripwire": "A new adjudicated finding (court ruling, jury verdict, or agency finding stating a violation) that Meta engaged in (a) or (b) -> propose Black.",
+   "_id": "p-META-watch-meta-doj-fha-settlement-2022",
+   "_version": null
+  },
+  {
+   "clause": "Black (a) Knowingly spread false information to the public: Court ruling on the merits (including summary judgment on falsity), 2025-04-09 (within 7 years). Scope: court found the statements false; knowledge (actual malice) was not adjudicated",
+   "company": "Newsmax Inc.",
+   "decided_at": "2026-09-26T13:32:11.221Z",
+   "decided_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "decision": "approve",
+   "event_date": "2025-04-09",
+   "evidence": [
+    {
+     "doc_date": "2025-04-09",
+     "publisher": "Superior Court of the State of Delaware (C.A. No. N21C-08-063 EMD)",
+     "quote": "Newsmax fails to meet its rebuttal burden of showing that an issue of material fact exists as to falsity. Therefore, the Court GRANTS summary judgment in Dominion's favor regarding falsity.",
+     "url": "https://courts.delaware.gov/Opinions/Download.aspx?id=377980"
+    },
+    {
+     "doc_date": "2025-08-18",
+     "publisher": "Newsmax Inc. Form 8-K (SEC EDGAR)",
+     "quote": "On August 15, 2025, Newsmax Media, Inc. and Newsmax Broadcasting, LLC entered into a settlement agreement with Dominion Voting Systems, Inc. and certain of its affiliates (\"Dominion\"), pursuant to which such parties agreed to resolve the lawsuit among them for a total amount of $67 million",
+     "url": "https://www.sec.gov/Archives/edgar/data/2026478/000121390025077611/ea025361001-8k_newsmax.htm"
+    }
+   ],
+   "evidence_hash": "c448f199a0bbe957",
+   "from": "black",
+   "proposal_id": "p-NMAX-black-newsmax-dominion-falsity-2025",
+   "reason": "",
+   "record_id": "newsmax-dominion-falsity-2025",
+   "tickers": [
+    "NMAX"
+   ],
+   "to": "black",
+   "tripwire": "",
+   "_id": "p-NMAX-black-newsmax-dominion-falsity-2025",
+   "_version": null
+  },
+  {
+   "clause": "Watch (b): Open lawsuit or agency complaint on (a) or (b) that has survived a motion to dismiss",
+   "company": "Tesla, Inc.",
+   "decided_at": "2026-09-26T13:33:16.521Z",
+   "decided_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "decision": "approve",
+   "event_date": "2026-07-23",
+   "evidence": [
+    {
+     "doc_date": "2026-07-23",
+     "publisher": "Tesla, Inc. Form 10-Q (SEC EDGAR)",
+     "quote": "on February 9, 2022, the California Civil Rights Department (\"CRD,\" formerly \"DFEH\") filed a civil complaint against Tesla in Alameda County, California Superior Court, alleging systemic race discrimination, hostile work environment and pay equity claims, among others.",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm"
+    },
+    {
+     "doc_date": "2026-07-23",
+     "publisher": "Tesla, Inc. Form 10-Q (SEC EDGAR)",
+     "quote": "The first phase of the trial is currently set for September 21, 2026. Additionally, on June 1, 2022, the Equal Employment Opportunity Commission (\"EEOC\") issued a cause finding against Tesla that closely parallels the CRD's allegations.",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm"
+    }
+   ],
+   "evidence_hash": "f45e18972047e5b6",
+   "from": "watch",
+   "proposal_id": "p-TSLA-watch-tesla-crd-eeoc-open-2026",
+   "reason": "",
+   "record_id": "tesla-crd-eeoc-open-2026",
+   "tickers": [
+    "TSLA"
+   ],
+   "to": "watch",
+   "tripwire": "A liability finding in the CRD trial or in EEOC v. Tesla (N.D. Cal.) -> propose Black under (b). If the Diaz proposal is approved, TSLA is already Black and this becomes context.",
+   "_id": "p-TSLA-watch-tesla-crd-eeoc-open-2026",
+   "_version": null
+  }
+ ],
+ "runs": [
+  {
+   "duration_s": 21.1,
+   "errors": [],
+   "finished": "2026-09-26T07:10:06+00:00",
+   "id": "run-20260926T070944",
+   "proposals": 14,
+   "sources_down": [],
+   "started": "2026-09-26T07:09:44+00:00",
+   "_id": "run-20260926T070944",
+   "_version": null
+  },
+  {
+   "duration_s": 23,
+   "errors": [],
+   "finished": "2026-09-26T07:31:13+00:00",
+   "id": "run-20260926T073050",
+   "proposals": 14,
+   "sources_down": [],
+   "started": "2026-09-26T07:30:50+00:00",
+   "_id": "run-20260926T073050",
+   "_version": null
+  },
+  {
+   "duration_s": 22.9,
+   "errors": [],
+   "finished": "2026-09-26T07:44:33+00:00",
+   "id": "run-20260926T074411",
+   "proposals": 14,
+   "sources_down": [],
+   "started": "2026-09-26T07:44:11+00:00",
+   "_id": "run-20260926T074411",
+   "_version": null
+  },
+  {
+   "duration_s": 22.5,
+   "errors": [],
+   "finished": "2026-09-26T07:58:30+00:00",
+   "id": "run-20260926T075808",
+   "proposals": 14,
+   "sources_down": [],
+   "started": "2026-09-26T07:58:08+00:00",
+   "_id": "run-20260926T075808",
+   "_version": null
+  }
+ ],
+ "proposal_ids": [
+  "p-ACN-watch-accenture-doj-fca-2026",
+  "p-ADBE-aligned-adbe-values",
+  "p-F-watch-ford-eeoc-conciliation-2026",
+  "p-FOXA-FOX-black-fox-dominion-falsity-2023",
+  "p-GOOG-GOOGL-aligned-alphabet-values",
+  "p-META-watch-meta-doj-fha-settlement-2022",
+  "p-META-watch-meta-states-youth-case-2026",
+  "p-NMAX-black-newsmax-dominion-falsity-2025",
+  "p-NYT-aligned-nyt-values",
+  "p-SHOP-aligned-shop-values",
+  "p-TRI-aligned-tri-values",
+  "p-TSLA-black-tesla-diaz-verdict-2021",
+  "p-TSLA-watch-tesla-crd-eeoc-open-2026",
+  "p-WBD-aligned-wbd-values"
+ ],
+ "versions": {
+  "universe/AAPL": 1,
+  "universe/AKAM": 1,
+  "universe/BRK-B": 1,
+  "universe/FOX": 1,
+  "universe/FOXA": 1,
+  "universe/MSFT": 1,
+  "universe/NMAX": 1,
+  "universe/SHOP": 1,
+  "universe/SPY": 1,
+  "universe/TSLA": 1,
+  "universe/VOO": 1,
+  "proposals/p-ACN-watch-accenture-doj-fca-2026": 4,
+  "proposals/p-ADBE-aligned-adbe-values": 4,
+  "proposals/p-F-watch-ford-eeoc-conciliation-2026": 4,
+  "proposals/p-FOXA-FOX-black-fox-dominion-falsity-2023": 4,
+  "proposals/p-GOOG-GOOGL-aligned-alphabet-values": 4,
+  "proposals/p-META-watch-meta-doj-fha-settlement-2022": 4,
+  "proposals/p-META-watch-meta-states-youth-case-2026": 4,
+  "proposals/p-NMAX-black-newsmax-dominion-falsity-2025": 4,
+  "proposals/p-NYT-aligned-nyt-values": 4,
+  "proposals/p-SHOP-aligned-shop-values": 4,
+  "proposals/p-TRI-aligned-tri-values": 4,
+  "proposals/p-TSLA-black-tesla-diaz-verdict-2021": 4,
+  "proposals/p-TSLA-watch-tesla-crd-eeoc-open-2026": 4,
+  "proposals/p-WBD-aligned-wbd-values": 4,
+  "runs/latest": 4
+ }
+}

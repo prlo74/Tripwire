@@ -41,6 +41,11 @@ def snapshot(d: Path) -> Path:
             "proposal_ids": [r["_id"] for r in _load_dir(d, "proposals")],
             "versions": {f"{c}/{r['_id']}": r["_version"] for c in ("runs", "proposals", "universe")
                          for r in _load_dir(d, c) if r.get("_version")}}
+    # Saved documents carry only their data; versions come from the ArtifactData list results,
+    # recorded by Claude in <dir>/versions.json as {"collection/doc_id": version}.
+    vf = d / "versions.json"
+    if vf.exists():
+        snap["versions"].update(json.loads(vf.read_text()))
     dest = OUT / "db_snapshot.json"
     dest.write_text(json.dumps(snap, indent=1))
     print(f"snapshot: {len(snap['universe'])} universe, {len(snap['approvals'])} approvals, "
@@ -85,15 +90,16 @@ def export() -> Path:
     # Mark newly checked team tickers, with a one-line outcome the page shows next to each ticker.
     by_ticker = {}
     for p in data["proposals"]:
+        state = "approved" if p.get("decision") == "approve" else "rejected" if p.get("decision") == "reject" else "proposed"
         for t in p["tickers"]:
-            by_ticker.setdefault(t, []).append(p["to"])
+            by_ticker.setdefault(t, []).append(f"{p['to'].title()} ({state})")
     fails = {r["ticker"]: r for r in data.get("valuesFail", [])}
     for c in data.get("newTickerChecks", []):
         t = c["ticker"]
         if c.get("kind") == "etf":
             summary = "ETF: holdings added to the look-through check"
         elif t in by_ticker:
-            summary = "Proposed: " + ", ".join(sorted(set(by_ticker[t]))) + " (see Needs approval)"
+            summary = ", ".join(sorted(set(by_ticker[t])))
         elif t in fails:
             summary = "Values link found, but fails the financial screen"
         elif c.get("errors"):
