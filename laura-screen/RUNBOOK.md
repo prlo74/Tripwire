@@ -19,6 +19,15 @@ This screen is the team's assumption about Laura's wishes. It is a research aid,
 A full first run takes about 4 minutes; a cached re-run takes under a minute. Alerts are only as
 fast as the run schedule: a weekly run means up to 7 days of lag.
 
+## Weekly run
+The **Weekly run** card on the page turns an automatic weekly run on or off and sets its day,
+time and time zone (default Monday 07:52, Asia/Tokyo). It controls a Claude Code Remote Routine
+(`trig_01Qe7LfvthehDzsLRq1WmLGZ`) owned by Leo's account, so only Leo can change it from the page;
+other editors see the state. Each run does the same steps as "run the Laura screen", records
+`last_run_at` on the card, and emails subscribers. A weekly schedule means alerts can be up to 7
+days late. The switch is saved in the database (`settings/weekly`), and a run that finds it off
+stops immediately.
+
 ## How to change a rule (no code)
 Edit `config/rules.yaml`, save, then run the screen again.
 

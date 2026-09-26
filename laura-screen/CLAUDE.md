@@ -65,7 +65,11 @@ python -m pipeline.alerts plan cache/db cache/ledger.json
 Send each item in `cache/alerts_to_send.json` with the Gmail connector (`send_message`), then
 `set runs/alerts_ledger` from `cache/ledger_next.json`. If Gmail is not connected, say so and
 list the alerts in the run summary instead. Before the first real alert ever, send one test
-email to Leo only, and only after he says yes.
+email to Leo only, and only after he says yes. (Done: Leo approved and received the test on 2026-09-26.)
+
+## 5b. Weekly run bookkeeping
+If this is a scheduled run, update `settings/weekly` (pinned to its version) with `last_run_at`
+and a one-line `last_run_summary`. The page's Weekly run card reads it.
 
 ## 6. Print a short run summary
 What changed, what needs approval, errors/sources down, alerts sent.
