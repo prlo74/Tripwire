@@ -20,6 +20,7 @@ records:
     kind: finding
     clause: a
     finding_type: merits_ruling
+    finding_scope: court found the statements false; knowledge (actual malice) was not adjudicated
     finding_body: court
     event_date: 2023-03-31
     summary: >-
@@ -28,8 +29,9 @@ records:
       April 18, 2023 (about $800M including a related suit, per Fox's filing).
     caveat: >-
       The court decided falsity only. Actual malice (the "knowingly" part) was left for trial and
-      never decided because the case settled. The team's rule counts summary judgment on falsity
-      as a qualifying finding. The ruling names Fox News Network, LLC, a Fox Corp subsidiary.
+      never decided because the case settled. The team's rule lists summary judgment on falsity
+      as a qualifying finding, so this is proposed; the team should confirm it accepts a falsity
+      finding for clause (a). The ruling names Fox News Network, LLC, a Fox Corp subsidiary.
     confidence: High
     sources:
       - url: https://courts.delaware.gov/Opinions/Download.aspx?id=345820
@@ -55,6 +57,7 @@ records:
     kind: finding
     clause: a
     finding_type: merits_ruling
+    finding_scope: court found the statements false; knowledge (actual malice) was not adjudicated
     finding_body: court
     event_date: 2025-04-09
     summary: >-
@@ -75,7 +78,7 @@ records:
           falsity.
       - url: https://www.sec.gov/Archives/edgar/data/2026478/000121390025077611/ea025361001-8k_newsmax.htm
         publisher: Newsmax Inc. Form 8-K (SEC EDGAR)
-        doc_date: 2025-08-15
+        doc_date: 2025-08-18
         quote: >-
           On August 15, 2025, Newsmax Media, Inc. and Newsmax Broadcasting, LLC entered into a
           settlement agreement with Dominion Voting Systems, Inc. and certain of its affiliates
@@ -131,7 +134,8 @@ records:
       Sept 28, 2023) for race harassment and retaliation is in discovery. EEOC issued a cause
       finding on June 1, 2022.
     caveat: >-
-      Both suits are past the pleading stage (one set for trial, one in discovery). Whether the CRD
+      Both suits are past the pleading stage (one set for trial, one in discovery). The 10-Q does
+      not mention a motion to dismiss; "survived" is inferred from the trial setting and discovery. Whether the CRD
       trial actually began on Sept 21, 2026 was not confirmed from a primary source this run
       (calcivilrights.ca.gov refused scripted access). Open question for the team: does an EEOC
       "cause finding" count as an "agency finding" under the Black rule? This screen treats it as
@@ -244,8 +248,8 @@ records:
       case. Check for admission language before the next run.
     confidence: Low
     sources:
-      - url: https://www.cnbc.com/2026/08/26/meta-social-media-trial-settlement.html
-        publisher: CNBC (Tier 2, lead only; not opened this run)
+      - url: https://oag.ca.gov/news/press-releases/attorney-general-bonta-secures-transformative-17-billion-settlement-meta
+        publisher: California Attorney General (announces the settlement; the agreement itself is still needed)
         doc_date: 2026-08-26
         quote: ""
 

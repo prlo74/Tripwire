@@ -143,6 +143,7 @@ def main(argv=None) -> int:
     decided = {a.get("proposal_id"): a for a in db.get("approvals", [])}
     proposals, leads = [], []
     by_ticker_values = {}
+    fin_notes: dict[str, dict] = {}
     for r in records:
         chk = r["check"]
         if chk["outcome"] == "lead" or not chk["proposable"]:
@@ -152,6 +153,11 @@ def main(argv=None) -> int:
         if chk["outcome"] == "values_link":
             for t in r["tickers"]:
                 by_ticker_values[t] = r
+            continue
+        if chk["outcome"] == "financial_note":
+            for t in r["tickers"]:
+                src = next(x for x in r["sources"] if x["quote_found"])
+                fin_notes.setdefault(t, {})[r["field"]] = {"value": r["value"], "url": src["url"], "quote": src["quote"]}
             continue
         to = chk["outcome"]
         frm = labels.get(r["tickers"][0], {}).get("label", "none")
@@ -180,7 +186,7 @@ def main(argv=None) -> int:
         if t not in tmap:
             errors.append(f"{t}: not in ticker map")
             continue
-        gate = step(f"XBRL companyfacts {t}", financial.financial_gate, tmap[t][2], rules)
+        gate = step(f"XBRL companyfacts {t}", financial.financial_gate, tmap[t][2], rules, fin_notes.get(t))
         if gate is None:
             gate = {"result": "unknown", "checks": {}, "failed": [], "unknown": ["all"]}
         rec = by_ticker_values.get(t)
@@ -249,7 +255,8 @@ def main(argv=None) -> int:
     else:
         since = today - timedelta(days=rules["discovery"].get("first_run_lookback_days", 365))
     if not args.no_discovery:
-        legal_since = max(since, today - timedelta(days=45))  # DOJ has no topic filter; bound first-run paging
+        legal_since = since if last_runs else \
+            today - timedelta(days=rules["discovery"].get("legal_first_run_lookback_days", 45))
         res = step("Discovery: agencies and courts", discovery.legal_candidates, universe, legal_since)
         if res:
             known = {t for p in proposals for t in p["tickers"]} | set(labels)
@@ -262,7 +269,7 @@ def main(argv=None) -> int:
                                             "since": legal_since.isoformat()}
         ucik = {v["cik"]: t for t, v in universe.items()}
         th = step("Discovery: SEC full-text search (themes)", discovery.theme_candidates, ucik,
-                  rules["aligned"]["themes"], today - timedelta(days=400))
+                  rules["aligned"]["themes"], since)
         if th:
             cands, err = th
             if err:
@@ -298,7 +305,8 @@ def main(argv=None) -> int:
     finished = now_iso()
     run = {"id": "run-" + started.replace(":", "").replace("-", "")[:15], "started": started, "finished": finished,
            "duration_s": round(time.time() - t0, 1), "today": today.isoformat(), "errors": errors,
-           "discovery_since": since.isoformat()}
+           "discovery_since": since.isoformat(),
+           "legal_discovery_since": (disc.get("legal_since") or since.isoformat())}
     dnl = do_not_list_tickers(rules)
     data = {
         "run": run, "status": status, "tickersAsOf": tick.get("asOf"),

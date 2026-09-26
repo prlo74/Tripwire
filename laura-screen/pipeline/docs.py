@@ -35,7 +35,8 @@ def _doj_release_via_api(url: str) -> bytes:
     raise SourceError(f"DOJ API: release not found for {url}")
 
 
-def doc_text(url: str, ttl_hours: float = 24 * 30) -> str:
+def doc_text(url: str, ttl_hours: float = 20) -> str:
+    """Plain text of a source. Default TTL is under a day so each run re-opens its sources."""
     browser = any(h in url for h in BROWSER_HOSTS)
     try:
         raw = fetch(url, ttl_hours=ttl_hours, browser_ua=browser)

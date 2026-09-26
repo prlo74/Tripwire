@@ -1,0 +1,30 @@
+# Financial notes: facts from a company's own filing that fill a gap in its XBRL data.
+# The gate uses them only when the quote is verified in the filing on the current run.
+records:
+  - id: nyt-no-borrowings-2025
+    tickers: [NYT]
+    company: The New York Times Company
+    kind: financial_note
+    field: debt
+    value: 0
+    summary: No debt tag in XBRL; the 10-K states no borrowings were outstanding under its only credit facility.
+    sources:
+      - url: https://www.sec.gov/Archives/edgar/data/71691/000007169126000011/nyt-20251231.htm
+        publisher: The New York Times Company Form 10-K FY2025 (SEC EDGAR)
+        doc_date: 2026-02-27
+        quote: As of December 31, 2025, there were no outstanding borrowings under the Credit Facility.
+
+  - id: shop-notes-settled-2025
+    tickers: [SHOP]
+    company: Shopify Inc.
+    kind: financial_note
+    field: debt
+    value: 0
+    summary: No debt tag in XBRL; the 10-K states its only notes matured and were settled in November 2025.
+    sources:
+      - url: https://www.sec.gov/Archives/edgar/data/1594805/000159480526000007/shop-20251231.htm
+        publisher: Shopify Inc. Form 10-K FY2025 (SEC EDGAR)
+        doc_date: 2026-02-11
+        quote: >-
+          The Notes matured on November 1, 2025. ... On November 3, 2025, the Company settled the
+          Notes and the embedded derivative for $ 1.0 billion in cash

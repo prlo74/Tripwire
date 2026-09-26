@@ -114,7 +114,9 @@ def fetch(url: str, *, params: dict | None = None, ttl_hours: float = 24,
         raise SourceError(f"robots.txt disallows {url}")
     host = urlparse(url).netloc
     hdrs = {"User-Agent": _browser_ua() if browser_ua else user_agent(),
-            "From": contact_email(), "Accept-Encoding": "gzip, deflate"}
+            "Accept-Encoding": "gzip, deflate"}
+    if host.endswith("sec.gov"):
+        hdrs["From"] = contact_email()  # SEC asks for a contact; other hosts don't get the email
     if host == "www.courtlistener.com" and os.environ.get("COURTLISTENER_TOKEN"):
         hdrs["Authorization"] = f"Token {os.environ['COURTLISTENER_TOKEN']}"
     hdrs.update(headers or {})
@@ -134,15 +136,13 @@ def fetch(url: str, *, params: dict | None = None, ttl_hours: float = 24,
                 path.write_bytes(r.content)
                 meta.write_text(json.dumps({"url": r.url, "fetched": time.time()}))
                 return r.content
-            last_err = f"HTTP {r.status_code}"
+            else:
+                last_err = f"HTTP {r.status_code}"
         except requests.RequestException as e:
             last_err = type(e).__name__
         if attempt == 0:
             time.sleep(2)
-    # Serve stale cache rather than nothing, but tell the caller via exception if none.
-    if path.exists() and not _is_challenge(path.read_bytes()) and \
-            (not expect or path.read_bytes().lstrip().startswith(expect)):
-        return path.read_bytes()
+    # No stale fallback: a source that fails twice is reported as unavailable this run.
     raise SourceError(f"{host}: {last_err}")
 
 

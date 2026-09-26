@@ -103,7 +103,8 @@ a:hover { text-decoration-thickness: 2px; }
 .card > header .purpose { color: var(--muted); font-size: 0.9rem; margin-top: 3px; max-width: 60ch; }
 .s12 { grid-column: span 12; } .s8 { grid-column: span 8; } .s7 { grid-column: span 7; }
 .s6 { grid-column: span 6; } .s5 { grid-column: span 5; } .s4 { grid-column: span 4; }
-@media (max-width: 1080px) { .s8, .s7, .s6, .s5 { grid-column: span 12; } .s4 { grid-column: span 6; } }
+.stack { display: flex; flex-direction: column; gap: var(--gap); min-width: 0; }
+@media (max-width: 1080px) { .s8, .s7, .s6, .s5, .stack.s4 { grid-column: span 12; } .s4 { grid-column: span 6; } }
 @media (max-width: 720px) { .s4 { grid-column: span 12; } .card { padding: 18px; } }
 
 /* ---- status header ---- */
@@ -147,7 +148,7 @@ a:hover { text-decoration-thickness: 2px; }
 .entries { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
 .entries li { display: grid; grid-template-columns: 64px 1fr auto; gap: 10px; align-items: center; font-size: 0.9rem; }
 .entries .co { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.open-hint { font-size: 0.85rem; color: var(--primary); font-weight: 600; margin-top: auto; }
+.open-hint { margin-top: auto; align-self: flex-start; padding-left: 0; }
 
 /* ---- proposals ---- */
 .plist { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); align-items: start; }
@@ -291,24 +292,27 @@ footer.foot { margin-top: 28px; color: var(--muted); font-size: 0.85rem; display
     </section>
 
     <!-- 2-4. lists -->
-    <button type="button" class="card s4 listcard black" data-list="black" aria-haspopup="dialog" aria-labelledby="h-black">
+    <section class="card s4 listcard black" data-list="black" aria-labelledby="h-black">
       <header><div><h2 id="h-black">Black list</h2><p class="purpose">Exclude. A court, jury or agency made a qualifying finding.</p></div></header>
       <div class="count" id="c-black">–</div>
       <ul class="entries" id="l-black"></ul>
-      <span class="open-hint">Open full table →</span>
-    </button>
-    <button type="button" class="card s4 listcard watch" data-list="watch" aria-haspopup="dialog" aria-labelledby="h-watch">
+      <p class="small muted asof" id="a-black"></p>
+      <button type="button" class="btn ghost open-hint" data-open="black" aria-haspopup="dialog">Open full black list table →</button>
+    </section>
+    <section class="card s4 listcard watch" data-list="watch" aria-labelledby="h-watch">
       <header><div><h2 id="h-watch">Watch list</h2><p class="purpose">Serious open issue, no qualifying finding yet. Each has a tripwire.</p></div></header>
       <div class="count" id="c-watch">–</div>
       <ul class="entries" id="l-watch"></ul>
-      <span class="open-hint">Open full table →</span>
-    </button>
-    <button type="button" class="card s4 listcard aligned" data-list="aligned" aria-haspopup="dialog" aria-labelledby="h-aligned">
+      <p class="small muted asof" id="a-watch"></p>
+      <button type="button" class="btn ghost open-hint" data-open="watch" aria-haspopup="dialog">Open full watch list table →</button>
+    </section>
+    <section class="card s4 listcard aligned" data-list="aligned" aria-labelledby="h-aligned">
       <header><div><h2 id="h-aligned">Aligned list</h2><p class="purpose">Passes the financial screen and has a documented link to Laura's values.</p></div></header>
       <div class="count" id="c-aligned">–</div>
       <ul class="entries" id="l-aligned"></ul>
-      <span class="open-hint">Open full table →</span>
-    </button>
+      <p class="small muted asof" id="a-aligned"></p>
+      <button type="button" class="btn ghost open-hint" data-open="aligned" aria-haspopup="dialog">Open full aligned list table →</button>
+    </section>
 
     <!-- 5. approvals -->
     <section class="card s12" aria-labelledby="h-approve" id="approvals">
@@ -328,10 +332,10 @@ footer.foot { margin-top: 28px; color: var(--muted); font-size: 0.85rem; display
     </section>
 
     <!-- 7. ETF look-through -->
-    <section class="card s8" aria-labelledby="h-etf">
+    <section class="card s12" aria-labelledby="h-etf">
       <header>
         <div><h2 id="h-etf">ETF look-through</h2><p class="purpose">How much of the whole portfolio sits in Black-list stocks through ETFs. Enter each ETF's share of the total portfolio.</p></div>
-        <label class="switch"><input type="checkbox" id="lt-proposed" checked> Count proposed Black too</label>
+        <label class="switch"><input type="checkbox" id="lt-proposed"> Count proposed Black too</label>
       </header>
       <div class="lt-top">
         <div class="gauge" id="lt-gauge"><span class="loading">Loading…</span></div>
@@ -357,7 +361,7 @@ footer.foot { margin-top: 28px; color: var(--muted); font-size: 0.85rem; display
     </section>
 
     <!-- 6. paste -->
-    <section class="card s4" aria-labelledby="h-paste">
+    <section class="card s8" aria-labelledby="h-paste">
       <header><div><h2 id="h-paste">Paste tickers</h2><p class="purpose">Add stocks or ETFs to what the screen monitors. Paste anything; fix the flagged chips; save.</p></div><span id="p-badge"></span></header>
       <label class="lbl" for="p-input">Tickers or company names</label>
       <textarea id="p-input" rows="4" spellcheck="false">aapl, MSFT; brk.b $TSLA  Apple Inc.
@@ -372,21 +376,22 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
       </div>
     </section>
 
+    <div class="stack s4">
     <!-- 8. values fit, fails financial -->
-    <section class="card s4" aria-labelledby="h-vf">
+    <section class="card" aria-labelledby="h-vf">
       <header><div><h2 id="h-vf">Values fit, fails financial screen</h2><p class="purpose">Good values link, but a financial gate failed or could not be checked. Shown to document the discipline.</p></div></header>
       <div class="tbl-wrap"><table><thead><tr><th scope="col">Ticker</th><th scope="col">Gate</th><th scope="col">Why</th></tr></thead><tbody id="vf-rows"></tbody></table></div>
       <p class="small muted" id="vf-note"></p>
     </section>
 
     <!-- 9. leads -->
-    <section class="card s4" aria-labelledby="h-leads">
+    <section class="card" aria-labelledby="h-leads">
       <header><div><h2 id="h-leads">Leads</h2><p class="purpose">Items that still need a primary source. A lead never changes a list.</p></div></header>
       <div id="leads" class="evid"></div>
     </section>
 
     <!-- 10. alerts -->
-    <section class="card s4" aria-labelledby="h-alerts">
+    <section class="card" aria-labelledby="h-alerts">
       <header><div><h2 id="h-alerts">Email alerts</h2><p class="purpose">Get an email when a run proposes moving a stock to the Black list. Alerts are sent only when a run happens.</p></div></header>
       <form id="al-form" class="evid" novalidate>
         <div><label class="lbl" for="al-email">Your email</label><input type="email" id="al-email" autocomplete="email" placeholder="name@example.com"></div>
@@ -399,6 +404,8 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
         <p class="small muted" id="al-status">Only the team's editors can see subscriber addresses.</p>
       </form>
     </section>
+
+    </div>
 
     <!-- 11. audit -->
     <section class="card s12" aria-labelledby="h-audit">
@@ -509,12 +516,17 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
   // ---------- derived state ----------
   function decisionOf(p) { var a = S.approvals[p.id]; return a ? a.decision : null; }
   function currentLabels() {
-    // Approved labels only; the most severe approved label wins.
-    var lab = {};
-    S.proposals.forEach(function (p) {
-      if (decisionOf(p) !== "approve") return;
-      p.tickers.forEach(function (t) {
-        if (!lab[t] || RANK[p.to] > RANK[lab[t].to]) lab[t] = { to: p.to, p: p };
+    // Built from the approval records themselves (not the live proposal list), so an approved
+    // label survives even when a later run no longer proposes it. Most severe label wins.
+    var lab = {}, byId = {};
+    S.proposals.forEach(function (p) { byId[p.id] = p; });
+    Object.keys(S.approvals).forEach(function (id) {
+      var a = S.approvals[id];
+      if (a.decision !== "approve") return;
+      var p = byId[id] || { id: id, tickers: a.tickers || [], company: a.company || "", to: a.to, from: a.from,
+                            clause_text: a.clause || "", evidence: a.evidence || [], tripwire: a.tripwire || "", event_date: a.event_date };
+      (a.tickers || []).forEach(function (t) {
+        if (!lab[t] || RANK[a.to] > RANK[lab[t].to]) lab[t] = { to: a.to, p: p };
       });
     });
     return lab;
@@ -572,6 +584,7 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
     ["black", "watch", "aligned"].forEach(function (k) {
       var rows = listEntries(k), ul = clear($("l-" + k));
       var approved = rows.filter(function (r) { return r.st === "approve"; }).length;
+      $("a-" + k).textContent = "As of run " + fmtDate((S.data.run || {}).finished) + ". Sources re-opened that day.";
       var c = $("c-" + k); clear(c);
       c.appendChild(document.createTextNode(String(approved)));
       c.appendChild(el("small", { text: "approved · " + (rows.length - approved) + " proposed" }));
@@ -716,6 +729,8 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
       if (kind === "approve" || kind === "reject") {
         await S.db.doc("approvals/" + p.id).set({
           proposal_id: p.id, record_id: p.record_id, tickers: p.tickers, from: p.from, to: p.to,
+          company: p.company, clause: p.clause_text, tripwire: p.tripwire || "", event_date: p.event_date || null,
+          evidence: (p.evidence || []).slice(0, 3).map(function (e) { return { publisher: e.publisher, url: e.url, doc_date: e.doc_date, quote: e.quote }; }),
           decision: kind, reason: reason || "", decided_by: S.uid, decided_at: now
         });
       } else if (kind === "reopen") {
@@ -777,7 +792,7 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
     } else {
       head.appendChild(icon(st === "notfound" ? "x" : "warn"));
       head.appendChild(el("b", { text: "“" + it.input + "”" }));
-      head.appendChild(el("span", { text: st === "name" ? "Looks like a company name" : st === "ambiguous" ? "Share classes" : "Not found" }));
+      head.appendChild(el("span", { text: st === "name" ? "Looks like a company name" : st === "ambiguous" ? (it.kind === "word" ? "Ordinary word?" : "Share classes") : "Not found" }));
       kids.push(head);
       kids.push(el("span", { class: "small", text: it.note || "" }));
       fix = el("div", { class: "fix" });
@@ -785,6 +800,10 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
       if (st === "name") {
         it.suggestions.forEach(function (s) {
           fix.appendChild(el("button", { class: "btn sm" + (ch === s.ticker ? " primary" : ""), type: "button", "aria-pressed": ch === s.ticker ? "true" : "false", onclick: function () { S.choices[i] = s.ticker; renderPaste(); } }, [s.ticker + "? " + s.name]));
+        });
+      } else if (st === "ambiguous" && it.kind === "word") {
+        it.tickers.forEach(function (t) {
+          fix.appendChild(el("button", { class: "btn sm" + (ch === t ? " primary" : ""), type: "button", "aria-pressed": ch === t ? "true" : "false", onclick: function () { S.choices[i] = t; renderPaste(); } }, ["Yes, add " + t]));
         });
       } else if (st === "ambiguous") {
         fix.appendChild(el("button", { class: "btn sm" + (ch === "all" ? " primary" : ""), type: "button", "aria-pressed": ch === "all" ? "true" : "false", onclick: function () { S.choices[i] = "all"; renderPaste(); } }, ["Add all: " + it.classes.join(" + ")]));
@@ -807,6 +826,7 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
       var ch = S.choices[i];
       if (ch === "__skip") return;
       if (it.status === "notfound") { if (ch) out.push(ch); return; }
+      if (it.status === "ambiguous" && it.kind === "word" && !ch) return;
       window.LauraParser.resolve(it, ch).forEach(function (t) { out.push(t); });
     });
     return out.filter(function (t, i, a) { return a.indexOf(t) === i; });
@@ -855,10 +875,10 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
   }
 
   // ---------- ETF look-through ----------
-  function blackSet() {
+  function blackSet(withProposed) {
     var lab = currentLabels(), set = {};
     Object.keys(lab).forEach(function (t) { if (lab[t].to === "black") set[t] = 1; });
-    if ($("lt-proposed").checked) S.proposals.forEach(function (p) { if (p.to === "black" && decisionOf(p) !== "reject") p.tickers.forEach(function (t) { set[t] = 1; }); });
+    if (withProposed || $("lt-proposed").checked) S.proposals.forEach(function (p) { if (p.to === "black" && decisionOf(p) !== "reject") p.tickers.forEach(function (t) { set[t] = 1; }); });
     return Object.keys(set);
   }
   function ltRows() {
@@ -894,7 +914,12 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
       var worst = r.perEtf.slice().sort(function (a, b) { return b.perAmountUsd - a.perAmountUsd; })[0];
       if (worst) { g.appendChild(el("div", { class: "num", style: "font-size:2rem;color:var(--ink)", text: "$" + worst.perAmountUsd.toFixed(2) })); g.appendChild(el("p", { class: "small muted", text: "Highest: " + worst.ticker + ", per $" + r.perAmountUsd.toLocaleString() })); }
     }
-    g.appendChild(el("p", { class: "small muted", text: "Counting: " + (black.length ? black.join(", ") : "no Black-list stocks") + ($("lt-proposed").checked ? " (approved + proposed)" : " (approved only)") + "." }));
+    g.appendChild(el("p", { class: "small muted", text: "Counting: " + (black.length ? black.join(", ") : "no approved Black-list stocks yet") + ($("lt-proposed").checked ? " (approved + proposed)" : " (approved only)") + "." }));
+    if (!$("lt-proposed").checked && r.mode === "portfolio") {
+      var withP = blackSet(true);
+      var r2 = window.LauraLookthrough.compute({ rows: rows, etfData: S.data.etf || {}, black: withP, thresholdPct: r.thresholdPct, perAmount: r.perAmountUsd });
+      if (withP.length !== black.length) g.appendChild(el("p", { class: "small", text: "If all proposed Black moves are approved: " + pct(r2.totalPct, 4) + (r2.flagged ? " (over the line)" : " (under the line)") + "." }));
+    }
 
     // bars
     var bars = clear($("lt-bars")), mx = Math.max.apply(null, r.perEtf.map(function (e) { return e.blackSharePct; }).concat([0.0001]));
@@ -952,7 +977,7 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
         el("td", { class: "small", text: why.join("; ") })]));
     });
     if (!rows.length) tb.appendChild(el("tr", {}, [el("td", { colspan: "3", class: "muted", text: "Nothing here this run." })]));
-    $("vf-note").textContent = "Gate: market cap ≥ " + fmtMoney(S.data.rules.gate.min_market_cap_usd) + ", positive net income and free cash flow, debt/equity ≤ " + S.data.rules.gate.max_debt_to_equity + ". Market cap uses SEC public float as a floor.";
+    $("vf-note").textContent = "Financials from SEC XBRL, latest fiscal year per company (checked " + fmtDate((S.data.run || {}).finished) + "). Gate: market cap ≥ " + fmtMoney(S.data.rules.gate.min_market_cap_usd) + ", positive net income and free cash flow, debt/equity ≤ " + S.data.rules.gate.max_debt_to_equity + ". Market cap uses SEC public float as a floor.";
   }
   function renderLeads() {
     var box = clear($("leads")), ls = S.data.leads || [];
@@ -960,6 +985,7 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
     ls.forEach(function (l) {
       box.appendChild(el("div", { class: "ev" }, [el("div", {}, [el("span", { class: "tk", text: l.tickers.join(", ") + " " }), chip("conf", "Lead: needs primary source", "warn")]),
         el("p", { class: "small", style: "margin-top:6px", text: l.summary }),
+        el("p", { class: "small muted", text: "Event " + fmtDate(l.event_date) + " · checked " + fmtDate((S.data.run || {}).finished) }),
         el("div", { class: "meta" }, (l.sources || []).map(function (s, i) { return el("span", {}, [i ? " · " : "", s.url ? el("a", { href: s.url, target: "_blank", rel: "noopener", text: s.publisher || s.url }) : s.publisher]); }))]));
     });
   }
@@ -1002,22 +1028,37 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
     if (!rows.length) { tb.appendChild(el("tr", {}, [el("td", { colspan: "3", class: "muted", text: f ? "No entries match." : "No decisions yet. Approvals and comments will appear here." })])); return; }
     rows.forEach(function (a) { tb.appendChild(el("tr", {}, [el("td", { class: "small", text: fmtDateTime(a.at) }), el("td", { class: "small", text: nameOf(a.by) }), el("td", { class: "small", text: auditText(a) })])); });
   }
-  function csvCell(v) { v = v == null ? "" : String(v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }
+  function csvCell(v) {
+    v = v == null ? "" : String(v);
+    if (/^[=+\-@\t\r]/.test(v)) v = "'" + v;  // stop spreadsheets from running a cell as a formula
+    return /[",\n\r]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
+  }
   async function downloadCsv() {
     await resolveNames(S.audit.map(function (a) { return a.by; }).concat(Object.keys(S.approvals).map(function (k) { return S.approvals[k].decided_by; })).filter(Boolean));
     var head = ["proposal_id", "tickers", "company", "from", "to", "status", "decided_by", "decided_at", "decision_reason", "rule_clause", "confidence", "event_date",
-      "evidence_1_publisher", "evidence_1_url", "evidence_1_date", "evidence_1_quote", "evidence_2_publisher", "evidence_2_url", "evidence_2_date", "evidence_2_quote", "approval_trail"];
+      "evidence_1_publisher", "evidence_1_url", "evidence_1_date", "evidence_1_quote", "evidence_2_publisher", "evidence_2_url", "evidence_2_date", "evidence_2_quote",
+      "more_evidence_urls", "caveat", "tripwire", "approval_trail"];
     var lines = [head.join(",")];
-    S.proposals.forEach(function (p) {
+    var all = S.proposals.slice(), have = {};
+    all.forEach(function (p) { have[p.id] = 1; });
+    Object.keys(S.approvals).forEach(function (id) {   // decisions on proposals a later run dropped
+      if (have[id]) return;
+      var a = S.approvals[id];
+      all.push({ id: id, tickers: a.tickers || [], company: a.company || "", from: a.from, to: a.to, clause_text: a.clause || "",
+                 confidence: "", event_date: a.event_date, evidence: a.evidence || [], caveat: "No longer proposed by the latest run.", tripwire: a.tripwire || "" });
+    });
+    all.forEach(function (p) {
       var a = S.approvals[p.id] || {}, e1 = (p.evidence || [])[0] || {}, e2 = (p.evidence || [])[1] || {};
       var trail = S.audit.filter(function (x) { return x.proposal_id === p.id; }).sort(function (x, y) { return x.at < y.at ? -1 : 1; })
         .map(function (x) { return x.at.slice(0, 16).replace("T", " ") + " " + nameOf(x.by) + " " + x.action + (x.reason ? ": " + x.reason : ""); }).join(" | ");
       lines.push([p.id, p.tickers.join(" "), p.company, LABEL[p.from], LABEL[p.to], a.decision ? (a.decision === "approve" ? "Approved" : "Rejected") : "Proposed",
         a.decided_by ? nameOf(a.decided_by) : "", a.decided_at || "", a.reason || "", p.clause_text, p.confidence, p.event_date || "",
-        e1.publisher, e1.url, e1.doc_date, e1.quote, e2.publisher, e2.url, e2.doc_date, e2.quote, trail].map(csvCell).join(","));
+        e1.publisher, e1.url, e1.doc_date, e1.quote, e2.publisher, e2.url, e2.doc_date, e2.quote,
+        (p.evidence || []).slice(2).map(function (e) { return e.url; }).join(" "), p.caveat || "", p.tripwire || "", trail].map(csvCell).join(","));
     });
     var csv = "﻿" + lines.join("\r\n");
-    var dl = await window.claude.use("downloads");
+    var dl = null;
+    try { dl = window.claude && window.claude.use ? await window.claude.use("downloads") : null; } catch (e) { dl = null; }
     if (!dl) { $("csv-note").textContent = "Downloads are not available in this view."; return; }
     try {
       await dl.save({ filename: "laura-screen-" + new Date().toISOString().slice(0, 10) + ".csv", data: new Blob([csv], { type: "text/csv" }) });
@@ -1037,7 +1078,7 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
     sec("Black list: exclude", ["(a) knowingly spread false information to the public, or", "(b) engaged in racial or ethnic discrimination."],
       "Proposed only when a court, jury, or government enforcement body found, within the last " + (r.lookback_years || 7) + " years, that the company:");
     sec("What counts as a finding", ["A court ruling on the merits, including summary judgment on falsity", "A jury verdict, even if later reduced", "An agency finding or consent order that states the violation", "A settlement in which the company admits the conduct"],
-      "Open question for the team: this screen does not yet treat an EEOC “reasonable cause” determination as a finding.");
+      "Open questions for the team: (1) this screen does not yet treat an EEOC “reasonable cause” determination as a finding; (2) for clause (a) it follows the rule's example and accepts summary judgment on falsity, even where the court did not decide the “knowingly” part (Fox, Newsmax).");
     sec("Watch list", ["An open lawsuit or agency complaint on (a) or (b) that has survived a motion to dismiss", "A settlement with no admission of wrongdoing", "A finding older than " + (r.lookback_years || 7) + " years"], "Each entry names a tripwire: the event that would move it to Black.");
     sec("Aligned list: two gates, in order", [
       "Financial: market cap ≥ " + fmtMoney(g.min_market_cap_usd) + " (SEC public float as a floor), positive GAAP net income and free cash flow in the latest fiscal year, debt/equity ≤ " + g.max_debt_to_equity + " (or an explanation when equity is negative).",
@@ -1055,7 +1096,9 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
   }
 
   // ---------- events ----------
-  document.querySelectorAll(".listcard").forEach(function (b) { b.addEventListener("click", function () { openList(b.getAttribute("data-list")); }); });
+  document.querySelectorAll(".listcard").forEach(function (c) {
+    c.addEventListener("click", function (e) { if (!e.target.closest("a")) openList(c.getAttribute("data-list")); });
+  });
   $("dlg-close").addEventListener("click", function () { $("dlg").close(); });
   $("dlg").addEventListener("click", function (e) { if (e.target === $("dlg")) $("dlg").close(); });
   document.querySelectorAll("[data-pf]").forEach(function (b) { b.addEventListener("click", function () {

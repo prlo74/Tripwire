@@ -21,8 +21,9 @@ def test_spec_fixture(run_js, mini_map, use_live_map):
     assert items["TSLA"]["ticker"] == "TSLA" and items["TSLA"]["status"] == "stock"
     assert items["spy"]["status"] == "etf" and items["spy"]["ticker"] == "SPY"
     assert items["VOO"]["status"] == "etf"
-    assert items["Apple Inc."]["status"] == "name"
-    assert items["Apple Inc."]["suggestions"][0]["ticker"] == "AAPL"
+    # "Apple Inc." resolves to AAPL; because aapl is also pasted, it is shown as an alias of AAPL
+    assert "Apple Inc." in items["aapl"]["aliases"]
+    assert "Apple Inc." in items["aapl"]["note"]
     assert items["XYZQ"]["status"] == "notfound"
     assert items["123"]["status"] == "notfound"
     fox = items["fox foxa"]
@@ -32,8 +33,8 @@ def test_spec_fixture(run_js, mini_map, use_live_map):
     assert items["Newsmax"]["status"] == "name"
     assert items["Newsmax"]["suggestions"][0]["ticker"] == "NMAX"
     assert items["SHOP"]["status"] == "stock"
-    # attention: Apple Inc., XYZQ, 123, fox/foxa, Newsmax
-    assert res["attention"] == 5
+    # attention: XYZQ, 123, fox/foxa, Newsmax
+    assert res["attention"] == 4
 
 
 def test_class_suffix_forms_canonicalize(run_js, mini_map):
@@ -112,3 +113,9 @@ def test_numbers_and_ticker_mixed(run_js, mini_map):
     res = run_js({"fn": "parse", "text": "123 4.5 aapl", "map": mini_map})
     st = [i["status"] for i in res["items"]]
     assert st == ["notfound", "notfound", "stock"]
+
+
+def test_apple_inc_alone_suggests_aapl(run_js, mini_map):
+    res = run_js({"fn": "parse", "text": "Apple Inc.", "map": mini_map})
+    it = res["items"][0]
+    assert it["status"] == "name" and it["suggestions"][0]["ticker"] == "AAPL"

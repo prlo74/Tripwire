@@ -20,6 +20,7 @@ TAGS = {
             ("us-gaap", "NetCashProvidedByUsedInOperatingActivitiesContinuingOperations"),
             ("ifrs-full", "CashFlowsFromUsedInOperatingActivities")],
     "capex": [("us-gaap", "PaymentsToAcquirePropertyPlantAndEquipment"),
+              ("us-gaap", "PaymentsToAcquireOtherPropertyPlantAndEquipment"),
               ("us-gaap", "PaymentsToAcquireProductiveAssets"),
               ("ifrs-full", "PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities")],
     "capex_software": [("us-gaap", "PaymentsToDevelopSoftware"), ("us-gaap", "PaymentsForSoftware"),
@@ -101,7 +102,10 @@ def _flow(facts, key, end):
     return None, None
 
 
-def financial_gate(cik: int, rules: dict) -> dict:
+def financial_gate(cik: int, rules: dict, notes: dict | None = None) -> dict:
+    """notes: verified statements from the company's own filing that fill an XBRL gap,
+    e.g. {"debt": {"value": 0, "url": ..., "quote": ...}}."""
+    notes = notes or {}
     g = rules["aligned"]["financial_gate"]
     res = {"cik": cik, "checks": {}, "result": "unknown", "fy_end": None, "source":
            f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik:010d}.json"}
@@ -142,13 +146,15 @@ def financial_gate(cik: int, rules: dict) -> dict:
     sw, sw_tag = _flow(facts, "capex_software", end)
     if ocf is None:
         checks["fcf"] = {"value": None, "pass": None, "note": "Unknown: operating cash flow not tagged."}
+    elif capex is None and sw is None:
+        checks["fcf"] = {"value": None, "ocf": ocf, "pass": None, "as_of": end, "tag": ocf_tag,
+                         "note": "Unknown: no capital-expenditure tag found in XBRL, so free cash flow cannot be computed."}
     else:
         spent = (capex or 0) + (sw or 0)
         fcf = ocf - spent
         checks["fcf"] = {"value": fcf, "as_of": end, "ocf": ocf, "capex": capex, "capitalized_software": sw,
                          "tag": ", ".join(t for t in (ocf_tag, capex_tag, sw_tag) if t),
-                         "pass": fcf > 0,
-                         "note": None if capex is not None else "No PP&E capex tag found; treated as 0."}
+                         "pass": fcf > 0}
 
     eq = None
     eq_tag = None
@@ -174,12 +180,18 @@ def financial_gate(cik: int, rules: dict) -> dict:
         if v:
             debt = (debt or 0) + v
             debt_tags.append(f"{t[0]}:{t[1]}")
+    debt_note = None
+    if debt is None and "debt" in notes:
+        n = notes["debt"]
+        debt = n["value"]
+        debt_note = f"No debt tag in XBRL; the company's filing states it: \"{n['quote']}\""
+        debt_tags.append("company filing (verified quote)")
     if debt is None:
-        debt = 0
-        debt_note = "No debt tags reported for this year; debt treated as 0."
-    else:
-        debt_note = None
-    if eq is None:
+        checks["debt_to_equity"] = {"value": None, "pass": None, "equity": eq,
+                                    "note": "Unknown: no debt tags in XBRL for this year and no verified statement of zero debt."}
+    if debt is None:
+        pass
+    elif eq is None:
         checks["debt_to_equity"] = {"value": None, "pass": None, "debt": debt,
                                     "note": "Unknown: shareholders' equity not tagged."}
     elif eq <= 0:

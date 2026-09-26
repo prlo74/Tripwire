@@ -60,7 +60,10 @@ etf_lookthrough:
 
 discovery:
   max_proposals_per_run: 10
-  first_run_lookback_days: 365
+  # First run only (later runs scan since the previous run):
+  first_run_lookback_days: 400          # 10-K theme search (covers one annual-report cycle)
+  legal_first_run_lookback_days: 45     # DOJ/EEOC/FTC/courts. DOJ's API has no topic filter, so a
+                                        # longer first scan means thousands of releases; widen if needed.
 
 # Deliberately NOT listed. The tool must not add these without a qualifying finding.
 do_not_list_without_finding:

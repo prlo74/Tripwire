@@ -14,7 +14,8 @@ records:
       of race and national-origin harassment at its Buffalo stamping plant. The EEOC's
       investigation found reasonable cause to believe the harassment occurred.
     caveat: >-
-      The release states no admission by Ford. Same open question as Tesla: does an EEOC
+      The EEOC release does not mention an admission, and the conciliation agreement itself was not
+      reviewed, so "no admission" is not confirmed. Same open question as Tesla: does an EEOC
       "reasonable cause" finding count as an "agency finding" under the Black rule? This screen
       treats it as NOT qualifying until the team decides.
     tripwire: >-
@@ -92,8 +93,13 @@ records:
     cik: 1437107
     kind: values_link
     themes: [storytelling_education]
-    summary: Owns DC Comics Publishing and film/TV storytelling studios.
-    confidence: Medium
+    summary: Owns DC Comics Publishing and film/TV studios.
+    caveat: >-
+      Thin link: the 10-K only lists DC Comics Publishing as one unit of the Studios segment. Also,
+      WBD's Q2 2026 10-Q reports a pending merger agreement with Paramount Skydance (signed after
+      WBD terminated a Netflix merger agreement on Feb 27, 2026), so the shares may be converted in
+      a deal.
+    confidence: Low
     sources:
       - url: https://www.sec.gov/Archives/edgar/data/1437107/000143710726000020/wbd-20251231.htm
         publisher: Warner Bros. Discovery Form 10-K FY2025, Item 1 Business (SEC EDGAR)
@@ -102,3 +108,10 @@ records:
           WBD's Studios segment includes the Warner Bros. Motion Picture Group ("WBMPG"), DC Studios,
           Warner Bros. Television Group ("WBTVG"), Consumer Products, Themed Entertainment and Brand
           Licensing, DC Comics Publishing
+      - url: https://www.sec.gov/Archives/edgar/data/1437107/000143710726000075/wbd-20260630.htm
+        publisher: Warner Bros. Discovery Form 10-Q Q2 2026 (SEC EDGAR)
+        doc_date: 2026-08-06
+        quote: >-
+          on February 27, 2026, in accordance with the terms of the Netflix Merger Agreement, the
+          Company terminated the Netflix Merger Agreement in connection with entering into the PSKY
+          Merger Agreement

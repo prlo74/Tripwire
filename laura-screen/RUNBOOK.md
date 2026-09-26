@@ -30,6 +30,7 @@ Edit `config/rules.yaml`, save, then run the screen again.
 | ETF exposure flag (0.5% of portfolio) | `etf_lookthrough.flag_threshold_pct_of_portfolio` |
 | Per-$ amount shown when no ETF weights | `etf_lookthrough.per_amount_fallback_usd` |
 | Max discovery proposals per run (10) | `discovery.max_proposals_per_run` |
+| First-run look-back for agency/court discovery (45 days) | `discovery.legal_first_run_lookback_days` |
 | Theme search phrases | `aligned.themes.<theme>.discovery_phrases` |
 | Companies never listed without a finding | `do_not_list_without_finding` |
 | Which websites count as Tier 1 / Tier 2 / banned | `sources.tier1_domains`, `tier2_domains`, `banned_domains` |
@@ -61,8 +62,14 @@ with no verified Tier-1 source becomes a lead and cannot be proposed.
   latest SEC N-PORT filing (lags ~60–90 days). The as-of date is always shown.
 - **State agencies**: calcivilrights.ca.gov refuses scripted access, so the CRD v. Tesla trial
   status is read from Tesla's own 10-Q.
-- **Open rule question**: an EEOC "reasonable cause" determination is not treated as an
-  "agency finding" until the team decides (affects TSLA and F).
+- **Open rule questions** for the team:
+  1. An EEOC "reasonable cause" determination is not treated as an "agency finding" until the team
+     decides (affects TSLA and F).
+  2. Clause (a) says "knowingly", but the rule's own example (summary judgment on falsity) does
+     not decide knowledge. Fox and Newsmax are proposed on falsity findings; the label says so.
+- **Financial gaps**: when XBRL has no capex tag, free cash flow is "unknown"; when it has no debt
+  tag, debt/equity is "unknown" unless `evidence/financial-notes.yaml` holds a verified quote from
+  the company's filing (NYT, SHOP).
 
 ## Files
 ```

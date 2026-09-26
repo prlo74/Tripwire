@@ -30,7 +30,7 @@ def _load_dir(d: Path, coll: str) -> list[dict]:
         doc = json.loads(p.read_text())
         body = doc.get("data", doc) if isinstance(doc, dict) else doc
         if isinstance(body, dict):
-            body = {**body, "_id": p.stem}
+            body = {**body, "_id": p.stem, "_version": doc.get("version") if isinstance(doc, dict) else None}
             rows.append(body)
     return rows
 
@@ -38,7 +38,9 @@ def _load_dir(d: Path, coll: str) -> list[dict]:
 def snapshot(d: Path) -> Path:
     snap = {"universe": _load_dir(d, "universe"), "approvals": _load_dir(d, "approvals"),
             "runs": [r for r in _load_dir(d, "runs") if r.get("_id") != "latest"],
-            "proposal_ids": [r["_id"] for r in _load_dir(d, "proposals")]}
+            "proposal_ids": [r["_id"] for r in _load_dir(d, "proposals")],
+            "versions": {f"{c}/{r['_id']}": r["_version"] for c in ("runs", "proposals")
+                         for r in _load_dir(d, c) if r.get("_version")}}
     dest = OUT / "db_snapshot.json"
     dest.write_text(json.dumps(snap, indent=1))
     print(f"snapshot: {len(snap['universe'])} universe, {len(snap['approvals'])} approvals, "
@@ -57,7 +59,11 @@ def export() -> Path:
     def put(coll, doc_id, body):
         f = wdir / f"{coll}__{doc_id}.json"
         f.write_text(json.dumps(body, default=str))
-        writes.append({"op": "set", "collection": coll, "doc_id": doc_id, "file_path": str(f)})
+        w = {"op": "set", "collection": coll, "doc_id": doc_id, "file_path": str(f)}
+        v = snap.get("versions", {}).get(f"{coll}/{doc_id}")
+        if v:
+            w["if_version"] = v  # the db refuses unpinned overwrites of existing documents
+        writes.append(w)
 
     latest = {k: v for k, v in data.items() if k != "proposals"}
     put("runs", "latest", latest)
@@ -72,7 +78,10 @@ def export() -> Path:
         live.add(p["id"])
     for old in snap.get("proposal_ids", []):
         if old not in live:
-            writes.append({"op": "delete", "collection": "proposals", "doc_id": old})
+            d = {"op": "delete", "collection": "proposals", "doc_id": old}
+            if snap.get("versions", {}).get(f"proposals/{old}"):
+                d["if_version"] = snap["versions"][f"proposals/{old}"]
+            writes.append(d)
     (wdir / "manifest.json").write_text(json.dumps(writes, indent=1))
     print(f"{len(writes)} writes -> {wdir / 'manifest.json'}")
     return wdir / "manifest.json"

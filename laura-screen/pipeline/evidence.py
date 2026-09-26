@@ -13,7 +13,8 @@ from urllib.parse import urlparse
 import yaml
 
 from .docs import doc_text, quote_in_doc
-from .http import SourceError
+from .http import SourceError, fetched_at
+import time
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -71,7 +72,8 @@ def check_record(rec: dict, rules: dict, today: date, open_sources: bool = True)
         if open_sources and entry["quote"] and t in (1, 2):
             try:
                 text = doc_text(s["url"])
-                entry["opened_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+                ts = fetched_at(s["url"]) or time.time()
+                entry["opened_at"] = datetime.fromtimestamp(ts, timezone.utc).isoformat(timespec="seconds")
                 entry["quote_found"] = quote_in_doc(entry["quote"], text)
                 if not entry["quote_found"]:
                     problems.append(f"quote not found in source: {s['url']}")
@@ -93,6 +95,8 @@ def check_record(rec: dict, rules: dict, today: date, open_sources: bool = True)
             clause_text = (f"Black ({rec['clause']}) {b['clauses'][rec['clause']]}: "
                            f"{b['qualifying_findings'].get(rec.get('finding_type'), '?')}, "
                            f"{rec['event_date']} (within {b['lookback_years']} years)")
+            if rec.get("finding_scope"):
+                clause_text += f". Scope: {rec['finding_scope']}"
         else:
             outcome = "watch"
             clause_text = f"Watch: {rules['watch']['triggers']['old_finding']} ({rec['event_date']})"
@@ -108,6 +112,11 @@ def check_record(rec: dict, rules: dict, today: date, open_sources: bool = True)
         clause_text = "Aligned gate 2 (values link): " + ", ".join(labels)
         if not any(v["tier"] == 1 and urlparse(v["url"]).netloc.endswith("sec.gov") for v in verified):
             problems.append("values link must cite the company's own filing on sec.gov (or a primary membership list)")
+    elif kind == "financial_note":
+        outcome = "financial_note"
+        clause_text = f"Financial gate input from the company's own filing: {rec.get('field')} = {rec.get('value')}"
+        if not any(v["tier"] == 1 and urlparse(v["url"]).netloc.endswith("sec.gov") and v["quote_found"] for v in verified):
+            problems.append("financial note must quote the company's own SEC filing")
     elif kind == "lead":
         outcome = "lead"
         clause_text = "Lead: needs primary source"
@@ -118,8 +127,7 @@ def check_record(rec: dict, rules: dict, today: date, open_sources: bool = True)
         problems.append("no Tier-1 source with a verified quote: cannot be proposed")
         outcome = "lead"
         clause_text = "Lead: needs primary source"
-    if outcome == "watch" and rules["watch"].get("tripwire_required") and not rec.get("tripwire") \
-            and kind != "finding":
+    if outcome == "watch" and rules["watch"].get("tripwire_required") and not rec.get("tripwire"):
         problems.append("Watch entry has no tripwire")
 
     # Settlement without admission can never produce Black (belt and braces).
@@ -129,7 +137,7 @@ def check_record(rec: dict, rules: dict, today: date, open_sources: bool = True)
     return {**rec, "event_date": str(rec.get("event_date", "")), "sources": verified,
             "check": {"outcome": outcome, "clause_text": clause_text, "problems": problems,
                       "tier1_verified": len(ok_tier1),
-                      "proposable": outcome in ("black", "watch", "values_link") and bool(ok_tier1)
+                      "proposable": outcome in ("black", "watch", "values_link", "financial_note") and bool(ok_tier1)
                       and not [p for p in problems if not p.startswith("source unreachable")]}}
 
 
