@@ -1,0 +1,1781 @@
+{
+ "run": {
+  "id": "run-20260926T070122",
+  "started": "2026-09-26T07:01:22+00:00",
+  "finished": "2026-09-26T07:01:43+00:00",
+  "duration_s": 20.4,
+  "today": "2026-09-26",
+  "errors": [],
+  "discovery_since": "2025-09-26"
+ },
+ "status": {
+  "SEC + Nasdaq ticker lists": {
+   "ok": true,
+   "as_of": "2026-09-25",
+   "count": 12724
+  },
+  "S&P 500 constituents (SPY holdings, State Street)": {
+   "ok": true,
+   "as_of": "2026-09-24",
+   "count": 503,
+   "source": "https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx"
+  },
+  "Evidence re-check": {
+   "ok": true,
+   "records": 18,
+   "sources_opened": 27
+  },
+  "XBRL companyfacts ADBE": {
+   "ok": true
+  },
+  "XBRL companyfacts ETSY": {
+   "ok": true
+  },
+  "XBRL companyfacts GOOG": {
+   "ok": true
+  },
+  "XBRL companyfacts GOOGL": {
+   "ok": true
+  },
+  "XBRL companyfacts NYT": {
+   "ok": true
+  },
+  "XBRL companyfacts SCHL": {
+   "ok": true
+  },
+  "XBRL companyfacts SHOP": {
+   "ok": true
+  },
+  "XBRL companyfacts TRI": {
+   "ok": true
+  },
+  "XBRL companyfacts WBD": {
+   "ok": true
+  },
+  "XBRL companyfacts WBTN": {
+   "ok": true
+  },
+  "ETF holdings IVV": {
+   "ok": true
+  },
+  "ETF holdings QQQ": {
+   "ok": true
+  },
+  "ETF holdings VOO": {
+   "ok": true
+  },
+  "ETF holdings VTI": {
+   "ok": true
+  },
+  "Discovery: agencies and courts": {
+   "ok": true
+  },
+  "DOJ releases": {
+   "ok": true,
+   "error": null,
+   "items": 2500,
+   "since": "2026-08-12"
+  },
+  "EEOC releases": {
+   "ok": true,
+   "error": null,
+   "items": 39,
+   "since": "2026-08-12"
+  },
+  "FTC releases": {
+   "ok": true,
+   "error": null,
+   "items": 25,
+   "since": "2026-08-12"
+  },
+  "CourtListener releases": {
+   "ok": true,
+   "error": null,
+   "items": 20,
+   "since": "2026-08-12"
+  },
+  "Discovery: SEC full-text search (themes)": {
+   "ok": true
+  }
+ },
+ "tickersAsOf": "2026-09-25",
+ "labels": {
+  "FOXA": {
+   "label": "black",
+   "approved": false,
+   "basis": "starting list (Sept 2026), not yet approved"
+  },
+  "FOX": {
+   "label": "black",
+   "approved": false,
+   "basis": "starting list (Sept 2026), not yet approved"
+  },
+  "NMAX": {
+   "label": "black",
+   "approved": false,
+   "basis": "starting list (Sept 2026), not yet approved"
+  },
+  "TSLA": {
+   "label": "watch",
+   "approved": false,
+   "basis": "starting list (Sept 2026), not yet approved"
+  },
+  "META": {
+   "label": "watch",
+   "approved": false,
+   "basis": "starting list (Sept 2026), not yet approved"
+  }
+ },
+ "proposals": [
+  {
+   "id": "p-F-watch-ford-eeoc-conciliation-2026",
+   "tickers": [
+    "F"
+   ],
+   "company": "Ford Motor Company",
+   "from": "none",
+   "to": "watch",
+   "record_id": "ford-eeoc-conciliation-2026",
+   "kind": "settlement_no_admission",
+   "clause": "b",
+   "clause_text": "Watch (b): Settlement with no admission of wrongdoing",
+   "summary": "Ford agreed to pay $2.3 million under an EEOC conciliation agreement resolving a 2021 charge of race and national-origin harassment at its Buffalo stamping plant. The EEOC's investigation found reasonable cause to believe the harassment occurred.",
+   "caveat": "The release states no admission by Ford. Same open question as Tesla: does an EEOC \"reasonable cause\" finding count as an \"agency finding\" under the Black rule? This screen treats it as NOT qualifying until the team decides.",
+   "tripwire": "Team rules that EEOC cause findings qualify, or a court/agency adjudicates a violation -> propose Black under (b).",
+   "confidence": "Medium",
+   "event_date": "2026-09-01",
+   "evidence": [
+    {
+     "publisher": "U.S. Equal Employment Opportunity Commission (press release)",
+     "url": "https://www.eeoc.gov/newsroom/ford-motor-company-pay-23-million-resolve-eeoc-race-and-national-origin-harassment-charge",
+     "doc_date": "2026-09-01",
+     "quote": "The EEOC's investigation found reasonable cause to believe that Ford personnel at the facility subjected numerous employees to harassment and discrimination based on race and national origin.",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:23+00:00",
+     "quote_found": true
+    },
+    {
+     "publisher": "U.S. Equal Employment Opportunity Commission (press release)",
+     "url": "https://www.eeoc.gov/newsroom/ford-motor-company-pay-23-million-resolve-eeoc-race-and-national-origin-harassment-charge",
+     "doc_date": "2026-09-01",
+     "quote": "Following the EEOC's investigation, the parties engaged in the EEOC's pre-litigation conciliation process, resulting in a conciliation agreement.",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:23+00:00",
+     "quote_found": true
+    }
+   ],
+   "decision": null,
+   "discovery": true
+  },
+  {
+   "id": "p-ACN-watch-accenture-doj-fca-2026",
+   "tickers": [
+    "ACN"
+   ],
+   "company": "Accenture plc",
+   "from": "none",
+   "to": "watch",
+   "record_id": "accenture-doj-fca-2026",
+   "kind": "settlement_no_admission",
+   "clause": "b",
+   "clause_text": "Watch (b): Settlement with no admission of wrongdoing",
+   "summary": "Accenture agreed to pay $25 million to resolve DOJ False Claims Act allegations that its federal-services unit certified non-discrimination in federal contracts while taking race or sex into account in employment decisions. DOJ states the claims are allegations only.",
+   "caveat": "",
+   "tripwire": "A court ruling, jury verdict, or agency finding that Accenture engaged in racial discrimination -> propose Black under (b).",
+   "confidence": "High",
+   "event_date": "2026-09-14",
+   "evidence": [
+    {
+     "publisher": "U.S. Department of Justice, Office of Public Affairs (press release)",
+     "url": "https://www.justice.gov/opa/pr/accenture-agrees-pay-25m-resolve-alleged-employment-discrimination-violations",
+     "doc_date": "2026-09-14",
+     "quote": "to resolve alleged violations of the False Claims Act for failing to comply with anti-discrimination requirements in federal contracts and discriminating against employees and applicants for employment because of race or sex.",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:23+00:00",
+     "quote_found": true
+    },
+    {
+     "publisher": "U.S. Department of Justice, Office of Public Affairs (press release)",
+     "url": "https://www.justice.gov/opa/pr/accenture-agrees-pay-25m-resolve-alleged-employment-discrimination-violations",
+     "doc_date": "2026-09-14",
+     "quote": "The claims resolved by the United States in the settlement are allegations only and there has been no determination of liability.",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:23+00:00",
+     "quote_found": true
+    }
+   ],
+   "decision": null,
+   "discovery": true
+  },
+  {
+   "id": "p-FOXA-FOX-black-fox-dominion-falsity-2023",
+   "tickers": [
+    "FOXA",
+    "FOX"
+   ],
+   "company": "Fox Corporation",
+   "from": "black",
+   "to": "black",
+   "record_id": "fox-dominion-falsity-2023",
+   "kind": "finding",
+   "clause": "a",
+   "clause_text": "Black (a) Knowingly spread false information to the public: Court ruling on the merits (including summary judgment on falsity), 2023-03-31 (within 7 years)",
+   "summary": "Delaware Superior Court granted Dominion summary judgment on falsity: Fox News statements about Dominion and the 2020 election were false. Fox Corp and Fox News Network settled on April 18, 2023 (about $800M including a related suit, per Fox's filing).",
+   "caveat": "The court decided falsity only. Actual malice (the \"knowingly\" part) was left for trial and never decided because the case settled. The team's rule counts summary judgment on falsity as a qualifying finding. The ruling names Fox News Network, LLC, a Fox Corp subsidiary.",
+   "tripwire": "",
+   "confidence": "High",
+   "event_date": "2023-03-31",
+   "evidence": [
+    {
+     "publisher": "Superior Court of the State of Delaware (C.A. No. N21C-03-257 EMD)",
+     "url": "https://courts.delaware.gov/Opinions/Download.aspx?id=345820",
+     "doc_date": "2023-03-31",
+     "quote": "The evidence developed in this civil proceeding demonstrates that is CRYSTAL clear that none of the Statements relating to Dominion about the 2020 election are true. Therefore, the Court will grant summary judgment in favor of Dominion on the element of falsity.",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:27+00:00",
+     "quote_found": true
+    },
+    {
+     "publisher": "Fox Corporation Form 10-Q (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1754301/000162828025024466/fox-20250331.htm",
+     "doc_date": "2025-05-12",
+     "quote": "On March 31, 2023, the court in the Dominion case issued its rulings on summary judgment motions that were unfavorable to the Company. Following these rulings, on April 18, 2023, the Company and its subsidiary, Fox News Network, LLC, entered into a Release and Settlement Agreement with Dominion",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:27+00:00",
+     "quote_found": true
+    }
+   ],
+   "decision": null,
+   "discovery": false
+  },
+  {
+   "id": "p-NMAX-black-newsmax-dominion-falsity-2025",
+   "tickers": [
+    "NMAX"
+   ],
+   "company": "Newsmax Inc.",
+   "from": "black",
+   "to": "black",
+   "record_id": "newsmax-dominion-falsity-2025",
+   "kind": "finding",
+   "clause": "a",
+   "clause_text": "Black (a) Knowingly spread false information to the public: Court ruling on the merits (including summary judgment on falsity), 2025-04-09 (within 7 years)",
+   "summary": "Delaware Superior Court granted Dominion summary judgment that Newsmax's statements were defamatory per se and false. Newsmax settled with Dominion for $67M on August 15, 2025.",
+   "caveat": "Actual malice and damages were left for trial and never decided because the case settled. The ruling names Newsmax Media, Inc. and Newsmax Broadcasting, LLC; Newsmax Inc. (NMAX) is their parent and reported the settlement in its own 8-K.",
+   "tripwire": "",
+   "confidence": "High",
+   "event_date": "2025-04-09",
+   "evidence": [
+    {
+     "publisher": "Superior Court of the State of Delaware (C.A. No. N21C-08-063 EMD)",
+     "url": "https://courts.delaware.gov/Opinions/Download.aspx?id=377980",
+     "doc_date": "2025-04-09",
+     "quote": "Newsmax fails to meet its rebuttal burden of showing that an issue of material fact exists as to falsity. Therefore, the Court GRANTS summary judgment in Dominion's favor regarding falsity.",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:30+00:00",
+     "quote_found": true
+    },
+    {
+     "publisher": "Newsmax Inc. Form 8-K (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/2026478/000121390025077611/ea025361001-8k_newsmax.htm",
+     "doc_date": "2025-08-15",
+     "quote": "On August 15, 2025, Newsmax Media, Inc. and Newsmax Broadcasting, LLC entered into a settlement agreement with Dominion Voting Systems, Inc. and certain of its affiliates (\"Dominion\"), pursuant to which such parties agreed to resolve the lawsuit among them for a total amount of $67 million",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:30+00:00",
+     "quote_found": true
+    }
+   ],
+   "decision": null,
+   "discovery": false
+  },
+  {
+   "id": "p-TSLA-black-tesla-diaz-verdict-2021",
+   "tickers": [
+    "TSLA"
+   ],
+   "company": "Tesla, Inc.",
+   "from": "watch",
+   "to": "black",
+   "record_id": "tesla-diaz-verdict-2021",
+   "kind": "finding",
+   "clause": "b",
+   "clause_text": "Black (b) Engaged in racial or ethnic discrimination: Jury verdict, even if later reduced, 2021-10-04 (within 7 years)",
+   "summary": "A federal jury (N.D. Cal., Diaz v. Tesla) returned a verdict against Tesla on a former contingent worker's race-discrimination claims at the Fremont factory. Damages were later reduced ($136.9M to $15M to $3.175M after a retrial); the parties settled confidentially in March 2024.",
+   "caveat": "NEW vs. the September starting list, which had TSLA on Watch. The rule counts \"a jury verdict, even if later reduced\", and October 2021 is inside the 7-year window (until 2028-10-04). The worker was a contingent (staffing-agency) worker. This is a proposal for the team to decide.",
+   "tripwire": "",
+   "confidence": "High",
+   "event_date": "2021-10-04",
+   "evidence": [
+    {
+     "publisher": "Tesla, Inc. Form 10-Q (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828024017503/tsla-20240331.htm",
+     "doc_date": "2024-04-24",
+     "quote": "On October 4, 2021, in a case captioned Diaz v. Tesla, a jury in the Northern District of California returned a verdict against Tesla on claims by a former contingent worker that he was subjected to race discrimination",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:30+00:00",
+     "quote_found": true
+    },
+    {
+     "publisher": "Tesla, Inc. Form 10-Q (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828024017503/tsla-20240331.htm",
+     "doc_date": "2024-04-24",
+     "quote": "the damages awarded against Tesla were reduced from an initial $ 136.9 million (October 4, 2021) down to $ 15 million (April 13, 2022), and then further down to $ 3.175 million (April 3, 2023).",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:30+00:00",
+     "quote_found": true
+    }
+   ],
+   "decision": null,
+   "discovery": false
+  },
+  {
+   "id": "p-TSLA-watch-tesla-crd-eeoc-open-2026",
+   "tickers": [
+    "TSLA"
+   ],
+   "company": "Tesla, Inc.",
+   "from": "watch",
+   "to": "watch",
+   "record_id": "tesla-crd-eeoc-open-2026",
+   "kind": "open_case",
+   "clause": "b",
+   "clause_text": "Watch (b): Open lawsuit or agency complaint on (a) or (b) that has survived a motion to dismiss",
+   "summary": "California Civil Rights Department suit (filed Feb 9, 2022) alleging systemic race discrimination at Fremont; first trial phase set for Sept 21, 2026. Separate EEOC suit (filed Sept 28, 2023) for race harassment and retaliation is in discovery. EEOC issued a cause finding on June 1, 2022.",
+   "caveat": "Both suits are past the pleading stage (one set for trial, one in discovery). Whether the CRD trial actually began on Sept 21, 2026 was not confirmed from a primary source this run (calcivilrights.ca.gov refused scripted access). Open question for the team: does an EEOC \"cause finding\" count as an \"agency finding\" under the Black rule? This screen treats it as NOT qualifying until the team decides, because it is a preliminary determination, not an adjudication.",
+   "tripwire": "A liability finding in the CRD trial or in EEOC v. Tesla (N.D. Cal.) -> propose Black under (b). If the Diaz proposal is approved, TSLA is already Black and this becomes context.",
+   "confidence": "High",
+   "event_date": "2026-07-23",
+   "evidence": [
+    {
+     "publisher": "Tesla, Inc. Form 10-Q (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm",
+     "doc_date": "2026-07-23",
+     "quote": "on February 9, 2022, the California Civil Rights Department (\"CRD,\" formerly \"DFEH\") filed a civil complaint against Tesla in Alameda County, California Superior Court, alleging systemic race discrimination, hostile work environment and pay equity claims, among others.",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:31+00:00",
+     "quote_found": true
+    },
+    {
+     "publisher": "Tesla, Inc. Form 10-Q (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm",
+     "doc_date": "2026-07-23",
+     "quote": "The first phase of the trial is currently set for September 21, 2026. Additionally, on June 1, 2022, the Equal Employment Opportunity Commission (\"EEOC\") issued a cause finding against Tesla that closely parallels the CRD's allegations.",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:31+00:00",
+     "quote_found": true
+    }
+   ],
+   "decision": null,
+   "discovery": false
+  },
+  {
+   "id": "p-META-watch-meta-doj-fha-settlement-2022",
+   "tickers": [
+    "META"
+   ],
+   "company": "Meta Platforms, Inc.",
+   "from": "watch",
+   "to": "watch",
+   "record_id": "meta-doj-fha-settlement-2022",
+   "kind": "settlement_no_admission",
+   "clause": "b",
+   "clause_text": "Watch (b): Settlement with no admission of wrongdoing",
+   "summary": "DOJ sued Meta (S.D.N.Y., June 21, 2022) alleging its housing-ad delivery system discriminated by race and other traits under the Fair Housing Act; settled the same month with no admission and no finding of liability. Court approved it June 27, 2022.",
+   "caveat": "The underlying HUD Charge of Discrimination (March 28, 2019) followed a \"reasonable cause\" determination; that is now older than 7 years and is a charge, not an adjudication.",
+   "tripwire": "A new adjudicated finding (court ruling, jury verdict, or agency finding stating a violation) that Meta engaged in (a) or (b) -> propose Black.",
+   "confidence": "High",
+   "event_date": "2022-06-27",
+   "evidence": [
+    {
+     "publisher": "U.S. Department of Justice, Civil Rights Division (settlement agreement, 22 Civ. 5187)",
+     "url": "https://www.justice.gov/crt/case-document/file/1516666/dl",
+     "doc_date": "2022-06-27",
+     "quote": "this Settlement Agreement is for settlement purposes only and does not constitute an admission by Meta of any of the allegations contained in the HUD Charge or the Complaint, nor does it constitute any finding of liability against Meta",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:31+00:00",
+     "quote_found": true
+    },
+    {
+     "publisher": "U.S. Department of Justice, Civil Rights Division (case page)",
+     "url": "https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny",
+     "doc_date": "2022-06-27",
+     "quote": "alleged that Meta's housing advertising system discriminated against Facebook users based on their race, color, religion, sex, disability, familial status, and national origin, in violation of the Fair Housing Act (FHA).",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:31+00:00",
+     "quote_found": true
+    }
+   ],
+   "decision": null,
+   "discovery": false
+  },
+  {
+   "id": "p-META-watch-meta-states-youth-case-2026",
+   "tickers": [
+    "META"
+   ],
+   "company": "Meta Platforms, Inc.",
+   "from": "watch",
+   "to": "watch",
+   "record_id": "meta-states-youth-case-2026",
+   "kind": "open_case",
+   "clause": "a",
+   "clause_text": "Watch (a): Open lawsuit or agency complaint on (a) or (b) that has survived a motion to dismiss",
+   "summary": "Multistate attorneys-general case (N.D. Cal.) alleging Meta misled the public about risks of Instagram and Facebook to young users. Trial began Aug 18, 2026; a settlement of up to $17.1B was announced Aug 26, 2026, subject to court approval.",
+   "caveat": "The California AG release does not mention an admission. The settlement document itself was not reviewed this run, so \"no admission\" is not yet confirmed. Until the court approves it, this is treated as an open case under (a).",
+   "tripwire": "If the approved settlement or a court order contains an admission or finding that Meta knowingly misled the public -> propose Black under (a). If approved with no admission -> Watch (settlement with no admission).",
+   "confidence": "Medium",
+   "event_date": "2026-08-26",
+   "evidence": [
+    {
+     "publisher": "California Attorney General (press release)",
+     "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-secures-transformative-17-billion-settlement-meta",
+     "doc_date": "2026-08-26",
+     "quote": "all the while misleading users, their families, and the public regarding the existence and severity of these risks. Trial in this case began on August 18 in the U.S. District Court for the Northern District of California.",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:31+00:00",
+     "quote_found": true
+    },
+    {
+     "publisher": "California Attorney General (press release)",
+     "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-secures-transformative-17-billion-settlement-meta",
+     "doc_date": "2026-08-26",
+     "quote": "Today's settlement, subject to court approval, provides for strong injunctive terms",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:31+00:00",
+     "quote_found": true
+    },
+    {
+     "publisher": "U.S. Attorney's Office, N.D.N.Y. (statement, via DOJ press-release API)",
+     "url": "https://www.justice.gov/usao-ndny/pr/first-assistant-us-attorney-sarcone-statement-online-safety-following-meta-settlement",
+     "doc_date": "2026-08-26",
+     "quote": "Today's announcement that Meta has agreed to pay up to $17.1 billion and implement reforms across Facebook and Instagram is an encouraging step forward.",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:34+00:00",
+     "quote_found": true
+    }
+   ],
+   "decision": null,
+   "discovery": false
+  },
+  {
+   "id": "p-ADBE-aligned-adbe-values",
+   "tickers": [
+    "ADBE"
+   ],
+   "company": "Adobe Inc.",
+   "from": "none",
+   "to": "aligned",
+   "record_id": "adbe-values",
+   "kind": "values_link",
+   "clause": null,
+   "clause_text": "Aligned: passes financial gate + Aligned gate 2 (values link): Trustworthy information, Creative entrepreneurship",
+   "summary": "Content Credentials (provenance labels) on generated assets; tools for creators and creative professionals.",
+   "caveat": "",
+   "tripwire": "",
+   "confidence": "High",
+   "event_date": null,
+   "evidence": [
+    {
+     "publisher": "Adobe Inc. Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+     "doc_date": "2026-01-15",
+     "quote": "Every asset generated with Firefly includes Content Credentials, a digital \"nutrition label\", to indicate that generative AI was used",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:34+00:00",
+     "quote_found": true
+    },
+    {
+     "publisher": "Adobe Inc. Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+     "doc_date": "2026-01-15",
+     "quote": "Our focus revolves around serving our customer audiences: business professionals, consumers, creators, creative professionals and marketing professionals.",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:35+00:00",
+     "quote_found": true
+    }
+   ],
+   "gate": {
+    "cik": 796343,
+    "checks": {
+     "market_cap": {
+      "value": 144940000000,
+      "as_of": "2025-05-30",
+      "tag": "dei:EntityPublicFloat",
+      "pass": true,
+      "note": "Public float (non-affiliate shares) used as a floor for market cap."
+     },
+     "net_income": {
+      "value": 7130000000,
+      "as_of": "2025-11-28",
+      "tag": "us-gaap:NetIncomeLoss",
+      "pass": true
+     },
+     "fcf": {
+      "value": 9852000000,
+      "as_of": "2025-11-28",
+      "ocf": 10031000000,
+      "capex": 179000000,
+      "capitalized_software": null,
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "pass": true,
+      "note": null
+     },
+     "debt_to_equity": {
+      "value": 0.534,
+      "debt": 6210000000,
+      "equity": 11623000000,
+      "as_of": "2025-11-28",
+      "tag": "us-gaap:LongTermDebt, us-gaap:StockholdersEquity",
+      "pass": true,
+      "note": null
+     }
+    },
+    "result": "pass",
+    "fy_end": "2025-11-28",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+    "failed": [],
+    "unknown": []
+   },
+   "decision": null,
+   "discovery": false
+  },
+  {
+   "id": "p-GOOG-GOOGL-aligned-alphabet-values",
+   "tickers": [
+    "GOOG",
+    "GOOGL"
+   ],
+   "company": "Alphabet Inc.",
+   "from": "none",
+   "to": "aligned",
+   "record_id": "alphabet-values",
+   "kind": "values_link",
+   "clause": null,
+   "clause_text": "Aligned: passes financial gate + Aligned gate 2 (values link): Creative entrepreneurship",
+   "summary": "YouTube Partner Program pays independent creators.",
+   "caveat": "The creator program is one part of a much larger business (search, cloud, advertising).",
+   "tripwire": "",
+   "confidence": "Medium",
+   "event_date": null,
+   "evidence": [
+    {
+     "publisher": "Alphabet Inc. Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+     "doc_date": "2026-02-05",
+     "quote": "YouTube provides people with entertainment, information, and opportunities to learn something new and helps support the creator economy through the YouTube Partner Program.",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:23+00:00",
+     "quote_found": true
+    }
+   ],
+   "gate": {
+    "cik": 1652044,
+    "checks": {
+     "market_cap": {
+      "value": 1900000000000,
+      "as_of": "2025-06-30",
+      "tag": "dei:EntityPublicFloat",
+      "pass": true,
+      "note": "Public float (non-affiliate shares) used as a floor for market cap."
+     },
+     "net_income": {
+      "value": 132170000000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:NetIncomeLoss",
+      "pass": true
+     },
+     "fcf": {
+      "value": 73266000000,
+      "as_of": "2025-12-31",
+      "ocf": 164713000000,
+      "capex": 91447000000,
+      "capitalized_software": null,
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "pass": true,
+      "note": null
+     },
+     "debt_to_equity": {
+      "value": 0.118,
+      "debt": 49085000000,
+      "equity": 415265000000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:LongTermDebt, us-gaap:StockholdersEquity",
+      "pass": true,
+      "note": null
+     }
+    },
+    "result": "pass",
+    "fy_end": "2025-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+    "failed": [],
+    "unknown": []
+   },
+   "decision": null,
+   "discovery": true
+  },
+  {
+   "id": "p-NYT-aligned-nyt-values",
+   "tickers": [
+    "NYT"
+   ],
+   "company": "The New York Times Company",
+   "from": "none",
+   "to": "aligned",
+   "record_id": "nyt-values",
+   "kind": "values_link",
+   "clause": null,
+   "clause_text": "Aligned: passes financial gate + Aligned gate 2 (values link): Trustworthy information",
+   "summary": "Subscription journalism; original reporting and investigative work.",
+   "caveat": "",
+   "tripwire": "",
+   "confidence": "High",
+   "event_date": null,
+   "evidence": [
+    {
+     "publisher": "The New York Times Company Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/71691/000007169126000011/nyt-20251231.htm",
+     "doc_date": "2026-02-27",
+     "quote": "The impact of our journalism and its breadth is evident as we continue to break stories, produce investigative reports and help our audience understand a wide range of topics.",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:38+00:00",
+     "quote_found": true
+    }
+   ],
+   "gate": {
+    "cik": 71691,
+    "checks": {
+     "market_cap": {
+      "value": 9000000000,
+      "as_of": "2025-06-30",
+      "tag": "dei:EntityPublicFloat",
+      "pass": true,
+      "note": "Public float (non-affiliate shares) used as a floor for market cap."
+     },
+     "net_income": {
+      "value": 343981000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:NetIncomeLoss",
+      "pass": true
+     },
+     "fcf": {
+      "value": 550505000,
+      "as_of": "2025-12-31",
+      "ocf": 584489000,
+      "capex": 33984000,
+      "capitalized_software": null,
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "pass": true,
+      "note": null
+     },
+     "debt_to_equity": {
+      "value": 0.0,
+      "debt": 0,
+      "equity": 2041363000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:StockholdersEquity",
+      "pass": true,
+      "note": "No debt tags reported for this year; debt treated as 0."
+     }
+    },
+    "result": "pass",
+    "fy_end": "2025-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000071691.json",
+    "failed": [],
+    "unknown": []
+   },
+   "decision": null,
+   "discovery": false
+  },
+  {
+   "id": "p-SHOP-aligned-shop-values",
+   "tickers": [
+    "SHOP"
+   ],
+   "company": "Shopify Inc.",
+   "from": "none",
+   "to": "aligned",
+   "record_id": "shop-values",
+   "kind": "values_link",
+   "clause": null,
+   "clause_text": "Aligned: passes financial gate + Aligned gate 2 (values link): Creative entrepreneurship",
+   "summary": "Commerce platform for merchants of all sizes, from first-time entrepreneurs up.",
+   "caveat": "The filing describes \"merchants\" and \"entrepreneurs\", not creators specifically; the fit to \"independent creators\" is an inference.",
+   "tripwire": "",
+   "confidence": "Medium",
+   "event_date": null,
+   "evidence": [
+    {
+     "publisher": "Shopify Inc. Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1594805/000159480526000007/shop-20251231.htm",
+     "doc_date": "2026-02-11",
+     "quote": "We believe we can help merchants of all verticals and sizes, from aspirational entrepreneurs to companies with large-scale, direct-to-consumer or business to business (\"B2B\") operations",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:39+00:00",
+     "quote_found": true
+    }
+   ],
+   "gate": {
+    "cik": 1594805,
+    "checks": {
+     "market_cap": {
+      "value": 140315345495,
+      "as_of": "2025-06-30",
+      "tag": "dei:EntityPublicFloat",
+      "pass": true,
+      "note": "Public float (non-affiliate shares) used as a floor for market cap."
+     },
+     "net_income": {
+      "value": 1231000000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:NetIncomeLoss",
+      "pass": true
+     },
+     "fcf": {
+      "value": 2007000000,
+      "as_of": "2025-12-31",
+      "ocf": 2033000000,
+      "capex": 26000000,
+      "capitalized_software": null,
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "pass": true,
+      "note": null
+     },
+     "debt_to_equity": {
+      "value": 0.0,
+      "debt": 0,
+      "equity": 13473000000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:StockholdersEquity",
+      "pass": true,
+      "note": "No debt tags reported for this year; debt treated as 0."
+     }
+    },
+    "result": "pass",
+    "fy_end": "2025-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001594805.json",
+    "failed": [],
+    "unknown": []
+   },
+   "decision": null,
+   "discovery": false
+  },
+  {
+   "id": "p-TRI-aligned-tri-values",
+   "tickers": [
+    "TRI"
+   ],
+   "company": "Thomson Reuters Corporation",
+   "from": "none",
+   "to": "aligned",
+   "record_id": "tri-values",
+   "kind": "values_link",
+   "clause": null,
+   "clause_text": "Aligned: passes financial gate + Aligned gate 2 (values link): Trustworthy information",
+   "summary": "Reuters news operates under the Thomson Reuters Trust Principles (independence, integrity, freedom from bias).",
+   "caveat": "",
+   "tripwire": "",
+   "confidence": "High",
+   "event_date": null,
+   "evidence": [
+    {
+     "publisher": "Thomson Reuters Form 40-F FY2025, Exhibit 99.1 Annual Report (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1075124/000119312526094222/tri-ex99_1.htm",
+     "doc_date": "2026-03-05",
+     "quote": "Reuters is committed to the Thomson Reuters Trust Principles, including that of independence, integrity and freedom from bias",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:37+00:00",
+     "quote_found": true
+    }
+   ],
+   "gate": {
+    "cik": 1075124,
+    "checks": {
+     "market_cap": {
+      "value": 46499728898,
+      "pass": true,
+      "as_of": "2026-04-30",
+      "tag": "dei:EntityCommonStockSharesOutstanding (2021-12-31) x N-PORT price (VXUS, 2026-04-30)",
+      "note": "Estimate: 486,092,864 shares x $95.66 implied by VXUS's N-PORT filing.",
+      "source_extra": "https://www.sec.gov/Archives/edgar/data/736054/000073605426000191/primary_doc.xml"
+     },
+     "net_income": {
+      "value": 1502000000,
+      "as_of": "2025-12-31",
+      "tag": "ifrs-full:ProfitLossAttributableToOwnersOfParent",
+      "pass": true
+     },
+     "fcf": {
+      "value": 2017000000,
+      "as_of": "2025-12-31",
+      "ocf": 2651000000,
+      "capex": 634000000,
+      "capitalized_software": null,
+      "tag": "ifrs-full:CashFlowsFromUsedInOperatingActivities, ifrs-full:PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities",
+      "pass": true,
+      "note": null
+     },
+     "debt_to_equity": {
+      "value": 0.178,
+      "debt": 2123000000,
+      "equity": 11914000000,
+      "as_of": "2025-12-31",
+      "tag": "ifrs-full:Borrowings, ifrs-full:Equity",
+      "pass": true,
+      "note": null
+     }
+    },
+    "result": "pass",
+    "fy_end": "2025-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001075124.json",
+    "failed": [],
+    "unknown": []
+   },
+   "decision": null,
+   "discovery": false
+  },
+  {
+   "id": "p-WBD-aligned-wbd-values",
+   "tickers": [
+    "WBD"
+   ],
+   "company": "Warner Bros. Discovery, Inc.",
+   "from": "none",
+   "to": "aligned",
+   "record_id": "wbd-values",
+   "kind": "values_link",
+   "clause": null,
+   "clause_text": "Aligned: passes financial gate + Aligned gate 2 (values link): Storytelling & education",
+   "summary": "Owns DC Comics Publishing and film/TV storytelling studios.",
+   "caveat": "",
+   "tripwire": "",
+   "confidence": "Medium",
+   "event_date": null,
+   "evidence": [
+    {
+     "publisher": "Warner Bros. Discovery Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1437107/000143710726000020/wbd-20251231.htm",
+     "doc_date": "2026-02-27",
+     "quote": "WBD's Studios segment includes the Warner Bros. Motion Picture Group (\"WBMPG\"), DC Studios, Warner Bros. Television Group (\"WBTVG\"), Consumer Products, Themed Entertainment and Brand Licensing, DC Comics Publishing",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:24+00:00",
+     "quote_found": true
+    }
+   ],
+   "gate": {
+    "cik": 1437107,
+    "checks": {
+     "market_cap": {
+      "value": 28000000000,
+      "as_of": "2025-06-30",
+      "tag": "dei:EntityPublicFloat",
+      "pass": true,
+      "note": "Public float (non-affiliate shares) used as a floor for market cap."
+     },
+     "net_income": {
+      "value": 727000000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:NetIncomeLoss",
+      "pass": true
+     },
+     "fcf": {
+      "value": 3088000000,
+      "as_of": "2025-12-31",
+      "ocf": 4319000000,
+      "capex": 1231000000,
+      "capitalized_software": null,
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "pass": true,
+      "note": null
+     },
+     "debt_to_equity": {
+      "value": 0.907,
+      "debt": 32567000000,
+      "equity": 35919000000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:LongTermDebt, us-gaap:StockholdersEquity",
+      "pass": true,
+      "note": null
+     }
+    },
+    "result": "pass",
+    "fy_end": "2025-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001437107.json",
+    "failed": [],
+    "unknown": []
+   },
+   "decision": null,
+   "discovery": true
+  }
+ ],
+ "aligned": [
+  {
+   "ticker": "ADBE",
+   "company": "Adobe Inc.",
+   "cik": 796343,
+   "themes": [
+    "Trustworthy information",
+    "Creative entrepreneurship"
+   ],
+   "values_record": "adbe-values",
+   "values_confidence": "High",
+   "values_summary": "Content Credentials (provenance labels) on generated assets; tools for creators and creative professionals.",
+   "values_caveat": null,
+   "evidence": [
+    {
+     "publisher": "Adobe Inc. Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+     "doc_date": "2026-01-15",
+     "quote": "Every asset generated with Firefly includes Content Credentials, a digital \"nutrition label\", to indicate that generative AI was used",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:34+00:00",
+     "quote_found": true
+    },
+    {
+     "publisher": "Adobe Inc. Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+     "doc_date": "2026-01-15",
+     "quote": "Our focus revolves around serving our customer audiences: business professionals, consumers, creators, creative professionals and marketing professionals.",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:35+00:00",
+     "quote_found": true
+    }
+   ],
+   "gate": {
+    "cik": 796343,
+    "checks": {
+     "market_cap": {
+      "value": 144940000000,
+      "as_of": "2025-05-30",
+      "tag": "dei:EntityPublicFloat",
+      "pass": true,
+      "note": "Public float (non-affiliate shares) used as a floor for market cap."
+     },
+     "net_income": {
+      "value": 7130000000,
+      "as_of": "2025-11-28",
+      "tag": "us-gaap:NetIncomeLoss",
+      "pass": true
+     },
+     "fcf": {
+      "value": 9852000000,
+      "as_of": "2025-11-28",
+      "ocf": 10031000000,
+      "capex": 179000000,
+      "capitalized_software": null,
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "pass": true,
+      "note": null
+     },
+     "debt_to_equity": {
+      "value": 0.534,
+      "debt": 6210000000,
+      "equity": 11623000000,
+      "as_of": "2025-11-28",
+      "tag": "us-gaap:LongTermDebt, us-gaap:StockholdersEquity",
+      "pass": true,
+      "note": null
+     }
+    },
+    "result": "pass",
+    "fy_end": "2025-11-28",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+    "failed": [],
+    "unknown": []
+   }
+  },
+  {
+   "ticker": "GOOG",
+   "company": "Alphabet Inc.",
+   "cik": 1652044,
+   "themes": [
+    "Creative entrepreneurship"
+   ],
+   "values_record": "alphabet-values",
+   "values_confidence": "Medium",
+   "values_summary": "YouTube Partner Program pays independent creators.",
+   "values_caveat": "The creator program is one part of a much larger business (search, cloud, advertising).",
+   "evidence": [
+    {
+     "publisher": "Alphabet Inc. Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+     "doc_date": "2026-02-05",
+     "quote": "YouTube provides people with entertainment, information, and opportunities to learn something new and helps support the creator economy through the YouTube Partner Program.",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:23+00:00",
+     "quote_found": true
+    }
+   ],
+   "gate": {
+    "cik": 1652044,
+    "checks": {
+     "market_cap": {
+      "value": 1900000000000,
+      "as_of": "2025-06-30",
+      "tag": "dei:EntityPublicFloat",
+      "pass": true,
+      "note": "Public float (non-affiliate shares) used as a floor for market cap."
+     },
+     "net_income": {
+      "value": 132170000000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:NetIncomeLoss",
+      "pass": true
+     },
+     "fcf": {
+      "value": 73266000000,
+      "as_of": "2025-12-31",
+      "ocf": 164713000000,
+      "capex": 91447000000,
+      "capitalized_software": null,
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "pass": true,
+      "note": null
+     },
+     "debt_to_equity": {
+      "value": 0.118,
+      "debt": 49085000000,
+      "equity": 415265000000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:LongTermDebt, us-gaap:StockholdersEquity",
+      "pass": true,
+      "note": null
+     }
+    },
+    "result": "pass",
+    "fy_end": "2025-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+    "failed": [],
+    "unknown": []
+   }
+  },
+  {
+   "ticker": "GOOGL",
+   "company": "Alphabet Inc.",
+   "cik": 1652044,
+   "themes": [
+    "Creative entrepreneurship"
+   ],
+   "values_record": "alphabet-values",
+   "values_confidence": "Medium",
+   "values_summary": "YouTube Partner Program pays independent creators.",
+   "values_caveat": "The creator program is one part of a much larger business (search, cloud, advertising).",
+   "evidence": [
+    {
+     "publisher": "Alphabet Inc. Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+     "doc_date": "2026-02-05",
+     "quote": "YouTube provides people with entertainment, information, and opportunities to learn something new and helps support the creator economy through the YouTube Partner Program.",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:23+00:00",
+     "quote_found": true
+    }
+   ],
+   "gate": {
+    "cik": 1652044,
+    "checks": {
+     "market_cap": {
+      "value": 1900000000000,
+      "as_of": "2025-06-30",
+      "tag": "dei:EntityPublicFloat",
+      "pass": true,
+      "note": "Public float (non-affiliate shares) used as a floor for market cap."
+     },
+     "net_income": {
+      "value": 132170000000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:NetIncomeLoss",
+      "pass": true
+     },
+     "fcf": {
+      "value": 73266000000,
+      "as_of": "2025-12-31",
+      "ocf": 164713000000,
+      "capex": 91447000000,
+      "capitalized_software": null,
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "pass": true,
+      "note": null
+     },
+     "debt_to_equity": {
+      "value": 0.118,
+      "debt": 49085000000,
+      "equity": 415265000000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:LongTermDebt, us-gaap:StockholdersEquity",
+      "pass": true,
+      "note": null
+     }
+    },
+    "result": "pass",
+    "fy_end": "2025-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json",
+    "failed": [],
+    "unknown": []
+   }
+  },
+  {
+   "ticker": "NYT",
+   "company": "The New York Times Company",
+   "cik": 71691,
+   "themes": [
+    "Trustworthy information"
+   ],
+   "values_record": "nyt-values",
+   "values_confidence": "High",
+   "values_summary": "Subscription journalism; original reporting and investigative work.",
+   "values_caveat": null,
+   "evidence": [
+    {
+     "publisher": "The New York Times Company Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/71691/000007169126000011/nyt-20251231.htm",
+     "doc_date": "2026-02-27",
+     "quote": "The impact of our journalism and its breadth is evident as we continue to break stories, produce investigative reports and help our audience understand a wide range of topics.",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:38+00:00",
+     "quote_found": true
+    }
+   ],
+   "gate": {
+    "cik": 71691,
+    "checks": {
+     "market_cap": {
+      "value": 9000000000,
+      "as_of": "2025-06-30",
+      "tag": "dei:EntityPublicFloat",
+      "pass": true,
+      "note": "Public float (non-affiliate shares) used as a floor for market cap."
+     },
+     "net_income": {
+      "value": 343981000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:NetIncomeLoss",
+      "pass": true
+     },
+     "fcf": {
+      "value": 550505000,
+      "as_of": "2025-12-31",
+      "ocf": 584489000,
+      "capex": 33984000,
+      "capitalized_software": null,
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "pass": true,
+      "note": null
+     },
+     "debt_to_equity": {
+      "value": 0.0,
+      "debt": 0,
+      "equity": 2041363000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:StockholdersEquity",
+      "pass": true,
+      "note": "No debt tags reported for this year; debt treated as 0."
+     }
+    },
+    "result": "pass",
+    "fy_end": "2025-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000071691.json",
+    "failed": [],
+    "unknown": []
+   }
+  },
+  {
+   "ticker": "SHOP",
+   "company": "Shopify Inc.",
+   "cik": 1594805,
+   "themes": [
+    "Creative entrepreneurship"
+   ],
+   "values_record": "shop-values",
+   "values_confidence": "Medium",
+   "values_summary": "Commerce platform for merchants of all sizes, from first-time entrepreneurs up.",
+   "values_caveat": "The filing describes \"merchants\" and \"entrepreneurs\", not creators specifically; the fit to \"independent creators\" is an inference.",
+   "evidence": [
+    {
+     "publisher": "Shopify Inc. Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1594805/000159480526000007/shop-20251231.htm",
+     "doc_date": "2026-02-11",
+     "quote": "We believe we can help merchants of all verticals and sizes, from aspirational entrepreneurs to companies with large-scale, direct-to-consumer or business to business (\"B2B\") operations",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:39+00:00",
+     "quote_found": true
+    }
+   ],
+   "gate": {
+    "cik": 1594805,
+    "checks": {
+     "market_cap": {
+      "value": 140315345495,
+      "as_of": "2025-06-30",
+      "tag": "dei:EntityPublicFloat",
+      "pass": true,
+      "note": "Public float (non-affiliate shares) used as a floor for market cap."
+     },
+     "net_income": {
+      "value": 1231000000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:NetIncomeLoss",
+      "pass": true
+     },
+     "fcf": {
+      "value": 2007000000,
+      "as_of": "2025-12-31",
+      "ocf": 2033000000,
+      "capex": 26000000,
+      "capitalized_software": null,
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "pass": true,
+      "note": null
+     },
+     "debt_to_equity": {
+      "value": 0.0,
+      "debt": 0,
+      "equity": 13473000000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:StockholdersEquity",
+      "pass": true,
+      "note": "No debt tags reported for this year; debt treated as 0."
+     }
+    },
+    "result": "pass",
+    "fy_end": "2025-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001594805.json",
+    "failed": [],
+    "unknown": []
+   }
+  },
+  {
+   "ticker": "TRI",
+   "company": "Thomson Reuters Corporation",
+   "cik": 1075124,
+   "themes": [
+    "Trustworthy information"
+   ],
+   "values_record": "tri-values",
+   "values_confidence": "High",
+   "values_summary": "Reuters news operates under the Thomson Reuters Trust Principles (independence, integrity, freedom from bias).",
+   "values_caveat": null,
+   "evidence": [
+    {
+     "publisher": "Thomson Reuters Form 40-F FY2025, Exhibit 99.1 Annual Report (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1075124/000119312526094222/tri-ex99_1.htm",
+     "doc_date": "2026-03-05",
+     "quote": "Reuters is committed to the Thomson Reuters Trust Principles, including that of independence, integrity and freedom from bias",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:37+00:00",
+     "quote_found": true
+    }
+   ],
+   "gate": {
+    "cik": 1075124,
+    "checks": {
+     "market_cap": {
+      "value": 46499728898,
+      "pass": true,
+      "as_of": "2026-04-30",
+      "tag": "dei:EntityCommonStockSharesOutstanding (2021-12-31) x N-PORT price (VXUS, 2026-04-30)",
+      "note": "Estimate: 486,092,864 shares x $95.66 implied by VXUS's N-PORT filing.",
+      "source_extra": "https://www.sec.gov/Archives/edgar/data/736054/000073605426000191/primary_doc.xml"
+     },
+     "net_income": {
+      "value": 1502000000,
+      "as_of": "2025-12-31",
+      "tag": "ifrs-full:ProfitLossAttributableToOwnersOfParent",
+      "pass": true
+     },
+     "fcf": {
+      "value": 2017000000,
+      "as_of": "2025-12-31",
+      "ocf": 2651000000,
+      "capex": 634000000,
+      "capitalized_software": null,
+      "tag": "ifrs-full:CashFlowsFromUsedInOperatingActivities, ifrs-full:PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities",
+      "pass": true,
+      "note": null
+     },
+     "debt_to_equity": {
+      "value": 0.178,
+      "debt": 2123000000,
+      "equity": 11914000000,
+      "as_of": "2025-12-31",
+      "tag": "ifrs-full:Borrowings, ifrs-full:Equity",
+      "pass": true,
+      "note": null
+     }
+    },
+    "result": "pass",
+    "fy_end": "2025-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001075124.json",
+    "failed": [],
+    "unknown": []
+   }
+  },
+  {
+   "ticker": "WBD",
+   "company": "Warner Bros. Discovery, Inc.",
+   "cik": 1437107,
+   "themes": [
+    "Storytelling & education"
+   ],
+   "values_record": "wbd-values",
+   "values_confidence": "Medium",
+   "values_summary": "Owns DC Comics Publishing and film/TV storytelling studios.",
+   "values_caveat": null,
+   "evidence": [
+    {
+     "publisher": "Warner Bros. Discovery Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1437107/000143710726000020/wbd-20251231.htm",
+     "doc_date": "2026-02-27",
+     "quote": "WBD's Studios segment includes the Warner Bros. Motion Picture Group (\"WBMPG\"), DC Studios, Warner Bros. Television Group (\"WBTVG\"), Consumer Products, Themed Entertainment and Brand Licensing, DC Comics Publishing",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:24+00:00",
+     "quote_found": true
+    }
+   ],
+   "gate": {
+    "cik": 1437107,
+    "checks": {
+     "market_cap": {
+      "value": 28000000000,
+      "as_of": "2025-06-30",
+      "tag": "dei:EntityPublicFloat",
+      "pass": true,
+      "note": "Public float (non-affiliate shares) used as a floor for market cap."
+     },
+     "net_income": {
+      "value": 727000000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:NetIncomeLoss",
+      "pass": true
+     },
+     "fcf": {
+      "value": 3088000000,
+      "as_of": "2025-12-31",
+      "ocf": 4319000000,
+      "capex": 1231000000,
+      "capitalized_software": null,
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "pass": true,
+      "note": null
+     },
+     "debt_to_equity": {
+      "value": 0.907,
+      "debt": 32567000000,
+      "equity": 35919000000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:LongTermDebt, us-gaap:StockholdersEquity",
+      "pass": true,
+      "note": null
+     }
+    },
+    "result": "pass",
+    "fy_end": "2025-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001437107.json",
+    "failed": [],
+    "unknown": []
+   }
+  }
+ ],
+ "valuesFail": [
+  {
+   "ticker": "ETSY",
+   "company": "Etsy, Inc.",
+   "cik": 1370637,
+   "themes": [
+    "Creative entrepreneurship"
+   ],
+   "values_record": "etsy-values",
+   "values_confidence": "High",
+   "values_summary": "Marketplaces connecting creative sellers with buyers.",
+   "values_caveat": null,
+   "evidence": [
+    {
+     "publisher": "Etsy, Inc. Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1370637/000137063726000019/etsy-20251231.htm",
+     "doc_date": "2026-02-19",
+     "quote": "Etsy operates two-sided online marketplaces that connect millions of creative entrepreneurs with buyers around the world.",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:41+00:00",
+     "quote_found": true
+    }
+   ],
+   "gate": {
+    "cik": 1370637,
+    "checks": {
+     "market_cap": {
+      "value": 4900000000,
+      "as_of": "2025-06-30",
+      "tag": "dei:EntityPublicFloat",
+      "pass": false,
+      "note": "Public float (non-affiliate shares) used as a floor for market cap. Float excludes insider holdings, so true market cap may be higher; team should confirm."
+     },
+     "net_income": {
+      "value": 162982000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:NetIncomeLoss",
+      "pass": true
+     },
+     "fcf": {
+      "value": 638750000,
+      "as_of": "2025-12-31",
+      "ocf": 693414000,
+      "capex": 15386000,
+      "capitalized_software": 39278000,
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquirePropertyPlantAndEquipment, us-gaap:PaymentsToDevelopSoftware",
+      "pass": true,
+      "note": null
+     },
+     "debt_to_equity": {
+      "value": null,
+      "debt": 2982238000,
+      "equity": -1098095000,
+      "pass": null,
+      "note": "Not meaningful: shareholders' equity is negative (often from buybacks). Team must explain."
+     }
+    },
+    "result": "fail",
+    "fy_end": "2025-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001370637.json",
+    "failed": [
+     "market_cap"
+    ],
+    "unknown": [
+     "debt_to_equity"
+    ]
+   }
+  },
+  {
+   "ticker": "SCHL",
+   "company": "Scholastic Corporation",
+   "cik": 866729,
+   "themes": [
+    "Storytelling & education"
+   ],
+   "values_record": "schl-values",
+   "values_confidence": "High",
+   "values_summary": "Children's book publisher; school book fairs and book clubs.",
+   "values_caveat": null,
+   "evidence": [
+    {
+     "publisher": "Scholastic Corporation Form 10-K FY2026, Item 1 Business (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/866729/000086672926000018/schl-20260531.htm",
+     "doc_date": "2026-07-24",
+     "quote": "The Company is the world's largest publisher and distributor of children's books and is the leading operator of school-based book clubs and school-based book fairs in the United States.",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:39+00:00",
+     "quote_found": true
+    }
+   ],
+   "gate": {
+    "cik": 866729,
+    "checks": {
+     "market_cap": {
+      "value": 707200000,
+      "as_of": "2025-11-30",
+      "tag": "dei:EntityPublicFloat",
+      "pass": false,
+      "note": "Public float (non-affiliate shares) used as a floor for market cap. Float excludes insider holdings, so true market cap may be higher; team should confirm."
+     },
+     "net_income": {
+      "value": 56700000,
+      "as_of": "2026-05-31",
+      "tag": "us-gaap:NetIncomeLoss",
+      "pass": true
+     },
+     "fcf": {
+      "value": 50900000,
+      "as_of": "2026-05-31",
+      "ocf": 50900000,
+      "capex": null,
+      "capitalized_software": null,
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+      "pass": true,
+      "note": "No PP&E capex tag found; treated as 0."
+     },
+     "debt_to_equity": {
+      "value": 0.107,
+      "debt": 80500000,
+      "equity": 750800000,
+      "as_of": "2026-05-31",
+      "tag": "us-gaap:DebtLongtermAndShorttermCombinedAmount, us-gaap:StockholdersEquity",
+      "pass": true,
+      "note": null
+     }
+    },
+    "result": "fail",
+    "fy_end": "2026-05-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000866729.json",
+    "failed": [
+     "market_cap"
+    ],
+    "unknown": []
+   }
+  },
+  {
+   "ticker": "WBTN",
+   "company": "WEBTOON Entertainment Inc.",
+   "cik": 1997859,
+   "themes": [
+    "Storytelling & education",
+    "Creative entrepreneurship"
+   ],
+   "values_record": "wbtn-values",
+   "values_confidence": "High",
+   "values_summary": "Comics/storytelling platform where creators publish and earn.",
+   "values_caveat": null,
+   "evidence": [
+    {
+     "publisher": "WEBTOON Entertainment Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1997859/000199785926000028/wbtn-20251231.htm",
+     "doc_date": "2026-03-05",
+     "quote": "WEBTOON is a global storytelling platform where a vibrant community of creators and users discover, create and share new content.",
+     "tier": 1,
+     "opened_at": "2026-09-26T07:01:40+00:00",
+     "quote_found": true
+    }
+   ],
+   "gate": {
+    "cik": 1997859,
+    "checks": {
+     "market_cap": {
+      "value": 154600000,
+      "as_of": "2025-06-30",
+      "tag": "dei:EntityPublicFloat",
+      "pass": false,
+      "note": "Public float (non-affiliate shares) used as a floor for market cap. Float excludes insider holdings, so true market cap may be higher; team should confirm."
+     },
+     "net_income": {
+      "value": -345927000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:NetIncomeLoss",
+      "pass": false
+     },
+     "fcf": {
+      "value": 3597000,
+      "as_of": "2025-12-31",
+      "ocf": 11216000,
+      "capex": 7619000,
+      "capitalized_software": null,
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+      "pass": true,
+      "note": null
+     },
+     "debt_to_equity": {
+      "value": 0.0,
+      "debt": 0,
+      "equity": 1170452000,
+      "as_of": "2025-12-31",
+      "tag": "us-gaap:StockholdersEquity",
+      "pass": true,
+      "note": "No debt tags reported for this year; debt treated as 0."
+     }
+    },
+    "result": "fail",
+    "fy_end": "2025-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001997859.json",
+    "failed": [
+     "market_cap",
+     "net_income"
+    ],
+    "unknown": []
+   }
+  }
+ ],
+ "leads": [
+  {
+   "id": "meta-states-settlement-terms-lead",
+   "tickers": [
+    "META"
+   ],
+   "company": "Meta Platforms, Inc.",
+   "summary": "Needs primary source: the settlement agreement / court approval order in the multistate case. Check for admission language before the next run.",
+   "problems": [
+    "banned or unlisted source: https://www.cnbc.com/2026/08/26/meta-social-media-trial-settlement.html"
+   ],
+   "event_date": "2026-08-26",
+   "sources": [
+    {
+     "publisher": "CNBC (Tier 2, lead only; not opened this run)",
+     "url": "https://www.cnbc.com/2026/08/26/meta-social-media-trial-settlement.html",
+     "doc_date": "2026-08-26",
+     "tier": null
+    }
+   ]
+  }
+ ],
+ "etf": {
+  "SPY": {
+   "asOf": "2026-09-24",
+   "source": "https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx",
+   "sourceKind": "Issuer daily holdings file (State Street)",
+   "holdings": {
+    "ACN": 0.163335,
+    "F": 0.07448,
+    "FOX": 0.011576,
+    "FOXA": 0.019236,
+    "META": 2.582483,
+    "TSLA": 1.604013
+   },
+   "positions": 505,
+   "name": "State Street SPDR S&P 500 ETF Trust"
+  },
+  "IVV": {
+   "asOf": "2026-06-30",
+   "source": "https://www.sec.gov/Archives/edgar/data/1100663/000207169126019760/primary_doc.xml",
+   "sourceKind": "SEC Form N-PORT-P (fallback; may lag ~60-90 days)",
+   "holdings": {
+    "ACN": 0.118329,
+    "F": 0.084258,
+    "FOX": 0.010088,
+    "FOXA": 0.016116,
+    "META": 1.915924,
+    "TSLA": 1.83393
+   },
+   "positions": 508,
+   "name": "iShares Core S&P 500 ETF"
+  },
+  "QQQ": {
+   "asOf": "2026-06-30",
+   "source": "https://www.sec.gov/Archives/edgar/data/1067839/000106783926000030/primary_doc.xml",
+   "sourceKind": "SEC Form N-PORT-P (fallback; may lag ~60-90 days)",
+   "holdings": {
+    "META": 2.617008,
+    "TSLA": 3.296348
+   },
+   "positions": 105,
+   "name": "Invesco QQQ Trust, Series 1"
+  },
+  "VOO": {
+   "asOf": "2026-06-30",
+   "source": "https://www.sec.gov/Archives/edgar/data/36405/000003640526000473/primary_doc.xml",
+   "sourceKind": "SEC Form N-PORT-P (fallback; may lag ~60-90 days)",
+   "holdings": {
+    "ACN": 0.118457,
+    "F": 0.084354,
+    "FOX": 0.010119,
+    "FOXA": 0.016112,
+    "META": 1.91822,
+    "TSLA": 1.836108
+   },
+   "positions": 520,
+   "name": "Vanguard S&P 500 ETF"
+  },
+  "VTI": {
+   "asOf": "2026-06-30",
+   "source": "https://www.sec.gov/Archives/edgar/data/36405/000003640526000480/primary_doc.xml",
+   "sourceKind": "SEC Form N-PORT-P (fallback; may lag ~60-90 days)",
+   "holdings": {
+    "ACN": 0.105553,
+    "F": 0.075164,
+    "FOX": 0.007566,
+    "FOXA": 0.013224,
+    "META": 1.709033,
+    "NMAX": 0.000519,
+    "TSLA": 1.636813
+   },
+   "positions": 3546,
+   "name": "Vanguard Morningstar Total Stock Market ETF"
+  }
+ },
+ "etfDefaults": [
+  "SPY",
+  "VOO",
+  "IVV",
+  "VTI",
+  "QQQ"
+ ],
+ "blackCandidates": [
+  "ACN",
+  "F",
+  "FOX",
+  "FOXA",
+  "META",
+  "NMAX",
+  "TSLA"
+ ],
+ "discovery": {
+  "legal": [],
+  "legalKnown": [
+   {
+    "source": "DOJ",
+    "date": "2026-09-14",
+    "title": "Accenture Agrees to Pay $25M to Resolve Alleged Employment Discrimination Violations",
+    "url": "https://www.justice.gov/opa/pr/accenture-agrees-pay-25m-resolve-alleged-employment-discrimination-violations",
+    "components": [
+     "Civil Division",
+     "Office of the Associate Attorney General"
+    ],
+    "tickers": [
+     "ACN"
+    ]
+   },
+   {
+    "source": "EEOC",
+    "date": "2026-09-01",
+    "title": "Ford Motor Company to Pay $2.3 Million to Resolve EEOC Race and National Origin Harassment Charge",
+    "url": "https://www.eeoc.gov/newsroom/ford-motor-company-pay-23-million-resolve-eeoc-race-and-national-origin-harassment-charge",
+    "tickers": [
+     "F"
+    ]
+   }
+  ],
+  "themes": [
+   {
+    "ticker": "STX",
+    "company": "Seagate Technology Holdings plc",
+    "themes": {
+     "creative_entrepreneurship": [
+      "creative professionals"
+     ]
+    },
+    "sic": 3572,
+    "sic_desc": "Computer Storage Devices",
+    "industry_fit": false,
+    "score": 3
+   },
+   {
+    "ticker": "TRMB",
+    "company": "TRIMBLE INC.",
+    "themes": {
+     "creative_entrepreneurship": [
+      "creative professionals"
+     ]
+    },
+    "sic": 3829,
+    "sic_desc": "Measuring & Controlling Devices, NEC",
+    "industry_fit": false,
+    "score": 3
+   }
+  ],
+  "since": "2026-08-12"
+ },
+ "universe": {
+  "sp500": 503,
+  "team": 0,
+  "teamEtfs": []
+ },
+ "doNotList": {
+  "DJT": "No qualifying legal finding; excluding it would look partisan.",
+  "NWSA": "News Corp is a separate company from Fox Corp. Its HarperCollins imprint Balzer + Bray is very likely Laura's publisher.",
+  "NWS": "News Corp is a separate company from Fox Corp. Its HarperCollins imprint Balzer + Bray is very likely Laura's publisher."
+ },
+ "rules": {
+  "lookback_years": 7,
+  "gate": {
+   "min_market_cap_usd": 5000000000,
+   "require_positive_net_income": true,
+   "require_positive_fcf": true,
+   "max_debt_to_equity": 1.5
+  },
+  "threshold_pct": 0.5,
+  "per_amount": 10000,
+  "sizing": {
+   "total_aligned_max_pct_of_stocks": 15,
+   "single_name_max_pct_of_stocks": 4
+  },
+  "themes": {
+   "trustworthy_information": "Trustworthy information",
+   "storytelling_education": "Storytelling & education",
+   "creative_entrepreneurship": "Creative entrepreneurship"
+  }
+ }
+}

@@ -1,0 +1,5 @@
+cache/
+config/local.yaml
+__pycache__/
+.pytest_cache/
+out/*.png

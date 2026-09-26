@@ -1,0 +1,15 @@
+[
+ {
+  "key": "TSLA|watch|black|tesla-diaz-verdict-2021|proposed",
+  "ticker": "TSLA",
+  "from": "watch",
+  "to": "black",
+  "status": "proposed",
+  "proposal_id": "p-TSLA-black-tesla-diaz-verdict-2021",
+  "subject": "[Laura Screen] TSLA proposed: Watch \u2192 Black",
+  "clause": "Black (b) Engaged in racial or ethnic discrimination: Jury verdict, even if later reduced, 2021-10-04 (within 7 years)",
+  "reason": "A federal jury (N.D.",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828024017503/tsla-20240331.htm",
+  "source_date": "2024-04-24"
+ }
+]

@@ -1,0 +1,102 @@
+# Laura Screen rules. Edit these values to change the screen; no code changes needed.
+# After editing, say "run the Laura screen" in Claude Code. See RUNBOOK.md.
+#
+# This screen is the team's assumption about Laura Gao's wishes. It applies to stocks and
+# stock ETFs only (bonds are out of scope).
+
+version: 1
+
+black:
+  lookback_years: 7          # a finding must be dated within this many years of the run date
+  clauses:
+    a: "Knowingly spread false information to the public"
+    b: "Engaged in racial or ethnic discrimination"
+  # Which kinds of decision count as a qualifying finding.
+  qualifying_findings:
+    merits_ruling: "Court ruling on the merits (including summary judgment on falsity)"
+    jury_verdict: "Jury verdict, even if later reduced"
+    agency_finding: "Agency finding or consent order that states the violation"
+    admitted_settlement: "Settlement in which the company admits the conduct"
+  # Who can make a qualifying finding.
+  finding_bodies: [court, jury, government_enforcement_body]
+
+watch:
+  triggers:
+    open_case: "Open lawsuit or agency complaint on (a) or (b) that has survived a motion to dismiss"
+    settlement_no_admission: "Settlement with no admission of wrongdoing"
+    old_finding: "Qualifying finding older than the look-back window"
+  tripwire_required: true    # every Watch entry must name what would move it to Black
+
+aligned:
+  financial_gate:            # all from SEC XBRL companyfacts
+    min_market_cap_usd: 5000000000     # uses dei:EntityPublicFloat as a floor
+    require_positive_net_income: true  # latest fiscal year, GAAP (IFRS for foreign filers)
+    require_positive_fcf: true         # operating cash flow minus capex (incl. capitalized software)
+    max_debt_to_equity: 1.5            # negative equity => "not meaningful", team explains
+  themes:
+    trustworthy_information:
+      label: "Trustworthy information"
+      examples: [journalism, provenance and verification, fact-checking]
+      discovery_phrases: ["Content Authenticity Initiative", "Content Credentials", "independent journalism",
+                          "Reuters Trust Principles", "fact-checking", "investigative journalism"]
+    storytelling_education:
+      label: "Storytelling & education"
+      examples: [publishing, reading, classroom learning, comics]
+      discovery_phrases: ["book fairs", "children's books", "graphic novels", "comics", "educational publishing",
+                          "reading instruction"]
+    creative_entrepreneurship:
+      label: "Creative entrepreneurship"
+      examples: [tools and marketplaces for independent creators]
+      discovery_phrases: ["independent creators", "creator economy", "creative professionals", "artists and designers",
+                          "independent artists", "creative entrepreneurs"]
+  evidence_must_be: "Company's own filing (10-K/40-F business section) or a primary source such as a membership list. Marketing adjectives do not count."
+  sizing_display_only:
+    total_aligned_max_pct_of_stocks: 15
+    single_name_max_pct_of_stocks: 4
+
+etf_lookthrough:
+  flag_threshold_pct_of_portfolio: 0.5   # sum over ETFs of (ETF weight x Black share inside ETF)
+  per_amount_fallback_usd: 10000         # shown when team hasn't entered ETF weights
+
+discovery:
+  max_proposals_per_run: 10
+  first_run_lookback_days: 365
+
+# Deliberately NOT listed. The tool must not add these without a qualifying finding.
+do_not_list_without_finding:
+  - {tickers: [DJT], reason: "No qualifying legal finding; excluding it would look partisan."}
+  - {tickers: [NWSA, NWS], reason: "News Corp is a separate company from Fox Corp. Its HarperCollins imprint Balzer + Bray is very likely Laura's publisher."}
+  - {rule: "Never select or exclude a company for the identity of its founder or CEO."}
+  - {rule: "China/Xinjiang supply-chain screens are outside Laura's public work."}
+
+sources:
+  tier1_domains:             # can trigger a Black/Watch proposal
+    - sec.gov
+    - justice.gov
+    - eeoc.gov
+    - ftc.gov
+    - calcivilrights.ca.gov
+    - oag.ca.gov
+    - courtlistener.com
+    - courts.delaware.gov
+    - uscourts.gov
+    - courts.ca.gov
+  tier2_domains:             # leads only; never a trigger on their own
+    - apnews.com
+    - reuters.com
+    - npr.org
+    - pbs.org
+    - news.bloomberglaw.com
+    - law360.com
+    - cnn.com
+    - nytimes.com
+    - wsj.com
+  banned_domains:
+    - medium.com
+    - substack.com
+    - reddit.com
+    - stocktwits.com
+    - x.com
+    - twitter.com
+    - facebook.com
+    - seekingalpha.com

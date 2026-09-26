@@ -1,0 +1,104 @@
+# Discovery records from the 2026-09-26 run. Each was matched automatically, then opened and
+# read by Claude. discovered: true marks them as discovery proposals in the page.
+records:
+  - id: ford-eeoc-conciliation-2026
+    discovered: true
+    tickers: [F]
+    company: Ford Motor Company
+    cik: 37996
+    kind: settlement_no_admission
+    clause: b
+    event_date: 2026-09-01
+    summary: >-
+      Ford agreed to pay $2.3 million under an EEOC conciliation agreement resolving a 2021 charge
+      of race and national-origin harassment at its Buffalo stamping plant. The EEOC's
+      investigation found reasonable cause to believe the harassment occurred.
+    caveat: >-
+      The release states no admission by Ford. Same open question as Tesla: does an EEOC
+      "reasonable cause" finding count as an "agency finding" under the Black rule? This screen
+      treats it as NOT qualifying until the team decides.
+    tripwire: >-
+      Team rules that EEOC cause findings qualify, or a court/agency adjudicates a violation
+      -> propose Black under (b).
+    confidence: Medium
+    sources:
+      - url: https://www.eeoc.gov/newsroom/ford-motor-company-pay-23-million-resolve-eeoc-race-and-national-origin-harassment-charge
+        publisher: U.S. Equal Employment Opportunity Commission (press release)
+        doc_date: 2026-09-01
+        quote: >-
+          The EEOC's investigation found reasonable cause to believe that Ford personnel at the
+          facility subjected numerous employees to harassment and discrimination based on race and
+          national origin.
+      - url: https://www.eeoc.gov/newsroom/ford-motor-company-pay-23-million-resolve-eeoc-race-and-national-origin-harassment-charge
+        publisher: U.S. Equal Employment Opportunity Commission (press release)
+        doc_date: 2026-09-01
+        quote: >-
+          Following the EEOC's investigation, the parties engaged in the EEOC's pre-litigation
+          conciliation process, resulting in a conciliation agreement.
+
+  - id: accenture-doj-fca-2026
+    discovered: true
+    tickers: [ACN]
+    company: Accenture plc
+    cik: 1467373
+    kind: settlement_no_admission
+    clause: b
+    event_date: 2026-09-14
+    summary: >-
+      Accenture agreed to pay $25 million to resolve DOJ False Claims Act allegations that its
+      federal-services unit certified non-discrimination in federal contracts while taking race or
+      sex into account in employment decisions. DOJ states the claims are allegations only.
+    tripwire: >-
+      A court ruling, jury verdict, or agency finding that Accenture engaged in racial
+      discrimination -> propose Black under (b).
+    confidence: High
+    sources:
+      - url: https://www.justice.gov/opa/pr/accenture-agrees-pay-25m-resolve-alleged-employment-discrimination-violations
+        publisher: U.S. Department of Justice, Office of Public Affairs (press release)
+        doc_date: 2026-09-14
+        quote: >-
+          to resolve alleged violations of the False Claims Act for failing to comply with
+          anti-discrimination requirements in federal contracts and discriminating against employees
+          and applicants for employment because of race or sex.
+      - url: https://www.justice.gov/opa/pr/accenture-agrees-pay-25m-resolve-alleged-employment-discrimination-violations
+        publisher: U.S. Department of Justice, Office of Public Affairs (press release)
+        doc_date: 2026-09-14
+        quote: >-
+          The claims resolved by the United States in the settlement are allegations only and there
+          has been no determination of liability.
+
+  - id: alphabet-values
+    discovered: true
+    tickers: [GOOGL, GOOG]
+    company: Alphabet Inc.
+    cik: 1652044
+    kind: values_link
+    themes: [creative_entrepreneurship]
+    summary: YouTube Partner Program pays independent creators.
+    caveat: The creator program is one part of a much larger business (search, cloud, advertising).
+    confidence: Medium
+    sources:
+      - url: https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm
+        publisher: Alphabet Inc. Form 10-K FY2025, Item 1 Business (SEC EDGAR)
+        doc_date: 2026-02-05
+        quote: >-
+          YouTube provides people with entertainment, information, and opportunities to learn
+          something new and helps support the creator economy through the YouTube Partner Program.
+
+  - id: wbd-values
+    discovered: true
+    tickers: [WBD]
+    company: Warner Bros. Discovery, Inc.
+    cik: 1437107
+    kind: values_link
+    themes: [storytelling_education]
+    summary: Owns DC Comics Publishing and film/TV storytelling studios.
+    confidence: Medium
+    sources:
+      - url: https://www.sec.gov/Archives/edgar/data/1437107/000143710726000020/wbd-20251231.htm
+        publisher: Warner Bros. Discovery Form 10-K FY2025, Item 1 Business (SEC EDGAR)
+        doc_date: 2026-02-27
+        quote: >-
+          WBD's Studios segment includes the Warner Bros. Motion Picture Group ("WBMPG"), DC Studios,
+          Warner Bros. Television Group ("WBTVG"), Consumer Products, Themed Entertainment and Brand
+          Licensing, DC Comics Publishing

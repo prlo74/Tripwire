@@ -1,0 +1,7 @@
+# Starting lists researched by the team in September 2026. The pipeline re-verifies every entry
+# from primary sources; these are only the "from" state for the first proposals.
+black: [FOXA, FOX, NMAX]
+watch: [TSLA, META]
+aligned_candidates: [ADBE, TRI, NYT, SHOP, SCHL]
+rejected_financial: [WBTN, ETSY]
+default_etfs: [SPY, VOO, IVV, VTI, QQQ]
