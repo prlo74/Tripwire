@@ -9,8 +9,11 @@ PAGE = (Path(__file__).resolve().parent.parent / "site" / "page.html").read_text
 
 
 LIGHT = dict(re.findall(r"--([\w-]+):\s*([^;]+);", re.search(r":root \{(.*?)\n\}", PAGE, re.S).group(1)))
-DARK = {**LIGHT, **dict(re.findall(r"--([\w-]+):\s*([^;]+);", re.search(r':root\[data-theme="dark"\] \{(.*?)\n\}', PAGE, re.S).group(1)))}
-DARK_MEDIA = {**LIGHT, **dict(re.findall(r"--([\w-]+):\s*([^;]+);", re.search(r':root:not\(\[data-theme="light"\]\) \{(.*?)\n  \}', PAGE, re.S).group(1)))}
+# The page is a single deliberate silver theme; dark blocks are checked only if they exist.
+_d = re.search(r':root\[data-theme="dark"\] \{(.*?)\n\}', PAGE, re.S)
+_m = re.search(r':root:not\(\[data-theme="light"\]\) \{(.*?)\n  \}', PAGE, re.S)
+DARK = {**LIGHT, **dict(re.findall(r"--([\w-]+):\s*([^;]+);", _d.group(1)))} if _d else LIGHT
+DARK_MEDIA = {**LIGHT, **dict(re.findall(r"--([\w-]+):\s*([^;]+);", _m.group(1)))} if _m else LIGHT
 
 
 def rgba(v):
