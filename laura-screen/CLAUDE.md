@@ -47,6 +47,21 @@ mirrors or archives.
 - Re-run `python -m pipeline.run` after editing evidence. Every record must show
   `proposable: True` with verified quotes.
 
+## 3b. Full check of new team tickers
+The run prints `NEW TICKER` lines and saves details in `site/data.json` → `newTickerChecks`
+(tickers the team pasted that were never checked). For each stock:
+- Read Item 1 (Business) of its latest annual report (`annual_report.url`), starting from the
+  `theme_snippets`. If it documents a link to one of the three themes in the company's own words,
+  add a `values_link` record (`discovered: true`). Marketing adjectives don't count.
+- Open each `legal_hits` filing (SEC full-text hits in its own filings over the look-back window)
+  and read the legal-proceedings passage. Most hits are boilerplate; write a `finding`,
+  `open_case` or `settlement_no_admission` record only when a primary source meets a rule clause.
+- If nothing qualifies, write nothing. The export records "No values link or qualifying legal
+  finding found" on the ticker, and the page shows it.
+Re-run `python -m pipeline.run` after writing records; `dbsync export` then marks each checked
+ticker (`universe/<T>.checked_at`, `check_summary`). New-ticker proposals count toward the 10
+discovery proposals per run.
+
 ## 4. Write results to the Artifact
 ```
 python -m pipeline.dbsync export

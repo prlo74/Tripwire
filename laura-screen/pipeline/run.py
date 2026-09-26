@@ -20,7 +20,7 @@ from pathlib import Path
 
 import yaml
 
-from . import discovery, etf, financial
+from . import discovery, etf, financial, newtickers
 from .evidence import check_record, do_not_list_tickers, guard_do_not_list, load_records, load_rules
 from .http import SourceError
 from .tickers import build as build_tickers, canon
@@ -124,7 +124,10 @@ def main(argv=None) -> int:
         status["S&P 500 constituents (SPY holdings, State Street)"].update(
             {"as_of": spy["as_of"], "count": len(universe), "source": spy["source"]})
     team_etfs = set()
+    unchecked = []   # team tickers never checked (added since the last run)
     for u in db.get("universe", []):
+        if not u.get("checked_at") and canon(u.get("ticker", "")) in tmap:
+            unchecked.append(canon(u["ticker"]))
         t = canon(u.get("ticker", ""))
         if t in tmap and tmap[t][1] == "S":
             universe.setdefault(t, {"name": tmap[t][0], "cik": tmap[t][2], "origin": "team list"})
@@ -262,6 +265,15 @@ def main(argv=None) -> int:
     held_back = [p for p in proposals if p["id"] in overflow]
     proposals = [p for p in proposals if p["id"] not in overflow]
 
+    # 4b. Full check for team tickers added since they were last checked.
+    new_checks = []
+    for t in sorted(set(unchecked)):
+        info = universe.get(t) or {"name": tmap[t][0], "cik": tmap[t][2]}
+        r = step(f"New ticker check {t}", newtickers.check, t, info, tmap, rules, today,
+                 lambda cik, t=t: financial.financial_gate(cik, rules, fin_notes.get(t)))
+        if r:
+            new_checks.append(r)
+
     # 5. ETF look-through data.
     etf_list = sorted(set(baseline.get("default_etfs", [])) | team_etfs)
     targets = {}
@@ -351,6 +363,7 @@ def main(argv=None) -> int:
                    "problems": r["check"]["problems"], "event_date": r.get("event_date"),
                    "sources": [{k: s.get(k) for k in ("publisher", "url", "doc_date", "tier")} for s in r["sources"]]}
                   for r in leads],
+        "newTickerChecks": new_checks,
         "etf": etf_data, "etfDefaults": baseline.get("default_etfs", []),
         "blackCandidates": sorted(targets),
         "discovery": {"heldBack": [{"id": p["id"], "tickers": p["tickers"], "to": p["to"], "confidence": p["confidence"]} for p in held_back],
@@ -384,6 +397,10 @@ def main(argv=None) -> int:
     print(f"Discovery: {len(disc['legal'])} new legal matches since {disc.get('legal_since')}, "
           f"{len(disc['themes'])} theme matches (unreviewed)")
     print(f"Alerts to send: {len(alerts)}")
+    for c in new_checks:
+        g = (c.get("gate") or {}).get("result", "n/a")
+        print(f"  NEW TICKER {c['ticker']:6s} gate={g} themes={list((c.get('theme_snippets') or {}).keys())} "
+              f"legal_hits={len(c.get('legal_hits') or [])} annual={((c.get('annual_report') or {}).get('url'))}")
     for k, v in status.items():
         if not v.get("ok"):
             print(f"  SOURCE PROBLEM {k}: {v.get('error')}")

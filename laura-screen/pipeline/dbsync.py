@@ -39,7 +39,7 @@ def snapshot(d: Path) -> Path:
     snap = {"universe": _load_dir(d, "universe"), "approvals": _load_dir(d, "approvals"),
             "runs": [r for r in _load_dir(d, "runs") if r.get("_id") != "latest"],
             "proposal_ids": [r["_id"] for r in _load_dir(d, "proposals")],
-            "versions": {f"{c}/{r['_id']}": r["_version"] for c in ("runs", "proposals")
+            "versions": {f"{c}/{r['_id']}": r["_version"] for c in ("runs", "proposals", "universe")
                          for r in _load_dir(d, c) if r.get("_version")}}
     dest = OUT / "db_snapshot.json"
     dest.write_text(json.dumps(snap, indent=1))
@@ -82,6 +82,33 @@ def export() -> Path:
             if snap.get("versions", {}).get(f"proposals/{old}"):
                 d["if_version"] = snap["versions"][f"proposals/{old}"]
             writes.append(d)
+    # Mark newly checked team tickers, with a one-line outcome the page shows next to each ticker.
+    by_ticker = {}
+    for p in data["proposals"]:
+        for t in p["tickers"]:
+            by_ticker.setdefault(t, []).append(p["to"])
+    fails = {r["ticker"]: r for r in data.get("valuesFail", [])}
+    for c in data.get("newTickerChecks", []):
+        t = c["ticker"]
+        if c.get("kind") == "etf":
+            summary = "ETF: holdings added to the look-through check"
+        elif t in by_ticker:
+            summary = "Proposed: " + ", ".join(sorted(set(by_ticker[t]))) + " (see Needs approval)"
+        elif t in fails:
+            summary = "Values link found, but fails the financial screen"
+        elif c.get("errors"):
+            summary = "Check incomplete: " + "; ".join(c["errors"])
+        else:
+            g = (c.get("gate") or {}).get("result", "unknown")
+            summary = "No values link or qualifying legal finding found" + (f" (financial gate: {g})" if g != "pass" else "")
+        body = {"checked_at": data["run"]["finished"], "check_run": data["run"]["id"], "check_summary": summary}
+        f = wdir / f"universe__{t}.json"
+        f.write_text(json.dumps(body))
+        w = {"op": "update", "collection": "universe", "doc_id": t, "file_path": str(f)}
+        v = snap.get("versions", {}).get(f"universe/{t}")
+        if v:
+            w["if_version"] = v
+        writes.append(w)
     (wdir / "manifest.json").write_text(json.dumps(writes, indent=1))
     print(f"{len(writes)} writes -> {wdir / 'manifest.json'}")
     return wdir / "manifest.json"

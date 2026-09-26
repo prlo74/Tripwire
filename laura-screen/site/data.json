@@ -1,9 +1,9 @@
 {
  "run": {
-  "id": "run-20260926T075808",
-  "started": "2026-09-26T07:58:08+00:00",
-  "finished": "2026-09-26T07:58:30+00:00",
-  "duration_s": 22.5,
+  "id": "run-20260926T134117",
+  "started": "2026-09-26T13:41:17+00:00",
+  "finished": "2026-09-26T13:41:45+00:00",
+  "duration_s": 27.7,
   "today": "2026-09-26",
   "errors": [],
   "discovery_since": "2025-08-22",
@@ -405,7 +405,7 @@
      "doc_date": "2022-06-27",
      "quote": "this Settlement Agreement is for settlement purposes only and does not constitute an admission by Meta of any of the allegations contained in the HUD Charge or the Complaint, nor does it constitute any finding of liability against Meta",
      "tier": 1,
-     "opened_at": "2026-09-26T07:48:13+00:00",
+     "opened_at": "2026-09-26T08:03:15+00:00",
      "quote_found": true
     },
     {
@@ -414,7 +414,7 @@
      "doc_date": "2022-06-27",
      "quote": "alleged that Meta's housing advertising system discriminated against Facebook users based on their race, color, religion, sex, disability, familial status, and national origin, in violation of the Fair Housing Act (FHA).",
      "tier": 1,
-     "opened_at": "2026-09-26T07:48:14+00:00",
+     "opened_at": "2026-09-26T08:03:16+00:00",
      "quote_found": true
     }
    ],
@@ -1631,6 +1631,7 @@
    ]
   }
  ],
+ "newTickerChecks": [],
  "etf": {
   "SPY": {
    "asOf": "2026-09-24",

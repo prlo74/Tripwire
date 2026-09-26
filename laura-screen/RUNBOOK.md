@@ -19,14 +19,20 @@ This screen is the team's assumption about Laura's wishes. It is a research aid,
 A full first run takes about 4 minutes; a cached re-run takes under a minute. Alerts are only as
 fast as the run schedule: a weekly run means up to 7 days of lag.
 
-## Weekly run
-The **Weekly run** card on the page turns an automatic weekly run on or off and sets its day,
-time and time zone (default Monday 07:52, Asia/Tokyo). It controls a Claude Code Remote Routine
-(`trig_01Qe7LfvthehDzsLRq1WmLGZ`) owned by Leo's account, so only Leo can change it from the page;
-other editors see the state. Each run does the same steps as "run the Laura screen", records
-`last_run_at` on the card, and emails subscribers. A weekly schedule means alerts can be up to 7
-days late. The switch is saved in the database (`settings/weekly`), and a run that finds it off
-stops immediately.
+## Checking new tickers and the scheduled run
+- **Paste, save, then Check now.** Saved tickers show "Waiting" in the team list. **Check now**
+  (on the Paste card or the Scheduled run card) starts a full run immediately. For every new ticker
+  it runs the financial gate, reads its latest 10-K for a values link, and searches its own SEC
+  filings over the 7-year window for legal proceedings. Results appear in 5–10 minutes: a proposal
+  in Needs approval, "Values fit, fails the financial screen", or "Checked: no values link or
+  qualifying legal finding found".
+- **Scheduled run.** The Scheduled run card turns the automatic run on or off and sets how often
+  (every 1–7 days), the weekday (7-day schedule only), time and time zone. Every 1–6 days fires
+  daily and the run skips itself until the interval has passed since the last run. Alerts can be
+  as late as the interval.
+- Both controls drive a Claude Code Remote Routine (`trig_01Qe7LfvthehDzsLRq1WmLGZ`) owned by Leo's
+  account, so only Leo can press them; other editors see the state. The settings live in the
+  database (`settings/weekly`).
 
 ## How to change a rule (no code)
 Edit `config/rules.yaml`, save, then run the screen again.

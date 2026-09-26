@@ -370,9 +370,10 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
       <p class="small muted" id="p-example-note">Example text. Replace it with your own list.</p>
       <div class="chips" id="p-chips" aria-live="polite"></div>
       <div class="actions"><button class="btn primary" type="button" id="p-save" disabled>Save valid tickers</button><span class="small muted" id="p-save-note"></span></div>
+      <div class="actions"><button class="btn" type="button" id="p-check" disabled>Check now</button><span class="small muted" id="p-check-note"></span></div>
       <div>
         <div class="eyebrow" style="margin-bottom:6px">Team list <span id="u-count"></span></div>
-        <div class="saved-list" id="u-list"><span class="small muted">Loading…</span></div>
+        <div class="tbl-wrap"><table><thead><tr><th scope="col">Ticker</th><th scope="col">Check result</th><th scope="col"><span class="sr">Remove</span></th></tr></thead><tbody id="u-list"><tr><td colspan="3" class="small muted">Loading…</td></tr></tbody></table></div>
         <p class="small muted" style="margin-top:6px">Plus the <span id="u-sp">~500</span> S&amp;P 500 companies (from SPY's daily holdings file).</p>
       </div>
     </section>
@@ -399,19 +400,25 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
       </form>
     </section>
 
-    <!-- 10b. weekly run -->
+    <!-- 10b. scheduled run -->
     <section class="card" aria-labelledby="h-weekly" id="weekly">
-      <header><div><h2 id="h-weekly">Weekly run</h2><p class="purpose">Run the screen automatically once a week. Alerts can be up to 7 days late on a weekly schedule.</p></div><span id="wk-badge"></span></header>
+      <header><div><h2 id="h-weekly">Scheduled run</h2><p class="purpose">Run the screen automatically every 1 to 7 days, or right now. Alerts are only as fast as the schedule.</p></div><span id="wk-badge"></span></header>
+      <div class="actions">
+        <button class="btn primary" type="button" id="wk-now">Check now</button>
+        <span class="small muted" id="wk-now-note"></span>
+      </div>
       <form id="wk-form" class="evid" novalidate>
-        <label class="switch" for="wk-on"><input type="checkbox" role="switch" id="wk-on"> <b>Run the screen every week</b></label>
+        <label class="switch" for="wk-on"><input type="checkbox" role="switch" id="wk-on"> <b>Run on a schedule</b></label>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-          <div><label class="lbl" for="wk-day">Day</label>
+          <div><label class="lbl" for="wk-every">Run every</label>
+            <select id="wk-every" class="sel"><option value="1">1 day</option><option value="2">2 days</option><option value="3">3 days</option><option value="4">4 days</option><option value="5">5 days</option><option value="6">6 days</option><option value="7">7 days</option></select></div>
+          <div><label class="lbl" for="wk-day">Day (7-day schedule)</label>
             <select id="wk-day" class="sel"><option value="1">Monday</option><option value="2">Tuesday</option><option value="3">Wednesday</option><option value="4">Thursday</option><option value="5">Friday</option><option value="6">Saturday</option><option value="0">Sunday</option></select></div>
           <div><label class="lbl" for="wk-time">Time</label><input type="time" id="wk-time" class="sel" value="07:52" step="60"></div>
+          <div><label class="lbl" for="wk-tz">Time zone</label>
+            <select id="wk-tz" class="sel"><option>Asia/Tokyo</option><option>America/New_York</option><option>America/Chicago</option><option>America/Los_Angeles</option><option>Europe/London</option><option>UTC</option></select></div>
         </div>
-        <div><label class="lbl" for="wk-tz">Time zone</label>
-          <select id="wk-tz" class="sel"><option>Asia/Tokyo</option><option>America/New_York</option><option>America/Chicago</option><option>America/Los_Angeles</option><option>Europe/London</option><option>UTC</option></select></div>
-        <div class="actions"><button class="btn primary" type="submit" id="wk-save">Save schedule</button><span class="small muted" id="wk-note"></span></div>
+        <div class="actions"><button class="btn" type="submit" id="wk-save">Save schedule</button><span class="small muted" id="wk-note"></span></div>
         <dl class="kv" id="wk-status"></dl>
       </form>
     </section>
@@ -899,10 +906,11 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
       for (var i = 0; i < ts.length; i++) {
         var t = ts[i], r = map[t];
         if (!r) continue;
+        if (S.universe.some(function (u) { return u.ticker === t; })) continue;   // already on the list; keep its check result
         await S.db.doc("universe/" + t).set({ ticker: t, type: r[1] === "E" ? "etf" : "stock", name: r[0], added_by: S.uid, added_at: new Date().toISOString() });
       }
       await S.db.collection("audit_log").add({ at: new Date().toISOString(), by: S.uid, action: "universe_add", tickers: ts, reason: "" });
-      toast("Saved " + ts.length + " to the team list. They are screened on the next run.");
+      toast("Saved to the team list. Press Check now to check them, or wait for the next scheduled run.");
     } catch (e) {
       if (e && e.code === "invalid_argument") { S.canWrite = false; toast("You don't have permission to edit the team list."); }
       else if (e && e.code === "quota_exceeded") toast("The database is full. Remove unused tickers first.");
@@ -910,16 +918,33 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
     }
     renderPaste();
   }
+  function tickerStatus(u) {
+    var t = u.ticker, props = S.proposals.filter(function (p) { return p.tickers.indexOf(t) >= 0; });
+    if (props.length) {
+      var p = props.slice().sort(function (a, b) { return RANK[b.to] - RANK[a.to]; })[0], d = decisionOf(p);
+      return [p.to === "black" ? chip("black", "Black", "black") : p.to === "watch" ? chip("watch", "Watch", "watch") : chip("aligned", "Aligned", "aligned"),
+              " ", d === "approve" ? "approved" : d === "reject" ? "rejected" : "proposed, see Needs approval"];
+    }
+    if ((S.data.valuesFail || []).some(function (r) { return r.ticker === t; })) return [chip("none", "Values fit", "none"), " fails the financial screen"];
+    if (u.checked_at) return [chip("none", "Checked", "none"), " " + fmtDate(u.checked_at) + ": " + (u.check_summary || "no proposal")];
+    if (checkRunning(S.weekly)) return [chip("watch", "Checking", "pending"), " check in progress"];
+    return [chip("proposed", "Waiting", "pending"), " for the next run or Check now"];
+  }
   function renderUniverse() {
     var box = clear($("u-list")), u = S.universe.slice().sort(function (a, b) { return a.ticker < b.ticker ? -1 : 1; });
     $("u-count").textContent = u.length ? "(" + u.length + ")" : "";
-    if (!S.db) { box.appendChild(el("span", { class: "small muted", text: "Available with the live database." })); return; }
-    if (!u.length) { box.appendChild(el("span", { class: "small muted", text: "No team tickers yet. Paste some above." })); return; }
+    function msg(t) { box.appendChild(el("tr", {}, [el("td", { colspan: "3", class: "small muted", text: t })])); }
+    if (!S.db) { msg("Available with the live database."); return; }
+    if (!u.length) { msg("No team tickers yet. Paste some above."); return; }
     u.forEach(function (d) {
-      box.appendChild(el("span", { class: "tkc" }, [d.ticker + (d.type === "etf" ? " · ETF" : ""), el("button", { type: "button", "aria-label": "Remove " + d.ticker, disabled: S.canWrite === false, onclick: async function () {
-        try { await S.db.doc("universe/" + d.ticker).delete(); await S.db.collection("audit_log").add({ at: new Date().toISOString(), by: S.uid, action: "universe_remove", tickers: [d.ticker], reason: "" }); toast("Removed " + d.ticker + "."); }
-        catch (e) { toast("Could not remove " + d.ticker + "."); }
-      } }, ["×"])]));
+      box.appendChild(el("tr", {}, [
+        el("td", {}, [el("span", { class: "tk", text: d.ticker }), el("div", { class: "small muted", text: (d.name || "") + (d.type === "etf" ? " · ETF" : "") })]),
+        el("td", { class: "small" }, tickerStatus(d)),
+        el("td", {}, [el("button", { class: "btn sm ghost", type: "button", "aria-label": "Remove " + d.ticker, disabled: S.canWrite === false, onclick: async function () {
+          try { await S.db.doc("universe/" + d.ticker).delete(); await S.db.collection("audit_log").add({ at: new Date().toISOString(), by: S.uid, action: "universe_remove", tickers: [d.ticker], reason: "" }); toast("Removed " + d.ticker + "."); }
+          catch (e) { toast("Could not remove " + d.ticker + "."); }
+        } }, ["Remove"])])
+      ]));
     });
   }
 
@@ -1071,72 +1096,122 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
   }
 
 
-  // ---------- weekly run (Claude Code Remote Routine) ----------
+  // ---------- scheduled run + check now (Claude Code Remote Routine) ----------
   var DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  function cronFor(day, time, tz) {
+  function cronFor(every, day, time, tz) {
     var hm = (time || "07:52").split(":");
-    return "CRON_TZ=" + tz + " " + parseInt(hm[1], 10) + " " + parseInt(hm[0], 10) + " * * " + day;
+    // Every 7 days runs on the chosen weekday. Every 1-6 days fires daily and the run itself skips
+    // until the interval has passed since the last run (so the spacing stays exact across months).
+    return "CRON_TZ=" + tz + " " + parseInt(hm[1], 10) + " " + parseInt(hm[0], 10) + " * * " + (every === 7 ? day : "*");
+  }
+  function everyText(w) {
+    var n = w.interval_days || 7;
+    return n === 7 ? DAYS[w.day != null ? w.day : 1] + "s at " + (w.time || "07:52") :
+      n === 1 ? "Every day at " + (w.time || "07:52") : "Every " + n + " days at " + (w.time || "07:52");
+  }
+  function checkRunning(w) {
+    if (!w || !w.check_requested_at) return false;
+    var req = Date.parse(w.check_requested_at), done = w.check_completed_at ? Date.parse(w.check_completed_at) : 0;
+    return done < req && Date.now() - req < 45 * 60 * 1000;
+  }
+  function pendingTeamTickers() {
+    return S.universe.filter(function (u) { return !u.checked_at; }).map(function (u) { return u.ticker; }).sort();
   }
   function renderWeekly() {
-    var w = S.weekly || {}, admin = !!(S.db && S.canAdmin);
+    var w = S.weekly || {}, admin = !!(S.db && S.canAdmin), ready = admin && !!S.mcp;
+    var every = w.interval_days || 7;
     if (document.activeElement !== $("wk-on")) $("wk-on").checked = !!w.enabled;
+    if (document.activeElement !== $("wk-every")) $("wk-every").value = String(every);
     if (w.day != null && document.activeElement !== $("wk-day")) $("wk-day").value = String(w.day);
     if (w.time && document.activeElement !== $("wk-time")) $("wk-time").value = w.time;
     if (w.tz && document.activeElement !== $("wk-tz")) $("wk-tz").value = w.tz;
-    ["wk-on", "wk-day", "wk-time", "wk-tz", "wk-save"].forEach(function (id) { $(id).disabled = !admin || !S.mcp || S.wkBusy; });
+    ["wk-on", "wk-every", "wk-time", "wk-tz", "wk-save"].forEach(function (id) { $(id).disabled = !ready || S.wkBusy; });
+    $("wk-day").disabled = !ready || S.wkBusy || parseInt($("wk-every").value, 10) !== 7;
+    var running = checkRunning(w);
+    $("wk-now").disabled = !ready || S.wkBusy || running;
+    $("p-check").disabled = $("wk-now").disabled;
+    var pend = pendingTeamTickers();
+    var nowNote = running ? "Check running since " + fmtDateTime(w.check_requested_at) + ". Results appear here in about 5–10 minutes." :
+      !S.db ? "Needs the live database." : !admin ? "Only the team's editors can start a check." :
+      !S.mcp ? "Needs the Claude Code Remote connector in this view." :
+      pend.length ? "Checks " + pend.join(", ") + " and runs the full screen." : "Runs the full screen now.";
+    $("wk-now-note").textContent = S.nowMsg || nowNote;
+    $("p-check-note").textContent = S.nowMsg || (running ? "Check running…" : pend.length ? pend.length + " ticker" + (pend.length > 1 ? "s" : "") + " waiting for a check." : "");
     var b = clear($("wk-badge"));
-    b.appendChild(w.enabled ? chip("aligned", "On", "aligned") : chip("none", "Off", "none"));
+    b.appendChild(running ? chip("watch", "Checking now", "pending") : w.enabled ? chip("aligned", "On", "aligned") : chip("none", "Off", "none"));
     $("wk-note").textContent = S.wkMsg || (!S.db ? "Schedule changes need the live database." :
       !admin ? "Only the team's editors can change the schedule." :
       !S.mcp ? "Schedule changes need the Claude Code Remote connector in this view." :
       "Changes apply to " + (w.owner_name || "the owner") + "'s scheduled Routine.");
     var st = clear($("wk-status"));
     function row(k, v) { st.appendChild(el("dt", { text: k })); st.appendChild(el("dd", { text: v })); }
-    row("Schedule", (w.day != null ? DAYS[w.day] : "Monday") + "s at " + (w.time || "07:52") + " (" + (w.tz || "Asia/Tokyo") + ")");
-    row("Next run", w.enabled ? (w.next_run_at ? fmtDateTime(w.next_run_at) : "scheduled") : "none (off)");
-    row("Last scheduled run", w.last_run_at ? fmtDateTime(w.last_run_at) + (w.last_run_summary ? " · " + w.last_run_summary : "") : "none yet");
+    row("Schedule", everyText(w) + " (" + (w.tz || "Asia/Tokyo") + ")" + (w.enabled ? "" : ", off"));
+    row("Last run", w.last_run_at ? fmtDateTime(w.last_run_at) + (w.last_run_summary ? " · " + w.last_run_summary : "") : "none yet");
+    row("Alert delay", "up to " + every + " day" + (every > 1 ? "s" : "") + " on this schedule");
+  }
+  function mcpErrorText(e, owner, what) {
+    var code = e && e.code;
+    return code === "server_not_connected" ? "Add the Claude Code Remote connector in claude.ai Settings → Connectors, then try again." :
+      code === "needs_reauth" ? "Reconnect Claude Code Remote in claude.ai Settings → Connectors." :
+      code === "not_in_manifest" ? "This page isn't allowed to use Claude Code Remote for you. Allow it when the page asks, then try again." :
+      code === "blocked_by_policy" || code === "approval_required" ? "Your organization's policy blocks this from the page." :
+      code === "tool_error" ? what + " failed: " + (e.message || "the Routine refused") + ". Only " + (owner || "its owner") + " can do this." :
+      code === "server_unavailable" || code === "upstream_error" ? "Claude Code Remote didn't answer. Reload the page to see whether it went through before trying again." :
+      what + " failed (" + (code || "error") + ").";
   }
   async function saveWeekly() {
     var w = S.weekly || {};
     if (!S.mcp || !S.db || !w.trigger_id) return;
-    var enabled = $("wk-on").checked, day = parseInt($("wk-day").value, 10), time = $("wk-time").value || "07:52", tz = $("wk-tz").value;
-    var cron = cronFor(day, time, tz);
+    var enabled = $("wk-on").checked, every = parseInt($("wk-every").value, 10), day = parseInt($("wk-day").value, 10),
+        time = $("wk-time").value || "07:52", tz = $("wk-tz").value;
+    var cron = cronFor(every, day, time, tz);
     S.wkBusy = true; S.wkMsg = "Saving…"; renderWeekly();
-    var next = null;
     try {
-      var res = await S.mcp.callTool("Claude Code Remote", "update_trigger", { trigger_id: w.trigger_id, enabled: enabled, cron_expression: cron }, { cache: false });
-      var pl = res && res.payload;
-      next = pl && pl.trigger ? pl.trigger.next_run_at : null;
+      await S.mcp.callTool("Claude Code Remote", "update_trigger", { trigger_id: w.trigger_id, enabled: enabled, cron_expression: cron }, { cache: false });
     } catch (e) {
-      S.wkBusy = false;
-      var code = e && e.code;
-      S.wkMsg = code === "server_not_connected" ? "Add the Claude Code Remote connector in claude.ai Settings → Connectors, then try again." :
-        code === "needs_reauth" ? "Reconnect Claude Code Remote in claude.ai Settings → Connectors." :
-        code === "not_in_manifest" ? "This page isn't allowed to use Claude Code Remote for you. Allow it when the page asks, then try again." :
-        code === "blocked_by_policy" || code === "approval_required" ? "Your organization's policy blocks schedule changes from this page." :
-        code === "tool_error" ? "The schedule wasn't changed: " + (e.message || "the Routine refused the update") + ". Only " + (w.owner_name || "its owner") + " can change it." :
-        code === "server_unavailable" || code === "upstream_error" ? "Claude Code Remote didn't answer. Reload the page to see whether the change applied." :
-        "The schedule wasn't changed (" + (code || "error") + ").";
-      renderWeekly();
-      return;
+      S.wkBusy = false; S.wkMsg = mcpErrorText(e, w.owner_name, "Saving the schedule"); renderWeekly(); return;
     }
     try {
-      await S.db.doc("settings/weekly").update({ enabled: enabled, day: day, time: time, tz: tz, cron: cron,
-        next_run_at: enabled ? next : null, updated_by: S.uid, updated_at: new Date().toISOString() });
+      await S.db.doc("settings/weekly").update({ enabled: enabled, interval_days: every, day: day, time: time, tz: tz, cron: cron,
+        updated_by: S.uid, updated_at: new Date().toISOString() });
       await S.db.collection("audit_log").add({ at: new Date().toISOString(), by: S.uid, action: enabled ? "weekly_on" : "weekly_off", tickers: [],
-        reason: enabled ? "Weekly run: " + DAYS[day] + "s " + time + " " + tz : "Weekly run turned off" });
-      S.wkMsg = enabled ? "Weekly run is on." : "Weekly run is off.";
+        reason: enabled ? "Scheduled run: " + everyText({ interval_days: every, day: day, time: time }) + " " + tz : "Scheduled run turned off" });
+      S.wkMsg = enabled ? "Schedule saved: " + everyText({ interval_days: every, day: day, time: time }) + "." : "Scheduled run is off.";
     } catch (e) {
       S.wkMsg = "The Routine was updated, but the page couldn't record it. Reload to check.";
     }
     S.wkBusy = false; renderWeekly();
   }
+  async function checkNow() {
+    var w = S.weekly || {};
+    if (!S.mcp || !S.db || !w.trigger_id || checkRunning(w)) return;
+    var pend = pendingTeamTickers();
+    S.wkBusy = true; S.nowMsg = "Starting…"; renderWeekly();
+    try {
+      await S.mcp.callTool("Claude Code Remote", "fire_trigger", { trigger_id: w.trigger_id,
+        text: "On-demand check requested from the Laura Screen page. New team tickers waiting for a check: " +
+              (pend.length ? pend.join(", ") : "none") + ". Run the Laura screen now (ignore the schedule switch and interval)." }, { cache: false });
+    } catch (e) {
+      S.wkBusy = false; S.nowMsg = mcpErrorText(e, w.owner_name, "Starting a check"); renderWeekly(); return;
+    }
+    S.nowMsg = "";
+    try {
+      await S.db.doc("settings/weekly").update({ check_requested_at: new Date().toISOString(), check_requested_by: S.uid });
+      await S.db.collection("audit_log").add({ at: new Date().toISOString(), by: S.uid, action: "check_now", tickers: pend, reason: "" });
+    } catch (e) { S.nowMsg = "Check started, but the page couldn't record it."; }
+    S.wkBusy = false; renderWeekly();
+    toast("Check started. Results appear in about 5–10 minutes.");
+  }
   $("wk-form").addEventListener("submit", function (e) { e.preventDefault(); saveWeekly(); });
   $("wk-on").addEventListener("change", function () { saveWeekly(); });
+  $("wk-every").addEventListener("change", function () { $("wk-day").disabled = parseInt($("wk-every").value, 10) !== 7; });
+  $("wk-now").addEventListener("click", checkNow);
+  $("p-check").addEventListener("click", checkNow);
+  setInterval(function () { if (S.weekly && S.weekly.check_requested_at) renderWeekly(); }, 60000);
 
   // ---------- audit + CSV ----------
   function auditText(a) {
-    var what = { approve: "Approved", reject: "Rejected", comment: "Commented on", reopen: "Reopened", universe_add: "Added to team list", universe_remove: "Removed from team list", weekly_on: "Turned the weekly run on", weekly_off: "Turned the weekly run off" }[a.action] || a.action;
+    var what = { approve: "Approved", reject: "Rejected", comment: "Commented on", reopen: "Reopened", universe_add: "Added to team list", universe_remove: "Removed from team list", weekly_on: "Turned the scheduled run on", weekly_off: "Turned the scheduled run off", check_now: "Started a check now" }[a.action] || a.action;
     var s = what + " " + (a.tickers || []).join(", ");
     if (a.from && a.to && a.action !== "universe_add") s += " (" + LABEL[a.from] + " → " + LABEL[a.to] + ")";
     if (a.reason) s += ": “" + a.reason + "”";
@@ -1273,7 +1348,7 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
     }, onErr("runs"));
     db.collection("proposals").onSnapshot(function (s) {
       if (!s.empty) S.proposals = s.docs.map(function (d) { return d.data(); });
-      renderStatus(); renderLists(); renderProposals(); renderLookthrough();
+      renderStatus(); renderLists(); renderProposals(); renderLookthrough(); renderUniverse();
     }, onErr("proposals"));
     db.collection("approvals").onSnapshot(function (s) {
       S.approvals = {}; s.docs.forEach(function (d) { var a = d.data(); S.approvals[a.proposal_id || d.id] = a; });
@@ -1285,12 +1360,12 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
       resolveNames(S.audit.map(function (a) { return a.by; }).filter(Boolean)).then(renderAudit);
       renderAudit();
     }, onErr("audit"));
-    db.collection("universe").onSnapshot(function (s) { S.universe = s.docs.map(function (d) { return d.data(); }); renderUniverse(); renderLookthrough(); }, onErr("universe"));
+    db.collection("universe").onSnapshot(function (s) { S.universe = s.docs.map(function (d) { return d.data(); }); renderUniverse(); renderLookthrough(); renderWeekly(); }, onErr("universe"));
     db.collection("etf_weights").onSnapshot(function (s) {
       S.weights = {}; s.docs.forEach(function (d) { var w = d.data(); S.weights[w.ticker || d.id] = w; });
       renderLookthrough();
     }, onErr("weights"));
-    db.doc("settings/weekly").onSnapshot(function (s) { S.weekly = s.exists ? s.data() : null; renderWeekly(); }, onErr("weekly"));
+    db.doc("settings/weekly").onSnapshot(function (s) { S.weekly = s.exists ? s.data() : null; renderWeekly(); renderUniverse(); }, onErr("weekly"));
     if (S.canAdmin) {
       try { S.mcp = await window.claude.use("mcp"); } catch (e) { S.mcp = null; }
       renderWeekly();
