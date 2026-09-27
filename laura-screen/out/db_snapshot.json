@@ -1,78 +1,6 @@
 {
  "universe": [
   {
-   "added_at": "2026-09-26T13:32:23.004Z",
-   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
-   "check_run": "run-20260926T142541",
-   "check_summary": "No values link or qualifying legal finding found",
-   "checked_at": "2026-09-26T14:27:12+00:00",
-   "name": "Apple Inc.",
-   "ticker": "AAPL",
-   "type": "stock",
-   "_id": "AAPL",
-   "_version": null
-  },
-  {
-   "added_at": "2026-09-26T13:34:00.520Z",
-   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
-   "check_run": "run-20260926T142541",
-   "check_summary": "No values link or qualifying legal finding found (financial gate: unknown)",
-   "checked_at": "2026-09-26T14:27:12+00:00",
-   "name": "AKAMAI TECHNOLOGIES INC",
-   "ticker": "AKAM",
-   "type": "stock",
-   "_id": "AKAM",
-   "_version": null
-  },
-  {
-   "added_at": "2026-09-26T13:32:23.850Z",
-   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
-   "check_run": "run-20260926T142541",
-   "check_summary": "No values link or qualifying legal finding found (financial gate: unknown)",
-   "checked_at": "2026-09-26T14:27:12+00:00",
-   "name": "BERKSHIRE HATHAWAY INC",
-   "ticker": "BRK-B",
-   "type": "stock",
-   "_id": "BRK-B",
-   "_version": null
-  },
-  {
-   "added_at": "2026-09-26T13:32:25.296Z",
-   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
-   "check_run": "run-20260926T142541",
-   "check_summary": "Black (approved)",
-   "checked_at": "2026-09-26T14:27:12+00:00",
-   "name": "Fox Corp",
-   "ticker": "FOX",
-   "type": "stock",
-   "_id": "FOX",
-   "_version": null
-  },
-  {
-   "added_at": "2026-09-26T13:32:25.695Z",
-   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
-   "check_run": "run-20260926T142541",
-   "check_summary": "Black (approved)",
-   "checked_at": "2026-09-26T14:27:12+00:00",
-   "name": "Fox Corp",
-   "ticker": "FOXA",
-   "type": "stock",
-   "_id": "FOXA",
-   "_version": null
-  },
-  {
-   "added_at": "2026-09-26T13:32:23.357Z",
-   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
-   "check_run": "run-20260926T142541",
-   "check_summary": "No values link or qualifying legal finding found",
-   "checked_at": "2026-09-26T14:27:12+00:00",
-   "name": "MICROSOFT CORP",
-   "ticker": "MSFT",
-   "type": "stock",
-   "_id": "MSFT",
-   "_version": null
-  },
-  {
    "added_at": "2026-09-26T13:46:28.840Z",
    "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
    "check_run": "run-20260926T142541",
@@ -94,6 +22,15 @@
    "ticker": "SHOP",
    "type": "stock",
    "_id": "SHOP",
+   "_version": null
+  },
+  {
+   "added_at": "2026-09-27T13:03:13.286Z",
+   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "name": "SPACE EXPLORATION TECHNOLOGIES CORP",
+   "ticker": "SPCX",
+   "type": "stock",
+   "_id": "SPCX",
    "_version": null
   },
   {
@@ -135,6 +72,108 @@
  ],
  "approvals": [
   {
+   "clause": "Watch (b): Settlement with no admission of wrongdoing",
+   "company": "Accenture plc",
+   "decided_at": "2026-09-26T15:27:57.651Z",
+   "decided_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "decision": "approve",
+   "event_date": "2026-09-14",
+   "evidence": [
+    {
+     "doc_date": "2026-09-14",
+     "publisher": "U.S. Department of Justice, Office of Public Affairs (press release)",
+     "quote": "to resolve alleged violations of the False Claims Act for failing to comply with anti-discrimination requirements in federal contracts and discriminating against employees and applicants for employment because of race or sex.",
+     "url": "https://www.justice.gov/opa/pr/accenture-agrees-pay-25m-resolve-alleged-employment-discrimination-violations"
+    },
+    {
+     "doc_date": "2026-09-14",
+     "publisher": "U.S. Department of Justice, Office of Public Affairs (press release)",
+     "quote": "The claims resolved by the United States in the settlement are allegations only and there has been no determination of liability.",
+     "url": "https://www.justice.gov/opa/pr/accenture-agrees-pay-25m-resolve-alleged-employment-discrimination-violations"
+    }
+   ],
+   "evidence_hash": "345aa355b518be9e",
+   "from": "none",
+   "proposal_id": "p-ACN-watch-accenture-doj-fca-2026",
+   "reason": "racial / sex based hiring",
+   "record_id": "accenture-doj-fca-2026",
+   "tickers": [
+    "ACN"
+   ],
+   "to": "watch",
+   "tripwire": "A court ruling, jury verdict, or agency finding that Accenture engaged in racial discrimination -> propose Black under (b).",
+   "_id": "p-ACN-watch-accenture-doj-fca-2026",
+   "_version": null
+  },
+  {
+   "clause": "Aligned: passes financial gate + Aligned gate 2 (values link): Trustworthy information, Creative entrepreneurship",
+   "company": "Adobe Inc.",
+   "decided_at": "2026-09-26T15:28:23.419Z",
+   "decided_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "decision": "approve",
+   "event_date": null,
+   "evidence": [
+    {
+     "doc_date": "2026-01-15",
+     "publisher": "Adobe Inc. Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "quote": "Every asset generated with Firefly includes Content Credentials, a digital \"nutrition label\", to indicate that generative AI was used",
+     "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm"
+    },
+    {
+     "doc_date": "2026-01-15",
+     "publisher": "Adobe Inc. Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "quote": "Our focus revolves around serving our customer audiences: business professionals, consumers, creators, creative professionals and marketing professionals.",
+     "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm"
+    }
+   ],
+   "evidence_hash": "56aa98c1829d12dd",
+   "from": "none",
+   "proposal_id": "p-ADBE-aligned-adbe-values",
+   "reason": "supports credibility (good)",
+   "record_id": "adbe-values",
+   "tickers": [
+    "ADBE"
+   ],
+   "to": "aligned",
+   "tripwire": "",
+   "_id": "p-ADBE-aligned-adbe-values",
+   "_version": null
+  },
+  {
+   "clause": "Watch (b): Settlement with no admission of wrongdoing",
+   "company": "Ford Motor Company",
+   "decided_at": "2026-09-26T15:28:07.118Z",
+   "decided_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "decision": "approve",
+   "event_date": "2026-09-01",
+   "evidence": [
+    {
+     "doc_date": "2026-09-01",
+     "publisher": "U.S. Equal Employment Opportunity Commission (press release)",
+     "quote": "The EEOC's investigation found reasonable cause to believe that Ford personnel at the facility subjected numerous employees to harassment and discrimination based on race and national origin.",
+     "url": "https://www.eeoc.gov/newsroom/ford-motor-company-pay-23-million-resolve-eeoc-race-and-national-origin-harassment-charge"
+    },
+    {
+     "doc_date": "2026-09-01",
+     "publisher": "U.S. Equal Employment Opportunity Commission (press release)",
+     "quote": "Following the EEOC's investigation, the parties engaged in the EEOC's pre-litigation conciliation process, resulting in a conciliation agreement.",
+     "url": "https://www.eeoc.gov/newsroom/ford-motor-company-pay-23-million-resolve-eeoc-race-and-national-origin-harassment-charge"
+    }
+   ],
+   "evidence_hash": "baa36ea46d84c620",
+   "from": "none",
+   "proposal_id": "p-F-watch-ford-eeoc-conciliation-2026",
+   "reason": "trust claude",
+   "record_id": "ford-eeoc-conciliation-2026",
+   "tickers": [
+    "F"
+   ],
+   "to": "watch",
+   "tripwire": "Team rules that EEOC cause findings qualify, or a court/agency adjudicates a violation -> propose Black under (b).",
+   "_id": "p-F-watch-ford-eeoc-conciliation-2026",
+   "_version": null
+  },
+  {
    "clause": "Black (a) Knowingly spread false information to the public: Court ruling on the merits (including summary judgment on falsity), 2023-03-31 (within 7 years). Scope: court found the statements false; knowledge (actual malice) was not adjudicated",
    "company": "Fox Corporation",
    "decided_at": "2026-09-26T13:30:13.670Z",
@@ -167,6 +206,35 @@
    "to": "black",
    "tripwire": "",
    "_id": "p-FOXA-FOX-black-fox-dominion-falsity-2023",
+   "_version": null
+  },
+  {
+   "clause": "Aligned: passes financial gate + Aligned gate 2 (values link): Creative entrepreneurship",
+   "company": "Alphabet Inc.",
+   "decided_at": "2026-09-26T15:29:00.419Z",
+   "decided_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "decision": "approve",
+   "event_date": null,
+   "evidence": [
+    {
+     "doc_date": "2026-02-05",
+     "publisher": "Alphabet Inc. Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "quote": "YouTube provides people with entertainment, information, and opportunities to learn something new and helps support the creator economy through the YouTube Partner Program.",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm"
+    }
+   ],
+   "evidence_hash": "e63f8ce4ac82c3bd",
+   "from": "none",
+   "proposal_id": "p-GOOG-GOOGL-aligned-alphabet-values",
+   "reason": "",
+   "record_id": "alphabet-values",
+   "tickers": [
+    "GOOG",
+    "GOOGL"
+   ],
+   "to": "aligned",
+   "tripwire": "",
+   "_id": "p-GOOG-GOOGL-aligned-alphabet-values",
    "_version": null
   },
   {
@@ -204,6 +272,46 @@
    "_version": null
   },
   {
+   "clause": "Watch (a): Open lawsuit or agency complaint on (a) or (b) that has survived a motion to dismiss",
+   "company": "Meta Platforms, Inc.",
+   "decided_at": "2026-09-26T15:27:41.018Z",
+   "decided_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "decision": "approve",
+   "event_date": "2026-08-26",
+   "evidence": [
+    {
+     "doc_date": "2026-08-26",
+     "publisher": "California Attorney General (press release)",
+     "quote": "all the while misleading users, their families, and the public regarding the existence and severity of these risks. Trial in this case began on August 18 in the U.S. District Court for the Northern District of California.",
+     "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-secures-transformative-17-billion-settlement-meta"
+    },
+    {
+     "doc_date": "2026-08-26",
+     "publisher": "California Attorney General (press release)",
+     "quote": "Today's settlement, subject to court approval, provides for strong injunctive terms",
+     "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-secures-transformative-17-billion-settlement-meta"
+    },
+    {
+     "doc_date": "2026-08-26",
+     "publisher": "U.S. Attorney's Office, N.D.N.Y. (statement, via DOJ press-release API)",
+     "quote": "Today's announcement that Meta has agreed to pay up to $17.1 billion and implement reforms across Facebook and Instagram is an encouraging step forward.",
+     "url": "https://www.justice.gov/usao-ndny/pr/first-assistant-us-attorney-sarcone-statement-online-safety-following-meta-settlement"
+    }
+   ],
+   "evidence_hash": "fa24492d1e417b3c",
+   "from": "watch",
+   "proposal_id": "p-META-watch-meta-states-youth-case-2026",
+   "reason": "selling and irresponsible use of data",
+   "record_id": "meta-states-youth-case-2026",
+   "tickers": [
+    "META"
+   ],
+   "to": "watch",
+   "tripwire": "If the approved settlement or a court order contains an admission or finding that Meta knowingly misled the public -> propose Black under (a). If approved with no admission -> Watch (settlement with no admission).",
+   "_id": "p-META-watch-meta-states-youth-case-2026",
+   "_version": null
+  },
+  {
    "clause": "Black (a) Knowingly spread false information to the public: Court ruling on the merits (including summary judgment on falsity), 2025-04-09 (within 7 years). Scope: court found the statements false; knowledge (actual malice) was not adjudicated",
    "company": "Newsmax Inc.",
    "decided_at": "2026-09-26T13:32:11.221Z",
@@ -238,6 +346,124 @@
    "_version": null
   },
   {
+   "clause": "Aligned: passes financial gate + Aligned gate 2 (values link): Trustworthy information",
+   "company": "The New York Times Company",
+   "decided_at": "2026-09-26T15:28:32.385Z",
+   "decided_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "decision": "approve",
+   "event_date": null,
+   "evidence": [
+    {
+     "doc_date": "2026-02-27",
+     "publisher": "The New York Times Company Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "quote": "The impact of our journalism and its breadth is evident as we continue to break stories, produce investigative reports and help our audience understand a wide range of topics.",
+     "url": "https://www.sec.gov/Archives/edgar/data/71691/000007169126000011/nyt-20251231.htm"
+    }
+   ],
+   "evidence_hash": "12455595c4154555",
+   "from": "none",
+   "proposal_id": "p-NYT-aligned-nyt-values",
+   "reason": "paid credibility (good)",
+   "record_id": "nyt-values",
+   "tickers": [
+    "NYT"
+   ],
+   "to": "aligned",
+   "tripwire": "",
+   "_id": "p-NYT-aligned-nyt-values",
+   "_version": null
+  },
+  {
+   "clause": "Aligned: passes financial gate + Aligned gate 2 (values link): Creative entrepreneurship",
+   "company": "Shopify Inc.",
+   "decided_at": "2026-09-26T15:28:43.085Z",
+   "decided_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "decision": "approve",
+   "event_date": null,
+   "evidence": [
+    {
+     "doc_date": "2026-02-11",
+     "publisher": "Shopify Inc. Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "quote": "We believe we can help merchants of all verticals and sizes, from aspirational entrepreneurs to companies with large-scale, direct-to-consumer or business to business (\"B2B\") operations",
+     "url": "https://www.sec.gov/Archives/edgar/data/1594805/000159480526000007/shop-20251231.htm"
+    }
+   ],
+   "evidence_hash": "391b219b5d7d08f2",
+   "from": "none",
+   "proposal_id": "p-SHOP-aligned-shop-values",
+   "reason": "helps all ppl (good)",
+   "record_id": "shop-values",
+   "tickers": [
+    "SHOP"
+   ],
+   "to": "aligned",
+   "tripwire": "",
+   "_id": "p-SHOP-aligned-shop-values",
+   "_version": null
+  },
+  {
+   "clause": "Aligned: passes financial gate + Aligned gate 2 (values link): Trustworthy information",
+   "company": "Thomson Reuters Corporation",
+   "decided_at": "2026-09-26T15:28:53.119Z",
+   "decided_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "decision": "approve",
+   "event_date": null,
+   "evidence": [
+    {
+     "doc_date": "2026-03-05",
+     "publisher": "Thomson Reuters Form 40-F FY2025, Exhibit 99.1 Annual Report (SEC EDGAR)",
+     "quote": "Reuters is committed to the Thomson Reuters Trust Principles, including that of independence, integrity and freedom from bias",
+     "url": "https://www.sec.gov/Archives/edgar/data/1075124/000119312526094222/tri-ex99_1.htm"
+    }
+   ],
+   "evidence_hash": "d41de23e14156e7a",
+   "from": "none",
+   "proposal_id": "p-TRI-aligned-tri-values",
+   "reason": "independence, integrity and freedom from bias",
+   "record_id": "tri-values",
+   "tickers": [
+    "TRI"
+   ],
+   "to": "aligned",
+   "tripwire": "",
+   "_id": "p-TRI-aligned-tri-values",
+   "_version": null
+  },
+  {
+   "clause": "Black (b) Engaged in racial or ethnic discrimination: Jury verdict, even if later reduced, 2021-10-04 (within 7 years)",
+   "company": "Tesla, Inc.",
+   "decided_at": "2026-09-26T15:27:27.568Z",
+   "decided_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "decision": "approve",
+   "event_date": "2021-10-04",
+   "evidence": [
+    {
+     "doc_date": "2024-04-24",
+     "publisher": "Tesla, Inc. Form 10-Q (SEC EDGAR)",
+     "quote": "On October 4, 2021, in a case captioned Diaz v. Tesla, a jury in the Northern District of California returned a verdict against Tesla on claims by a former contingent worker that he was subjected to race discrimination",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828024017503/tsla-20240331.htm"
+    },
+    {
+     "doc_date": "2024-04-24",
+     "publisher": "Tesla, Inc. Form 10-Q (SEC EDGAR)",
+     "quote": "the damages awarded against Tesla were reduced from an initial $ 136.9 million (October 4, 2021) down to $ 15 million (April 13, 2022), and then further down to $ 3.175 million (April 3, 2023).",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828024017503/tsla-20240331.htm"
+    }
+   ],
+   "evidence_hash": "6f39410e420df6c0",
+   "from": "watch",
+   "proposal_id": "p-TSLA-black-tesla-diaz-verdict-2021",
+   "reason": "racial discrimination",
+   "record_id": "tesla-diaz-verdict-2021",
+   "tickers": [
+    "TSLA"
+   ],
+   "to": "black",
+   "tripwire": "",
+   "_id": "p-TSLA-black-tesla-diaz-verdict-2021",
+   "_version": null
+  },
+  {
    "clause": "Watch (b): Open lawsuit or agency complaint on (a) or (b) that has survived a motion to dismiss",
    "company": "Tesla, Inc.",
    "decided_at": "2026-09-26T13:33:16.521Z",
@@ -269,6 +495,40 @@
    "to": "watch",
    "tripwire": "A liability finding in the CRD trial or in EEOC v. Tesla (N.D. Cal.) -> propose Black under (b). If the Diaz proposal is approved, TSLA is already Black and this becomes context.",
    "_id": "p-TSLA-watch-tesla-crd-eeoc-open-2026",
+   "_version": null
+  },
+  {
+   "clause": "Aligned: passes financial gate + Aligned gate 2 (values link): Storytelling & education",
+   "company": "Warner Bros. Discovery, Inc.",
+   "decided_at": "2026-09-26T15:29:05.185Z",
+   "decided_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "decision": "approve",
+   "event_date": null,
+   "evidence": [
+    {
+     "doc_date": "2026-02-27",
+     "publisher": "Warner Bros. Discovery Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "quote": "WBD's Studios segment includes the Warner Bros. Motion Picture Group (\"WBMPG\"), DC Studios, Warner Bros. Television Group (\"WBTVG\"), Consumer Products, Themed Entertainment and Brand Licensing, DC Comics Publishing",
+     "url": "https://www.sec.gov/Archives/edgar/data/1437107/000143710726000020/wbd-20251231.htm"
+    },
+    {
+     "doc_date": "2026-08-06",
+     "publisher": "Warner Bros. Discovery Form 10-Q Q2 2026 (SEC EDGAR)",
+     "quote": "on February 27, 2026, in accordance with the terms of the Netflix Merger Agreement, the Company terminated the Netflix Merger Agreement in connection with entering into the PSKY Merger Agreement",
+     "url": "https://www.sec.gov/Archives/edgar/data/1437107/000143710726000075/wbd-20260630.htm"
+    }
+   ],
+   "evidence_hash": "eecd08788e9e0978",
+   "from": "none",
+   "proposal_id": "p-WBD-aligned-wbd-values",
+   "reason": "",
+   "record_id": "wbd-values",
+   "tickers": [
+    "WBD"
+   ],
+   "to": "aligned",
+   "tripwire": "",
+   "_id": "p-WBD-aligned-wbd-values",
    "_version": null
   }
  ],
@@ -327,6 +587,19 @@
    "started": "2026-09-26T14:25:41+00:00",
    "_id": "run-20260926T142541",
    "_version": null
+  },
+  {
+   "duration_s": 55.8,
+   "errors": [],
+   "finished": "2026-09-26T15:01:18+00:00",
+   "id": "run-20260926T150023",
+   "proposals": 14,
+   "sources_down": [
+    "CourtListener releases"
+   ],
+   "started": "2026-09-26T15:00:23+00:00",
+   "_id": "run-20260926T150023",
+   "_version": null
   }
  ],
  "proposal_ids": [
@@ -346,40 +619,47 @@
   "p-WBD-aligned-wbd-values"
  ],
  "versions": {
-  "universe/AAPL": 2,
-  "universe/AKAM": 2,
-  "universe/BRK-B": 2,
-  "universe/FOX": 2,
-  "universe/FOXA": 2,
-  "universe/MSFT": 2,
+  "settings/weekly": 10,
   "universe/NMAX": 2,
   "universe/SHOP": 2,
+  "universe/SPCX": 1,
   "universe/SPY": 2,
   "universe/TSLA": 2,
   "universe/VOO": 2,
+  "approvals/p-ACN-watch-accenture-doj-fca-2026": 1,
+  "approvals/p-ADBE-aligned-adbe-values": 1,
+  "approvals/p-F-watch-ford-eeoc-conciliation-2026": 1,
   "approvals/p-FOXA-FOX-black-fox-dominion-falsity-2023": 1,
+  "approvals/p-GOOG-GOOGL-aligned-alphabet-values": 1,
   "approvals/p-META-watch-meta-doj-fha-settlement-2022": 1,
+  "approvals/p-META-watch-meta-states-youth-case-2026": 1,
   "approvals/p-NMAX-black-newsmax-dominion-falsity-2025": 1,
+  "approvals/p-NYT-aligned-nyt-values": 1,
+  "approvals/p-SHOP-aligned-shop-values": 1,
+  "approvals/p-TRI-aligned-tri-values": 1,
+  "approvals/p-TSLA-black-tesla-diaz-verdict-2021": 1,
   "approvals/p-TSLA-watch-tesla-crd-eeoc-open-2026": 1,
-  "runs/latest": 5,
+  "approvals/p-WBD-aligned-wbd-values": 1,
+  "runs/latest": 6,
   "runs/run-20260926T070944": 1,
   "runs/run-20260926T073050": 1,
   "runs/run-20260926T074411": 1,
   "runs/run-20260926T075808": 1,
   "runs/run-20260926T142541": 1,
-  "proposals/p-ACN-watch-accenture-doj-fca-2026": 5,
-  "proposals/p-ADBE-aligned-adbe-values": 5,
-  "proposals/p-F-watch-ford-eeoc-conciliation-2026": 5,
-  "proposals/p-FOXA-FOX-black-fox-dominion-falsity-2023": 5,
-  "proposals/p-GOOG-GOOGL-aligned-alphabet-values": 5,
-  "proposals/p-META-watch-meta-doj-fha-settlement-2022": 5,
-  "proposals/p-META-watch-meta-states-youth-case-2026": 5,
-  "proposals/p-NMAX-black-newsmax-dominion-falsity-2025": 5,
-  "proposals/p-NYT-aligned-nyt-values": 5,
-  "proposals/p-SHOP-aligned-shop-values": 5,
-  "proposals/p-TRI-aligned-tri-values": 5,
-  "proposals/p-TSLA-black-tesla-diaz-verdict-2021": 5,
-  "proposals/p-TSLA-watch-tesla-crd-eeoc-open-2026": 5,
-  "proposals/p-WBD-aligned-wbd-values": 5
+  "runs/run-20260926T150023": 1,
+  "proposals/p-ACN-watch-accenture-doj-fca-2026": 6,
+  "proposals/p-ADBE-aligned-adbe-values": 6,
+  "proposals/p-F-watch-ford-eeoc-conciliation-2026": 6,
+  "proposals/p-FOXA-FOX-black-fox-dominion-falsity-2023": 6,
+  "proposals/p-GOOG-GOOGL-aligned-alphabet-values": 6,
+  "proposals/p-META-watch-meta-doj-fha-settlement-2022": 6,
+  "proposals/p-META-watch-meta-states-youth-case-2026": 6,
+  "proposals/p-NMAX-black-newsmax-dominion-falsity-2025": 6,
+  "proposals/p-NYT-aligned-nyt-values": 6,
+  "proposals/p-SHOP-aligned-shop-values": 6,
+  "proposals/p-TRI-aligned-tri-values": 6,
+  "proposals/p-TSLA-black-tesla-diaz-verdict-2021": 6,
+  "proposals/p-TSLA-watch-tesla-crd-eeoc-open-2026": 6,
+  "proposals/p-WBD-aligned-wbd-values": 6
  }
 }
