@@ -333,9 +333,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
         <section class="card s8" aria-labelledby="h-paste">
       <header><div><h2 id="h-paste">Paste tickers</h2><p class="purpose">Add stocks or ETFs to what the screen monitors. Paste anything; fix the flagged chips; save.</p></div><span id="p-badge"></span></header>
       <label class="lbl" for="p-input">Tickers or company names</label>
-      <textarea id="p-input" rows="4" spellcheck="false">aapl, MSFT; brk.b $TSLA  Apple Inc.
-spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
-      <p class="small muted" id="p-example-note">Example text. Replace it with your own list.</p>
+      <textarea id="p-input" rows="4" spellcheck="false" autocomplete="off" placeholder="e.g. aapl, MSFT; brk.b $TSLA  Newsmax  SPY"></textarea>
       <div class="chips" id="p-chips" aria-live="polite"></div>
       <div class="actions"><button class="btn primary" type="button" id="p-save" disabled>Save valid tickers</button><span class="small muted" id="p-save-note"></span></div>
       <div class="actions"><button class="btn" type="button" id="p-check" disabled>Check now</button><span class="timer" id="p-timer" role="timer" aria-live="off"></span><span class="small muted" id="p-check-note"></span></div>
@@ -947,15 +945,23 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
     var ts = resolvedTickers(), map = ensureTickers(), btn = $("p-save");
     if (!ts.length || !S.db) return;
     btn.disabled = true;
+    var added = 0;
     try {
       for (var i = 0; i < ts.length; i++) {
         var t = ts[i], r = map[t];
         if (!r) continue;
         if (S.universe.some(function (u) { return u.ticker === t; })) continue;   // already on the list; keep its check result
-        await S.db.doc("universe/" + t).set({ ticker: t, type: r[1] === "E" ? "etf" : "stock", name: r[0], added_by: S.uid, added_at: new Date().toISOString() });
+        await S.db.doc("universe/" + t).set({ ticker: t, type: r[1] === "E" ? "etf" : "stock", name: r[0], added_by: S.uid, added_at: new Date().toISOString() }); added++;
       }
       await S.db.collection("audit_log").add({ at: new Date().toISOString(), by: S.uid, action: "universe_add", tickers: ts, reason: "" });
-      toast("Saved to the team list. Press Check now to check them, or wait for the next scheduled run.");
+      var left = (S.parse ? S.parse.items : []).filter(function (it, i) {
+        var ch = S.choices[i];
+        if (ch === "__skip") return false;
+        return (it.status === "notfound" && !ch) || (it.status === "ambiguous" && it.kind === "word" && !ch) || (it.status === "name" && !ch);
+      }).map(function (it) { return it.input; });
+      $("p-input").value = left.join("\n");
+      runParse();
+      toast((added ? "Added " + added + " to the team list" : "Already on the team list") + (ts.length > added && added ? " (" + (ts.length - added) + " already there)" : "") + (left.length ? "; left " + left.length + " unresolved item" + (left.length > 1 ? "s" : "") + " in the box" : "") + ". Press Check now to check them, or wait for the next scheduled run.");
     } catch (e) {
       if (e && e.code === "invalid_argument") { S.canWrite = false; toast("You don't have permission to edit the team list."); }
       else if (e && e.code === "quota_exceeded") toast("The database is full. Remove unused tickers first.");
@@ -1366,7 +1372,7 @@ spy VOO	XYZQ 123 fox foxa  Newsmax  SHOP</textarea>
     document.querySelectorAll("[data-pf]").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
     renderProposals();
   }); });
-  $("p-input").addEventListener("input", function () { $("p-example-note").hidden = true; clearTimeout(pasteT); pasteT = setTimeout(runParse, 250); });
+  $("p-input").addEventListener("input", function () { clearTimeout(pasteT); pasteT = setTimeout(runParse, 250); });
   $("p-save").addEventListener("click", savePaste);
   $("lt-proposed").addEventListener("change", renderLookthrough);
   $("lt-add-btn").addEventListener("click", function () {
