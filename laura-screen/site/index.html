@@ -478,12 +478,22 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
       <p class="assume">This screen is our assumption about Laura's wishes.</p>
       <div class="method" id="method"></div>
         </section>
+        <section class="card s12" aria-labelledby="h-usage" id="usage">
+      <header><div><h2 id="h-usage">Usage counts</h2><p class="purpose">How the team uses this page, counted so we can report on the project. Only team totals are ever shown or exported.</p></div></header>
+      <ul class="small" style="margin:0;padding-left:18px;display:grid;gap:4px;max-width:72ch">
+        <li>Counted: visits, which tabs are opened, and how often each feature is used (save tickers, Check now, approve, reject, comment, CSV download, alerts, schedule, ETF weights), per day.</li>
+        <li>Not collected: IP address, location, device details, anything you type or paste, time on page, screen recordings. No cookies.</li>
+        <li>Counts are stored under your account id so repeat visits aren't double counted as new people. Only the page's editors can read them, and anything older than 8 weeks is deleted. Reports show totals only, never per person.</li>
+      </ul>
+      <label class="switch" for="usage-off"><input type="checkbox" role="switch" id="usage-off"> <b>Don't count my use on this device</b></label>
+      <p class="small muted" id="usage-note"></p>
+        </section>
       </div>
     </section>
   </main>
 
   <footer class="foot">
-    <span>Research aid for a student competition. Not investment advice.</span>
+    <span>Research aid for a student competition. Not investment advice. Feature use is counted as team totals: <a href="#method" data-go-link="method">details and opt-out</a>.</span>
     <span id="foot-run"></span>
   </footer>
 </div>
@@ -1129,6 +1139,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
   }
 
   function openList(kind) {
+    track("a", "open_list");
     var rows = listEntries(kind), body = clear($("dlg-body"));
     $("dlg-title").textContent = LABEL[kind] + " list";
     if (!rows.length) body.appendChild(el("div", { class: "empty" }, ["Nothing on this list yet."]));
@@ -1293,6 +1304,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
         from: p.from, to: p.to, reason: reason || "", clause: p.clause_text
       });
       delete S.open[p.id];
+      track("a", kind);
       toast(kind === "approve" ? "Approved. Logged in the audit trail." : kind === "reject" ? "Rejected. Logged in the audit trail." : kind === "reopen" ? "Moved back to pending." : "Comment posted.");
     } catch (e) {
       btn.disabled = false;
@@ -1407,6 +1419,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
         await S.db.doc("universe/" + t).set({ ticker: t, type: r[1] === "E" ? "etf" : "stock", name: r[0], added_by: S.uid, added_at: new Date().toISOString() }); added++;
       }
       await S.db.collection("audit_log").add({ at: new Date().toISOString(), by: S.uid, action: "universe_add", tickers: ts, reason: "" });
+      track("a", "save_tickers");
       var left = (S.parse ? S.parse.items : []).filter(function (it, i) {
         var ch = S.choices[i];
         if (ch === "__skip") return false;
@@ -1450,7 +1463,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
         el("td", {}, [el("span", { class: "tk", text: d.ticker }), el("div", { class: "small muted", text: (d.name || "") + (d.type === "etf" ? " · ETF" : "") })]),
         el("td", { class: "small" }, tickerStatus(d)),
         el("td", {}, [el("button", { class: "btn sm ghost", type: "button", "aria-label": "Remove " + d.ticker, disabled: S.canWrite === false, onclick: async function () {
-          try { await S.db.doc("universe/" + d.ticker).delete(); await S.db.collection("audit_log").add({ at: new Date().toISOString(), by: S.uid, action: "universe_remove", tickers: [d.ticker], reason: "" }); toast("Removed " + d.ticker + "."); }
+          try { await S.db.doc("universe/" + d.ticker).delete(); await S.db.collection("audit_log").add({ at: new Date().toISOString(), by: S.uid, action: "universe_remove", tickers: [d.ticker], reason: "" }); track("a", "remove_ticker"); toast("Removed " + d.ticker + "."); }
           catch (e) { toast("Could not remove " + d.ticker + "."); }
         } }, ["Remove"])])
       ]));
@@ -1548,6 +1561,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
     if (n != null && (!isFinite(n) || n < 0 || n > 100)) { toast("Enter a percent between 0 and 100."); return; }
     try {
       await S.db.doc("etf_weights/" + t).set({ ticker: t, weightPct: n, updated_by: S.uid, updated_at: new Date().toISOString() });
+      track("a", "etf_weight");
     } catch (e) { toast(e && e.code === "invalid_argument" ? "You don't have permission to edit weights." : "Could not save the weight."); }
   }
 
@@ -1599,7 +1613,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
     try {
       var body = { email: active ? email : (S.mySub && S.mySub.email) || email, mode: $("al-mode-b").checked ? "any_black" : "to_black", active: active, updated_at: new Date().toISOString() };
       await S.db.doc("subscribers/" + S.uid).set(body);
-      S.mySub = body; renderAlerts();
+      S.mySub = body; renderAlerts(); track("a", active ? "alerts_on" : "alerts_off");
       toast(active ? "Subscribed. You'll get an email when a run proposes a Black move." : "Unsubscribed.");
     } catch (e) { toast(e && e.code === "invalid_argument" ? "You don't have permission to subscribe on this page." : "Could not save. Try again."); }
   }
@@ -1696,6 +1710,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
         updated_by: S.uid, updated_at: new Date().toISOString() });
       await S.db.collection("audit_log").add({ at: new Date().toISOString(), by: S.uid, action: enabled ? "weekly_on" : "weekly_off", tickers: [],
         reason: enabled ? "Scheduled run: " + everyText({ interval_days: every, day: day, time: time }) + " " + tz : "Scheduled run turned off" });
+      track("a", "schedule");
       S.wkMsg = enabled ? "Schedule saved: " + everyText({ interval_days: every, day: day, time: time }) + "." : "Scheduled run is off.";
     } catch (e) {
       S.wkMsg = "The Routine was updated, but the page couldn't record it. Reload to check.";
@@ -1718,6 +1733,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
     try {
       await S.db.doc("settings/weekly").update({ check_requested_at: new Date().toISOString(), check_requested_by: S.uid });
       await S.db.collection("audit_log").add({ at: new Date().toISOString(), by: S.uid, action: "check_now", tickers: pend, reason: "" });
+      track("a", "check_now");
     } catch (e) { S.nowMsg = "Check started, but the page couldn't record it."; }
     S.wkBusy = false; renderWeekly();
     toast("Check started. Results appear in about 5–10 minutes.");
@@ -1729,6 +1745,67 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
   $("p-check").addEventListener("click", checkNow);
   setInterval(function () { if (checkRunning(S.weekly)) renderTimer(); }, 1000);
   setInterval(function () { if (S.weekly && S.weekly.check_requested_at) { var r = checkRunning(S.weekly); if (r !== S.wasRunning) { S.wasRunning = r; renderWeekly(); renderUniverse(); } } }, 5000);
+
+  // ---------- usage counts (team totals only; see the Usage counts card) ----------
+  // One document per viewer, usage/<uid> = {weeks: {"2026-W40": {"2026-09-28": {v, p: {tab: n}, a: {action: n}}}}}.
+  // Written only by that viewer (db rule usage/{self}); readable only by editors. Keeps the last 8 weeks.
+  var U = { doc: null, body: null, pending: [], dirty: false, t: null, busy: false, off: false };
+  try { U.off = localStorage.getItem("ls-usage-off") === "1"; } catch (e) { /* storage blocked: count as normal */ }
+  function isoWeek(d) {
+    var t = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()));
+    var dow = t.getUTCDay() || 7; t.setUTCDate(t.getUTCDate() + 4 - dow);
+    var y0 = new Date(Date.UTC(t.getUTCFullYear(), 0, 1)), wk = Math.ceil(((t - y0) / 86400000 + 1) / 7);
+    return t.getUTCFullYear() + "-W" + (wk < 10 ? "0" : "") + wk;
+  }
+  function track(kind, name) {
+    if (U.off) return;
+    U.pending.push([kind, name, new Date()]);
+    if (U.body) applyUsage();
+  }
+  function applyUsage() {
+    U.pending.forEach(function (e) {
+      var w = isoWeek(e[2]), d = e[2].toISOString().slice(0, 10);
+      var wk = U.body.weeks[w] || (U.body.weeks[w] = {}), dy = wk[d] || (wk[d] = { v: 0, p: {}, a: {} });
+      if (e[0] === "v") dy.v += 1; else dy[e[0]][e[1]] = (dy[e[0]][e[1]] || 0) + 1;
+    });
+    U.pending = []; U.dirty = true;
+    clearTimeout(U.t); U.t = setTimeout(flushUsage, 5000);
+  }
+  async function flushUsage() {
+    if (!U.dirty || !U.doc || U.busy || U.off) return;
+    U.busy = true; U.dirty = false;
+    var keys = Object.keys(U.body.weeks).sort();
+    while (keys.length > 8) delete U.body.weeks[keys.shift()];
+    U.body.updated_at = new Date().toISOString();
+    try { await U.doc.set(U.body); }
+    catch (e) { if (e && e.code !== "unavailable" && e.code !== "resource_exhausted") { U.doc = null; } else U.dirty = true; }
+    U.busy = false;
+    if (U.dirty) { clearTimeout(U.t); U.t = setTimeout(flushUsage, 15000); }
+  }
+  async function startUsage(db, uid) {
+    if (U.off || !db || !uid) return;
+    var ref = db.doc("usage/" + uid);
+    try {
+      var snap = await ref.get(), b = snap.exists ? JSON.parse(JSON.stringify(snap.data() || {})) : {};
+      U.body = { weeks: b.weeks && typeof b.weeks === "object" ? b.weeks : {} };
+      U.doc = ref;
+    } catch (e) { return; }
+    applyUsage();
+  }
+  function renderUsageCard() {
+    $("usage-off").checked = U.off;
+    $("usage-note").textContent = U.off ? "Your use on this device is not counted." :
+      !S.db ? "Counting needs the live database." : "Your use is counted in the team totals.";
+  }
+  $("usage-off").addEventListener("change", function () {
+    U.off = $("usage-off").checked;
+    try { if (U.off) localStorage.setItem("ls-usage-off", "1"); else localStorage.removeItem("ls-usage-off"); } catch (e) { /* per-device only */ }
+    if (U.off) { U.pending = []; U.dirty = false; clearTimeout(U.t); }
+    else if (S.db && S.uid && !U.doc) startUsage(S.db, S.uid);
+    renderUsageCard();
+  });
+  document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden") flushUsage(); });
+  track("v");
 
   // ---------- audit + CSV ----------
   function auditText(a) {
@@ -1781,6 +1858,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
     if (!dl) { $("csv-note").textContent = "Downloads are not available in this view."; return; }
     try {
       await dl.save({ filename: "laura-screen-" + new Date().toISOString().slice(0, 10) + ".csv", data: new Blob([csv], { type: "text/csv" }) });
+      track("a", "csv_download");
       $("csv-note").textContent = "";
     } catch (e) { $("csv-note").textContent = e && e.code === "unavailable" ? "Downloads are not available in this view." : "Download cancelled."; }
   }
@@ -1811,7 +1889,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
 
   function renderAll() {
     renderStatus(); renderLists(); renderProposals(); renderDiscovery(); renderPaste(); renderUniverse();
-    renderLookthrough(); renderValuesFail(); renderLeads(); renderAlerts(); renderWeekly(); renderAudit(); renderMethod();
+    renderLookthrough(); renderValuesFail(); renderLeads(); renderAlerts(); renderWeekly(); renderAudit(); renderMethod(); renderUsageCard();
   }
 
   // ---------- events ----------
@@ -1832,7 +1910,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
     var t = window.LauraParser.canon($("lt-add").value || "");
     if (!t) return;
     if (!ensureTickers()[t]) { toast(t + " is not a recognized US-listed ticker."); return; }
-    if (S.extraRows.indexOf(t) < 0) S.extraRows.push(t);
+    if (S.extraRows.indexOf(t) < 0) { S.extraRows.push(t); track("a", "etf_add"); }
     $("lt-add").value = ""; renderLookthrough();
     var i = document.getElementById("w-" + t); if (i) i.focus();
   });
@@ -1846,6 +1924,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
   var PAGES = ["home", "approvals", "etf", "records", "method"];
   function showPage(name, focus) {
     if (PAGES.indexOf(name) < 0) name = "home";
+    if (S.curPage !== name) { S.curPage = name; track("p", name); }
     PAGES.forEach(function (p) { $("page-" + p).hidden = p !== name; });
     document.querySelectorAll(".nav [data-go]").forEach(function (b) {
       if (b.getAttribute("data-go") === name) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current");
@@ -1854,6 +1933,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
     if (focus) { var h = document.querySelector("#page-" + name + " h2"); if (h) { h.setAttribute("tabindex", "-1"); h.focus({ preventScroll: true }); } window.scrollTo({ top: 0, behavior: "smooth" }); }
   }
   document.querySelectorAll(".nav [data-go]").forEach(function (b) { b.addEventListener("click", function () { showPage(b.getAttribute("data-go"), true); }); });
+  document.querySelectorAll("[data-go-link]").forEach(function (a) { a.addEventListener("click", function (e) { e.preventDefault(); showPage(a.getAttribute("data-go-link"), true); var u = $("usage"); if (u) u.scrollIntoView(); }); });
   $("st-pending").addEventListener("click", function (e) { e.preventDefault(); showPage("approvals", true); });
   window.addEventListener("hashchange", function () { showPage((location.hash || "#home").slice(1)); });
   showPage((location.hash || "#home").slice(1));
@@ -1878,6 +1958,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
     try { db = await window.claude.use("db"); } catch (e) { db = null; }
     if (!db) { banner("Read-only: the live database is unavailable in this view, so this shows the last published run. Approvals, the team list, weights and alerts are turned off."); renderAll(); return; }
     S.db = db;
+    startUsage(db, S.uid);
     function onErr(what) { return function (e) { if (e && e.code === "revoked") banner("Access to the live database ended. Showing the last loaded data."); else console.warn(what, e); }; }
     db.doc("runs/latest").onSnapshot(function (s) {
       if (s.exists) { var d = s.data(); if (d && d.run) { S.data = Object.assign({}, S.data, d); S.fromDb = true; } }

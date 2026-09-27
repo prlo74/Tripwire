@@ -5,6 +5,7 @@ The rule behind everything: **Claude proposes, humans decide.** A wrong Black la
 real company is the worst failure. Accuracy and traceability beat coverage.
 
 Artifact: https://claude.ai/artifact/8uEh8baXjRBYo7BYLL4SHr  (page source: `site/page.html`)
+Analytics (private, editors only): https://claude.ai/artifact/TjpvQ6RGKb3upULt9SBGP2  (page source: `analytics/page.html`)
 
 ## 0. Setup (once per machine)
 - `pip install requests pyyaml beautifulsoup4 openpyxl pypdf pytest` and have `node` on PATH.
@@ -13,7 +14,7 @@ Artifact: https://claude.ai/artifact/8uEh8baXjRBYo7BYLL4SHr  (page source: `site
 - Optional: `COURTLISTENER_TOKEN` env var (free token) for higher CourtListener limits.
 
 ## 1. Read the team's state from the Artifact database (ArtifactData tool)
-`list` each of `universe`, `approvals`, `runs`, `proposals` with `out_dir: cache/db`
+`list` each of `universe`, `approvals`, `runs`, `proposals`, `audit_log`, `usage` with `out_dir: cache/db`
 (use `query.limit: 1000`). The saved files hold only document data, so also write
 `cache/db/versions.json` as `{"<collection>/<doc_id>": <version>}` from the versions the list
 results print (needed to pin overwrites). Then:
@@ -71,7 +72,8 @@ python -m pipeline.dbsync export
 Then one ArtifactData `batch` call with the entries in `out/db_writes/manifest.json`
 (split into batches of 50). Republish the page only if `site/page.html`, the parser, the
 look-through code or the ticker map changed: `python -m pipeline.build_page`, then publish
-`site/index.html` to the Artifact URL above (omit `capabilities` to keep the rules).
+`site/index.html` to the Artifact URL above (omit `capabilities` to keep the rules; if the rules
+must change, pass the whole of `site/capabilities.json`, since a declaration replaces the old one).
 
 ## 5. Email alerts
 `list subscribers` with `out_dir: cache/db` (cache is gitignored: it holds emails) and `get
@@ -89,6 +91,15 @@ After every run (scheduled or Check now), update `settings/weekly` (pinned to it
 `last_run_at`, a one-line `last_run_summary`, and `check_completed_at` (the current UTC time, as the
 last write of the run). The page's elapsed timer stops at `check_completed_at` and shows how long
 the check took; a request with no completion after 45 minutes is shown as unfinished.
+
+## 5c. Analytics (team totals only)
+```
+python -m pipeline.analytics cache/db
+```
+Then `set metrics/latest` on the analytics Artifact (URL above) from `out/analytics.json`
+(`file_path`; pin `if_version` to the version a `get` shows). Commit `analytics/history.json`:
+it keeps weekly totals after the page deletes raw usage older than 8 weeks. Never write account
+ids, names or per-person numbers to the analytics page, the repo or the run summary.
 
 ## 6. Print a short run summary
 What changed, what needs approval, errors/sources down, alerts sent.

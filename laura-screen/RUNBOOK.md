@@ -34,6 +34,16 @@ fast as the run schedule: a weekly run means up to 7 days of lag.
   account, so only Leo can press them; other editors see the state. The settings live in the
   database (`settings/weekly`).
 
+## Analytics (private)
+https://claude.ai/artifact/TjpvQ6RGKb3upULt9SBGP2 shows team totals for the Wharton report and
+college applications: runs, companies screened, sources re-opened, decisions and time to decide,
+Check now waits, visits and feature use. Only people with Editor access to that page can read
+the numbers. It updates at the end of each run. **Download one-page summary** gives an HTML file
+you can open and print to PDF; **Download weekly CSV** gives the raw weekly counts.
+The team page counts visits, tabs and feature use per person-week so people aren't double
+counted, keeps only the last 8 weeks, and never collects IPs, locations or typed text. Anyone can
+opt out on its Methodology tab. Tell the team before relying on the numbers.
+
 ## How to change a rule (no code)
 Edit `config/rules.yaml`, save, then run the screen again.
 

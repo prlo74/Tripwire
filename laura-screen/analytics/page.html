@@ -1,0 +1,313 @@
+<title>Laura Screen Analytics</title>
+<meta name="description" content="Private team-total analytics for the Laura Screen values monitor">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
+<style>
+/* Same workspace look as the team page: silver ground, flat square cards, navy accent. Single theme by design. */
+:root {
+  color-scheme: light;
+  --bg: #C0C0C0; --card: #EEEDEA; --card-2: #E4E2DD; --field: #F7F6F4;
+  --ink: #15171C; --muted: #464343; --line: #C4C2BD; --line-strong: #A9A9A9;
+  --primary: #1B3470; --primary-2: #2F5D8C; --primary-ink: #FFFFFF;
+  --mark: #2F5D8C; --mark-hover: #1B3470; --grid: #D3D0CA;
+  --bar: #15171C; --bar-ink: #EDEDEF; --bar-muted: #A9ABB3;
+  --watch: #C9A04A; --watch-ink: #15171C; --aligned: #26684A;
+  --glow: radial-gradient(ellipse 75% 65% at 50% 42%, #EDEDED 0%, #D8D8D8 38%, #C0C0C0 72%, #A9A9A9 100%);
+  --font-body: "Schibsted Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "Martian Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+* { box-sizing: border-box; border-radius: 0; }
+body { margin: 0; color: var(--ink); background: var(--glow) fixed, var(--bg); background-color: var(--bg);
+  font: 400 15px/1.5 var(--font-body); font-variant-numeric: tabular-nums; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-inline: 24px; padding-block: 0 48px; }
+@media (max-width: 600px) { .wrap { padding-inline: 16px; } }
+h1, h2 { margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+h2 { font-size: 1.05rem; font-weight: 700; }
+p { margin: 0; }
+.muted { color: var(--muted); }
+.small { font-size: 0.85rem; line-height: 1.45; }
+.mono { font-family: var(--font-mono); font-size: 0.8em; }
+.topbar { background: var(--bar); color: var(--bar-ink); margin-inline: -24px; padding: 16px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 20px; }
+@media (max-width: 600px) { .topbar { margin-inline: -16px; padding-inline: 16px; } }
+.topbar h1 { font-size: 1.15rem; font-weight: 700; }
+.topbar .sub { color: var(--bar-muted); font-size: 0.82rem; }
+.lock { font-size: 0.78rem; color: var(--bar-muted); }
+.banner { margin-top: 16px; padding: 10px 14px; background: var(--watch); color: var(--watch-ink); font-weight: 600; font-size: 0.9rem; }
+.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--line-strong); background: var(--card); margin: 20px 0; box-shadow: 0 1px 3px rgba(20, 20, 26, 0.18); }
+.kpi { padding: 14px 18px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: grid; gap: 3px; min-width: 0; }
+.kpi:nth-child(4n) { border-right: 0; }
+.kpi .k { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.kpi .v { font-size: 1.55rem; font-weight: 700; line-height: 1.1; }
+.kpi .v small { font-size: 0.8rem; font-weight: 600; color: var(--muted); }
+.kpi .d { font-size: 0.78rem; color: var(--muted); }
+@media (max-width: 860px) { .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } .kpi:nth-child(2n) { border-right: 0; } .kpi:nth-child(4n+3) { border-right: 1px solid var(--line); } }
+.grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; }
+.s6 { grid-column: span 6; } .s12 { grid-column: span 12; } .s4 { grid-column: span 4; } .s8 { grid-column: span 8; }
+@media (max-width: 860px) { .s4, .s6, .s8 { grid-column: span 12; } }
+.card { min-width: 0; padding: 18px; background: var(--card); border: 1px solid var(--line-strong); box-shadow: 0 1px 3px rgba(20, 20, 26, 0.18); display: grid; gap: 12px; align-content: start; }
+.card header { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.purpose { color: var(--muted); font-size: 0.85rem; margin-top: 2px; max-width: 70ch; }
+.btn { font: 600 0.86rem/1 var(--font-body); padding: 10px 14px; cursor: pointer; min-height: 38px; color: var(--ink); background: var(--field); border: 1px solid var(--line-strong); }
+.btn:hover { background: #FFFFFF; }
+.btn.primary { color: var(--primary-ink); background: var(--primary); border-color: var(--primary); }
+.btn.primary:hover { background: var(--primary-2); }
+.btn:focus-visible, a:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.tbl-wrap { overflow-x: auto; border: 1px solid var(--line); background: var(--card); }
+table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; background: var(--card-2); white-space: nowrap; }
+td.num, th.num { text-align: right; white-space: nowrap; }
+.quote { border-left: 3px solid var(--primary); padding: 8px 12px; background: var(--field); font-size: 0.92rem; }
+.chart { position: relative; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart .axis { fill: var(--muted); font-size: 11px; font-family: var(--font-body); }
+.chart .val { fill: var(--ink); font-size: 11px; font-weight: 600; font-family: var(--font-body); }
+.chart .m { fill: var(--mark); }
+.chart g.hit:hover .m, .chart g.hit:focus .m { fill: var(--mark-hover); }
+.chart g.hit { outline: none; }
+.chart line.g { stroke: var(--grid); stroke-width: 1; }
+.chart line.base { stroke: var(--line-strong); stroke-width: 1; }
+.tip { position: absolute; pointer-events: none; background: var(--bar); color: var(--bar-ink); font-size: 0.78rem; padding: 6px 8px; white-space: nowrap; transform: translate(-50%, -100%); z-index: 5; }
+.empty { color: var(--muted); font-size: 0.86rem; padding: 18px 0; }
+details summary { cursor: pointer; font-size: 0.85rem; color: var(--primary); font-weight: 600; }
+.foot { margin-top: 24px; color: var(--muted); font-size: 0.8rem; }
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); background: var(--ink); color: var(--card); padding: 10px 14px; font-size: 0.88rem; max-width: calc(100vw - 32px); }
+</style>
+
+<div class="wrap">
+  <header class="topbar">
+    <div><h1>Laura Screen Analytics</h1><p class="sub" id="asof">Waiting for data…</p></div>
+    <p class="lock">Private: only this page's editors can read the numbers.</p>
+  </header>
+  <p class="banner" id="banner" hidden></p>
+
+  <section class="kpis" id="kpis" aria-label="Headline numbers"></section>
+
+  <div class="grid">
+    <section class="card s12" aria-labelledby="h-quote">
+      <header><div><h2 id="h-quote">Quotable summary</h2><p class="purpose">Plain sentences built from the numbers below. Every figure is a count the screen recorded, so each one can be checked.</p></div></header>
+      <div id="quotes" class="small" style="display:grid;gap:8px"></div>
+      <div class="actions">
+        <button class="btn primary" type="button" id="dl-summary" disabled>Download one-page summary</button>
+        <button class="btn" type="button" id="dl-csv" disabled>Download weekly CSV</button>
+        <span class="small muted" id="dl-note"></span>
+      </div>
+    </section>
+
+    <section class="card s6" aria-labelledby="h-runs"><header><div><h2 id="h-runs">Screen runs per week</h2><p class="purpose">Scheduled runs plus Check now runs. Each run re-opens every evidence source.</p></div></header><div class="chart" id="c-runs"></div></section>
+    <section class="card s6" aria-labelledby="h-dec"><header><div><h2 id="h-dec">Team decisions per week</h2><p class="purpose">Approvals and rejections of proposed list changes.</p></div></header><div class="chart" id="c-dec"></div></section>
+    <section class="card s6" aria-labelledby="h-vis"><header><div><h2 id="h-vis">Visits per week</h2><p class="purpose">Page loads by the team, counted since the usage counter went live.</p></div></header><div class="chart" id="c-vis"></div></section>
+    <section class="card s6" aria-labelledby="h-ppl"><header><div><h2 id="h-ppl">Active people per week</h2><p class="purpose">Teammates who visited or acted that week. A count, never names.</p></div></header><div class="chart" id="c-ppl"></div></section>
+    <section class="card s6" aria-labelledby="h-feat"><header><div><h2 id="h-feat">Feature use</h2><p class="purpose">All weeks combined.</p></div></header><div class="chart" id="c-feat"></div></section>
+    <section class="card s6" aria-labelledby="h-tabs"><header><div><h2 id="h-tabs">Tabs opened</h2><p class="purpose">All weeks combined.</p></div></header><div class="chart" id="c-tabs"></div></section>
+
+    <section class="card s12" aria-labelledby="h-tbl">
+      <header><div><h2 id="h-tbl">Weekly table</h2><p class="purpose">The same numbers as the charts, one row per week (ISO weeks, Monday start, UTC).</p></div></header>
+      <div class="tbl-wrap"><table><thead><tr><th scope="col">Week</th><th scope="col" class="num">Runs</th><th scope="col" class="num">New proposals</th><th scope="col" class="num">Decisions</th><th scope="col" class="num">Visits</th><th scope="col" class="num">Active people</th><th scope="col" class="num">Feature uses</th></tr></thead><tbody id="wk-body"><tr><td colspan="7" class="muted small">No data yet.</td></tr></tbody></table></div>
+    </section>
+
+    <section class="card s12" aria-labelledby="h-notes">
+      <header><div><h2 id="h-notes">How these are counted</h2></div></header>
+      <ul class="small" id="notes" style="margin:0;padding-left:18px;display:grid;gap:4px;max-width:80ch"></ul>
+    </section>
+  </div>
+  <p class="foot">Updated by Claude at the end of each screen run. The team page counts feature use as team totals and lets anyone opt out on its Methodology tab.</p>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var $ = function (id) { return document.getElementById(id); };
+  var M = null, downloads = null;
+  var ACTION_LABEL = { save_tickers: "Save tickers", remove_ticker: "Remove ticker", check_now: "Check now", approve: "Approve", reject: "Reject",
+    comment: "Comment", reopen: "Reopen", csv_download: "Audit CSV download", alerts_on: "Alerts on", alerts_off: "Alerts off", schedule: "Schedule change",
+    etf_add: "ETF look-through add", etf_weight: "ETF weight saved", open_list: "Open a list" };
+  var TAB_LABEL = { home: "Home", approvals: "Needs approval", etf: "ETF look-through", records: "Records", method: "Methodology" };
+
+  function el(tag, attrs, kids) {
+    var n = document.createElement(tag);
+    Object.keys(attrs || {}).forEach(function (k) { if (k === "text") n.textContent = attrs[k]; else n.setAttribute(k, attrs[k]); });
+    (kids || []).forEach(function (c) { if (c != null) n.appendChild(typeof c === "string" ? document.createTextNode(c) : c); });
+    return n;
+  }
+  function svg(tag, attrs) { var n = document.createElementNS("http://www.w3.org/2000/svg", tag); Object.keys(attrs).forEach(function (k) { n.setAttribute(k, attrs[k]); }); return n; }
+  function clear(n) { while (n.firstChild) n.removeChild(n.firstChild); return n; }
+  function toast(t) { var n = el("div", { class: "toast", role: "status", text: t }); document.body.appendChild(n); setTimeout(function () { n.remove(); }, 3200); }
+  function fmtDate(s) { var d = new Date(s); return isNaN(d) ? "unknown" : d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }); }
+  function fmtDT(s) { var d = new Date(s); return isNaN(d) ? "unknown" : d.toLocaleString(undefined, { year: "numeric", month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZoneName: "short" }); }
+  function num(v) { return v == null ? "unknown" : Number(v).toLocaleString(); }
+  function sum(o) { return Object.keys(o || {}).reduce(function (a, k) { return a + (o[k] || 0); }, 0); }
+  function hrs(h) { return h == null ? "unknown" : h < 1 ? Math.round(h * 60) + " min" : h < 48 ? h.toFixed(1) + " h" : (h / 24).toFixed(1) + " days"; }
+  function weekStart(w) {   // "2026-W40" -> Monday date string
+    var m = /^(\d{4})-W(\d{2})$/.exec(w); if (!m) return w;
+    var y = +m[1], n = +m[2], jan4 = new Date(Date.UTC(y, 0, 4)), dow = jan4.getUTCDay() || 7;
+    var mon = new Date(jan4); mon.setUTCDate(jan4.getUTCDate() - dow + 1 + (n - 1) * 7);
+    return mon.toISOString().slice(0, 10);
+  }
+  function weekLabel(w) { var d = new Date(weekStart(w) + "T12:00:00Z"); return isNaN(d) ? w : d.toLocaleDateString(undefined, { month: "short", day: "numeric" }); }
+
+  // ---- charts: one series each, one hue, direct value labels, hover tooltip ----
+  function columnChart(host, rows, unit) {
+    clear(host);
+    if (!rows.length || rows.every(function (r) { return !r.v; })) { host.appendChild(el("p", { class: "empty", text: "Nothing counted yet." })); return; }
+    var W = 520, H = 200, L = 34, R = 8, T = 18, B = 26, iw = W - L - R, ih = H - T - B;
+    var max = Math.max.apply(null, rows.map(function (r) { return r.v; })), step = max <= 5 ? 1 : Math.ceil(max / 4);
+    var top = Math.max(step, Math.ceil(max / step) * step);
+    var s = svg("svg", { viewBox: "0 0 " + W + " " + H, role: "img", "aria-label": host.getAttribute("data-label") || "" });
+    for (var t = 0; t <= top; t += step) {
+      var y = T + ih - (t / top) * ih;
+      s.appendChild(svg("line", { class: t === 0 ? "base" : "g", x1: L, x2: W - R, y1: y, y2: y }));
+      var lab = svg("text", { class: "axis", x: L - 6, y: y + 4, "text-anchor": "end" }); lab.textContent = t; s.appendChild(lab);
+    }
+    var slot = iw / rows.length, bw = Math.max(6, Math.min(36, slot * 0.6));
+    var tip = el("div", { class: "tip", hidden: "" });
+    rows.forEach(function (r, i) {
+      var x = L + slot * i + (slot - bw) / 2, h = (r.v / top) * ih, y = T + ih - h;
+      var g = svg("g", { class: "hit", tabindex: "0", "aria-label": r.label + ": " + r.v + " " + unit });
+      g.appendChild(svg("rect", { x: L + slot * i, y: T, width: slot, height: ih, fill: "transparent" }));
+      if (r.v > 0) {
+        var rr = Math.min(4, bw / 2, h);
+        g.appendChild(svg("path", { class: "m", d: "M" + x + "," + (T + ih) + "V" + (y + rr) + "Q" + x + "," + y + " " + (x + rr) + "," + y + "H" + (x + bw - rr) + "Q" + (x + bw) + "," + y + " " + (x + bw) + "," + (y + rr) + "V" + (T + ih) + "Z" }));
+      }
+      if (rows.length <= 12 || i === rows.length - 1) {
+        var v = svg("text", { class: "val", x: x + bw / 2, y: y - 5, "text-anchor": "middle" }); v.textContent = r.v; g.appendChild(v);
+      }
+      if (rows.length <= 10 || i % Math.ceil(rows.length / 8) === 0) {
+        var xl = svg("text", { class: "axis", x: x + bw / 2, y: H - 8, "text-anchor": "middle" }); xl.textContent = r.short; g.appendChild(xl);
+      }
+      function show() { tip.textContent = r.label + " · " + r.v + " " + unit; tip.hidden = false; var b = host.getBoundingClientRect(); tip.style.left = ((x + bw / 2) / W * b.width) + "px"; tip.style.top = ((y - 8) / H * b.height) + "px"; }
+      g.addEventListener("mouseenter", show); g.addEventListener("focus", show);
+      g.addEventListener("mouseleave", function () { tip.hidden = true; }); g.addEventListener("blur", function () { tip.hidden = true; });
+      s.appendChild(g);
+    });
+    host.appendChild(s); host.appendChild(tip);
+  }
+  function barList(host, pairs, unit) {   // horizontal bars, sorted, labels on the left, values on the right
+    clear(host);
+    pairs = pairs.filter(function (p) { return p.v > 0; }).sort(function (a, b) { return b.v - a.v; });
+    if (!pairs.length) { host.appendChild(el("p", { class: "empty", text: "Nothing counted yet." })); return; }
+    var max = pairs[0].v, list = el("div", { style: "display:grid;gap:6px" });
+    pairs.forEach(function (p) {
+      var w = Math.max(2, p.v / max * 100);
+      list.appendChild(el("div", { style: "display:grid;grid-template-columns:minmax(0,11rem) 1fr 3.5rem;gap:10px;align-items:center", title: p.label + ": " + p.v + " " + unit }, [
+        el("span", { class: "small", text: p.label }),
+        el("span", { style: "display:block;height:12px;background:var(--grid)" }, [el("span", { style: "display:block;height:12px;width:" + w + "%;background:var(--mark)" })]),
+        el("span", { class: "small", style: "text-align:right;font-weight:600", text: String(p.v) })
+      ]));
+    });
+    host.appendChild(list);
+  }
+
+  function quotes(h, weeks) {
+    var first = h.first_activity ? fmtDate(h.first_activity) : null, last = M.generated_at ? fmtDate(M.generated_at) : null;
+    var span = first && last ? "Between " + first + " and " + last + ", " : "";
+    var out = [];
+    out.push(span + "the screen ran " + num(h.runs_total) + " times, each run re-checking " + num(h.companies_screened) + " companies (the S&P 500 plus the team's own picks) against the team's rules.");
+    if (h.evidence_records != null) out.push("Every run re-opened " + num(h.evidence_sources_opened_per_run) + " primary sources behind " + num(h.evidence_records) + " evidence records to confirm each quoted passage was still there; anything it could not confirm was held back instead of proposed.");
+    out.push("The team made " + num(h.decisions_total) + " decisions on proposed list changes (" + num(h.approved) + " approved, " + num(h.rejected) + " rejected)" + (h.median_hours_to_decision != null ? ", with a median of " + hrs(h.median_hours_to_decision) + " from proposal to decision." : "."));
+    if (h.check_now_requests) out.push("On-demand checks were requested " + num(h.check_now_requests) + " times" + (h.median_minutes_check_now_to_result != null ? "; the median wait for the pipeline to finish was " + h.median_minutes_check_now_to_result.toFixed(1) + " minutes." : "."));
+    if (h.source_uptime_pct != null) out.push("Official data sources answered " + h.source_uptime_pct + "% of " + num(h.source_checks) + " checks; failures were reported, never worked around.");
+    return out;
+  }
+
+  function render() {
+    if (!M) return;
+    var h = M.headline || {}, weeks = M.weekly || [];
+    $("asof").textContent = "Updated " + fmtDT(M.generated_at) + (M.as_of_run ? " · run " + M.as_of_run : "");
+    var k = clear($("kpis"));
+    function kpi(label, v, d) { k.appendChild(el("div", { class: "kpi" }, [el("span", { class: "k", text: label }), el("span", { class: "v" }, v), el("span", { class: "d", text: d })])); }
+    kpi("Companies screened", [num(h.companies_screened)], num(h.sp500_companies) + " S&P 500 + team picks");
+    kpi("Screen runs", [num(h.runs_total)], num(h.runs_last_30_days) + " in the last 30 days");
+    kpi("Sources re-opened per run", [num(h.evidence_sources_opened_per_run)], num(h.evidence_records) + " evidence records");
+    kpi("Team decisions", [num(h.decisions_total)], num(h.approved) + " approved · " + num(h.rejected) + " rejected");
+    kpi("Proposal to decision", [hrs(h.median_hours_to_decision)], "median of " + num(h.decisions_timed));
+    kpi("Check now to results", [h.median_minutes_check_now_to_result == null ? "unknown" : h.median_minutes_check_now_to_result.toFixed(1), el("small", { text: " min" })], "median of " + num(h.check_now_timed) + " requests");
+    kpi("Source uptime", [h.source_uptime_pct == null ? "unknown" : h.source_uptime_pct + "%"], h.source_uptime_pct == null ? "recorded from the next run on" : num(h.source_checks) + " source checks");
+    kpi("People active", [num(h.people_active_ever)], num(h.visits_total) + " visits counted");
+
+    var q = clear($("quotes"));
+    quotes(h, weeks).forEach(function (t) { q.appendChild(el("p", { class: "quote", text: t })); });
+
+    function series(key) { return weeks.map(function (w) { return { v: w[key] || 0, label: "Week of " + weekLabel(w.week), short: weekLabel(w.week) }; }); }
+    columnChart($("c-runs"), series("runs"), "runs");
+    columnChart($("c-dec"), series("decisions"), "decisions");
+    columnChart($("c-vis"), series("visits"), "visits");
+    columnChart($("c-ppl"), series("active_people"), "people");
+    var acts = {}, tabs = {};
+    weeks.forEach(function (w) { Object.keys(w.actions || {}).forEach(function (a) { acts[a] = (acts[a] || 0) + w.actions[a]; }); Object.keys(w.page_views || {}).forEach(function (a) { tabs[a] = (tabs[a] || 0) + w.page_views[a]; }); });
+    barList($("c-feat"), Object.keys(acts).map(function (a) { return { label: ACTION_LABEL[a] || a, v: acts[a] }; }), "uses");
+    barList($("c-tabs"), Object.keys(tabs).map(function (a) { return { label: TAB_LABEL[a] || a, v: tabs[a] }; }), "views");
+
+    var tb = clear($("wk-body"));
+    if (!weeks.length) tb.appendChild(el("tr", {}, [el("td", { colspan: "7", class: "muted small", text: "No data yet." })]));
+    weeks.slice().reverse().forEach(function (w) {
+      tb.appendChild(el("tr", {}, [el("td", { text: "Week of " + weekLabel(w.week) + " (" + w.week + ")" }),
+        el("td", { class: "num", text: String(w.runs || 0) }), el("td", { class: "num", text: String(w.new_proposals || 0) }),
+        el("td", { class: "num", text: String(w.decisions || 0) }), el("td", { class: "num", text: String(w.visits || 0) }),
+        el("td", { class: "num", text: String(w.active_people || 0) }), el("td", { class: "num", text: String(sum(w.actions)) })]));
+    });
+    var n = clear($("notes"));
+    (M.notes || []).forEach(function (t) { n.appendChild(el("li", { text: t })); });
+    $("dl-summary").disabled = $("dl-csv").disabled = !downloads;
+    $("dl-note").textContent = downloads ? "" : "Downloads are not available in this view.";
+  }
+
+  // ---- exports ----
+  function csvCell(v) { v = v == null ? "" : String(v); if (/^[=+\-@\t\r]/.test(v)) v = "'" + v; return /[",\n\r]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }
+  function weeklyCsv() {
+    var acts = M.actions || [], pages = M.pages || [];
+    var head = ["week", "week_start", "runs", "new_proposals", "decisions", "visits", "active_people"].concat(pages.map(function (p) { return "tab_" + p; }), acts.map(function (a) { return "action_" + a; }));
+    var lines = [head.join(",")];
+    (M.weekly || []).forEach(function (w) {
+      lines.push([w.week, weekStart(w.week), w.runs || 0, w.new_proposals || 0, w.decisions || 0, w.visits || 0, w.active_people || 0]
+        .concat(pages.map(function (p) { return (w.page_views || {})[p] || 0; }), acts.map(function (a) { return (w.actions || {})[a] || 0; })).map(csvCell).join(","));
+    });
+    return lines.join("\r\n") + "\r\n";
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function summaryHtml() {
+    var h = M.headline || {}, rows = [
+      ["Companies screened each run", num(h.companies_screened)], ["Screen runs", num(h.runs_total)],
+      ["Primary sources re-opened per run", num(h.evidence_sources_opened_per_run)], ["Evidence records", num(h.evidence_records)],
+      ["Team decisions", num(h.decisions_total) + " (" + num(h.approved) + " approved, " + num(h.rejected) + " rejected)"],
+      ["Median time from proposal to decision", hrs(h.median_hours_to_decision)],
+      ["On-demand checks", num(h.check_now_requests)], ["Official-source uptime", h.source_uptime_pct == null ? "not yet recorded" : h.source_uptime_pct + "%"],
+      ["People who used the screen", num(h.people_active_ever)], ["Visits counted", num(h.visits_total)]];
+    return "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>Laura Screen: project summary</title>" +
+      "<style>body{font:15px/1.55 'Helvetica Neue',Helvetica,Arial,sans-serif;color:#15171C;max-width:720px;margin:40px auto;padding:0 20px}" +
+      "h1{font-size:22px;margin:0 0 4px}p.sub{color:#555;margin:0 0 20px;font-size:13px}table{border-collapse:collapse;width:100%;margin:12px 0 20px}" +
+      "td{border-bottom:1px solid #ccc;padding:6px 4px}td:last-child{text-align:right;font-weight:600}blockquote{margin:8px 0;padding:6px 12px;border-left:3px solid #1B3470;background:#f4f4f2}" +
+      "h2{font-size:15px;margin:20px 0 6px}li{margin:3px 0}@media print{body{margin:0}}</style></head><body>" +
+      "<h1>Laura Screen: project summary</h1><p class=\"sub\">Values screen built for the Wharton Global Youth Investment Competition (client: Laura Gao). Figures as of " + esc(fmtDT(M.generated_at)) + ".</p>" +
+      "<h2>What it does</h2><p>Keeps three lists of US stocks current (exclude, watch, include) from court rulings, agency findings and company filings. Claude proposes changes with verbatim quotes from primary sources; the team approves or rejects each one.</p>" +
+      "<h2>Key numbers</h2><table>" + rows.map(function (r) { return "<tr><td>" + esc(r[0]) + "</td><td>" + esc(r[1]) + "</td></tr>"; }).join("") + "</table>" +
+      "<h2>In plain sentences</h2>" + quotes(h, M.weekly || []).map(function (t) { return "<blockquote>" + esc(t) + "</blockquote>"; }).join("") +
+      "<h2>How these are counted</h2><ul>" + (M.notes || []).map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") +
+      "<li>Usage is counted as team totals only; no IP addresses, locations or typed content are collected.</li></ul></body></html>";
+  }
+  async function save(filename, data) {
+    if (!downloads) return;
+    try { await downloads.save({ filename: filename, data: data }); $("dl-note").textContent = ""; }
+    catch (e) { $("dl-note").textContent = e && e.code === "declined" ? "Download cancelled." : e && e.code === "rate_limited" ? "A download prompt is already open." : "Download is not available in this view."; }
+  }
+  var stamp = function () { return new Date().toISOString().slice(0, 10); };
+  $("dl-summary").addEventListener("click", function () { save("laura-screen-summary-" + stamp() + ".html", new Blob([summaryHtml()], { type: "text/html" })); });
+  $("dl-csv").addEventListener("click", function () { save("laura-screen-weekly-" + stamp() + ".csv", new Blob([weeklyCsv()], { type: "text/csv" })); });
+
+  function banner(t) { $("banner").textContent = t || ""; $("banner").hidden = !t; }
+  (async function connect() {
+    if (!window.claude || !window.claude.use) { banner("Open this page on claude.ai to see the numbers."); return; }
+    try { downloads = await window.claude.use("downloads"); } catch (e) { downloads = null; }
+    var db = null;
+    try { db = await window.claude.use("db"); } catch (e) { db = null; }
+    if (!db) { banner("The numbers are only shown to this page's editors, signed in on claude.ai."); return; }
+    db.doc("metrics/latest").onSnapshot(function (s) {
+      if (!s.exists) { banner("No numbers yet, or you don't have access. Only this page's editors can read them."); $("asof").textContent = "No data"; return; }
+      banner(""); M = s.data(); render();
+    }, function (e) { banner(e && e.code === "revoked" ? "Access to the numbers ended." : "Could not load the numbers. Reload to try again."); });
+  })();
+})();
+</script>

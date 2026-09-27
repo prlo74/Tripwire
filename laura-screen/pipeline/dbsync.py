@@ -54,6 +54,22 @@ def snapshot(d: Path) -> Path:
     return dest
 
 
+def run_stats(data: dict) -> dict:
+    """Team-level numbers for the analytics page, recorded with each run (no personal data)."""
+    st = data.get("status", {})
+    ev = st.get("Evidence re-check", {})
+    uni = data.get("universe", {}) if isinstance(data.get("universe"), dict) else {}
+    by_to = {}
+    for p in data.get("proposals", []):
+        by_to[p["to"]] = by_to.get(p["to"], 0) + 1
+    return {"sources_checked": len(st), "sources_ok": sum(1 for v in st.values() if v.get("ok")),
+            "evidence_records": ev.get("records"), "evidence_sources_opened": ev.get("sources_opened"),
+            "sp500": uni.get("sp500"), "team_tickers": uni.get("team"),
+            "new_tickers_checked": len(data.get("newTickerChecks", [])),
+            "proposals_by_list": by_to, "values_fail": len(data.get("valuesFail", [])),
+            "leads": len(data.get("leads", []))}
+
+
 def export() -> Path:
     data = json.loads((ROOT / "site" / "data.json").read_text())
     snap = json.loads((OUT / "db_snapshot.json").read_text()) if (OUT / "db_snapshot.json").exists() else {}
@@ -77,7 +93,8 @@ def export() -> Path:
     put("runs", run["id"], {"id": run["id"], "started": run["started"], "finished": run["finished"],
                             "duration_s": run["duration_s"], "errors": run["errors"],
                             "proposals": len(data["proposals"]),
-                            "sources_down": [k for k, v in data["status"].items() if not v.get("ok")]})
+                            "sources_down": [k for k, v in data["status"].items() if not v.get("ok")],
+                            "stats": run_stats(data)})
     live = set()
     for p in data["proposals"]:
         put("proposals", p["id"], p)
