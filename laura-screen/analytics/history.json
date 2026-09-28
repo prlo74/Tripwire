@@ -21,10 +21,28 @@
    "active_people": 1,
    "decisions": 14,
    "new_proposals": 14,
-   "page_views": {},
+   "page_views": {
+    "home": 1
+   },
    "runs": 7,
-   "visits": 0,
+   "visits": 1,
    "week": "2026-W39"
+  },
+  {
+   "actions": {
+    "check_now": 1,
+    "save_tickers": 1
+   },
+   "active_people": 1,
+   "decisions": 0,
+   "new_proposals": 0,
+   "page_views": {
+    "etf": 1,
+    "home": 1
+   },
+   "runs": 0,
+   "visits": 1,
+   "week": "2026-W40"
   }
  ]
 }
