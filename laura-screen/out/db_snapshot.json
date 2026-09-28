@@ -1,6 +1,15 @@
 {
  "universe": [
   {
+   "added_at": "2026-09-28T23:25:31.845Z",
+   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "name": "iShares Core MSCI EAFE ETF",
+   "ticker": "IEFA",
+   "type": "etf",
+   "_id": "IEFA",
+   "_version": null
+  },
+  {
    "added_at": "2026-09-26T13:46:28.840Z",
    "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
    "check_run": "run-20260926T142541",
@@ -659,6 +668,37 @@
    },
    "_id": "run-20260928T024143",
    "_version": null
+  },
+  {
+   "duration_s": 246.6,
+   "errors": [],
+   "finished": "2026-09-28T22:19:01+00:00",
+   "id": "run-20260928T221454",
+   "proposals": 13,
+   "sources_down": [
+    "Evidence re-check",
+    "DOJ releases",
+    "CourtListener releases"
+   ],
+   "started": "2026-09-28T22:14:54+00:00",
+   "stats": {
+    "evidence_records": 21,
+    "evidence_sources_opened": 28,
+    "leads": 2,
+    "new_tickers_checked": 0,
+    "proposals_by_list": {
+     "aligned": 6,
+     "black": 3,
+     "watch": 4
+    },
+    "sources_checked": 23,
+    "sources_ok": 20,
+    "sp500": 503,
+    "team_tickers": 3,
+    "values_fail": 3
+   },
+   "_id": "run-20260928T221454",
+   "_version": null
   }
  ],
  "proposal_ids": [
@@ -677,13 +717,15 @@
   "p-WBD-aligned-wbd-values"
  ],
  "versions": {
-  "universe/NMAX": 2,
-  "universe/NVDA": 2,
-  "universe/SHOP": 2,
-  "universe/SPCX": 2,
-  "universe/SPY": 2,
-  "universe/TSLA": 2,
   "universe/VOO": 2,
+  "universe/SHOP": 2,
+  "universe/NVDA": 2,
+  "universe/SPY": 2,
+  "universe/NMAX": 2,
+  "universe/IEFA": 1,
+  "universe/SPCX": 2,
+  "universe/TSLA": 2,
+  "usage/u_Xvj7Rxem5TB8oVDXKCt1dQ": 16,
   "approvals/p-TSLA-black-tesla-diaz-verdict-2021": 1,
   "approvals/p-ACN-watch-accenture-doj-fca-2026": 1,
   "approvals/p-META-watch-meta-doj-fha-settlement-2022": 1,
@@ -698,19 +740,6 @@
   "approvals/p-WBD-aligned-wbd-values": 1,
   "approvals/p-TRI-aligned-tri-values": 1,
   "approvals/p-NMAX-black-newsmax-dominion-falsity-2025": 1,
-  "proposals/p-TSLA-black-tesla-diaz-verdict-2021": 8,
-  "proposals/p-ACN-watch-accenture-doj-fca-2026": 8,
-  "proposals/p-SHOP-aligned-shop-values": 8,
-  "proposals/p-META-watch-meta-states-youth-case-2026": 8,
-  "proposals/p-F-watch-ford-eeoc-conciliation-2026": 8,
-  "proposals/p-GOOG-GOOGL-aligned-alphabet-values": 8,
-  "proposals/p-ADBE-aligned-adbe-values": 8,
-  "proposals/p-FOXA-FOX-black-fox-dominion-falsity-2023": 8,
-  "proposals/p-TSLA-watch-tesla-crd-eeoc-open-2026": 8,
-  "proposals/p-NYT-aligned-nyt-values": 8,
-  "proposals/p-WBD-aligned-wbd-values": 8,
-  "proposals/p-TRI-aligned-tri-values": 8,
-  "proposals/p-NMAX-black-newsmax-dominion-falsity-2025": 8,
   "audit_log/v9kgaoyg160nf82mmamf": 1,
   "audit_log/2lzcieza8iy5x1y702ad": 1,
   "audit_log/776w492x76en0egl1wyq": 1,
@@ -733,6 +762,7 @@
   "audit_log/f2kj96ovr3pmtnjd1o39": 1,
   "audit_log/otqo7g85n2gsasdsv85v": 1,
   "audit_log/qdg39gpvwvzqypntorr4": 1,
+  "audit_log/9n2bai8fwvv7u61rtzyg": 1,
   "audit_log/devdvu3cnv058dgcq9a9": 1,
   "audit_log/fhtlio6gyiyasz8v3f4y": 1,
   "audit_log/pxh0b21v2mvy35pexnjr": 1,
@@ -747,16 +777,30 @@
   "audit_log/i27jbvj5a1dlgpde5z6x": 1,
   "audit_log/1ydihrwjba7ho0temh5x": 1,
   "audit_log/ln123px7ztemt6cvgk4c": 1,
+  "audit_log/ktlgsb52n6xpnk8f5gow": 1,
   "audit_log/1xb5wbpwslsx8b16ur84": 1,
+  "proposals/p-TSLA-black-tesla-diaz-verdict-2021": 9,
+  "proposals/p-ACN-watch-accenture-doj-fca-2026": 9,
+  "proposals/p-SHOP-aligned-shop-values": 9,
+  "proposals/p-META-watch-meta-states-youth-case-2026": 9,
+  "proposals/p-F-watch-ford-eeoc-conciliation-2026": 9,
+  "proposals/p-GOOG-GOOGL-aligned-alphabet-values": 9,
+  "proposals/p-ADBE-aligned-adbe-values": 9,
+  "proposals/p-FOXA-FOX-black-fox-dominion-falsity-2023": 9,
+  "proposals/p-TSLA-watch-tesla-crd-eeoc-open-2026": 9,
+  "proposals/p-NYT-aligned-nyt-values": 9,
+  "proposals/p-WBD-aligned-wbd-values": 9,
+  "proposals/p-TRI-aligned-tri-values": 9,
+  "proposals/p-NMAX-black-newsmax-dominion-falsity-2025": 9,
+  "runs/latest": 9,
   "runs/run-20260926T150023": 1,
   "runs/run-20260926T074411": 1,
   "runs/run-20260928T024143": 1,
   "runs/run-20260926T073050": 1,
+  "runs/run-20260928T221454": 1,
   "runs/run-20260927T130543": 1,
   "runs/run-20260926T142541": 1,
   "runs/run-20260926T070944": 1,
-  "runs/run-20260926T075808": 1,
-  "runs/latest": 8,
-  "usage/u_Xvj7Rxem5TB8oVDXKCt1dQ": 15
+  "runs/run-20260926T075808": 1
  }
 }
