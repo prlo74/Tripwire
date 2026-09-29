@@ -30,18 +30,19 @@
   },
   {
    "actions": {
-    "check_now": 3,
-    "save_tickers": 2
+    "check_now": 4,
+    "open_list": 1,
+    "save_tickers": 3
    },
    "active_people": 1,
    "decisions": 0,
    "new_proposals": 0,
    "page_views": {
     "etf": 1,
-    "home": 5,
-    "method": 2
+    "home": 6,
+    "method": 3
    },
-   "runs": 2,
+   "runs": 3,
    "visits": 2,
    "week": "2026-W40"
   }
