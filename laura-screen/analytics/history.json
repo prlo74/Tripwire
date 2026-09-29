@@ -30,8 +30,8 @@
   },
   {
    "actions": {
-    "check_now": 2,
-    "save_tickers": 1
+    "check_now": 3,
+    "save_tickers": 2
    },
    "active_people": 1,
    "decisions": 0,
@@ -41,7 +41,7 @@
     "home": 5,
     "method": 2
    },
-   "runs": 1,
+   "runs": 2,
    "visits": 2,
    "week": "2026-W40"
   }
