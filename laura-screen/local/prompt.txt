@@ -1,6 +1,0 @@
-Laura Screen run (scheduled, local). You are in the laura-screen/ folder of the repo.
-1. Read the db doc settings/weekly on https://claude.ai/artifact/8uEh8baXjRBYo7BYLL4SHr. Stop without doing anything else if enabled is false, or if last_run_at is less than (interval_days days minus 3 hours) ago.
-2. Follow CLAUDE.md steps 1 to 6 exactly, including step 3b. Alerts may be sent to subscribers if a Gmail connector is available; otherwise list them in the summary.
-3. Update settings/weekly, pinned to its version: last_run_at and a one-line last_run_summary.
-4. Run `python -m pytest -q`, then commit and push run outputs and any new evidence records to the current branch.
-Never label anything yourself; only propose. If a source is down, report it; never route around it.
