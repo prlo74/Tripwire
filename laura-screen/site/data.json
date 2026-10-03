@@ -1,23 +1,23 @@
 {
  "run": {
-  "id": "run-20261001T224837",
-  "started": "2026-10-01T22:48:37+00:00",
-  "finished": "2026-10-01T22:49:43+00:00",
-  "duration_s": 65.4,
-  "today": "2026-10-01",
+  "id": "run-20261003T224821",
+  "started": "2026-10-03T22:48:21+00:00",
+  "finished": "2026-10-03T22:49:23+00:00",
+  "duration_s": 62.7,
+  "today": "2026-10-03",
   "errors": [],
-  "discovery_since": "2026-09-28",
-  "legal_discovery_since": "2026-09-28"
+  "discovery_since": "2026-09-30",
+  "legal_discovery_since": "2026-09-30"
  },
  "status": {
   "SEC + Nasdaq ticker lists": {
    "ok": true,
-   "as_of": "2026-10-01",
-   "count": 12738
+   "as_of": "2026-10-02",
+   "count": 12733
   },
   "S&P 500 constituents (SPY holdings, State Street)": {
    "ok": true,
-   "as_of": "2026-09-30",
+   "as_of": "2026-10-01",
    "count": 504,
    "source": "https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx"
   },
@@ -80,32 +80,32 @@
   "DOJ releases": {
    "ok": true,
    "error": null,
-   "items": 200,
-   "since": "2026-09-28"
+   "items": 300,
+   "since": "2026-09-30"
   },
   "EEOC releases": {
    "ok": true,
    "error": null,
-   "items": 24,
-   "since": "2026-09-28"
+   "items": 15,
+   "since": "2026-09-30"
   },
   "FTC releases": {
    "ok": true,
    "error": null,
-   "items": 1,
-   "since": "2026-09-28"
+   "items": 2,
+   "since": "2026-09-30"
   },
   "CourtListener releases": {
-   "ok": false,
-   "error": "CourtListener: www.courtlistener.com: HTTP 429",
-   "items": 0,
-   "since": "2026-09-28"
+   "ok": true,
+   "error": null,
+   "items": 9,
+   "since": "2026-09-30"
   },
   "Discovery: SEC full-text search (themes)": {
    "ok": true
   }
  },
- "tickersAsOf": "2026-10-01",
+ "tickersAsOf": "2026-10-02",
  "labels": {
   "FOXA": {
    "label": "black",
@@ -217,7 +217,7 @@
      "doc_date": "2026-09-01",
      "quote": "The EEOC's investigation found reasonable cause to believe that Ford personnel at the facility subjected numerous employees to harassment and discrimination based on race and national origin.",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:41+00:00",
+     "opened_at": "2026-10-03T22:48:24+00:00",
      "quote_found": true
     },
     {
@@ -226,7 +226,7 @@
      "doc_date": "2026-09-01",
      "quote": "Following the EEOC's investigation, the parties engaged in the EEOC's pre-litigation conciliation process, resulting in a conciliation agreement.",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:41+00:00",
+     "opened_at": "2026-10-03T22:48:24+00:00",
      "quote_found": true
     }
    ],
@@ -259,7 +259,7 @@
      "doc_date": "2026-09-14",
      "quote": "to resolve alleged violations of the False Claims Act for failing to comply with anti-discrimination requirements in federal contracts and discriminating against employees and applicants for employment because of race or sex.",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:42+00:00",
+     "opened_at": "2026-10-03T22:48:25+00:00",
      "quote_found": true
     },
     {
@@ -268,7 +268,7 @@
      "doc_date": "2026-09-14",
      "quote": "The claims resolved by the United States in the settlement are allegations only and there has been no determination of liability.",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:42+00:00",
+     "opened_at": "2026-10-03T22:48:25+00:00",
      "quote_found": true
     }
    ],
@@ -302,7 +302,7 @@
      "doc_date": "2023-03-31",
      "quote": "The evidence developed in this civil proceeding demonstrates that is CRYSTAL clear that none of the Statements relating to Dominion about the 2020 election are true. Therefore, the Court will grant summary judgment in favor of Dominion on the element of falsity.",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:50+00:00",
+     "opened_at": "2026-10-03T22:48:34+00:00",
      "quote_found": true
     },
     {
@@ -311,7 +311,7 @@
      "doc_date": "2025-05-12",
      "quote": "On March 31, 2023, the court in the Dominion case issued its rulings on summary judgment motions that were unfavorable to the Company. Following these rulings, on April 18, 2023, the Company and its subsidiary, Fox News Network, LLC, entered into a Release and Settlement Agreement with Dominion",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:54+00:00",
+     "opened_at": "2026-10-03T22:48:37+00:00",
      "quote_found": true
     }
    ],
@@ -344,7 +344,7 @@
      "doc_date": "2025-04-09",
      "quote": "Newsmax fails to meet its rebuttal burden of showing that an issue of material fact exists as to falsity. Therefore, the Court GRANTS summary judgment in Dominion's favor regarding falsity.",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:54+00:00",
+     "opened_at": "2026-10-03T22:48:38+00:00",
      "quote_found": true
     },
     {
@@ -353,7 +353,7 @@
      "doc_date": "2025-08-18",
      "quote": "On August 15, 2025, Newsmax Media, Inc. and Newsmax Broadcasting, LLC entered into a settlement agreement with Dominion Voting Systems, Inc. and certain of its affiliates (\"Dominion\"), pursuant to which such parties agreed to resolve the lawsuit among them for a total amount of $67 million",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:57+00:00",
+     "opened_at": "2026-10-03T22:48:41+00:00",
      "quote_found": true
     }
    ],
@@ -386,7 +386,7 @@
      "doc_date": "2024-04-24",
      "quote": "On October 4, 2021, in a case captioned Diaz v. Tesla, a jury in the Northern District of California returned a verdict against Tesla on claims by a former contingent worker that he was subjected to race discrimination",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:57+00:00",
+     "opened_at": "2026-10-03T22:48:41+00:00",
      "quote_found": true
     },
     {
@@ -395,7 +395,7 @@
      "doc_date": "2024-04-24",
      "quote": "the damages awarded against Tesla were reduced from an initial $ 136.9 million (October 4, 2021) down to $ 15 million (April 13, 2022), and then further down to $ 3.175 million (April 3, 2023).",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:57+00:00",
+     "opened_at": "2026-10-03T22:48:41+00:00",
      "quote_found": true
     }
    ],
@@ -428,7 +428,7 @@
      "doc_date": "2026-07-23",
      "quote": "on February 9, 2022, the California Civil Rights Department (\"CRD,\" formerly \"DFEH\") filed a civil complaint against Tesla in Alameda County, California Superior Court, alleging systemic race discrimination, hostile work environment and pay equity claims, among others.",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:58+00:00",
+     "opened_at": "2026-10-03T22:48:42+00:00",
      "quote_found": true
     },
     {
@@ -437,7 +437,7 @@
      "doc_date": "2026-07-23",
      "quote": "The first phase of the trial is currently set for September 21, 2026. Additionally, on June 1, 2022, the Equal Employment Opportunity Commission (\"EEOC\") issued a cause finding against Tesla that closely parallels the CRD's allegations.",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:58+00:00",
+     "opened_at": "2026-10-03T22:48:42+00:00",
      "quote_found": true
     }
    ],
@@ -470,7 +470,7 @@
      "doc_date": "2022-06-27",
      "quote": "this Settlement Agreement is for settlement purposes only and does not constitute an admission by Meta of any of the allegations contained in the HUD Charge or the Complaint, nor does it constitute any finding of liability against Meta",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:59+00:00",
+     "opened_at": "2026-10-03T22:48:44+00:00",
      "quote_found": true
     },
     {
@@ -479,7 +479,7 @@
      "doc_date": "2022-06-27",
      "quote": "alleged that Meta's housing advertising system discriminated against Facebook users based on their race, color, religion, sex, disability, familial status, and national origin, in violation of the Fair Housing Act (FHA).",
      "tier": 1,
-     "opened_at": "2026-10-01T22:49:00+00:00",
+     "opened_at": "2026-10-03T22:48:44+00:00",
      "quote_found": true
     }
    ],
@@ -512,7 +512,7 @@
      "doc_date": "2026-08-26",
      "quote": "all the while misleading users, their families, and the public regarding the existence and severity of these risks. Trial in this case began on August 18 in the U.S. District Court for the Northern District of California.",
      "tier": 1,
-     "opened_at": "2026-10-01T22:49:01+00:00",
+     "opened_at": "2026-10-03T22:48:46+00:00",
      "quote_found": true
     },
     {
@@ -521,7 +521,7 @@
      "doc_date": "2026-08-26",
      "quote": "Today's settlement, subject to court approval, provides for strong injunctive terms",
      "tier": 1,
-     "opened_at": "2026-10-01T22:49:01+00:00",
+     "opened_at": "2026-10-03T22:48:46+00:00",
      "quote_found": true
     },
     {
@@ -563,7 +563,7 @@
      "doc_date": "2026-01-15",
      "quote": "Every asset generated with Firefly includes Content Credentials, a digital \"nutrition label\", to indicate that generative AI was used",
      "tier": 1,
-     "opened_at": "2026-10-01T22:49:07+00:00",
+     "opened_at": "2026-10-03T22:48:51+00:00",
      "quote_found": true
     },
     {
@@ -572,7 +572,7 @@
      "doc_date": "2026-01-15",
      "quote": "Our focus revolves around serving our customer audiences: business professionals, consumers, creators, creative professionals and marketing professionals.",
      "tier": 1,
-     "opened_at": "2026-10-01T22:49:07+00:00",
+     "opened_at": "2026-10-03T22:48:51+00:00",
      "quote_found": true
     }
    ],
@@ -647,7 +647,7 @@
      "doc_date": "2026-02-05",
      "quote": "YouTube provides people with entertainment, information, and opportunities to learn something new and helps support the creator economy through the YouTube Partner Program.",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:42+00:00",
+     "opened_at": "2026-10-03T22:48:25+00:00",
      "quote_found": true
     }
    ],
@@ -721,7 +721,7 @@
      "doc_date": "2026-02-27",
      "quote": "The impact of our journalism and its breadth is evident as we continue to break stories, produce investigative reports and help our audience understand a wide range of topics.",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:46+00:00",
+     "opened_at": "2026-10-03T22:48:29+00:00",
      "quote_found": true
     }
    ],
@@ -795,7 +795,7 @@
      "doc_date": "2026-02-11",
      "quote": "We believe we can help merchants of all verticals and sizes, from aspirational entrepreneurs to companies with large-scale, direct-to-consumer or business to business (\"B2B\") operations",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:47+00:00",
+     "opened_at": "2026-10-03T22:48:31+00:00",
      "quote_found": true
     }
    ],
@@ -869,7 +869,7 @@
      "doc_date": "2026-03-05",
      "quote": "Reuters is committed to the Thomson Reuters Trust Principles, including that of independence, integrity and freedom from bias",
      "tier": 1,
-     "opened_at": "2026-10-01T22:49:09+00:00",
+     "opened_at": "2026-10-03T22:48:53+00:00",
      "quote_found": true
     }
    ],
@@ -944,7 +944,7 @@
      "doc_date": "2026-02-27",
      "quote": "WBD's Studios segment includes the Warner Bros. Motion Picture Group (\"WBMPG\"), DC Studios, Warner Bros. Television Group (\"WBTVG\"), Consumer Products, Themed Entertainment and Brand Licensing, DC Comics Publishing",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:43+00:00",
+     "opened_at": "2026-10-03T22:48:27+00:00",
      "quote_found": true
     },
     {
@@ -953,7 +953,7 @@
      "doc_date": "2026-08-06",
      "quote": "on February 27, 2026, in accordance with the terms of the Netflix Merger Agreement, the Company terminated the Netflix Merger Agreement in connection with entering into the PSKY Merger Agreement",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:45+00:00",
+     "opened_at": "2026-10-03T22:48:28+00:00",
      "quote_found": true
     }
    ],
@@ -1024,7 +1024,7 @@
      "doc_date": "2026-01-15",
      "quote": "Every asset generated with Firefly includes Content Credentials, a digital \"nutrition label\", to indicate that generative AI was used",
      "tier": 1,
-     "opened_at": "2026-10-01T22:49:07+00:00",
+     "opened_at": "2026-10-03T22:48:51+00:00",
      "quote_found": true
     },
     {
@@ -1033,7 +1033,7 @@
      "doc_date": "2026-01-15",
      "quote": "Our focus revolves around serving our customer audiences: business professionals, consumers, creators, creative professionals and marketing professionals.",
      "tier": 1,
-     "opened_at": "2026-10-01T22:49:07+00:00",
+     "opened_at": "2026-10-03T22:48:51+00:00",
      "quote_found": true
     }
    ],
@@ -1097,7 +1097,7 @@
      "doc_date": "2026-02-05",
      "quote": "YouTube provides people with entertainment, information, and opportunities to learn something new and helps support the creator economy through the YouTube Partner Program.",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:42+00:00",
+     "opened_at": "2026-10-03T22:48:25+00:00",
      "quote_found": true
     }
    ],
@@ -1161,7 +1161,7 @@
      "doc_date": "2026-02-05",
      "quote": "YouTube provides people with entertainment, information, and opportunities to learn something new and helps support the creator economy through the YouTube Partner Program.",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:42+00:00",
+     "opened_at": "2026-10-03T22:48:25+00:00",
      "quote_found": true
     }
    ],
@@ -1225,7 +1225,7 @@
      "doc_date": "2026-02-27",
      "quote": "The impact of our journalism and its breadth is evident as we continue to break stories, produce investigative reports and help our audience understand a wide range of topics.",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:46+00:00",
+     "opened_at": "2026-10-03T22:48:29+00:00",
      "quote_found": true
     }
    ],
@@ -1289,7 +1289,7 @@
      "doc_date": "2026-02-11",
      "quote": "We believe we can help merchants of all verticals and sizes, from aspirational entrepreneurs to companies with large-scale, direct-to-consumer or business to business (\"B2B\") operations",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:47+00:00",
+     "opened_at": "2026-10-03T22:48:31+00:00",
      "quote_found": true
     }
    ],
@@ -1353,7 +1353,7 @@
      "doc_date": "2026-03-05",
      "quote": "Reuters is committed to the Thomson Reuters Trust Principles, including that of independence, integrity and freedom from bias",
      "tier": 1,
-     "opened_at": "2026-10-01T22:49:09+00:00",
+     "opened_at": "2026-10-03T22:48:53+00:00",
      "quote_found": true
     }
    ],
@@ -1418,7 +1418,7 @@
      "doc_date": "2026-02-27",
      "quote": "WBD's Studios segment includes the Warner Bros. Motion Picture Group (\"WBMPG\"), DC Studios, Warner Bros. Television Group (\"WBTVG\"), Consumer Products, Themed Entertainment and Brand Licensing, DC Comics Publishing",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:43+00:00",
+     "opened_at": "2026-10-03T22:48:27+00:00",
      "quote_found": true
     },
     {
@@ -1427,7 +1427,7 @@
      "doc_date": "2026-08-06",
      "quote": "on February 27, 2026, in accordance with the terms of the Netflix Merger Agreement, the Company terminated the Netflix Merger Agreement in connection with entering into the PSKY Merger Agreement",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:45+00:00",
+     "opened_at": "2026-10-03T22:48:28+00:00",
      "quote_found": true
     }
    ],
@@ -1493,7 +1493,7 @@
      "doc_date": "2026-02-19",
      "quote": "Etsy operates two-sided online marketplaces that connect millions of creative entrepreneurs with buyers around the world.",
      "tier": 1,
-     "opened_at": "2026-10-01T22:49:16+00:00",
+     "opened_at": "2026-10-03T22:49:01+00:00",
      "quote_found": true
     }
    ],
@@ -1559,7 +1559,7 @@
      "doc_date": "2026-07-24",
      "quote": "The Company is the world's largest publisher and distributor of children's books and is the leading operator of school-based book clubs and school-based book fairs in the United States.",
      "tier": 1,
-     "opened_at": "2026-10-01T22:48:48+00:00",
+     "opened_at": "2026-10-03T22:48:31+00:00",
      "quote_found": true
     }
    ],
@@ -1627,7 +1627,7 @@
      "doc_date": "2026-03-05",
      "quote": "WEBTOON is a global storytelling platform where a vibrant community of creators and users discover, create and share new content.",
      "tier": 1,
-     "opened_at": "2026-10-01T22:49:15+00:00",
+     "opened_at": "2026-10-03T22:49:00+00:00",
      "quote_found": true
     }
    ],
@@ -1699,20 +1699,20 @@
  "newTickerChecks": [],
  "etf": {
   "SPY": {
-   "asOf": "2026-09-30",
+   "asOf": "2026-10-01",
    "source": "https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx",
    "sourceKind": "Issuer daily holdings file (State Street)",
    "holdings": {
-    "ACN": 0.169968,
-    "ADBE": 0.144443,
-    "F": 0.071769,
-    "FOX": 0.011471,
-    "FOXA": 0.019004,
-    "GOOG": 2.45582,
-    "GOOGL": 3.061334,
-    "META": 2.424733,
-    "TSLA": 1.516042,
-    "WBD": 0.117826
+    "ACN": 0.196394,
+    "ADBE": 0.144962,
+    "F": 0.072877,
+    "FOX": 0.011167,
+    "FOXA": 0.018553,
+    "GOOG": 2.409213,
+    "GOOGL": 3.003466,
+    "META": 2.42247,
+    "TSLA": 1.51008,
+    "WBD": 0.117595
    },
    "positions": 506,
    "name": "State Street SPDR S&P 500 ETF Trust"
@@ -1838,7 +1838,7 @@
   "legal": [],
   "legalKnown": [],
   "themes": [],
-  "since": "2026-09-28"
+  "since": "2026-09-30"
  },
  "universe": {
   "sp500": 504,

@@ -38,7 +38,7 @@ def _load_dir(d: Path, coll: str) -> list[dict]:
 
 def snapshot(d: Path) -> Path:
     snap = {"universe": _load_dir(d, "universe"), "approvals": _load_dir(d, "approvals"),
-            "runs": [r for r in _load_dir(d, "runs") if r.get("_id") != "latest"],
+            "runs": [r for r in _load_dir(d, "runs") if str(r.get("_id", "")).startswith("run-")],
             "proposal_ids": [r["_id"] for r in _load_dir(d, "proposals")],
             "versions": {f"{c}/{r['_id']}": r["_version"] for c in ("runs", "proposals", "universe")
                          for r in _load_dir(d, c) if r.get("_version")}}

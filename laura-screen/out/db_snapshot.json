@@ -768,6 +768,35 @@
    },
    "_id": "run-20260929T104244",
    "_version": null
+  },
+  {
+   "duration_s": 65.4,
+   "errors": [],
+   "finished": "2026-10-01T22:49:43+00:00",
+   "id": "run-20261001T224837",
+   "proposals": 14,
+   "sources_down": [
+    "CourtListener releases"
+   ],
+   "started": "2026-10-01T22:48:37+00:00",
+   "stats": {
+    "evidence_records": 21,
+    "evidence_sources_opened": 31,
+    "leads": 1,
+    "new_tickers_checked": 0,
+    "proposals_by_list": {
+     "aligned": 6,
+     "black": 3,
+     "watch": 5
+    },
+    "sources_checked": 25,
+    "sources_ok": 24,
+    "sp500": 504,
+    "team_tickers": 3,
+    "values_fail": 3
+   },
+   "_id": "run-20261001T224837",
+   "_version": null
   }
  ],
  "proposal_ids": [
@@ -796,31 +825,20 @@
   "universe/TSLA": 2,
   "universe/TYO": 2,
   "universe/VOO": 2,
-  "runs/latest": 11,
-  "runs/run-20260926T070944": 1,
-  "runs/run-20260926T073050": 1,
-  "runs/run-20260926T074411": 1,
-  "runs/run-20260926T075808": 1,
-  "runs/run-20260926T142541": 1,
-  "runs/run-20260926T150023": 1,
-  "runs/run-20260927T130543": 1,
-  "runs/run-20260928T024143": 1,
-  "runs/run-20260928T221454": 1,
-  "runs/run-20260928T232654": 1,
-  "runs/run-20260929T104244": 1,
-  "proposals/p-ACN-watch-accenture-doj-fca-2026": 11,
-  "proposals/p-ADBE-aligned-adbe-values": 11,
-  "proposals/p-F-watch-ford-eeoc-conciliation-2026": 11,
-  "proposals/p-FOXA-FOX-black-fox-dominion-falsity-2023": 11,
-  "proposals/p-GOOG-GOOGL-aligned-alphabet-values": 11,
-  "proposals/p-META-watch-meta-doj-fha-settlement-2022": 2,
-  "proposals/p-META-watch-meta-states-youth-case-2026": 11,
-  "proposals/p-NMAX-black-newsmax-dominion-falsity-2025": 11,
-  "proposals/p-NYT-aligned-nyt-values": 11,
-  "proposals/p-SHOP-aligned-shop-values": 11,
-  "proposals/p-TRI-aligned-tri-values": 1,
-  "proposals/p-TSLA-black-tesla-diaz-verdict-2021": 11,
-  "proposals/p-TSLA-watch-tesla-crd-eeoc-open-2026": 11,
-  "proposals/p-WBD-aligned-wbd-values": 11
+  "runs/latest": 12,
+  "proposals/p-ACN-watch-accenture-doj-fca-2026": 12,
+  "proposals/p-ADBE-aligned-adbe-values": 12,
+  "proposals/p-F-watch-ford-eeoc-conciliation-2026": 12,
+  "proposals/p-FOXA-FOX-black-fox-dominion-falsity-2023": 12,
+  "proposals/p-GOOG-GOOGL-aligned-alphabet-values": 12,
+  "proposals/p-META-watch-meta-doj-fha-settlement-2022": 3,
+  "proposals/p-META-watch-meta-states-youth-case-2026": 12,
+  "proposals/p-NMAX-black-newsmax-dominion-falsity-2025": 12,
+  "proposals/p-NYT-aligned-nyt-values": 12,
+  "proposals/p-SHOP-aligned-shop-values": 12,
+  "proposals/p-TRI-aligned-tri-values": 2,
+  "proposals/p-TSLA-black-tesla-diaz-verdict-2021": 12,
+  "proposals/p-TSLA-watch-tesla-crd-eeoc-open-2026": 12,
+  "proposals/p-WBD-aligned-wbd-values": 12
  }
 }

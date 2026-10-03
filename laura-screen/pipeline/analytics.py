@@ -84,7 +84,7 @@ def backfill_first_seen() -> dict:
 
 def build(db: Path, history: dict, today: datetime | None = None) -> tuple[dict, dict]:
     now = today or datetime.now(timezone.utc)
-    runs = [r for r in _load(db, "runs") if r["_id"] != "latest"]
+    runs = [r for r in _load(db, "runs") if r["_id"].startswith("run-")]  # skip "latest" and "alerts_ledger"
     latest = next((r for r in _load(db, "runs") if r["_id"] == "latest"), {})
     audit = _load(db, "audit_log")
     approvals = _load(db, "approvals")
