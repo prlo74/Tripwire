@@ -52,7 +52,7 @@ Edit `config/rules.yaml`, save, then run the screen again.
 | Look-back window for Black findings (7 years) | `black.lookback_years` |
 | Minimum market cap ($5B) | `aligned.financial_gate.min_market_cap_usd` |
 | Maximum debt/equity (1.5) | `aligned.financial_gate.max_debt_to_equity` |
-| ETF exposure flag (0.5% of portfolio) | `etf_lookthrough.flag_threshold_pct_of_portfolio` |
+| ETF exposure flag (2% of portfolio) | `etf_lookthrough.flag_threshold_pct_of_portfolio` |
 | Per-$ amount shown when no ETF weights | `etf_lookthrough.per_amount_fallback_usd` |
 | Max discovery proposals per run (10) | `discovery.max_proposals_per_run` |
 | First-run look-back for agency/court discovery (45 days) | `discovery.legal_first_run_lookback_days` |

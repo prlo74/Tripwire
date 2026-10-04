@@ -3,7 +3,7 @@
  * Whole-portfolio Black exposure (percent of total portfolio) =
  *   sum over held ETFs of (ETF weight % x Black share inside that ETF %) / 100
  *   + weight % of any Black-list stock held directly.
- * Flag when the total exceeds the threshold (default 0.5%) or any Black stock is held directly.
+ * Flag when the total exceeds the threshold (default 2%) or any Black stock is held directly.
  *
  * compute({rows, etfData, black, thresholdPct, perAmount})
  *   rows:    [{ticker, weightPct}]  team inputs; weightPct may be null/"" (not entered)
@@ -31,7 +31,7 @@
 
   function compute(opts) {
     var rows = opts.rows || [], etfData = opts.etfData || {}, black = opts.black || [];
-    var threshold = opts.thresholdPct == null ? 0.5 : opts.thresholdPct;
+    var threshold = opts.thresholdPct == null ? 2 : opts.thresholdPct;
     var perAmount = opts.perAmount || 10000;
     var blackSet = {};
     black.forEach(function (t) { blackSet[t] = true; });

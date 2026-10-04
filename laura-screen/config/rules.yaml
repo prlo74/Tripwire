@@ -55,7 +55,7 @@ aligned:
     single_name_max_pct_of_stocks: 4
 
 etf_lookthrough:
-  flag_threshold_pct_of_portfolio: 0.5   # sum over ETFs of (ETF weight x Black share inside ETF)
+  flag_threshold_pct_of_portfolio: 2     # sum over ETFs of (ETF weight x Black share inside ETF)
   per_amount_fallback_usd: 10000         # shown when team hasn't entered ETF weights
 
 discovery:

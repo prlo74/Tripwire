@@ -1036,7 +1036,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
   function renderLookthrough() {
     var rows = ltRows(), black = blackSet(), r = window.LauraLookthrough.compute({
       rows: rows, etfData: S.data.etf || {}, black: black,
-      thresholdPct: (S.data.rules || {}).threshold_pct || 0.5, perAmount: (S.data.rules || {}).per_amount || 10000
+      thresholdPct: (S.data.rules || {}).threshold_pct || 2, perAmount: (S.data.rules || {}).per_amount || 10000
     });
     var g = clear($("lt-gauge")); g.className = "gauge " + (r.flagged ? "over" : "ok");
     if (r.mode === "portfolio") {
@@ -1429,7 +1429,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
       "Values: a link, in the company's own filing or a primary membership list, to " + Object.keys(r.themes || {}).map(function (k) { return r.themes[k]; }).join(", ") + ". Marketing adjectives do not count."]);
     sec("Sources", ["Tier 1 (can trigger a proposal): SEC filings and XBRL data, DOJ, EEOC, FTC, state civil-rights agencies and attorneys general, court opinions and CourtListener.", "Tier 2 (leads only): AP, Reuters, NPR, PBS, Bloomberg Law, Law360, CNN, NYT, WSJ.", "Never used: blogs, Substack, Medium, forums, social media, stock-chatter sites, SEO legal aggregators, AI summaries."],
       "Every quote is re-checked against its source on each run. If a source is down, the run says so; it never substitutes a mirror.");
-    sec("ETF look-through", ["Exposure = sum over ETFs of (ETF % of portfolio × Black-list % inside the ETF), plus any Black stock held directly.", "Flag above " + (r.threshold_pct || 0.5) + "% of the total portfolio.", "Holdings come from the issuer's daily file where it can be read (State Street), otherwise the fund's latest SEC N-PORT filing, which can lag about 60–90 days."]);
+    sec("ETF look-through", ["Exposure = sum over ETFs of (ETF % of portfolio × Black-list % inside the ETF), plus any Black stock held directly.", "Flag above " + (r.threshold_pct || 2) + "% of the total portfolio.", "Holdings come from the issuer's daily file where it can be read (State Street), otherwise the fund's latest SEC N-PORT filing, which can lag about 60–90 days."]);
     sec("Deliberately not listed", Object.keys(S.data.doNotList || {}).map(function (t) { return t + ": " + S.data.doNotList[t]; }).concat(["No company is chosen or excluded for the identity of its founder or CEO.", "China and Xinjiang supply-chain screens are outside Laura's public work."]));
     sec("Scope", ["Stocks and stock ETFs only. Bonds (the 2033 operating reserve) are not screened.", "Sizing guide, not enforced: Aligned stocks ≤ " + ((r.sizing || {}).total_aligned_max_pct_of_stocks || 15) + "% of the stock portion in total, ≤ " + ((r.sizing || {}).single_name_max_pct_of_stocks || 4) + "% in any one company."]);
   }

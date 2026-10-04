@@ -32,10 +32,18 @@ def test_several_etfs(run_js):
 
 
 def test_etf_with_several_black_names_over_threshold(run_js):
-    r = lt(run_js, [{"ticker": "NEWS", "weightPct": 2}])
+    r = lt(run_js, [{"ticker": "NEWS", "weightPct": 5}])
     assert r["perEtf"][0]["blackSharePct"] == pytest.approx(45.0)
-    assert r["totalPct"] == pytest.approx(0.9)
+    assert r["totalPct"] == pytest.approx(2.25)
     assert r["overThreshold"] is True and r["flagged"] is True
+
+
+def test_exposure_under_two_percent_is_not_flagged(run_js):
+    # 0.9% was over the old 0.5% line; under the 2% line it is shown but not flagged.
+    r = lt(run_js, [{"ticker": "NEWS", "weightPct": 2}])
+    assert r["totalPct"] == pytest.approx(0.9)
+    assert r["thresholdPct"] == 2
+    assert r["overThreshold"] is False and r["flagged"] is False
     assert sorted(r["perEtf"][0]["blackNames"]) == ["FOX", "FOXA", "NMAX"]
 
 
@@ -59,9 +67,16 @@ def test_direct_black_holding_flags_even_under_threshold(run_js):
 
 
 def test_threshold_boundary_is_strictly_greater(run_js):
-    r = lt(run_js, [{"ticker": "NEWS", "weightPct": 0.5 / 45 * 100}])
-    assert r["totalPct"] == pytest.approx(0.5)
+    r = lt(run_js, [{"ticker": "NEWS", "weightPct": 2 / 45 * 100}])
+    assert r["totalPct"] == pytest.approx(2)
     assert r["overThreshold"] is False
+
+
+def test_page_default_threshold_matches_rules(run_js):
+    # The page falls back to the JS default when a run hasn't sent rules; keep it equal to config.
+    from pipeline.evidence import load_rules
+    r = lt(run_js, [{"ticker": "QQQ", "weightPct": 10}])
+    assert r["thresholdPct"] == load_rules()["etf_lookthrough"]["flag_threshold_pct_of_portfolio"]
 
 
 def test_unknown_etf_reported_missing(run_js):
