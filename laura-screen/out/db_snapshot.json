@@ -288,6 +288,90 @@
   },
   {
    "clause": "Watch (b): Settlement with no admission of wrongdoing",
+   "company": "Cardinal Health, Inc.",
+   "decided_at": "2026-10-04T13:32:14.780Z",
+   "decided_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "decision": "approve",
+   "event_date": "2021-07-09",
+   "evidence": [
+    {
+     "doc_date": "2021-07-09",
+     "publisher": "U.S. Equal Employment Opportunity Commission (press release)",
+     "quote": "Cardinal Health will pay $1.45 million to resolve a racial harassment and retaliation discrimination lawsuit filed by the U.S. Equal Employment Opportunity Commission (EEOC)",
+     "url": "https://www.eeoc.gov/newsroom/cardinal-health-and-appleone-settle-eeoc-race-harassment-retaliation-lawsuit"
+    }
+   ],
+   "evidence_hash": "b7b26a09b64deba8",
+   "from": "none",
+   "proposal_id": "p-CAH-watch-cardinal-health-eeoc-2021",
+   "reason": "keep watching, but it's close",
+   "record_id": "cardinal-health-eeoc-2021",
+   "tickers": [
+    "CAH"
+   ],
+   "to": "watch",
+   "tripwire": "A court ruling, jury verdict, or agency finding that states a violation, or an admission in the decree -> propose Black under (b).",
+   "_id": "p-CAH-watch-cardinal-health-eeoc-2021",
+   "_version": null
+  },
+  {
+   "clause": "Black (c) At least 10% of latest fiscal-year revenue comes from immigration detention, or immigration detainee monitoring or transport, as disclosed in the company's own 10-K: 35% of fiscal-year 2025 revenue (10-K filed 2026-02-20; threshold 10%)",
+   "company": "CoreCivic, Inc.",
+   "decided_at": "2026-10-04T13:31:00.646Z",
+   "decided_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "decision": "approve",
+   "event_date": "2026-02-20",
+   "evidence": [
+    {
+     "doc_date": "2026-02-20",
+     "publisher": "CoreCivic, Inc. Form 10-K for fiscal year 2025 (SEC EDGAR)",
+     "quote": "For the year ended December 31, 2025, ICE, USMS, and the BOP accounted for 35% ($770.7 million), 18% ($390.6 million), and 1% ($32.2 million), respectively, of our total revenue.",
+     "url": "https://www.sec.gov/Archives/edgar/data/1070985/000119312526060669/cxw-20251231.htm"
+    }
+   ],
+   "evidence_hash": "82e3897eba733b26",
+   "from": "none",
+   "proposal_id": "p-CXW-black-cxw-ice-share-fy2025",
+   "reason": "profits off of Immigration Detention",
+   "record_id": "cxw-ice-share-fy2025",
+   "tickers": [
+    "CXW"
+   ],
+   "to": "black",
+   "tripwire": "",
+   "_id": "p-CXW-black-cxw-ice-share-fy2025",
+   "_version": null
+  },
+  {
+   "clause": "Watch (b): Settlement with no admission of wrongdoing",
+   "company": "Dollar General Corporation",
+   "decided_at": "2026-10-04T13:33:06.230Z",
+   "decided_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "decision": "approve",
+   "event_date": "2019-11-18",
+   "evidence": [
+    {
+     "doc_date": "2019-11-18",
+     "publisher": "U.S. Equal Employment Opportunity Commission (press release)",
+     "quote": "Dollar General will pay $6 million and furnish other relief to settle a class race discrimination lawsuit brought by the U.S. Equal Employment Opportunity Commission (EEOC)",
+     "url": "https://www.eeoc.gov/newsroom/dollar-general-pay-6-million-settle-eeoc-class-race-discrimination-suit"
+    }
+   ],
+   "evidence_hash": "cddf1f7cac88a230",
+   "from": "none",
+   "proposal_id": "p-DG-watch-dollar-general-eeoc-2019",
+   "reason": "close to expiring, but it's still best to keep an eye on this. could happen again",
+   "record_id": "dollar-general-eeoc-2019",
+   "tickers": [
+    "DG"
+   ],
+   "to": "watch",
+   "tripwire": "A court ruling, jury verdict, or agency finding that states a violation, or an admission in the decree -> propose Black under (b).",
+   "_id": "p-DG-watch-dollar-general-eeoc-2019",
+   "_version": null
+  },
+  {
+   "clause": "Watch (b): Settlement with no admission of wrongdoing",
    "company": "Ford Motor Company",
    "decided_at": "2026-09-26T15:28:07.118Z",
    "decided_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
@@ -353,6 +437,34 @@
    "to": "black",
    "tripwire": "",
    "_id": "p-FOXA-FOX-black-fox-dominion-falsity-2023",
+   "_version": null
+  },
+  {
+   "clause": "Black (c) At least 10% of latest fiscal-year revenue comes from immigration detention, or immigration detainee monitoring or transport, as disclosed in the company's own 10-K: 47.6% of fiscal-year 2025 revenue (10-K filed 2026-02-25; threshold 10%)",
+   "company": "The GEO Group, Inc.",
+   "decided_at": "2026-10-04T13:31:42.496Z",
+   "decided_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "decision": "approve",
+   "event_date": "2026-02-25",
+   "evidence": [
+    {
+     "doc_date": "2026-02-25",
+     "publisher": "The GEO Group, Inc. Form 10-K for fiscal year 2025 (SEC EDGAR)",
+     "quote": "ICE accounting for 47.6% and 41.5% of our total consolidated revenues for 2025 and 2024, respectively",
+     "url": "https://www.sec.gov/Archives/edgar/data/923796/000119312526071747/geo-20251231.htm"
+    }
+   ],
+   "evidence_hash": "f6020aee3dde9bda",
+   "from": "none",
+   "proposal_id": "p-GEO-black-geo-ice-share-fy2025",
+   "reason": "nearly half of revenue came from ICE Arrests and Detention",
+   "record_id": "geo-ice-share-fy2025",
+   "tickers": [
+    "GEO"
+   ],
+   "to": "black",
+   "tripwire": "",
+   "_id": "p-GEO-black-geo-ice-share-fy2025",
    "_version": null
   },
   {
@@ -521,6 +633,34 @@
    "_version": null
   },
   {
+   "clause": "Watch (b): Settlement with no admission of wrongdoing",
+   "company": "PayPal Holdings, Inc.",
+   "decided_at": "2026-10-04T13:33:52.396Z",
+   "decided_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "decision": "approve",
+   "event_date": "2026-05-12",
+   "evidence": [
+    {
+     "doc_date": "2026-05-12",
+     "publisher": "U.S. Department of Justice, Office of Public Affairs (press release)",
+     "quote": "the Justice Department announced a settlement with PayPal Inc. to resolve a fair lending investigation into a discriminatory investment program created for black and minority-owned businesses.",
+     "url": "https://www.justice.gov/opa/pr/justice-department-secures-30m-settlement-paypal-over-unlawful-dei-investment-program"
+    }
+   ],
+   "evidence_hash": "1cb183e36c05ce2c",
+   "from": "none",
+   "proposal_id": "p-PYPL-watch-paypal-doj-fair-lending-2026",
+   "reason": "The agreement to a settlement is almost similar to admitting guilt for something.this is justified for watch list",
+   "record_id": "paypal-doj-fair-lending-2026",
+   "tickers": [
+    "PYPL"
+   ],
+   "to": "watch",
+   "tripwire": "A court ruling, jury verdict, or agency finding or consent order that states PayPal discriminated, or an admission in the settlement -> propose Black under (b).",
+   "_id": "p-PYPL-watch-paypal-doj-fair-lending-2026",
+   "_version": null
+  },
+  {
    "clause": "Aligned: passes financial gate + Aligned gate 2 (values link): Creative entrepreneurship",
    "company": "Shopify Inc.",
    "decided_at": "2026-09-26T15:28:43.085Z",
@@ -577,9 +717,9 @@
    "_version": null
   },
   {
-   "clause": "Black (b) Engaged in racial or ethnic discrimination: Jury verdict, even if later reduced, 2021-10-04 (within 7 years)",
+   "clause": "Black (b) Engaged in discrimination on the basis of race, ethnicity, sexual orientation or gender identity: Jury verdict, even if later reduced, 2021-10-04 (within 7 years)",
    "company": "Tesla, Inc.",
-   "decided_at": "2026-09-26T15:27:27.568Z",
+   "decided_at": "2026-10-04T13:19:26.585Z",
    "decided_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
    "decision": "approve",
    "event_date": "2021-10-04",
@@ -597,10 +737,10 @@
      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828024017503/tsla-20240331.htm"
     }
    ],
-   "evidence_hash": "6f39410e420df6c0",
+   "evidence_hash": "bdc5a562d9d294b8",
    "from": "watch",
    "proposal_id": "p-TSLA-black-tesla-diaz-verdict-2021",
-   "reason": "racial discrimination",
+   "reason": "findings show racial discrimination",
    "record_id": "tesla-diaz-verdict-2021",
    "tickers": [
     "TSLA"
@@ -642,6 +782,34 @@
    "to": "watch",
    "tripwire": "A liability finding in the CRD trial or in EEOC v. Tesla (N.D. Cal.) -> propose Black under (b). If the Diaz proposal is approved, TSLA is already Black and this becomes context.",
    "_id": "p-TSLA-watch-tesla-crd-eeoc-open-2026",
+   "_version": null
+  },
+  {
+   "clause": "Watch (b): Settlement with no admission of wrongdoing",
+   "company": "United Airlines Holdings, Inc.",
+   "decided_at": "2026-10-04T13:34:44.746Z",
+   "decided_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "decision": "approve",
+   "event_date": "2025-01-06",
+   "evidence": [
+    {
+     "doc_date": "2025-01-06",
+     "publisher": "U.S. Equal Employment Opportunity Commission (press release)",
+     "quote": "will pay $99,000 and provide other relief to settle a federal lawsuit for a hostile work environment based on race and national origin",
+     "url": "https://www.eeoc.gov/newsroom/united-airlines-pay-99000-eeoc-discrimination-case"
+    }
+   ],
+   "evidence_hash": "99e715669748cbe6",
+   "from": "none",
+   "proposal_id": "p-UAL-watch-united-airlines-eeoc-2025",
+   "reason": "once again, a settlement can be viewed as an admission of guilt, even if not officially. Good to keep an eye on.",
+   "record_id": "united-airlines-eeoc-2025",
+   "tickers": [
+    "UAL"
+   ],
+   "to": "watch",
+   "tripwire": "A court ruling, jury verdict, or agency finding that states a violation, or an admission in the decree -> propose Black under (b).",
+   "_id": "p-UAL-watch-united-airlines-eeoc-2025",
    "_version": null
   },
   {
@@ -990,6 +1158,35 @@
    },
    "_id": "run-20261004T124531",
    "_version": null
+  },
+  {
+   "duration_s": 85.2,
+   "errors": [],
+   "finished": "2026-10-04T13:16:50+00:00",
+   "id": "run-20261004T131524",
+   "proposals": 20,
+   "sources_down": [
+    "CourtListener releases"
+   ],
+   "started": "2026-10-04T13:15:24+00:00",
+   "stats": {
+    "evidence_records": 27,
+    "evidence_sources_opened": 37,
+    "leads": 1,
+    "new_tickers_checked": 0,
+    "proposals_by_list": {
+     "aligned": 6,
+     "black": 5,
+     "watch": 9
+    },
+    "sources_checked": 31,
+    "sources_ok": 30,
+    "sp500": 504,
+    "team_tickers": 3,
+    "values_fail": 3
+   },
+   "_id": "run-20261004T131524",
+   "_version": null
   }
  ],
  "proposal_ids": [
@@ -1033,10 +1230,14 @@
   "universe/VT": 2,
   "universe/TSLA": 2,
   "universe/VEA": 2,
-  "approvals/p-TSLA-black-tesla-diaz-verdict-2021": 1,
+  "approvals/p-TSLA-black-tesla-diaz-verdict-2021": 2,
   "approvals/p-ACN-watch-accenture-doj-fca-2026": 1,
   "approvals/p-META-watch-meta-doj-fha-settlement-2022": 1,
+  "approvals/p-DG-watch-dollar-general-eeoc-2019": 1,
   "approvals/p-SHOP-aligned-shop-values": 1,
+  "approvals/p-CAH-watch-cardinal-health-eeoc-2021": 1,
+  "approvals/p-GEO-black-geo-ice-share-fy2025": 1,
+  "approvals/p-CXW-black-cxw-ice-share-fy2025": 1,
   "approvals/p-META-watch-meta-states-youth-case-2026": 1,
   "approvals/p-F-watch-ford-eeoc-conciliation-2026": 1,
   "approvals/p-GOOG-GOOGL-aligned-alphabet-values": 1,
@@ -1044,16 +1245,19 @@
   "approvals/p-FOXA-FOX-black-fox-dominion-falsity-2023": 1,
   "approvals/p-TSLA-watch-tesla-crd-eeoc-open-2026": 1,
   "approvals/p-NYT-aligned-nyt-values": 1,
+  "approvals/p-PYPL-watch-paypal-doj-fair-lending-2026": 1,
+  "approvals/p-UAL-watch-united-airlines-eeoc-2025": 1,
   "approvals/p-WBD-aligned-wbd-values": 1,
   "approvals/p-TRI-aligned-tri-values": 1,
   "approvals/p-NMAX-black-newsmax-dominion-falsity-2025": 1,
-  "runs/latest": 15,
+  "runs/latest": 17,
   "runs/run-20260928T232654": 1,
   "runs/run-20260926T150023": 1,
+  "runs/run-20261004T131524": 1,
   "runs/alerts_ledger": 1,
   "runs/run-20260926T074411": 1,
   "runs/run-20260928T024143": 1,
-  "runs/progress": 1,
+  "runs/progress": 9,
   "runs/run-20260926T073050": 1,
   "runs/run-20260928T221454": 1,
   "runs/run-20261001T224837": 1,
@@ -1065,29 +1269,32 @@
   "runs/run-20261004T120506": 1,
   "runs/run-20260929T104244": 1,
   "runs/run-20260926T075808": 1,
-  "proposals/p-TSLA-black-tesla-diaz-verdict-2021": 15,
-  "proposals/p-ACN-watch-accenture-doj-fca-2026": 15,
-  "proposals/p-META-watch-meta-doj-fha-settlement-2022": 6,
-  "proposals/p-DG-watch-dollar-general-eeoc-2019": 1,
-  "proposals/p-SHOP-aligned-shop-values": 15,
-  "proposals/p-CAH-watch-cardinal-health-eeoc-2021": 1,
-  "proposals/p-GEO-black-geo-ice-share-fy2025": 1,
-  "proposals/p-CXW-black-cxw-ice-share-fy2025": 1,
-  "proposals/p-META-watch-meta-states-youth-case-2026": 15,
-  "proposals/p-F-watch-ford-eeoc-conciliation-2026": 15,
-  "proposals/p-GOOG-GOOGL-aligned-alphabet-values": 15,
-  "proposals/p-ADBE-aligned-adbe-values": 15,
-  "proposals/p-FOXA-FOX-black-fox-dominion-falsity-2023": 15,
-  "proposals/p-TSLA-watch-tesla-crd-eeoc-open-2026": 15,
-  "proposals/p-NYT-aligned-nyt-values": 15,
-  "proposals/p-PYPL-watch-paypal-doj-fair-lending-2026": 1,
-  "proposals/p-UAL-watch-united-airlines-eeoc-2025": 1,
-  "proposals/p-WBD-aligned-wbd-values": 15,
-  "proposals/p-TRI-aligned-tri-values": 5,
-  "proposals/p-NMAX-black-newsmax-dominion-falsity-2025": 15,
+  "proposals/p-TSLA-black-tesla-diaz-verdict-2021": 16,
+  "proposals/p-ACN-watch-accenture-doj-fca-2026": 16,
+  "proposals/p-META-watch-meta-doj-fha-settlement-2022": 7,
+  "proposals/p-DG-watch-dollar-general-eeoc-2019": 2,
+  "proposals/p-SHOP-aligned-shop-values": 16,
+  "proposals/p-CAH-watch-cardinal-health-eeoc-2021": 2,
+  "proposals/p-GEO-black-geo-ice-share-fy2025": 2,
+  "proposals/p-CXW-black-cxw-ice-share-fy2025": 2,
+  "proposals/p-META-watch-meta-states-youth-case-2026": 16,
+  "proposals/p-F-watch-ford-eeoc-conciliation-2026": 16,
+  "proposals/p-GOOG-GOOGL-aligned-alphabet-values": 16,
+  "proposals/p-ADBE-aligned-adbe-values": 16,
+  "proposals/p-FOXA-FOX-black-fox-dominion-falsity-2023": 16,
+  "proposals/p-TSLA-watch-tesla-crd-eeoc-open-2026": 16,
+  "proposals/p-NYT-aligned-nyt-values": 16,
+  "proposals/p-PYPL-watch-paypal-doj-fair-lending-2026": 2,
+  "proposals/p-UAL-watch-united-airlines-eeoc-2025": 2,
+  "proposals/p-WBD-aligned-wbd-values": 16,
+  "proposals/p-TRI-aligned-tri-values": 6,
+  "proposals/p-NMAX-black-newsmax-dominion-falsity-2025": 16,
+  "audit_log/4hzm11eq2h2leu6608aj": 1,
   "audit_log/hd80tjiu3cnks4lgpxqf": 1,
   "audit_log/v9kgaoyg160nf82mmamf": 1,
   "audit_log/2lzcieza8iy5x1y702ad": 1,
+  "audit_log/meza7pdiqywte1euaef9": 1,
+  "audit_log/246x5o1mpgrsllcsby0y": 1,
   "audit_log/776w492x76en0egl1wyq": 1,
   "audit_log/imh3hhh1k4wstywvm376": 1,
   "audit_log/n8q52kng896lyjy17myp": 1,
@@ -1098,6 +1305,7 @@
   "audit_log/57cia1onrl63614zy13v": 1,
   "audit_log/rwn1bt6c7pw90ny83g8t": 1,
   "audit_log/36e9cywch1j407p76e6s": 1,
+  "audit_log/y00ainm5xw56vyjznqh1": 1,
   "audit_log/4639zurpxb4x9zzi8fqi": 1,
   "audit_log/p84agf302er4a41d7e1g": 1,
   "audit_log/192qceqgcimoal5n87gz": 1,
@@ -1113,23 +1321,27 @@
   "audit_log/43ewuqx15kw2vzznaoih": 1,
   "audit_log/9n2bai8fwvv7u61rtzyg": 1,
   "audit_log/devdvu3cnv058dgcq9a9": 1,
+  "audit_log/na3tr7k9jxgfprrsvxxr": 1,
   "audit_log/fhtlio6gyiyasz8v3f4y": 1,
   "audit_log/1jekvhotzlp1eeen9w6k": 1,
   "audit_log/lp2dnmf7wwcnm6i7evrz": 1,
   "audit_log/pxh0b21v2mvy35pexnjr": 1,
   "audit_log/8c9iyiqhijwf3rayncmq": 1,
   "audit_log/5d77e1g3ab9xdladwfst": 1,
+  "audit_log/vd0p0yb6mxub4vygobzb": 1,
   "audit_log/72jumz1iv9c08j24kuqv": 1,
   "audit_log/c0l9bqsan1709dnazjq1": 1,
   "audit_log/dfndt6ucvn29o5s28ij0": 1,
   "audit_log/ozw06weznj611x7jyhx8": 1,
   "audit_log/jt5lldb65yi0v6cn6t6c": 1,
   "audit_log/fejeu7mcqb7dsrfh513y": 1,
+  "audit_log/awaxdali81z56mtufd2o": 1,
+  "audit_log/tbuurwskx7sy2wslmkzj": 1,
   "audit_log/i27jbvj5a1dlgpde5z6x": 1,
   "audit_log/1ydihrwjba7ho0temh5x": 1,
   "audit_log/ln123px7ztemt6cvgk4c": 1,
   "audit_log/ktlgsb52n6xpnk8f5gow": 1,
   "audit_log/1xb5wbpwslsx8b16ur84": 1,
-  "usage/u_Xvj7Rxem5TB8oVDXKCt1dQ": 60
+  "usage/u_Xvj7Rxem5TB8oVDXKCt1dQ": 87
  }
 }

@@ -4,152 +4,152 @@
   "collection": "runs",
   "doc_id": "latest",
   "file_path": "/home/user/CredCheck/laura-screen/out/db_writes/runs__latest.json",
-  "if_version": 15
+  "if_version": 17
  },
  {
   "op": "set",
   "collection": "runs",
-  "doc_id": "run-20261004T131524",
-  "file_path": "/home/user/CredCheck/laura-screen/out/db_writes/runs__run-20261004T131524.json"
+  "doc_id": "run-20261004T235454",
+  "file_path": "/home/user/CredCheck/laura-screen/out/db_writes/runs__run-20261004T235454.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-F-watch-ford-eeoc-conciliation-2026",
   "file_path": "/home/user/CredCheck/laura-screen/out/db_writes/proposals__p-F-watch-ford-eeoc-conciliation-2026.json",
-  "if_version": 15
+  "if_version": 16
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-ACN-watch-accenture-doj-fca-2026",
   "file_path": "/home/user/CredCheck/laura-screen/out/db_writes/proposals__p-ACN-watch-accenture-doj-fca-2026.json",
-  "if_version": 15
+  "if_version": 16
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-CXW-black-cxw-ice-share-fy2025",
   "file_path": "/home/user/CredCheck/laura-screen/out/db_writes/proposals__p-CXW-black-cxw-ice-share-fy2025.json",
-  "if_version": 1
+  "if_version": 2
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-GEO-black-geo-ice-share-fy2025",
   "file_path": "/home/user/CredCheck/laura-screen/out/db_writes/proposals__p-GEO-black-geo-ice-share-fy2025.json",
-  "if_version": 1
+  "if_version": 2
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-PYPL-watch-paypal-doj-fair-lending-2026",
   "file_path": "/home/user/CredCheck/laura-screen/out/db_writes/proposals__p-PYPL-watch-paypal-doj-fair-lending-2026.json",
-  "if_version": 1
+  "if_version": 2
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-CAH-watch-cardinal-health-eeoc-2021",
   "file_path": "/home/user/CredCheck/laura-screen/out/db_writes/proposals__p-CAH-watch-cardinal-health-eeoc-2021.json",
-  "if_version": 1
+  "if_version": 2
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-UAL-watch-united-airlines-eeoc-2025",
   "file_path": "/home/user/CredCheck/laura-screen/out/db_writes/proposals__p-UAL-watch-united-airlines-eeoc-2025.json",
-  "if_version": 1
+  "if_version": 2
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-DG-watch-dollar-general-eeoc-2019",
   "file_path": "/home/user/CredCheck/laura-screen/out/db_writes/proposals__p-DG-watch-dollar-general-eeoc-2019.json",
-  "if_version": 1
+  "if_version": 2
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-FOXA-FOX-black-fox-dominion-falsity-2023",
   "file_path": "/home/user/CredCheck/laura-screen/out/db_writes/proposals__p-FOXA-FOX-black-fox-dominion-falsity-2023.json",
-  "if_version": 15
+  "if_version": 16
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-NMAX-black-newsmax-dominion-falsity-2025",
   "file_path": "/home/user/CredCheck/laura-screen/out/db_writes/proposals__p-NMAX-black-newsmax-dominion-falsity-2025.json",
-  "if_version": 15
+  "if_version": 16
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-TSLA-black-tesla-diaz-verdict-2021",
   "file_path": "/home/user/CredCheck/laura-screen/out/db_writes/proposals__p-TSLA-black-tesla-diaz-verdict-2021.json",
-  "if_version": 15
+  "if_version": 16
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-TSLA-watch-tesla-crd-eeoc-open-2026",
   "file_path": "/home/user/CredCheck/laura-screen/out/db_writes/proposals__p-TSLA-watch-tesla-crd-eeoc-open-2026.json",
-  "if_version": 15
+  "if_version": 16
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-META-watch-meta-doj-fha-settlement-2022",
   "file_path": "/home/user/CredCheck/laura-screen/out/db_writes/proposals__p-META-watch-meta-doj-fha-settlement-2022.json",
-  "if_version": 6
+  "if_version": 7
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-META-watch-meta-states-youth-case-2026",
   "file_path": "/home/user/CredCheck/laura-screen/out/db_writes/proposals__p-META-watch-meta-states-youth-case-2026.json",
-  "if_version": 15
+  "if_version": 16
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-ADBE-aligned-adbe-values",
   "file_path": "/home/user/CredCheck/laura-screen/out/db_writes/proposals__p-ADBE-aligned-adbe-values.json",
-  "if_version": 15
+  "if_version": 16
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-GOOG-GOOGL-aligned-alphabet-values",
   "file_path": "/home/user/CredCheck/laura-screen/out/db_writes/proposals__p-GOOG-GOOGL-aligned-alphabet-values.json",
-  "if_version": 15
+  "if_version": 16
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-NYT-aligned-nyt-values",
   "file_path": "/home/user/CredCheck/laura-screen/out/db_writes/proposals__p-NYT-aligned-nyt-values.json",
-  "if_version": 15
+  "if_version": 16
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-SHOP-aligned-shop-values",
   "file_path": "/home/user/CredCheck/laura-screen/out/db_writes/proposals__p-SHOP-aligned-shop-values.json",
-  "if_version": 15
+  "if_version": 16
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-TRI-aligned-tri-values",
   "file_path": "/home/user/CredCheck/laura-screen/out/db_writes/proposals__p-TRI-aligned-tri-values.json",
-  "if_version": 5
+  "if_version": 6
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-WBD-aligned-wbd-values",
   "file_path": "/home/user/CredCheck/laura-screen/out/db_writes/proposals__p-WBD-aligned-wbd-values.json",
-  "if_version": 15
+  "if_version": 16
  }
 ]

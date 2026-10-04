@@ -25,7 +25,7 @@
   {
    "actions": {},
    "active_people": 1,
-   "decisions": 14,
+   "decisions": 13,
    "new_proposals": 14,
    "page_views": {
     "home": 1
@@ -37,23 +37,24 @@
   {
    "actions": {
     "alerts_on": 1,
-    "check_now": 6,
-    "etf_weight": 14,
-    "open_list": 7,
+    "approve": 6,
+    "check_now": 7,
+    "etf_weight": 18,
+    "open_list": 10,
     "save_tickers": 5
    },
    "active_people": 1,
-   "decisions": 0,
+   "decisions": 7,
    "new_proposals": 6,
    "page_views": {
-    "approvals": 9,
-    "etf": 13,
-    "home": 24,
-    "method": 6,
+    "approvals": 14,
+    "etf": 14,
+    "home": 34,
+    "method": 8,
     "records": 3
    },
-   "runs": 8,
-   "visits": 12,
+   "runs": 9,
+   "visits": 19,
    "week": "2026-W40"
   }
  ]
