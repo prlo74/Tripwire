@@ -1493,7 +1493,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
     try { dl = window.claude && window.claude.use ? await window.claude.use("downloads") : null; } catch (e) { dl = null; }
     if (!dl) { $("csv-note").textContent = "Downloads are not available in this view."; return; }
     try {
-      await dl.save({ filename: "laura-screen-" + new Date().toISOString().slice(0, 10) + ".csv", data: new Blob([csv], { type: "text/csv" }) });
+      await dl.save({ filename: "tripwire-" + new Date().toISOString().slice(0, 10) + ".csv", data: new Blob([csv], { type: "text/csv" }) });
       track("a", "csv_download");
       $("csv-note").textContent = "";
     } catch (e) { $("csv-note").textContent = e && e.code === "unavailable" ? "Downloads are not available in this view." : "Download cancelled."; }

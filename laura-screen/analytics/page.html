@@ -294,8 +294,8 @@ details summary { cursor: pointer; font-size: 0.85rem; color: var(--primary); fo
     catch (e) { $("dl-note").textContent = e && e.code === "declined" ? "Download cancelled." : e && e.code === "rate_limited" ? "A download prompt is already open." : "Download is not available in this view."; }
   }
   var stamp = function () { return new Date().toISOString().slice(0, 10); };
-  $("dl-summary").addEventListener("click", function () { save("laura-screen-summary-" + stamp() + ".html", new Blob([summaryHtml()], { type: "text/html" })); });
-  $("dl-csv").addEventListener("click", function () { save("laura-screen-weekly-" + stamp() + ".csv", new Blob([weeklyCsv()], { type: "text/csv" })); });
+  $("dl-summary").addEventListener("click", function () { save("tripwire-summary-" + stamp() + ".html", new Blob([summaryHtml()], { type: "text/html" })); });
+  $("dl-csv").addEventListener("click", function () { save("tripwire-weekly-" + stamp() + ".csv", new Blob([weeklyCsv()], { type: "text/csv" })); });
 
   function banner(t) { $("banner").textContent = t || ""; $("banner").hidden = !t; }
   (async function connect() {
