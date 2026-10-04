@@ -17,11 +17,12 @@ from bs4 import BeautifulSoup
 
 from .http import fetch, fetch_json, SourceError
 
-# Clause (b): race/ethnicity terms. Clause (a): falsity to the public. Plain "discrimination"
+# Clause (b): race, ethnicity, sexual orientation and gender identity terms. Clause (a): falsity to the public. Plain "discrimination"
 # (disability, religion, age, sex) is outside the rule and is not matched.
 RACE_OR_FALSITY = re.compile(
     r"\b(race|racial|racially|national origin|ethnic|ethnicity|black employees|black workers|hispanic|"
-    r"latino|asian american|african american|fair housing|redlining|defam\w*|disinformation|misinformation|"
+    r"latino|asian american|african american|fair housing|redlining|sexual orientation|gender identity|"
+    r"transgender|gay|lesbian|lgbt\w*|homophob\w*|transphob\w*|defam\w*|disinformation|misinformation|"
     r"misled the public|misleading the public|false information)\b", re.I)
 
 GENERIC_SINGLE = {"visa", "southern", "apple", "oracle", "intel", "salesforce", "cisco", "chubb", "target","target", "block", "apple", "visa", "ford", "gap", "match", "fox", "news", "general",
@@ -76,7 +77,10 @@ def doj_since(since: date, max_pages: int = 60) -> tuple[list[dict], str | None]
             return out, f"DOJ: {e}"
         stop = False
         for r in d.get("results", []):
-            dt = datetime.fromtimestamp(int(r["date"])).date()
+            try:
+                dt = datetime.fromtimestamp(int(r["date"])).date()
+            except (ValueError, TypeError, KeyError):
+                continue   # a release without a date cannot be placed in the window
             if dt < since:
                 stop = True
                 break
@@ -159,7 +163,8 @@ def ftc_since(since: date, max_pages: int = 15) -> tuple[list[dict], str | None]
 
 
 def courtlistener_since(since: date) -> tuple[list[dict], str | None]:
-    q = ('("race discrimination" OR "racial discrimination" OR "racial harassment" OR defamation) '
+    q = ('("race discrimination" OR "racial discrimination" OR "racial harassment" OR "sexual orientation discrimination" '
+         'OR "gender identity discrimination" OR defamation) '
          'AND (jury OR verdict OR "summary judgment")')
     try:
         d = fetch_json("https://www.courtlistener.com/api/rest/v4/search/",
@@ -176,11 +181,13 @@ def courtlistener_since(since: date) -> tuple[list[dict], str | None]:
     return out, None
 
 
-def legal_candidates(universe: dict, since: date) -> dict:
+def legal_candidates(universe: dict, since: date, deep: bool = False) -> dict:
+    """deep=True (full re-check after a rule change) lifts the page caps so the whole window is scanned."""
     pats = name_patterns(universe)
     status, cands = {}, []
+    caps = {doj_since: 600, eeoc_since: 200, ftc_since: 150}
     for fn in (doj_since, eeoc_since, ftc_since, courtlistener_since):
-        items, err = fn(since)
+        items, err = fn(since, caps[fn]) if (deep and fn in caps) else fn(since)
         name = fn.__name__.split("_")[0].upper().replace("COURTLISTENER", "CourtListener")
         status[name] = {"ok": err is None, "items_scanned": len(items), "error": err}
         for it in items:
@@ -234,3 +241,36 @@ def sic_of(cik: int) -> tuple[int | None, str | None]:
         return (int(d["sic"]) if d.get("sic") else None), d.get("sicDescription")
     except (SourceError, ValueError):
         return None, None
+
+
+def sec_phrase_hits(universe_ciks: dict, phrases: list[str], forms: str, since: date,
+                    max_pages: int = 5) -> tuple[dict, str | None]:
+    """SEC full-text search for exact phrases in the given forms since `since`.
+    Returns ({ticker: [{phrase, form, filed, url}]}, error). Hits are leads for Claude to read."""
+    out: dict[str, list] = {}
+    err = None
+    for ph in phrases:
+        for page in range(max_pages):
+            try:
+                d = fetch_json("https://efts.sec.gov/LATEST/search-index",
+                               params={"q": f'"{ph}"', "forms": forms, "dateRange": "custom",
+                                       "startdt": since.isoformat(), "enddt": date.today().isoformat(),
+                                       "from": page * 100}, ttl_hours=24 * 3)
+            except SourceError as e:
+                err = f"SEC full-text search: {e}"
+                break
+            hits = d.get("hits", {}).get("hits", [])
+            for h in hits:
+                src = h["_source"]
+                for c in src.get("ciks", []):
+                    t = universe_ciks.get(int(c))
+                    if not t:
+                        continue
+                    acc, _, fname = h["_id"].partition(":")
+                    url = f"https://www.sec.gov/Archives/edgar/data/{int(c)}/{acc.replace('-', '')}/{fname}"
+                    row = {"phrase": ph, "form": src.get("form"), "filed": src.get("file_date"), "url": url}
+                    if row not in out.setdefault(t, []):
+                        out[t].append(row)
+            if len(hits) < 100:
+                break
+    return out, err

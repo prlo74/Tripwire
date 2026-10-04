@@ -145,3 +145,77 @@ def test_financial_gate(monkeypatch, kw, result, failed):
     assert g["failed"] == failed
     if kw.get("eq_neg"):
         assert "Not meaningful" in g["checks"]["debt_to_equity"]["note"]
+
+
+# ---- Rule change 2026-10-04: widened clause (b) and new clause (c) ----
+
+def test_clause_b_text_covers_orientation_and_gender_identity():
+    t = RULES["black"]["clauses"]["b"]
+    assert "sexual orientation" in t and "gender identity" in t and "race" in t
+
+
+def test_sexual_orientation_finding_is_black_under_b_with_clause_cited():
+    c = check_record_with_verified(rec(finding_type="agency_finding", clause="b"))
+    assert c["check"]["outcome"] == "black"
+    assert "Black (b)" in c["check"]["clause_text"] and "sexual orientation" in c["check"]["clause_text"]
+
+
+def test_widened_b_keeps_7_year_lookback_and_settlement_rules():
+    assert check_record_with_verified(rec(event_date="2018-01-01"))["check"]["outcome"] == "watch"
+    assert check_record_with_verified(rec(kind="settlement_no_admission", event_date="2026-01-01"))["check"]["outcome"] == "watch"
+
+
+def bl(**kw):
+    base = {"id": "geo-c", "tickers": ["GEO"], "company": "The GEO Group", "kind": "business_line", "clause": "c",
+            "fiscal_year": 2025, "filing_date": "2026-02-20", "share_pct": 10, "tripwire": "",
+            "sources": [{"url": "https://www.sec.gov/Archives/x.htm", "quote": "q"}]}
+    base.update(kw)
+    return base
+
+
+def test_clause_c_threshold_is_in_rules_and_editable():
+    assert RULES["black_business_line"]["threshold_pct"] == 10
+    assert "10%" in RULES["black"]["clauses"]["c"].format(threshold_pct=10)
+
+
+@pytest.mark.parametrize("share,outcome", [(10, "black"), (10.0, "black"), (45, "black"), (9.9, "below_threshold")])
+def test_clause_c_at_and_around_threshold(share, outcome):
+    c = check_record_with_verified(bl(share_pct=share))
+    assert c["check"]["outcome"] == outcome
+    assert c["check"]["proposable"] == (outcome == "black")
+    if outcome == "black":
+        t = c["check"]["clause_text"]
+        assert t.startswith("Black (c)") and "10%" in t and "2025" in t
+
+
+def test_clause_c_undisclosed_is_watch_with_tripwire_never_estimated():
+    c = check_record_with_verified(bl(share_pct="unknown"))
+    assert c["check"]["outcome"] == "watch" and c["check"]["proposable"]
+    assert c["tripwire"] == RULES["black_business_line"]["unknown_tripwire"]
+    assert "Watch (c)" in c["check"]["clause_text"]
+
+
+def test_clause_c_needs_company_10k_quote_and_dates():
+    c = check_record_with_verified(bl(fiscal_year=None, sources=[{"url": "https://www.reuters.com/x", "quote": "q"}]))
+    assert not c["check"]["proposable"]
+
+
+def test_clause_c_never_black_from_tier2():
+    c = check_record_with_verified(bl(sources=[{"url": "https://www.reuters.com/x", "quote": "q"}]))
+    assert c["check"]["outcome"] == "lead" and not c["check"]["proposable"]
+
+
+def test_not_added_list_recorded():
+    txt = " ".join(str(e) for e in RULES["do_not_list_without_finding"]).lower()
+    for k in ("firearms", "social-media", "taiwan", "esg"):
+        assert k in txt
+
+
+def test_screen_added_tickers():
+    assert set(RULES["black_business_line"]["screen_added_tickers"]) == {"GEO", "CXW"}
+
+
+def test_discovery_matches_orientation_terms():
+    from pipeline.discovery import RACE_OR_FALSITY
+    assert RACE_OR_FALSITY.search("EEOC sues over sexual orientation discrimination")
+    assert RACE_OR_FALSITY.search("transgender employee harassment settlement")

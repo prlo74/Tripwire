@@ -4,13 +4,14 @@
 # This screen is the team's assumption about Laura Gao's wishes. It applies to stocks and
 # stock ETFs only (bonds are out of scope).
 
-version: 1
+version: 2   # 2026-10-04: clause (b) widened, clause (c) added (decided by Leo)
 
 black:
   lookback_years: 7          # a finding must be dated within this many years of the run date
   clauses:
     a: "Knowingly spread false information to the public"
-    b: "Engaged in racial or ethnic discrimination"
+    b: "Engaged in discrimination on the basis of race, ethnicity, sexual orientation or gender identity"
+    c: "At least {threshold_pct}% of latest fiscal-year revenue comes from immigration detention, or immigration detainee monitoring or transport, as disclosed in the company's own 10-K"
   # Which kinds of decision count as a qualifying finding.
   qualifying_findings:
     merits_ruling: "Court ruling on the merits (including summary judgment on falsity)"
@@ -20,9 +21,23 @@ black:
   # Who can make a qualifying finding.
   finding_bodies: [court, jury, government_enforcement_body]
 
+# Clause (c) is a business-line test, not a legal-finding test: no look-back; re-tested on each
+# new 10-K. Evidence is a Tier-1 10-K quote that states the percentage. If the 10-K gives no
+# figure that lets the test be applied, record "unknown" (never estimate) and propose Watch.
+black_business_line:
+  clause: c
+  threshold_pct: 10          # team-editable
+  unknown_tripwire: "10-K discloses a share at or above the threshold"
+  screen_added_tickers:      # added to the universe by the screen for the 2026-10-04 rule change, not by a teammate
+    GEO: "The GEO Group (listed immigration-detention operator)"
+    CXW: "CoreCivic (listed immigration-detention operator)"
+  discovery_phrases: ["Immigration and Customs Enforcement", "immigration detention", "detainee transportation",
+                      "electronic monitoring of immigration", "alternatives to detention"]
+
 watch:
   triggers:
     open_case: "Open lawsuit or agency complaint on (a) or (b) that has survived a motion to dismiss"
+    business_line_unknown: "Clause (c) share of revenue not disclosed in the 10-K (recorded as unknown, never estimated)"
     settlement_no_admission: "Settlement with no admission of wrongdoing"
     old_finding: "Qualifying finding older than the look-back window"
   tripwire_required: true    # every Watch entry must name what would move it to Black
@@ -62,6 +77,7 @@ discovery:
   max_proposals_per_run: 10
   # First run only (later runs scan since the previous run):
   first_run_lookback_days: 400          # 10-K theme search (covers one annual-report cycle)
+  rule_change_lookback_years: 7         # full re-check after a rule change scans the whole look-back
   legal_first_run_lookback_days: 45     # DOJ/EEOC/FTC/courts. DOJ's API has no topic filter, so a
                                         # longer first scan means thousands of releases; widen if needed.
 
@@ -71,6 +87,11 @@ do_not_list_without_finding:
   - {tickers: [NWSA, NWS], reason: "News Corp is a separate company from Fox Corp. Its HarperCollins imprint Balzer + Bray is very likely Laura's publisher."}
   - {rule: "Never select or exclude a company for the identity of its founder or CEO."}
   - {rule: "China/Xinjiang supply-chain screens are outside Laura's public work."}
+  # Added 2026-10-04 (decided by Leo): considered and NOT added; adding any needs a team decision.
+  - {rule: "Civilian firearms makers: considered and rejected (single-source evidence)."}
+  - {rule: "Social-media platforms as a category are not screened."}
+  - {rule: "China or Taiwan-politics screens are not added."}
+  - {rule: "Generic ESG screens (tobacco, alcohol, gambling, fossil fuels, defense, AI) are not added."}
 
 sources:
   tier1_domains:             # can trigger a Black/Watch proposal

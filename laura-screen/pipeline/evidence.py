@@ -30,6 +30,12 @@ def load_records() -> list[dict]:
     return recs
 
 
+def clause_text_of(rules: dict, key: str) -> str:
+    """Clause wording with the editable clause-(c) threshold filled in."""
+    return rules["black"]["clauses"][key].format(
+        threshold_pct=rules.get("black_business_line", {}).get("threshold_pct", 10))
+
+
 def tier_of(url: str, rules: dict) -> int | None:
     """1 = primary (can trigger), 2 = lead only, 0 = banned, None = unlisted (treated as banned)."""
     host = urlparse(url).netloc.lower()
@@ -92,7 +98,7 @@ def check_record(rec: dict, rules: dict, today: date, open_sources: bool = True)
         age = years_between(_d(rec["event_date"]), today)
         if age <= b["lookback_years"]:
             outcome = "black"
-            clause_text = (f"Black ({rec['clause']}) {b['clauses'][rec['clause']]}: "
+            clause_text = (f"Black ({rec['clause']}) {clause_text_of(rules, rec['clause'])}: "
                            f"{b['qualifying_findings'].get(rec.get('finding_type'), '?')}, "
                            f"{rec['event_date']} (within {b['lookback_years']} years)")
             if rec.get("finding_scope"):
@@ -117,6 +123,28 @@ def check_record(rec: dict, rules: dict, today: date, open_sources: bool = True)
         clause_text = f"Financial gate input from the company's own filing: {rec.get('field')} = {rec.get('value')}"
         if not any(v["tier"] == 1 and urlparse(v["url"]).netloc.endswith("sec.gov") and v["quote_found"] for v in verified):
             problems.append("financial note must quote the company's own SEC filing")
+    elif kind == "business_line":
+        # Clause (c): share of latest fiscal-year revenue from the company's own 10-K. No look-back.
+        bl = rules["black_business_line"]
+        thr = bl["threshold_pct"]
+        share = rec.get("share_pct", "unknown")
+        if not any(v["tier"] == 1 and urlparse(v["url"]).netloc.endswith("sec.gov") and v["quote_found"] for v in verified):
+            problems.append("clause (c) evidence must be a quote from the company's own SEC 10-K")
+        for f in ("fiscal_year", "filing_date"):
+            if not rec.get(f):
+                problems.append(f"clause (c) record needs {f}")
+        if share == "unknown" or share is None:
+            outcome = "watch"
+            clause_text = (f"Watch (c): {rules['watch']['triggers']['business_line_unknown']}; "
+                           f"fiscal year {rec.get('fiscal_year')}")
+        elif float(share) >= thr:
+            outcome = "black"
+            clause_text = (f"Black (c) {clause_text_of(rules, 'c')}: {share}% of fiscal-year "
+                           f"{rec.get('fiscal_year')} revenue (10-K filed {rec.get('filing_date')}; threshold {thr}%)")
+        else:
+            outcome = "below_threshold"
+            clause_text = f"Clause (c) not met: {share}% is below the {thr}% threshold (FY{rec.get('fiscal_year')})"
+            problems.append("clause (c) below threshold: informational only, no label")
     elif kind == "lead":
         outcome = "lead"
         clause_text = "Lead: needs primary source"
@@ -127,6 +155,8 @@ def check_record(rec: dict, rules: dict, today: date, open_sources: bool = True)
         problems.append("no Tier-1 source with a verified quote: cannot be proposed")
         outcome = "lead"
         clause_text = "Lead: needs primary source"
+    if kind == "business_line" and outcome == "watch" and not rec.get("tripwire"):
+        rec = {**rec, "tripwire": rules["black_business_line"]["unknown_tripwire"]}
     if outcome == "watch" and rules["watch"].get("tripwire_required") and not rec.get("tripwire"):
         problems.append("Watch entry has no tripwire")
 

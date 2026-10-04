@@ -40,7 +40,11 @@ mirrors or archives.
 - Rules you must apply (see `config/rules.yaml`):
   - Black needs a qualifying finding (merits ruling, jury verdict, agency finding/consent order
     stating the violation, or an admitted settlement) within 7 years, on (a) knowingly false
-    information to the public or (b) racial/ethnic discrimination.
+    information to the public or (b) discrimination on the basis of race, ethnicity, sexual orientation or gender identity.
+  - Clause (c) is a business-line test (`kind: business_line`, `share_pct`, `fiscal_year`, `filing_date`): at or above
+    `black_business_line.threshold_pct` of latest-FY revenue from immigration detention per the company's own 10-K -> Black;
+    undisclosed -> `share_pct: unknown` -> Watch. Never estimate. No look-back.
+  - After a rule change run `python -m pipeline.run --full-recheck` (7-year clause-(b) sweep, clause-(c) test).
   - Settlement without admission -> Watch. Finding older than 7 years -> Watch. Open case past
     a motion to dismiss -> Watch. Every Watch entry needs a tripwire.
   - Tier-2 news is a lead only (`kind: lead`). Never propose from Tier 2 alone.
