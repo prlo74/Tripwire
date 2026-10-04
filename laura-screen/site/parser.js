@@ -1,4 +1,4 @@
-/* Laura Screen paste-box parser. Runs in the page and in Node (tests).
+/* Tripwire paste-box parser. Runs in the page and in Node (tests).
  *
  * parse(text, map) -> { items: [...], attention: n }
  *   map: { TICKER: [name, "S"|"E", cik|null, commonClass 1|0|null] }  (site/tickers.json .t)

@@ -1,4 +1,4 @@
-/* Laura Screen ETF look-through math. Runs in the page and in Node (tests).
+/* Tripwire ETF look-through math. Runs in the page and in Node (tests).
  *
  * Whole-portfolio Black exposure (percent of total portfolio) =
  *   sum over held ETFs of (ETF weight % x Black share inside that ETF %) / 100

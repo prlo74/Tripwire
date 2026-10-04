@@ -1,10 +1,10 @@
-<title>Laura Screen</title>
+<title>Tripwire</title>
 <meta name="description" content="Values-screen monitor for the Wharton GYIC Laura Gao portfolio">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
 <style>
-/* Laura Screen: analyst workspace. Flat, square, static.
+/* Tripwire: analyst workspace. Flat, square, static.
    Ground: Shadesurfer silver (#D8D4CB #C0C0C0 #A9A9A9 #949090 #8B8686). Accent: Galactica navy.
    Status: obsidian (Black), brass (Watch), green (Aligned). Garnet only for alarms. */
 :root {
@@ -347,7 +347,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
 <div class="wrap">
   <header class="topbar">
     <div class="topbar-row">
-      <div class="brandmark"><h1>Laura Screen</h1><span>Values screen · Wharton GYIC 2026 · Laura Gao portfolio · stocks and stock ETFs</span></div>
+      <div class="brandmark"><h1>Tripwire</h1><span>Values screen · Wharton GYIC 2026 · Laura Gao portfolio · stocks and stock ETFs</span></div>
       <div id="me-line"></div>
     </div>
     <nav class="nav" aria-label="Sections">
@@ -460,7 +460,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
         <section class="card s12" aria-labelledby="h-status">
           <header><div><h2 id="h-status">Data sources this run</h2><p class="purpose">Every source the last run opened, and whether it answered. A source that fails is reported, never replaced.</p></div></header>
           <div class="sources" id="st-sources"><span class="loading">Loading…</span></div>
-          <div class="howto"><b>Run it by hand.</b> Open Claude Code in the <code>laura-screen</code> folder and say <code>run the Laura screen</code>, or press <b>Check now</b> above.</div>
+          <div class="howto"><b>Run it by hand.</b> Open Claude Code in the <code>laura-screen</code> folder and say <code>run Tripwire</code>, or press <b>Check now</b> above.</div>
         </section>
       </div>
     </section>
@@ -1360,8 +1360,8 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
     S.wkBusy = true; S.nowMsg = "Starting…"; renderWeekly();
     try {
       await S.mcp.callTool("Claude Code Remote", "fire_trigger", { trigger_id: w.trigger_id,
-        text: "On-demand check requested from the Laura Screen page. New team tickers waiting for a check: " +
-              (pend.length ? pend.join(", ") : "none") + ". Run the Laura screen now (ignore the schedule switch and interval)." }, { cache: false });
+        text: "On-demand check requested from the Tripwire page. New team tickers waiting for a check: " +
+              (pend.length ? pend.join(", ") : "none") + ". Run Tripwire now (ignore the schedule switch and interval)." }, { cache: false });
     } catch (e) {
       S.wkBusy = false; S.nowMsg = mcpErrorText(e, w.owner_name, "Starting a check"); renderWeekly(); return;
     }
@@ -1493,7 +1493,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
     try { dl = window.claude && window.claude.use ? await window.claude.use("downloads") : null; } catch (e) { dl = null; }
     if (!dl) { $("csv-note").textContent = "Downloads are not available in this view."; return; }
     try {
-      await dl.save({ filename: "laura-screen-" + new Date().toISOString().slice(0, 10) + ".csv", data: new Blob([csv], { type: "text/csv" }) });
+      await dl.save({ filename: "tripwire-" + new Date().toISOString().slice(0, 10) + ".csv", data: new Blob([csv], { type: "text/csv" }) });
       track("a", "csv_download");
       $("csv-note").textContent = "";
     } catch (e) { $("csv-note").textContent = e && e.code === "unavailable" ? "Downloads are not available in this view." : "Download cancelled."; }

@@ -1,4 +1,4 @@
-/* Laura Screen: run progress indicator ("runbar"). Inlined into site/index.html by
+/* Tripwire: run progress indicator ("runbar"). Inlined into site/index.html by
  * pipeline/build_page.py and tested with node (tests/runbar.test.js).
  * The phase ids must equal the stage ids in pipeline/progress.py.
  */

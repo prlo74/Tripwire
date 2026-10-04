@@ -40,8 +40,8 @@ def body(a: dict) -> str:
         "",
         "Proposed. Awaiting team approval." if a["status"] == "proposed" else "Confirmed: the team approved this change.",
         "",
-        "Laura Screen is a research aid for a student competition, not investment advice.",
-        "You get this because you subscribed on the Laura Screen page. Unsubscribe there.",
+        "Tripwire is a research aid for a student competition, not investment advice.",
+        "You get this because you subscribed on the Tripwire page. Unsubscribe there.",
     ]
     return "\n".join(lines)
 

@@ -1,4 +1,4 @@
-"""Team-total analytics for the private Laura Screen Analytics page.
+"""Team-total analytics for the private Tripwire Analytics page.
 
   python -m pipeline.analytics <db_dir>
       reads <db_dir>/{runs,audit_log,approvals,proposals,universe,usage}/*.json (saved by

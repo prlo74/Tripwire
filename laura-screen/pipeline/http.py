@@ -51,7 +51,7 @@ def contact_email() -> str:
 
 
 def user_agent() -> str:
-    return f"LauraScreen/1.0 (student research, Wharton GYIC; {contact_email()})"
+    return f"Tripwire/1.0 (student research, Wharton GYIC; {contact_email()})"
 
 
 def _browser_ua() -> str:
