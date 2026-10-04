@@ -31,22 +31,23 @@
   {
    "actions": {
     "alerts_on": 1,
-    "check_now": 4,
-    "open_list": 6,
-    "save_tickers": 3
+    "check_now": 5,
+    "etf_weight": 13,
+    "open_list": 7,
+    "save_tickers": 5
    },
    "active_people": 1,
    "decisions": 0,
    "new_proposals": 0,
    "page_views": {
-    "approvals": 3,
-    "etf": 7,
-    "home": 13,
+    "approvals": 6,
+    "etf": 10,
+    "home": 17,
     "method": 4,
     "records": 1
    },
    "runs": 6,
-   "visits": 5,
+   "visits": 7,
    "week": "2026-W40"
   }
  ]

@@ -1,6 +1,15 @@
 {
  "universe": [
   {
+   "added_at": "2026-10-04T12:04:15.564Z",
+   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "name": "Vanguard Total Bond Market ETF",
+   "ticker": "BND",
+   "type": "etf",
+   "_id": "BND",
+   "_version": null
+  },
+  {
    "added_at": "2026-09-28T23:25:31.845Z",
    "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
    "check_run": "run-20260928T232654",
@@ -10,6 +19,24 @@
    "ticker": "IEFA",
    "type": "etf",
    "_id": "IEFA",
+   "_version": null
+  },
+  {
+   "added_at": "2026-10-04T12:04:14.987Z",
+   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "name": "iShares Core MSCI Emerging Markets ETF",
+   "ticker": "IEMG",
+   "type": "etf",
+   "_id": "IEMG",
+   "_version": null
+  },
+  {
+   "added_at": "2026-10-04T12:04:13.413Z",
+   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "name": "iShares Core S&P 500 ETF",
+   "ticker": "IVV",
+   "type": "etf",
+   "_id": "IVV",
    "_version": null
   },
   {
@@ -34,6 +61,24 @@
    "ticker": "NVDA",
    "type": "stock",
    "_id": "NVDA",
+   "_version": null
+  },
+  {
+   "added_at": "2026-10-04T12:04:14.044Z",
+   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "name": "Invesco QQQ Trust, Series 1",
+   "ticker": "QQQ",
+   "type": "etf",
+   "_id": "QQQ",
+   "_version": null
+  },
+  {
+   "added_at": "2026-10-04T12:04:15.872Z",
+   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "name": "Schwab US Dividend Equity ETF",
+   "ticker": "SCHD",
+   "type": "etf",
+   "_id": "SCHD",
    "_version": null
   },
   {
@@ -97,6 +142,15 @@
    "_version": null
   },
   {
+   "added_at": "2026-10-04T12:04:14.667Z",
+   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "name": "Vanguard FTSE Developed Markets ETF",
+   "ticker": "VEA",
+   "type": "etf",
+   "_id": "VEA",
+   "_version": null
+  },
+  {
    "added_at": "2026-09-26T13:32:24.967Z",
    "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
    "check_run": "run-20260926T142541",
@@ -106,6 +160,33 @@
    "ticker": "VOO",
    "type": "etf",
    "_id": "VOO",
+   "_version": null
+  },
+  {
+   "added_at": "2026-10-04T12:04:15.285Z",
+   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "name": "Vanguard Total World Stock Index ETF",
+   "ticker": "VT",
+   "type": "etf",
+   "_id": "VT",
+   "_version": null
+  },
+  {
+   "added_at": "2026-10-04T12:04:13.738Z",
+   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "name": "Vanguard Morningstar Total Stock Market ETF",
+   "ticker": "VTI",
+   "type": "etf",
+   "_id": "VTI",
+   "_version": null
+  },
+  {
+   "added_at": "2026-10-04T12:04:14.357Z",
+   "added_by": "u_Xvj7Rxem5TB8oVDXKCt1dQ",
+   "name": "Vanguard Morningstar Growth ETF",
+   "ticker": "VUG",
+   "type": "etf",
+   "_id": "VUG",
    "_version": null
   }
  ],
@@ -797,6 +878,33 @@
    },
    "_id": "run-20261001T224837",
    "_version": null
+  },
+  {
+   "duration_s": 62.7,
+   "errors": [],
+   "finished": "2026-10-03T22:49:23+00:00",
+   "id": "run-20261003T224821",
+   "proposals": 14,
+   "sources_down": [],
+   "started": "2026-10-03T22:48:21+00:00",
+   "stats": {
+    "evidence_records": 21,
+    "evidence_sources_opened": 31,
+    "leads": 1,
+    "new_tickers_checked": 0,
+    "proposals_by_list": {
+     "aligned": 6,
+     "black": 3,
+     "watch": 5
+    },
+    "sources_checked": 25,
+    "sources_ok": 25,
+    "sp500": 504,
+    "team_tickers": 3,
+    "values_fail": 3
+   },
+   "_id": "run-20261003T224821",
+   "_version": null
   }
  ],
  "proposal_ids": [
@@ -816,29 +924,54 @@
   "p-WBD-aligned-wbd-values"
  ],
  "versions": {
+  "universe/BND": 1,
   "universe/IEFA": 2,
+  "universe/IEMG": 1,
+  "universe/IVV": 1,
   "universe/NMAX": 2,
   "universe/NVDA": 2,
+  "universe/QQQ": 1,
+  "universe/SCHD": 1,
   "universe/SHOP": 2,
   "universe/SPCX": 2,
   "universe/SPY": 2,
   "universe/TSLA": 2,
   "universe/TYO": 2,
+  "universe/VEA": 1,
   "universe/VOO": 2,
-  "runs/latest": 12,
-  "proposals/p-ACN-watch-accenture-doj-fca-2026": 12,
-  "proposals/p-ADBE-aligned-adbe-values": 12,
-  "proposals/p-F-watch-ford-eeoc-conciliation-2026": 12,
-  "proposals/p-FOXA-FOX-black-fox-dominion-falsity-2023": 12,
-  "proposals/p-GOOG-GOOGL-aligned-alphabet-values": 12,
-  "proposals/p-META-watch-meta-doj-fha-settlement-2022": 3,
-  "proposals/p-META-watch-meta-states-youth-case-2026": 12,
-  "proposals/p-NMAX-black-newsmax-dominion-falsity-2025": 12,
-  "proposals/p-NYT-aligned-nyt-values": 12,
-  "proposals/p-SHOP-aligned-shop-values": 12,
-  "proposals/p-TRI-aligned-tri-values": 2,
-  "proposals/p-TSLA-black-tesla-diaz-verdict-2021": 12,
-  "proposals/p-TSLA-watch-tesla-crd-eeoc-open-2026": 12,
-  "proposals/p-WBD-aligned-wbd-values": 12
+  "universe/VT": 1,
+  "universe/VTI": 1,
+  "universe/VUG": 1,
+  "approvals/p-TSLA-black-tesla-diaz-verdict-2021": 1,
+  "approvals/p-ACN-watch-accenture-doj-fca-2026": 1,
+  "approvals/p-META-watch-meta-doj-fha-settlement-2022": 1,
+  "approvals/p-SHOP-aligned-shop-values": 1,
+  "approvals/p-META-watch-meta-states-youth-case-2026": 1,
+  "approvals/p-F-watch-ford-eeoc-conciliation-2026": 1,
+  "approvals/p-GOOG-GOOGL-aligned-alphabet-values": 1,
+  "approvals/p-ADBE-aligned-adbe-values": 1,
+  "approvals/p-FOXA-FOX-black-fox-dominion-falsity-2023": 1,
+  "approvals/p-TSLA-watch-tesla-crd-eeoc-open-2026": 1,
+  "approvals/p-NYT-aligned-nyt-values": 1,
+  "approvals/p-WBD-aligned-wbd-values": 1,
+  "approvals/p-TRI-aligned-tri-values": 1,
+  "approvals/p-NMAX-black-newsmax-dominion-falsity-2025": 1,
+  "proposals/p-TSLA-black-tesla-diaz-verdict-2021": 13,
+  "proposals/p-ACN-watch-accenture-doj-fca-2026": 13,
+  "proposals/p-META-watch-meta-doj-fha-settlement-2022": 4,
+  "proposals/p-SHOP-aligned-shop-values": 13,
+  "proposals/p-META-watch-meta-states-youth-case-2026": 13,
+  "proposals/p-F-watch-ford-eeoc-conciliation-2026": 13,
+  "proposals/p-GOOG-GOOGL-aligned-alphabet-values": 13,
+  "proposals/p-ADBE-aligned-adbe-values": 13,
+  "proposals/p-FOXA-FOX-black-fox-dominion-falsity-2023": 13,
+  "proposals/p-TSLA-watch-tesla-crd-eeoc-open-2026": 13,
+  "proposals/p-NYT-aligned-nyt-values": 13,
+  "proposals/p-WBD-aligned-wbd-values": 13,
+  "proposals/p-TRI-aligned-tri-values": 3,
+  "proposals/p-NMAX-black-newsmax-dominion-falsity-2025": 13,
+  "runs/alerts_ledger": 1,
+  "runs/latest": 13,
+  "usage/u_Xvj7Rxem5TB8oVDXKCt1dQ": 48
  }
 }
