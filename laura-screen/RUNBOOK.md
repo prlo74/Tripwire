@@ -80,6 +80,7 @@ Edit `config/rules.yaml`, save, then run the screen again.
 | To change | Edit this key |
 |---|---|
 | Look-back window for Black findings (7 years) | `black.lookback_years` |
+| Clause (c) revenue-share threshold (10%) | `black_business_line.threshold_pct` |
 | Minimum market cap ($5B) | `aligned.financial_gate.min_market_cap_usd` |
 | Maximum debt/equity (1.5) | `aligned.financial_gate.max_debt_to_equity` |
 | ETF exposure flag (2% of portfolio) | `etf_lookthrough.flag_threshold_pct_of_portfolio` |
@@ -122,6 +123,12 @@ with no verified Tier-1 source becomes a lead and cannot be proposed.
      decides (affects TSLA and F).
   2. Clause (a) says "knowingly", but the rule's own example (summary judgment on falsity) does
      not decide knowledge. Fox and Newsmax are proposed on falsity findings; the label says so.
+- **Rule change 2026-10-04 (Leo)**: clause (b) now covers race, ethnicity, sexual orientation and gender
+  identity; new clause (c) (>= `black_business_line.threshold_pct`% of latest-FY revenue from immigration
+  detention, per the company's own 10-K; undisclosed = "unknown" -> Watch). GEO and CXW were added to the
+  universe by the screen. Not added (decided): civilian firearms makers, social-media platforms as a
+  category, China/Taiwan-politics screens, generic ESG screens. `python -m pipeline.run --full-recheck`
+  re-scans the whole look-back after a rule change.
 - **Financial gaps**: when XBRL has no capex tag, free cash flow is "unknown"; when it has no debt
   tag, debt/equity is "unknown" unless `evidence/financial-notes.yaml` holds a verified quote from
   the company's filing (NYT, SHOP).

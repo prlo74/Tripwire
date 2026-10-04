@@ -1,13 +1,13 @@
 {
  "run": {
-  "id": "run-20261004T120506",
-  "started": "2026-10-04T12:05:06+00:00",
-  "finished": "2026-10-04T12:06:15+00:00",
-  "duration_s": 68.9,
+  "id": "run-20261004T124531",
+  "started": "2026-10-04T12:45:31+00:00",
+  "finished": "2026-10-04T12:46:39+00:00",
+  "duration_s": 67.5,
   "today": "2026-10-04",
   "errors": [],
   "discovery_since": "2026-10-02",
-  "legal_discovery_since": "2026-10-02"
+  "legal_discovery_since": "2019-10-05"
  },
  "status": {
   "SEC + Nasdaq ticker lists": {
@@ -23,8 +23,8 @@
   },
   "Evidence re-check": {
    "ok": true,
-   "records": 21,
-   "sources_opened": 31
+   "records": 27,
+   "sources_opened": 37
   },
   "XBRL companyfacts ADBE": {
    "ok": true
@@ -125,26 +125,32 @@
   "DOJ releases": {
    "ok": true,
    "error": null,
-   "items": 85,
-   "since": "2026-10-02"
+   "items": 29999,
+   "since": "2019-10-05"
   },
   "EEOC releases": {
    "ok": true,
    "error": null,
-   "items": 0,
-   "since": "2026-10-02"
+   "items": 1844,
+   "since": "2019-10-05"
   },
   "FTC releases": {
    "ok": true,
    "error": null,
-   "items": 2,
-   "since": "2026-10-02"
+   "items": 1953,
+   "since": "2019-10-05"
   },
   "CourtListener releases": {
    "ok": false,
    "error": "CourtListener: www.courtlistener.com: HTTP 429",
    "items": 0,
-   "since": "2026-10-02"
+   "since": "2019-10-05"
+  },
+  "Discovery: SEC full-text search (clause b, sexual orientation / gender identity)": {
+   "ok": true
+  },
+  "Discovery: SEC full-text search (clause c, immigration detention)": {
+   "ok": true
   },
   "Discovery: SEC full-text search (themes)": {
    "ok": true
@@ -171,10 +177,10 @@
    "proposal_id": "p-NMAX-black-newsmax-dominion-falsity-2025"
   },
   "TSLA": {
-   "label": "black",
+   "label": "watch",
    "approved": true,
    "basis": "approved 2026-09-26",
-   "proposal_id": "p-TSLA-black-tesla-diaz-verdict-2021"
+   "proposal_id": "p-TSLA-watch-tesla-crd-eeoc-open-2026"
   },
   "META": {
    "label": "watch",
@@ -323,6 +329,204 @@
    "evidence_changed": false
   },
   {
+   "id": "p-CXW-black-cxw-ice-share-fy2025",
+   "tickers": [
+    "CXW"
+   ],
+   "company": "CoreCivic, Inc.",
+   "from": "none",
+   "to": "black",
+   "record_id": "cxw-ice-share-fy2025",
+   "kind": "business_line",
+   "clause": "c",
+   "clause_text": "Black (c) At least 10% of latest fiscal-year revenue comes from immigration detention, or immigration detainee monitoring or transport, as disclosed in the company's own 10-K: 35% of fiscal-year 2025 revenue (10-K filed 2026-02-20; threshold 10%)",
+   "summary": "CoreCivic's 10-K for fiscal 2025 states that ICE accounted for 35% ($770.7 million) of its total revenue (29% in 2024, 30% in 2023).",
+   "caveat": "The 10-K gives ICE's share of total revenue, not a separate \"immigration detention\" line. This screen treats ICE contract revenue as the clause (c) measure, as in the rule's own example. The 10-K does not split ICE revenue between detention and any other service; the team may want to confirm that reading.",
+   "tripwire": "",
+   "confidence": "High",
+   "event_date": "2026-02-20",
+   "evidence": [
+    {
+     "publisher": "CoreCivic, Inc. Form 10-K for fiscal year 2025 (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1070985/000119312526060669/cxw-20251231.htm",
+     "doc_date": "2026-02-20",
+     "quote": "For the year ended December 31, 2025, ICE, USMS, and the BOP accounted for 35% ($770.7 million), 18% ($390.6 million), and 1% ($32.2 million), respectively, of our total revenue.",
+     "tier": 1,
+     "opened_at": "2026-10-04T12:43:59+00:00",
+     "quote_found": true
+    }
+   ],
+   "decision": null,
+   "discovery": true,
+   "evidence_hash": "82e3897eba733b26",
+   "evidence_changed": false
+  },
+  {
+   "id": "p-GEO-black-geo-ice-share-fy2025",
+   "tickers": [
+    "GEO"
+   ],
+   "company": "The GEO Group, Inc.",
+   "from": "none",
+   "to": "black",
+   "record_id": "geo-ice-share-fy2025",
+   "kind": "business_line",
+   "clause": "c",
+   "clause_text": "Black (c) At least 10% of latest fiscal-year revenue comes from immigration detention, or immigration detainee monitoring or transport, as disclosed in the company's own 10-K: 47.6% of fiscal-year 2025 revenue (10-K filed 2026-02-25; threshold 10%)",
+   "summary": "GEO Group's 10-K for fiscal 2025 states that ICE accounted for 47.6% of its total consolidated revenues (41.5% in 2024).",
+   "caveat": "The 10-K gives ICE's share of total consolidated revenues, not a separate \"immigration detention\" line. This screen treats ICE contract revenue as the clause (c) measure, as in the rule's own example. GEO's ICE revenue includes an electronic-monitoring contract (ISAP) as well as detention; both fall under clause (c).",
+   "tripwire": "",
+   "confidence": "High",
+   "event_date": "2026-02-25",
+   "evidence": [
+    {
+     "publisher": "The GEO Group, Inc. Form 10-K for fiscal year 2025 (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/923796/000119312526071747/geo-20251231.htm",
+     "doc_date": "2026-02-25",
+     "quote": "ICE accounting for 47.6% and 41.5% of our total consolidated revenues for 2025 and 2024, respectively",
+     "tier": 1,
+     "opened_at": "2026-10-04T12:44:01+00:00",
+     "quote_found": true
+    }
+   ],
+   "decision": null,
+   "discovery": true,
+   "evidence_hash": "f6020aee3dde9bda",
+   "evidence_changed": false
+  },
+  {
+   "id": "p-PYPL-watch-paypal-doj-fair-lending-2026",
+   "tickers": [
+    "PYPL"
+   ],
+   "company": "PayPal Holdings, Inc.",
+   "from": "none",
+   "to": "watch",
+   "record_id": "paypal-doj-fair-lending-2026",
+   "kind": "settlement_no_admission",
+   "clause": "b",
+   "clause_text": "Watch (b): Settlement with no admission of wrongdoing",
+   "summary": "PayPal agreed to a DOJ settlement resolving a fair lending investigation into an investment program for Black and minority-owned businesses, valued at about $30 million in fee waivers.",
+   "caveat": "The DOJ release does not say whether PayPal admitted wrongdoing, so \"no admission\" is not confirmed; the settlement agreement itself was not reviewed. DOJ describes the program as discriminatory on race and national origin; no court or agency ruling is cited.",
+   "tripwire": "A court ruling, jury verdict, or agency finding or consent order that states PayPal discriminated, or an admission in the settlement -> propose Black under (b).",
+   "confidence": "Medium",
+   "event_date": "2026-05-12",
+   "evidence": [
+    {
+     "publisher": "U.S. Department of Justice, Office of Public Affairs (press release)",
+     "url": "https://www.justice.gov/opa/pr/justice-department-secures-30m-settlement-paypal-over-unlawful-dei-investment-program",
+     "doc_date": "2026-05-12",
+     "quote": "the Justice Department announced a settlement with PayPal Inc. to resolve a fair lending investigation into a discriminatory investment program created for black and minority-owned businesses.",
+     "tier": 1,
+     "opened_at": "2026-10-04T12:44:18+00:00",
+     "quote_found": true
+    }
+   ],
+   "decision": null,
+   "discovery": true,
+   "evidence_hash": "1cb183e36c05ce2c",
+   "evidence_changed": false
+  },
+  {
+   "id": "p-CAH-watch-cardinal-health-eeoc-2021",
+   "tickers": [
+    "CAH"
+   ],
+   "company": "Cardinal Health, Inc.",
+   "from": "none",
+   "to": "watch",
+   "record_id": "cardinal-health-eeoc-2021",
+   "kind": "settlement_no_admission",
+   "clause": "b",
+   "clause_text": "Watch (b): Settlement with no admission of wrongdoing",
+   "summary": "Cardinal Health agreed to pay $1.45 million to resolve an EEOC lawsuit alleging racial harassment and retaliation of African American workers. The allegations are the EEOC's.",
+   "caveat": "The EEOC release does not say whether Cardinal Health admitted wrongdoing, so \"no admission\" is not confirmed; the consent decree was not reviewed. The release is dated 2021-07-09 (inside the 7-year window until 2028-07-09).",
+   "tripwire": "A court ruling, jury verdict, or agency finding that states a violation, or an admission in the decree -> propose Black under (b).",
+   "confidence": "Low",
+   "event_date": "2021-07-09",
+   "evidence": [
+    {
+     "publisher": "U.S. Equal Employment Opportunity Commission (press release)",
+     "url": "https://www.eeoc.gov/newsroom/cardinal-health-and-appleone-settle-eeoc-race-harassment-retaliation-lawsuit",
+     "doc_date": "2021-07-09",
+     "quote": "Cardinal Health will pay $1.45 million to resolve a racial harassment and retaliation discrimination lawsuit filed by the U.S. Equal Employment Opportunity Commission (EEOC)",
+     "tier": 1,
+     "opened_at": "2026-10-04T12:44:24+00:00",
+     "quote_found": true
+    }
+   ],
+   "decision": null,
+   "discovery": true,
+   "evidence_hash": "b7b26a09b64deba8",
+   "evidence_changed": false
+  },
+  {
+   "id": "p-UAL-watch-united-airlines-eeoc-2025",
+   "tickers": [
+    "UAL"
+   ],
+   "company": "United Airlines Holdings, Inc.",
+   "from": "none",
+   "to": "watch",
+   "record_id": "united-airlines-eeoc-2025",
+   "kind": "settlement_no_admission",
+   "clause": "b",
+   "clause_text": "Watch (b): Settlement with no admission of wrongdoing",
+   "summary": "United Airlines, Inc. agreed to pay $99,000 to settle an EEOC lawsuit alleging a hostile work environment based on race and national origin. The allegations are the EEOC's.",
+   "caveat": "The EEOC release does not say whether United admitted wrongdoing, so \"no admission\" is not confirmed. The defendant named is United Airlines, Inc., the operating subsidiary of the listed holding company. Small amount; a single employee.",
+   "tripwire": "A court ruling, jury verdict, or agency finding that states a violation, or an admission in the decree -> propose Black under (b).",
+   "confidence": "Low",
+   "event_date": "2025-01-06",
+   "evidence": [
+    {
+     "publisher": "U.S. Equal Employment Opportunity Commission (press release)",
+     "url": "https://www.eeoc.gov/newsroom/united-airlines-pay-99000-eeoc-discrimination-case",
+     "doc_date": "2025-01-06",
+     "quote": "will pay $99,000 and provide other relief to settle a federal lawsuit for a hostile work environment based on race and national origin",
+     "tier": 1,
+     "opened_at": "2026-10-04T12:44:20+00:00",
+     "quote_found": true
+    }
+   ],
+   "decision": null,
+   "discovery": true,
+   "evidence_hash": "99e715669748cbe6",
+   "evidence_changed": false
+  },
+  {
+   "id": "p-DG-watch-dollar-general-eeoc-2019",
+   "tickers": [
+    "DG"
+   ],
+   "company": "Dollar General Corporation",
+   "from": "none",
+   "to": "watch",
+   "record_id": "dollar-general-eeoc-2019",
+   "kind": "settlement_no_admission",
+   "clause": "b",
+   "clause_text": "Watch (b): Settlement with no admission of wrongdoing",
+   "summary": "Dollar General agreed to pay $6 million under a consent decree settling an EEOC class lawsuit alleging its criminal-background-check screen discriminated against African American applicants (a disparate-impact claim). The allegations are the EEOC's.",
+   "caveat": "The EEOC release does not say whether Dollar General admitted wrongdoing, so \"no admission\" is not confirmed. The three-year decree has ended. The release is dated 2019-11-18, which leaves the 7-year window on 2026-11-18, after which this record would no longer apply.",
+   "tripwire": "A court ruling, jury verdict, or agency finding that states a violation, or an admission in the decree -> propose Black under (b).",
+   "confidence": "Low",
+   "event_date": "2019-11-18",
+   "evidence": [
+    {
+     "publisher": "U.S. Equal Employment Opportunity Commission (press release)",
+     "url": "https://www.eeoc.gov/newsroom/dollar-general-pay-6-million-settle-eeoc-class-race-discrimination-suit",
+     "doc_date": "2019-11-18",
+     "quote": "Dollar General will pay $6 million and furnish other relief to settle a class race discrimination lawsuit brought by the U.S. Equal Employment Opportunity Commission (EEOC)",
+     "tier": 1,
+     "opened_at": "2026-10-04T12:44:27+00:00",
+     "quote_found": true
+    }
+   ],
+   "decision": null,
+   "discovery": true,
+   "evidence_hash": "cddf1f7cac88a230",
+   "evidence_changed": false
+  },
+  {
    "id": "p-FOXA-FOX-black-fox-dominion-falsity-2023",
    "tickers": [
     "FOXA",
@@ -418,7 +622,7 @@
    "record_id": "tesla-diaz-verdict-2021",
    "kind": "finding",
    "clause": "b",
-   "clause_text": "Black (b) Engaged in racial or ethnic discrimination: Jury verdict, even if later reduced, 2021-10-04 (within 7 years)",
+   "clause_text": "Black (b) Engaged in discrimination on the basis of race, ethnicity, sexual orientation or gender identity: Jury verdict, even if later reduced, 2021-10-04 (within 7 years)",
    "summary": "A federal jury (N.D. Cal., Diaz v. Tesla) returned a verdict against Tesla on a former contingent worker's race-discrimination claims at the Fremont factory. Damages were later reduced ($136.9M to $15M to $3.175M after a retrial); the parties settled confidentially in March 2024.",
    "caveat": "NEW vs. the September starting list, which had TSLA on Watch. The rule counts \"a jury verdict, even if later reduced\", and October 2021 is inside the 7-year window (until 2028-10-04). The worker was a contingent (staffing-agency) worker. This is a proposal for the team to decide.",
    "tripwire": "",
@@ -444,10 +648,10 @@
      "quote_found": true
     }
    ],
-   "decision": "approve",
+   "decision": null,
    "discovery": false,
-   "evidence_hash": "6f39410e420df6c0",
-   "evidence_changed": false
+   "evidence_hash": "bdc5a562d9d294b8",
+   "evidence_changed": true
   },
   {
    "id": "p-TSLA-watch-tesla-crd-eeoc-open-2026",
@@ -575,7 +779,7 @@
      "doc_date": "2026-08-26",
      "quote": "Today's announcement that Meta has agreed to pay up to $17.1 billion and implement reforms across Facebook and Instagram is an encouraging step forward.",
      "tier": 1,
-     "opened_at": "2026-10-04T12:05:34+00:00",
+     "opened_at": "2026-10-04T12:45:54+00:00",
      "quote_found": true
     }
    ],
@@ -1814,13 +2018,17 @@
    "holdings": {
     "ACN": 0.196394,
     "ADBE": 0.144962,
+    "CAH": 0.08078,
+    "DG": 0.039788,
     "F": 0.072877,
     "FOX": 0.011167,
     "FOXA": 0.018553,
     "GOOG": 2.409213,
     "GOOGL": 3.003466,
     "META": 2.42247,
+    "PYPL": 0.068495,
     "TSLA": 1.51008,
+    "UAL": 0.055058,
     "WBD": 0.117595
    },
    "positions": 506,
@@ -1832,10 +2040,13 @@
    "sourceKind": "SEC Form N-PORT-P (fallback; may lag ~60-90 days)",
    "holdings": {
     "ADBE": 0.011547,
+    "CAH": 0.018697,
+    "DG": 0.020406,
     "F": 0.011983,
     "FOX": 0.032632,
     "GOOG": 0.140439,
-    "META": 0.250199
+    "META": 0.250199,
+    "PYPL": 0.036263
    },
    "positions": 17409,
    "name": "Vanguard Total Bond Market ETF"
@@ -1863,13 +2074,17 @@
    "holdings": {
     "ACN": 0.118329,
     "ADBE": 0.128349,
+    "CAH": 0.086167,
+    "DG": 0.039262,
     "F": 0.084258,
     "FOX": 0.010088,
     "FOXA": 0.016116,
     "GOOG": 2.586448,
     "GOOGL": 3.245489,
     "META": 1.915924,
+    "PYPL": 0.058994,
     "TSLA": 1.83393,
+    "UAL": 0.068376,
     "WBD": 0.102337
    },
    "positions": 508,
@@ -1884,6 +2099,7 @@
     "GOOG": 3.024421,
     "GOOGL": 3.265329,
     "META": 2.617008,
+    "PYPL": 0.164971,
     "SHOP": 0.603123,
     "TRI": 0.134793,
     "TSLA": 3.296348,
@@ -1929,13 +2145,17 @@
    "holdings": {
     "ACN": 0.118457,
     "ADBE": 0.128464,
+    "CAH": 0.086248,
+    "DG": 0.039304,
     "F": 0.084354,
     "FOX": 0.010119,
     "FOXA": 0.016112,
     "GOOG": 2.589448,
     "GOOGL": 3.249254,
     "META": 1.91822,
+    "PYPL": 0.054908,
     "TSLA": 1.836108,
+    "UAL": 0.068432,
     "WBD": 0.102453
    },
    "positions": 520,
@@ -1948,16 +2168,22 @@
    "holdings": {
     "ACN": 0.088522,
     "ADBE": 0.088232,
+    "CAH": 0.04716,
+    "CXW": 0.002487,
+    "DG": 0.024623,
     "F": 0.049669,
     "FOX": 0.013561,
     "FOXA": 0.003262,
+    "GEO": 0.003358,
     "GOOG": 1.43858,
     "GOOGL": 1.827319,
     "META": 1.059585,
     "NYT": 0.010826,
+    "PYPL": 0.040586,
     "SHOP": 0.124531,
     "TRI": 0.011364,
     "TSLA": 0.787185,
+    "UAL": 0.008205,
     "WBD": 0.054625
    },
    "positions": 10100,
@@ -1970,15 +2196,21 @@
    "holdings": {
     "ACN": 0.105553,
     "ADBE": 0.114489,
+    "CAH": 0.076865,
+    "CXW": 0.003931,
+    "DG": 0.035036,
     "F": 0.075164,
     "FOX": 0.007566,
     "FOXA": 0.013224,
+    "GEO": 0.00517,
     "GOOG": 2.280013,
     "GOOGL": 2.895475,
     "META": 1.709033,
     "NMAX": 0.000519,
     "NYT": 0.01324,
+    "PYPL": 0.048964,
     "TSLA": 1.636813,
+    "UAL": 0.06099,
     "WBD": 0.087725
    },
    "positions": 3546,
@@ -2009,29 +2241,255 @@
  "blackCandidates": [
   "ACN",
   "ADBE",
+  "CAH",
+  "CXW",
+  "DG",
   "F",
   "FOX",
   "FOXA",
+  "GEO",
   "GOOG",
   "GOOGL",
   "META",
   "NMAX",
   "NYT",
+  "PYPL",
   "SHOP",
   "TRI",
   "TSLA",
+  "UAL",
   "WBD"
  ],
  "discovery": {
   "heldBack": [],
-  "legal": [],
-  "legalKnown": [],
+  "legal": [
+   {
+    "source": "DOJ",
+    "date": "2025-04-10",
+    "title": "Justice Department Files a Proposed Statement of Interest Supporting Equal Access to Southwest Airlines Travel Program",
+    "url": "https://www.justice.gov/opa/pr/justice-department-files-proposed-statement-interest-supporting-equal-access-southwest",
+    "components": [
+     "Civil Rights Division",
+     "USAO - Texas, Northern"
+    ],
+    "tickers": [
+     "LUV"
+    ]
+   },
+   {
+    "source": "DOJ",
+    "date": "2025-04-10",
+    "title": "Justice Department Files a Proposed Statement of Interest Supporting Equal Access to Southwest Airlines Travel Program",
+    "url": "https://www.justice.gov/usao-ndtx/pr/justice-department-files-proposed-statement-interest-supporting-equal-access-southwest",
+    "components": [
+     "Civil Rights Division",
+     "USAO - Texas, Northern"
+    ],
+    "tickers": [
+     "LUV"
+    ]
+   },
+   {
+    "source": "EEOC",
+    "date": "2025-06-02",
+    "title": "Bigfoot Energy Services and Iron Mountain Energy to Pay $697,500 in EEOC Race and Sex Harassment Suit",
+    "url": "https://www.eeoc.gov/newsroom/bigfoot-energy-services-and-iron-mountain-energy-pay-697500-eeoc-race-and-sex-harassment",
+    "tickers": [
+     "IRM"
+    ]
+   },
+   {
+    "source": "EEOC",
+    "date": "2024-10-01",
+    "title": "EEOC Sues Bigfoot Energy Services and Iron Mountain Energy",
+    "url": "https://www.eeoc.gov/newsroom/eeoc-sues-bigfoot-energy-services-and-iron-mountain-energy",
+    "tickers": [
+     "IRM"
+    ]
+   },
+   {
+    "source": "EEOC",
+    "date": "2023-07-31",
+    "title": "EEOC Sues HCA Healthcare and Two of its Divisions for Race, National Origin, Age Discrimination and Retaliation",
+    "url": "https://www.eeoc.gov/newsroom/eeoc-sues-hca-healthcare-and-two-its-divisions-race-national-origin-age-discrimination-and",
+    "tickers": [
+     "HCA"
+    ]
+   },
+   {
+    "source": "EEOC",
+    "date": "2022-02-11",
+    "title": "EEOC Sues Walmart for Gender and Race Discrimination",
+    "url": "https://www.eeoc.gov/newsroom/eeoc-sues-walmart-gender-and-race-discrimination",
+    "tickers": [
+     "WMT"
+    ]
+   },
+   {
+    "source": "EEOC",
+    "date": "2020-11-03",
+    "title": "Blackstone Consulting, Inc. Will Pay $37,500 To Settle EEOC National Origin Discrimination Suit",
+    "url": "https://www.eeoc.gov/newsroom/blackstone-consulting-inc-will-pay-37500-settle-eeoc-national-origin-discrimination-suit",
+    "tickers": [
+     "BX"
+    ]
+   },
+   {
+    "source": "EEOC",
+    "date": "2019-12-16",
+    "title": "EEOC Sues Blackstone Consulting, Inc. for National Origin Discrimination",
+    "url": "https://www.eeoc.gov/newsroom/eeoc-sues-blackstone-consulting-inc-national-origin-discrimination",
+    "tickers": [
+     "BX"
+    ]
+   },
+   {
+    "source": "EEOC",
+    "date": "2019-10-08",
+    "title": "Halliburton to Pay $275,000 to Settle National Origin and Religious Discrimination Suit",
+    "url": "https://www.eeoc.gov/newsroom/halliburton-pay-275000-settle-national-origin-and-religious-discrimination-suit",
+    "tickers": [
+     "HAL"
+    ]
+   }
+  ],
+  "legalKnown": [
+   {
+    "source": "DOJ",
+    "date": "2026-05-12",
+    "title": "Justice Department Secures $30M Settlement with PayPal Over DEI Investment Program",
+    "url": "https://www.justice.gov/opa/pr/justice-department-secures-30m-settlement-paypal-over-unlawful-dei-investment-program",
+    "components": [
+     "Office of the Attorney General",
+     "Civil Rights Division"
+    ],
+    "tickers": [
+     "PYPL"
+    ]
+   },
+   {
+    "source": "EEOC",
+    "date": "2026-09-01",
+    "title": "Ford Motor Company to Pay $2.3 Million to Resolve EEOC Race and National Origin Harassment Charge",
+    "url": "https://www.eeoc.gov/newsroom/ford-motor-company-pay-23-million-resolve-eeoc-race-and-national-origin-harassment-charge",
+    "tickers": [
+     "F"
+    ]
+   },
+   {
+    "source": "EEOC",
+    "date": "2025-01-06",
+    "title": "United Airlines to Pay $99,000 in EEOC Discrimination Case",
+    "url": "https://www.eeoc.gov/newsroom/united-airlines-pay-99000-eeoc-discrimination-case",
+    "tickers": [
+     "UAL"
+    ]
+   },
+   {
+    "source": "EEOC",
+    "date": "2023-09-28",
+    "title": "EEOC Sues Tesla for Racial Harassment and Retaliation",
+    "url": "https://www.eeoc.gov/newsroom/eeoc-sues-tesla-racial-harassment-and-retaliation",
+    "tickers": [
+     "TSLA"
+    ]
+   },
+   {
+    "source": "EEOC",
+    "date": "2021-07-09",
+    "title": "Cardinal Health and AppleOne Settle EEOC Race Harassment / Retaliation Lawsuit",
+    "url": "https://www.eeoc.gov/newsroom/cardinal-health-and-appleone-settle-eeoc-race-harassment-retaliation-lawsuit",
+    "tickers": [
+     "CAH"
+    ]
+   },
+   {
+    "source": "EEOC",
+    "date": "2019-11-18",
+    "title": "Dollar General to Pay $6 Million to Settle EEOC Class Race Discrimination Suit",
+    "url": "https://www.eeoc.gov/newsroom/dollar-general-pay-6-million-settle-eeoc-class-race-discrimination-suit",
+    "tickers": [
+     "DG"
+    ]
+   }
+  ],
   "themes": [],
-  "since": "2026-10-02"
+  "since": "2019-10-05",
+  "clauseBNew": {
+   "TTWO": [
+    {
+     "phrase": "sexual orientation discrimination",
+     "form": "10-Q",
+     "filed": "2021-08-03",
+     "url": "https://www.sec.gov/Archives/edgar/data/946581/000162828021015202/nordeuspurchaseagreement.htm"
+    }
+   ],
+   "SJM": [
+    {
+     "phrase": "gender identity discrimination",
+     "form": "10-K",
+     "filed": "2022-06-16",
+     "url": "https://www.sec.gov/Archives/edgar/data/91419/000009141922000049/sjm-20220430.htm"
+    },
+    {
+     "phrase": "gender identity discrimination",
+     "form": "10-K",
+     "filed": "2023-06-20",
+     "url": "https://www.sec.gov/Archives/edgar/data/91419/000009141923000072/sjm-20230430.htm"
+    },
+    {
+     "phrase": "gender identity discrimination",
+     "form": "10-K",
+     "filed": "2024-06-18",
+     "url": "https://www.sec.gov/Archives/edgar/data/91419/000009141924000054/sjm-20240430.htm"
+    }
+   ]
+  },
+  "clauseC": {
+   "CXW": [
+    {
+     "phrase": "Immigration and Customs Enforcement",
+     "form": "10-K",
+     "filed": "2026-02-20",
+     "url": "https://www.sec.gov/Archives/edgar/data/1070985/000119312526060669/cxw-20251231.htm"
+    },
+    {
+     "phrase": "immigration detention",
+     "form": "10-K",
+     "filed": "2026-02-20",
+     "url": "https://www.sec.gov/Archives/edgar/data/1070985/000119312526060669/cxw-20251231.htm"
+    }
+   ],
+   "GEO": [
+    {
+     "phrase": "Immigration and Customs Enforcement",
+     "form": "10-K",
+     "filed": "2026-02-25",
+     "url": "https://www.sec.gov/Archives/edgar/data/923796/000119312526071747/geo-20251231.htm"
+    },
+    {
+     "phrase": "immigration detention",
+     "form": "10-K",
+     "filed": "2026-02-25",
+     "url": "https://www.sec.gov/Archives/edgar/data/923796/000119312526071747/geo-20251231.htm"
+    },
+    {
+     "phrase": "alternatives to detention",
+     "form": "10-K",
+     "filed": "2026-02-25",
+     "url": "https://www.sec.gov/Archives/edgar/data/923796/000119312526071747/geo-20251231.htm"
+    }
+   ]
+  }
  },
  "universe": {
   "sp500": 504,
   "team": 3,
+  "screen": 2,
+  "screenAdded": {
+   "GEO": "The GEO Group (listed immigration-detention operator)",
+   "CXW": "CoreCivic (listed immigration-detention operator)"
+  },
   "teamEtfs": [
    "BND",
    "IEFA",
@@ -2055,6 +2513,12 @@
  },
  "rules": {
   "lookback_years": 7,
+  "clauses": {
+   "a": "Knowingly spread false information to the public",
+   "b": "Engaged in discrimination on the basis of race, ethnicity, sexual orientation or gender identity",
+   "c": "At least 10% of latest fiscal-year revenue comes from immigration detention, or immigration detainee monitoring or transport, as disclosed in the company's own 10-K"
+  },
+  "clause_c_threshold_pct": 10,
   "gate": {
    "min_market_cap_usd": 5000000000,
    "require_positive_net_income": true,
@@ -2250,6 +2714,226 @@
     "clause_text": "Aligned gate 2 (values link): Storytelling & education",
     "problems": [],
     "tier1_verified": 2,
+    "proposable": true
+   }
+  },
+  {
+   "id": "cxw-ice-share-fy2025",
+   "discovered": true,
+   "tickers": [
+    "CXW"
+   ],
+   "company": "CoreCivic, Inc.",
+   "cik": 1070985,
+   "kind": "business_line",
+   "clause": "c",
+   "share_pct": 35,
+   "fiscal_year": 2025,
+   "filing_date": "2026-02-20",
+   "event_date": "2026-02-20",
+   "summary": "CoreCivic's 10-K for fiscal 2025 states that ICE accounted for 35% ($770.7 million) of its total revenue (29% in 2024, 30% in 2023).",
+   "caveat": "The 10-K gives ICE's share of total revenue, not a separate \"immigration detention\" line. This screen treats ICE contract revenue as the clause (c) measure, as in the rule's own example. The 10-K does not split ICE revenue between detention and any other service; the team may want to confirm that reading.",
+   "confidence": "High",
+   "sources": [
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/1070985/000119312526060669/cxw-20251231.htm",
+     "publisher": "CoreCivic, Inc. Form 10-K for fiscal year 2025 (SEC EDGAR)",
+     "doc_date": "2026-02-20",
+     "quote": "For the year ended December 31, 2025, ICE, USMS, and the BOP accounted for 35% ($770.7 million), 18% ($390.6 million), and 1% ($32.2 million), respectively, of our total revenue.",
+     "tier": 1,
+     "quote_words": 29,
+     "quote_found": true,
+     "opened_at": "2026-10-04T12:43:59+00:00",
+     "error": null
+    }
+   ],
+   "check": {
+    "outcome": "black",
+    "clause_text": "Black (c) At least 10% of latest fiscal-year revenue comes from immigration detention, or immigration detainee monitoring or transport, as disclosed in the company's own 10-K: 35% of fiscal-year 2025 revenue (10-K filed 2026-02-20; threshold 10%)",
+    "problems": [],
+    "tier1_verified": 1,
+    "proposable": true
+   }
+  },
+  {
+   "id": "geo-ice-share-fy2025",
+   "discovered": true,
+   "tickers": [
+    "GEO"
+   ],
+   "company": "The GEO Group, Inc.",
+   "cik": 923796,
+   "kind": "business_line",
+   "clause": "c",
+   "share_pct": 47.6,
+   "fiscal_year": 2025,
+   "filing_date": "2026-02-25",
+   "event_date": "2026-02-25",
+   "summary": "GEO Group's 10-K for fiscal 2025 states that ICE accounted for 47.6% of its total consolidated revenues (41.5% in 2024).",
+   "caveat": "The 10-K gives ICE's share of total consolidated revenues, not a separate \"immigration detention\" line. This screen treats ICE contract revenue as the clause (c) measure, as in the rule's own example. GEO's ICE revenue includes an electronic-monitoring contract (ISAP) as well as detention; both fall under clause (c).",
+   "confidence": "High",
+   "sources": [
+    {
+     "url": "https://www.sec.gov/Archives/edgar/data/923796/000119312526071747/geo-20251231.htm",
+     "publisher": "The GEO Group, Inc. Form 10-K for fiscal year 2025 (SEC EDGAR)",
+     "doc_date": "2026-02-25",
+     "quote": "ICE accounting for 47.6% and 41.5% of our total consolidated revenues for 2025 and 2024, respectively",
+     "tier": 1,
+     "quote_words": 16,
+     "quote_found": true,
+     "opened_at": "2026-10-04T12:44:01+00:00",
+     "error": null
+    }
+   ],
+   "check": {
+    "outcome": "black",
+    "clause_text": "Black (c) At least 10% of latest fiscal-year revenue comes from immigration detention, or immigration detainee monitoring or transport, as disclosed in the company's own 10-K: 47.6% of fiscal-year 2025 revenue (10-K filed 2026-02-25; threshold 10%)",
+    "problems": [],
+    "tier1_verified": 1,
+    "proposable": true
+   }
+  },
+  {
+   "id": "paypal-doj-fair-lending-2026",
+   "discovered": true,
+   "tickers": [
+    "PYPL"
+   ],
+   "company": "PayPal Holdings, Inc.",
+   "cik": 1633917,
+   "kind": "settlement_no_admission",
+   "clause": "b",
+   "event_date": "2026-05-12",
+   "summary": "PayPal agreed to a DOJ settlement resolving a fair lending investigation into an investment program for Black and minority-owned businesses, valued at about $30 million in fee waivers.",
+   "caveat": "The DOJ release does not say whether PayPal admitted wrongdoing, so \"no admission\" is not confirmed; the settlement agreement itself was not reviewed. DOJ describes the program as discriminatory on race and national origin; no court or agency ruling is cited.",
+   "tripwire": "A court ruling, jury verdict, or agency finding or consent order that states PayPal discriminated, or an admission in the settlement -> propose Black under (b).",
+   "confidence": "Medium",
+   "sources": [
+    {
+     "url": "https://www.justice.gov/opa/pr/justice-department-secures-30m-settlement-paypal-over-unlawful-dei-investment-program",
+     "publisher": "U.S. Department of Justice, Office of Public Affairs (press release)",
+     "doc_date": "2026-05-12",
+     "quote": "the Justice Department announced a settlement with PayPal Inc. to resolve a fair lending investigation into a discriminatory investment program created for black and minority-owned businesses.",
+     "tier": 1,
+     "quote_words": 26,
+     "quote_found": true,
+     "opened_at": "2026-10-04T12:44:18+00:00",
+     "error": null
+    }
+   ],
+   "check": {
+    "outcome": "watch",
+    "clause_text": "Watch (b): Settlement with no admission of wrongdoing",
+    "problems": [],
+    "tier1_verified": 1,
+    "proposable": true
+   }
+  },
+  {
+   "id": "cardinal-health-eeoc-2021",
+   "discovered": true,
+   "tickers": [
+    "CAH"
+   ],
+   "company": "Cardinal Health, Inc.",
+   "cik": 721371,
+   "kind": "settlement_no_admission",
+   "clause": "b",
+   "event_date": "2021-07-09",
+   "summary": "Cardinal Health agreed to pay $1.45 million to resolve an EEOC lawsuit alleging racial harassment and retaliation of African American workers. The allegations are the EEOC's.",
+   "caveat": "The EEOC release does not say whether Cardinal Health admitted wrongdoing, so \"no admission\" is not confirmed; the consent decree was not reviewed. The release is dated 2021-07-09 (inside the 7-year window until 2028-07-09).",
+   "tripwire": "A court ruling, jury verdict, or agency finding that states a violation, or an admission in the decree -> propose Black under (b).",
+   "confidence": "Low",
+   "sources": [
+    {
+     "url": "https://www.eeoc.gov/newsroom/cardinal-health-and-appleone-settle-eeoc-race-harassment-retaliation-lawsuit",
+     "publisher": "U.S. Equal Employment Opportunity Commission (press release)",
+     "doc_date": "2021-07-09",
+     "quote": "Cardinal Health will pay $1.45 million to resolve a racial harassment and retaliation discrimination lawsuit filed by the U.S. Equal Employment Opportunity Commission (EEOC)",
+     "tier": 1,
+     "quote_words": 24,
+     "quote_found": true,
+     "opened_at": "2026-10-04T12:44:24+00:00",
+     "error": null
+    }
+   ],
+   "check": {
+    "outcome": "watch",
+    "clause_text": "Watch (b): Settlement with no admission of wrongdoing",
+    "problems": [],
+    "tier1_verified": 1,
+    "proposable": true
+   }
+  },
+  {
+   "id": "united-airlines-eeoc-2025",
+   "discovered": true,
+   "tickers": [
+    "UAL"
+   ],
+   "company": "United Airlines Holdings, Inc.",
+   "cik": 100517,
+   "kind": "settlement_no_admission",
+   "clause": "b",
+   "event_date": "2025-01-06",
+   "summary": "United Airlines, Inc. agreed to pay $99,000 to settle an EEOC lawsuit alleging a hostile work environment based on race and national origin. The allegations are the EEOC's.",
+   "caveat": "The EEOC release does not say whether United admitted wrongdoing, so \"no admission\" is not confirmed. The defendant named is United Airlines, Inc., the operating subsidiary of the listed holding company. Small amount; a single employee.",
+   "tripwire": "A court ruling, jury verdict, or agency finding that states a violation, or an admission in the decree -> propose Black under (b).",
+   "confidence": "Low",
+   "sources": [
+    {
+     "url": "https://www.eeoc.gov/newsroom/united-airlines-pay-99000-eeoc-discrimination-case",
+     "publisher": "U.S. Equal Employment Opportunity Commission (press release)",
+     "doc_date": "2025-01-06",
+     "quote": "will pay $99,000 and provide other relief to settle a federal lawsuit for a hostile work environment based on race and national origin",
+     "tier": 1,
+     "quote_words": 23,
+     "quote_found": true,
+     "opened_at": "2026-10-04T12:44:20+00:00",
+     "error": null
+    }
+   ],
+   "check": {
+    "outcome": "watch",
+    "clause_text": "Watch (b): Settlement with no admission of wrongdoing",
+    "problems": [],
+    "tier1_verified": 1,
+    "proposable": true
+   }
+  },
+  {
+   "id": "dollar-general-eeoc-2019",
+   "discovered": true,
+   "tickers": [
+    "DG"
+   ],
+   "company": "Dollar General Corporation",
+   "cik": 29534,
+   "kind": "settlement_no_admission",
+   "clause": "b",
+   "event_date": "2019-11-18",
+   "summary": "Dollar General agreed to pay $6 million under a consent decree settling an EEOC class lawsuit alleging its criminal-background-check screen discriminated against African American applicants (a disparate-impact claim). The allegations are the EEOC's.",
+   "caveat": "The EEOC release does not say whether Dollar General admitted wrongdoing, so \"no admission\" is not confirmed. The three-year decree has ended. The release is dated 2019-11-18, which leaves the 7-year window on 2026-11-18, after which this record would no longer apply.",
+   "tripwire": "A court ruling, jury verdict, or agency finding that states a violation, or an admission in the decree -> propose Black under (b).",
+   "confidence": "Low",
+   "sources": [
+    {
+     "url": "https://www.eeoc.gov/newsroom/dollar-general-pay-6-million-settle-eeoc-class-race-discrimination-suit",
+     "publisher": "U.S. Equal Employment Opportunity Commission (press release)",
+     "doc_date": "2019-11-18",
+     "quote": "Dollar General will pay $6 million and furnish other relief to settle a class race discrimination lawsuit brought by the U.S. Equal Employment Opportunity Commission (EEOC)",
+     "tier": 1,
+     "quote_words": 26,
+     "quote_found": true,
+     "opened_at": "2026-10-04T12:44:27+00:00",
+     "error": null
+    }
+   ],
+   "check": {
+    "outcome": "watch",
+    "clause_text": "Watch (b): Settlement with no admission of wrongdoing",
+    "problems": [],
+    "tier1_verified": 1,
     "proposable": true
    }
   },
@@ -2491,7 +3175,7 @@
    ],
    "check": {
     "outcome": "black",
-    "clause_text": "Black (b) Engaged in racial or ethnic discrimination: Jury verdict, even if later reduced, 2021-10-04 (within 7 years)",
+    "clause_text": "Black (b) Engaged in discrimination on the basis of race, ethnicity, sexual orientation or gender identity: Jury verdict, even if later reduced, 2021-10-04 (within 7 years)",
     "problems": [],
     "tier1_verified": 2,
     "proposable": true
@@ -2634,7 +3318,7 @@
      "tier": 1,
      "quote_words": 24,
      "quote_found": true,
-     "opened_at": "2026-10-04T12:05:34+00:00",
+     "opened_at": "2026-10-04T12:45:54+00:00",
      "error": null
     }
    ],

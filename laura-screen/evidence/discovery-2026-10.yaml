@@ -1,0 +1,162 @@
+# Records from the 2026-10-04 full re-check after the rule change (clause (b) widened, clause (c) added).
+# Each was matched automatically, then opened and read by Claude. discovered: true marks them as
+# discovery proposals in the page. Claude only proposes; the team decides.
+records:
+  - id: cxw-ice-share-fy2025
+    discovered: true
+    tickers: [CXW]
+    company: CoreCivic, Inc.
+    cik: 1070985
+    kind: business_line
+    clause: c
+    share_pct: 35
+    fiscal_year: 2025
+    filing_date: 2026-02-20
+    event_date: 2026-02-20
+    summary: >-
+      CoreCivic's 10-K for fiscal 2025 states that ICE accounted for 35% ($770.7 million) of its total
+      revenue (29% in 2024, 30% in 2023).
+    caveat: >-
+      The 10-K gives ICE's share of total revenue, not a separate "immigration detention" line. This
+      screen treats ICE contract revenue as the clause (c) measure, as in the rule's own example. The
+      10-K does not split ICE revenue between detention and any other service; the team may want to
+      confirm that reading.
+    confidence: High
+    sources:
+      - url: https://www.sec.gov/Archives/edgar/data/1070985/000119312526060669/cxw-20251231.htm
+        publisher: CoreCivic, Inc. Form 10-K for fiscal year 2025 (SEC EDGAR)
+        doc_date: 2026-02-20
+        quote: >-
+          For the year ended December 31, 2025, ICE, USMS, and the BOP accounted for 35% ($770.7 million), 18% ($390.6 million), and 1% ($32.2 million), respectively, of our total revenue.
+
+  - id: geo-ice-share-fy2025
+    discovered: true
+    tickers: [GEO]
+    company: The GEO Group, Inc.
+    cik: 923796
+    kind: business_line
+    clause: c
+    share_pct: 47.6
+    fiscal_year: 2025
+    filing_date: 2026-02-25
+    event_date: 2026-02-25
+    summary: >-
+      GEO Group's 10-K for fiscal 2025 states that ICE accounted for 47.6% of its total consolidated
+      revenues (41.5% in 2024).
+    caveat: >-
+      The 10-K gives ICE's share of total consolidated revenues, not a separate "immigration detention"
+      line. This screen treats ICE contract revenue as the clause (c) measure, as in the rule's own
+      example. GEO's ICE revenue includes an electronic-monitoring contract (ISAP) as well as
+      detention; both fall under clause (c).
+    confidence: High
+    sources:
+      - url: https://www.sec.gov/Archives/edgar/data/923796/000119312526071747/geo-20251231.htm
+        publisher: The GEO Group, Inc. Form 10-K for fiscal year 2025 (SEC EDGAR)
+        doc_date: 2026-02-25
+        quote: >-
+          ICE accounting for 47.6% and 41.5% of our total consolidated revenues for 2025 and 2024, respectively
+
+  - id: paypal-doj-fair-lending-2026
+    discovered: true
+    tickers: [PYPL]
+    company: PayPal Holdings, Inc.
+    cik: 1633917
+    kind: settlement_no_admission
+    clause: b
+    event_date: 2026-05-12
+    summary: >-
+      PayPal agreed to a DOJ settlement resolving a fair lending investigation into an investment
+      program for Black and minority-owned businesses, valued at about $30 million in fee waivers.
+    caveat: >-
+      The DOJ release does not say whether PayPal admitted wrongdoing, so "no admission" is not
+      confirmed; the settlement agreement itself was not reviewed. DOJ describes the program as
+      discriminatory on race and national origin; no court or agency ruling is cited.
+    tripwire: >-
+      A court ruling, jury verdict, or agency finding or consent order that states PayPal
+      discriminated, or an admission in the settlement -> propose Black under (b).
+    confidence: Medium
+    sources:
+      - url: https://www.justice.gov/opa/pr/justice-department-secures-30m-settlement-paypal-over-unlawful-dei-investment-program
+        publisher: U.S. Department of Justice, Office of Public Affairs (press release)
+        doc_date: 2026-05-12
+        quote: >-
+          the Justice Department announced a settlement with PayPal Inc. to resolve a fair lending investigation into a discriminatory investment program created for black and minority-owned businesses.
+
+  - id: cardinal-health-eeoc-2021
+    discovered: true
+    tickers: [CAH]
+    company: Cardinal Health, Inc.
+    cik: 721371
+    kind: settlement_no_admission
+    clause: b
+    event_date: 2021-07-09
+    summary: >-
+      Cardinal Health agreed to pay $1.45 million to resolve an EEOC lawsuit alleging racial
+      harassment and retaliation of African American workers. The allegations are the EEOC's.
+    caveat: >-
+      The EEOC release does not say whether Cardinal Health admitted wrongdoing, so "no admission" is
+      not confirmed; the consent decree was not reviewed. The release is dated 2021-07-09 (inside the
+      7-year window until 2028-07-09).
+    tripwire: >-
+      A court ruling, jury verdict, or agency finding that states a violation, or an admission in
+      the decree -> propose Black under (b).
+    confidence: Low
+    sources:
+      - url: https://www.eeoc.gov/newsroom/cardinal-health-and-appleone-settle-eeoc-race-harassment-retaliation-lawsuit
+        publisher: U.S. Equal Employment Opportunity Commission (press release)
+        doc_date: 2021-07-09
+        quote: >-
+          Cardinal Health will pay $1.45 million to resolve a racial harassment and retaliation discrimination lawsuit filed by the U.S. Equal Employment Opportunity Commission (EEOC)
+
+  - id: united-airlines-eeoc-2025
+    discovered: true
+    tickers: [UAL]
+    company: United Airlines Holdings, Inc.
+    cik: 100517
+    kind: settlement_no_admission
+    clause: b
+    event_date: 2025-01-06
+    summary: >-
+      United Airlines, Inc. agreed to pay $99,000 to settle an EEOC lawsuit alleging a hostile work
+      environment based on race and national origin. The allegations are the EEOC's.
+    caveat: >-
+      The EEOC release does not say whether United admitted wrongdoing, so "no admission" is not
+      confirmed. The defendant named is United Airlines, Inc., the operating subsidiary of the listed
+      holding company. Small amount; a single employee.
+    tripwire: >-
+      A court ruling, jury verdict, or agency finding that states a violation, or an admission in
+      the decree -> propose Black under (b).
+    confidence: Low
+    sources:
+      - url: https://www.eeoc.gov/newsroom/united-airlines-pay-99000-eeoc-discrimination-case
+        publisher: U.S. Equal Employment Opportunity Commission (press release)
+        doc_date: 2025-01-06
+        quote: >-
+          will pay $99,000 and provide other relief to settle a federal lawsuit for a hostile work environment based on race and national origin
+
+  - id: dollar-general-eeoc-2019
+    discovered: true
+    tickers: [DG]
+    company: Dollar General Corporation
+    cik: 29534
+    kind: settlement_no_admission
+    clause: b
+    event_date: 2019-11-18
+    summary: >-
+      Dollar General agreed to pay $6 million under a consent decree settling an EEOC class lawsuit
+      alleging its criminal-background-check screen discriminated against African American applicants
+      (a disparate-impact claim). The allegations are the EEOC's.
+    caveat: >-
+      The EEOC release does not say whether Dollar General admitted wrongdoing, so "no admission" is
+      not confirmed. The three-year decree has ended. The release is dated 2019-11-18, which leaves
+      the 7-year window on 2026-11-18, after which this record would no longer apply.
+    tripwire: >-
+      A court ruling, jury verdict, or agency finding that states a violation, or an admission in
+      the decree -> propose Black under (b).
+    confidence: Low
+    sources:
+      - url: https://www.eeoc.gov/newsroom/dollar-general-pay-6-million-settle-eeoc-class-race-discrimination-suit
+        publisher: U.S. Equal Employment Opportunity Commission (press release)
+        doc_date: 2019-11-18
+        quote: >-
+          Dollar General will pay $6 million and furnish other relief to settle a class race discrimination lawsuit brought by the U.S. Equal Employment Opportunity Commission (EEOC)

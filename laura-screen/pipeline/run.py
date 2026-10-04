@@ -23,7 +23,7 @@ from pathlib import Path
 import yaml
 
 from . import discovery, etf, financial, newtickers, progress
-from .evidence import check_record, do_not_list_tickers, guard_do_not_list, load_records, load_rules
+from .evidence import clause_text_of, check_record, do_not_list_tickers, guard_do_not_list, load_records, load_rules
 from .http import SourceError
 from .tickers import build as build_tickers, canon
 
@@ -83,6 +83,8 @@ def main(argv=None) -> int:
     ap.add_argument("--no-discovery", action="store_true")
     ap.add_argument("--today", default=None)
     ap.add_argument("--progress", action="store_true", help="report stages for the page's progress bar")
+    ap.add_argument("--full-recheck", action="store_true",
+                    help="after a rule change: scan the whole look-back for clause (b) and test clause (c)")
     args = ap.parse_args(argv)
 
     t0 = time.time()
@@ -138,6 +140,13 @@ def main(argv=None) -> int:
             universe.setdefault(t, {"name": tmap[t][0], "cik": tmap[t][2], "origin": "team list"})
         elif t in tmap and tmap[t][1] == "E":
             team_etfs.add(t)
+    bl_cfg = rules.get("black_business_line", {})
+    for t, why in (bl_cfg.get("screen_added_tickers") or {}).items():
+        if t in tmap and tmap[t][1] == "S":
+            universe.setdefault(t, {"name": tmap[t][0], "cik": tmap[t][2],
+                                    "origin": "screen (rule change 2026-10-04)", "why": why})
+        else:
+            errors.append(f"{t}: screen-added ticker not found in the ticker map")
     labels = current_labels(baseline, db.get("approvals", []))
 
     # 3. Evidence: re-open every source, verify quotes, apply rules.
@@ -291,7 +300,7 @@ def main(argv=None) -> int:
     # 5. ETF look-through data.
     etf_list = sorted(set(baseline.get("default_etfs", [])) | team_etfs)
     targets = {}
-    for t in sorted({t for r in records if r["kind"] in ("finding", "open_case", "settlement_no_admission")
+    for t in sorted({t for r in records if r["kind"] in ("finding", "open_case", "settlement_no_admission", "business_line")
                      for t in r["tickers"]} | set(labels)):
         if t in tmap:
             targets[t] = {"cusips": set(), "names": {etf._norm_name(tmap[t][0])}}
@@ -321,7 +330,10 @@ def main(argv=None) -> int:
     if not args.no_discovery:
         legal_since = since if last_runs else \
             today - timedelta(days=rules["discovery"].get("legal_first_run_lookback_days", 45))
-        res = step("Discovery: agencies and courts", discovery.legal_candidates, universe, legal_since)
+        if args.full_recheck:
+            legal_since = today - timedelta(days=int(365.25 * rules["discovery"].get("rule_change_lookback_years", 7)))
+        res = step("Discovery: agencies and courts", discovery.legal_candidates, universe, legal_since,
+                   args.full_recheck)
         if res:
             known = {t for p in proposals for t in p["tickers"]} | set(labels)
             disc["legal"] = [c for c in res["candidates"] if not set(c["tickers"]) <= known]
@@ -332,6 +344,26 @@ def main(argv=None) -> int:
                 status[f"{k} releases"] = {"ok": v["ok"], "error": v.get("error"), "items": v["items_scanned"],
                                             "since": legal_since.isoformat()}
         ucik = {v["cik"]: t for t, v in universe.items()}
+        if args.full_recheck:
+            # Clause (b) widened: sexual-orientation / gender-identity phrases in the universe's own
+            # 10-K/10-Q filings over the whole look-back (leads for Claude to read, never labels).
+            b_since = today - timedelta(days=int(365.25 * rules["black"]["lookback_years"]))
+            r = step("Discovery: SEC full-text search (clause b, sexual orientation / gender identity)",
+                     discovery.sec_phrase_hits, ucik,
+                     ["sexual orientation discrimination", "gender identity discrimination",
+                      "discrimination based on sexual orientation", "discrimination on the basis of sexual orientation",
+                      "discrimination based on gender identity"], "10-K,10-Q,8-K", b_since)
+            if r:
+                disc["clause_b_new"], err = r
+                if err:
+                    status["Discovery: SEC full-text search (clause b, sexual orientation / gender identity)"] = {"ok": False, "error": err}
+            r = step("Discovery: SEC full-text search (clause c, immigration detention)",
+                     discovery.sec_phrase_hits, ucik, bl_cfg.get("discovery_phrases", []), "10-K",
+                     today - timedelta(days=400))
+            if r:
+                disc["clause_c"], err = r
+                if err:
+                    status["Discovery: SEC full-text search (clause c, immigration detention)"] = {"ok": False, "error": err}
         th = step("Discovery: SEC full-text search (themes)", discovery.theme_candidates, ucik,
                   rules["aligned"]["themes"], since)
         if th:
@@ -385,12 +417,17 @@ def main(argv=None) -> int:
         "blackCandidates": sorted(targets),
         "discovery": {"heldBack": [{"id": p["id"], "tickers": p["tickers"], "to": p["to"], "confidence": p["confidence"]} for p in held_back],
                       "legal": disc["legal"], "legalKnown": disc.get("legal_known", []),
-                      "themes": disc["themes"][:40], "since": disc.get("legal_since")},
+                      "themes": disc["themes"][:40], "since": disc.get("legal_since"),
+                      "clauseBNew": disc.get("clause_b_new", {}), "clauseC": disc.get("clause_c", {})},
         "universe": {"sp500": sum(1 for v in universe.values() if v["origin"] == "S&P 500"),
                      "team": sum(1 for v in universe.values() if v["origin"] == "team list"),
+                     "screen": sum(1 for v in universe.values() if v["origin"].startswith("screen")),
+                     "screenAdded": {t: v.get("why") for t, v in universe.items() if v["origin"].startswith("screen")},
                      "teamEtfs": sorted(team_etfs)},
         "doNotList": dnl,
-        "rules": {"lookback_years": rules["black"]["lookback_years"], "gate": rules["aligned"]["financial_gate"],
+        "rules": {"lookback_years": rules["black"]["lookback_years"],
+                  "clauses": {k: clause_text_of(rules, k) for k in rules["black"]["clauses"]},
+                  "clause_c_threshold_pct": bl_cfg.get("threshold_pct"), "gate": rules["aligned"]["financial_gate"],
                   "threshold_pct": rules["etf_lookthrough"]["flag_threshold_pct_of_portfolio"],
                   "per_amount": rules["etf_lookthrough"]["per_amount_fallback_usd"],
                   "sizing": rules["aligned"]["sizing_display_only"],
