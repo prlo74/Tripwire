@@ -1,4 +1,4 @@
-"""Run the Laura screen pipeline.
+"""Run the Tripwire pipeline.
 
     python -m pipeline.run [--db out/db_snapshot.json] [--no-discovery] [--progress]
 
@@ -394,7 +394,7 @@ def main(argv=None) -> int:
                 alerts.append({"key": f"{t}|{p['from']}|black|{p['record_id']}|{status_word}", "ticker": t,
                                "core": p["from"] in ("aligned", "watch"),
                                "from": p["from"], "to": "black", "status": status_word, "proposal_id": p["id"],
-                               "subject": f"[Laura Screen] {t} {status_word}: {p['from'].title()} → Black",
+                               "subject": f"[Tripwire] {t} {status_word}: {p['from'].title()} → Black",
                                "clause": p["clause_text"], "reason": first_sentence(p["summary"]),
                                "source_url": ev.get("url"), "source_date": ev.get("doc_date")})
 
@@ -439,7 +439,7 @@ def main(argv=None) -> int:
     prog.finished()
 
     # Summary
-    print(f"Laura screen run {run['id']} finished in {run['duration_s']}s")
+    print(f"Tripwire run {run['id']} finished in {run['duration_s']}s")
     print(f"Universe: {data['universe']['sp500']} S&P 500 + {data['universe']['team']} team stocks; "
           f"ETFs checked: {', '.join(etf_data)}")
     for p in proposals:
