@@ -1,19 +1,19 @@
 {
- "generated_at": "2026-10-04T12:47:56Z",
- "as_of_run": "run-20261003T224821",
+ "generated_at": "2026-10-04T13:17:35Z",
+ "as_of_run": "run-20261004T124531",
  "headline": {
   "companies_screened": 507,
   "sp500_companies": 504,
   "team_tickers": 18,
-  "runs_total": 13,
-  "runs_last_30_days": 13,
+  "runs_total": 15,
+  "runs_last_30_days": 15,
   "runs_all_sources_up": 8,
-  "source_checks": 148,
-  "source_checks_ok": 142,
-  "source_uptime_pct": 95.9,
-  "evidence_records": 21,
-  "evidence_sources_opened_per_run": 31,
-  "proposals_open": 0,
+  "source_checks": 230,
+  "source_checks_ok": 222,
+  "source_uptime_pct": 96.5,
+  "evidence_records": 27,
+  "evidence_sources_opened_per_run": 37,
+  "proposals_open": 6,
   "decisions_total": 14,
   "approved": 14,
   "rejected": 0,
@@ -24,12 +24,12 @@
   },
   "median_hours_to_decision": 8.4,
   "decisions_timed": 14,
-  "approvals_invalidated_by_new_evidence": 0,
-  "check_now_requests": 8,
-  "median_minutes_check_now_to_result": 4.3,
-  "check_now_timed": 7,
+  "approvals_invalidated_by_new_evidence": 1,
+  "check_now_requests": 9,
+  "median_minutes_check_now_to_result": 3.9,
+  "check_now_timed": 8,
   "people_active_ever": 1,
-  "visits_total": 8,
+  "visits_total": 13,
   "first_activity": "2026-09-26T13:30:13.670Z"
  },
  "weekly": [
@@ -47,25 +47,25 @@
   },
   {
    "week": "2026-W40",
-   "visits": 7,
+   "visits": 12,
    "active_people": 1,
    "page_views": {
-    "etf": 10,
-    "home": 17,
-    "method": 4,
-    "approvals": 6,
-    "records": 1
+    "etf": 13,
+    "home": 24,
+    "method": 6,
+    "approvals": 9,
+    "records": 3
    },
    "actions": {
-    "check_now": 5,
+    "check_now": 6,
     "save_tickers": 5,
     "alerts_on": 1,
     "open_list": 7,
-    "etf_weight": 13
+    "etf_weight": 14
    },
-   "runs": 6,
+   "runs": 8,
    "decisions": 0,
-   "new_proposals": 0
+   "new_proposals": 6
   }
  ],
  "pages": [
