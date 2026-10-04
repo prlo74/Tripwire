@@ -1,11 +1,13 @@
 """Run the Laura screen pipeline.
 
-    python -m pipeline.run [--db out/db_snapshot.json] [--no-discovery]
+    python -m pipeline.run [--db out/db_snapshot.json] [--no-discovery] [--progress]
 
 Inputs:  config/rules.yaml, config/baseline.yaml, evidence/*.yaml, and a snapshot of the
          Artifact database (universe, approvals) that Claude Code saves before the run.
 Outputs: site/data.json (embedded in the page; no secrets), out/state.json (full detail),
          out/alerts.json (alerts to send), printed run summary.
+         With --progress, stage changes and counts go to cache/progress_pipeline.json for the
+         page's progress bar (see pipeline/progress.py).
 """
 from __future__ import annotations
 
@@ -20,7 +22,7 @@ from pathlib import Path
 
 import yaml
 
-from . import discovery, etf, financial, newtickers
+from . import discovery, etf, financial, newtickers, progress
 from .evidence import check_record, do_not_list_tickers, guard_do_not_list, load_records, load_rules
 from .http import SourceError
 from .tickers import build as build_tickers, canon
@@ -80,10 +82,13 @@ def main(argv=None) -> int:
     ap.add_argument("--db", default=str(OUT / "db_snapshot.json"))
     ap.add_argument("--no-discovery", action="store_true")
     ap.add_argument("--today", default=None)
+    ap.add_argument("--progress", action="store_true", help="report stages for the page's progress bar")
     args = ap.parse_args(argv)
 
     t0 = time.time()
     started = now_iso()
+    run_id = "run-" + started.replace(":", "").replace("-", "")[:15]
+    prog = progress.Reporter(args.progress, run_id)
     today = date.fromisoformat(args.today) if args.today else date.today()
     OUT.mkdir(exist_ok=True)
     rules = load_rules()
@@ -136,7 +141,12 @@ def main(argv=None) -> int:
     labels = current_labels(baseline, db.get("approvals", []))
 
     # 3. Evidence: re-open every source, verify quotes, apply rules.
-    records = [check_record(r, rules, today) for r in load_records()]
+    raw = load_records()
+    prog.phase("records", total=sum(len(r.get("sources", [])) for r in raw), unit="sources checked")
+    records = []
+    for r in raw:
+        records.append(check_record(r, rules, today))
+        prog.tick(len(r.get("sources", [])))
     records = guard_do_not_list(records, rules)
     status["Evidence re-check"] = {"ok": all(not any("unreachable" in p for p in r["check"]["problems"])
                                              for r in records),
@@ -184,13 +194,16 @@ def main(argv=None) -> int:
                            | set(baseline.get("rejected_financial", [])))
     aligned, values_fail = [], []
     passing: dict[str, tuple] = {}
+    prog.phase("financials", total=len(aligned_cands) + len(set(unchecked)), unit="companies")
     black_like = {t for p in proposals if p["to"] == "black" for t in p["tickers"]} | \
                  {t for t, l in labels.items() if l["label"] == "black"}
     for t in aligned_cands:
         if t not in tmap:
             errors.append(f"{t}: not in ticker map")
+            prog.tick()
             continue
         gate = step(f"XBRL companyfacts {t}", financial.financial_gate, tmap[t][2], rules, fin_notes.get(t))
+        prog.tick()
         if gate is None:
             gate = {"result": "unknown", "checks": {}, "failed": [], "unknown": ["all"]}
         rec = by_ticker_values.get(t)
@@ -271,6 +284,7 @@ def main(argv=None) -> int:
         info = universe.get(t) or {"name": tmap[t][0], "cik": tmap[t][2]}
         r = step(f"New ticker check {t}", newtickers.check, t, info, tmap, rules, today,
                  lambda cik, t=t: financial.financial_gate(cik, rules, fin_notes.get(t)))
+        prog.tick()
         if r:
             new_checks.append(r)
 
@@ -282,8 +296,10 @@ def main(argv=None) -> int:
         if t in tmap:
             targets[t] = {"cusips": set(), "names": {etf._norm_name(tmap[t][0])}}
     etf_data = {}
+    prog.phase("etf", total=len(etf_list), unit="funds")
     for e in (["SPY"] if "SPY" in etf_list else []) + [x for x in etf_list if x != "SPY"]:
         h = spy if (e == "SPY" and spy) else step(f"ETF holdings {e}", etf.holdings, e, tmap.get(e, [""])[0])
+        prog.tick()
         if not h:
             etf_data[e] = {"asOf": None, "error": status.get(f"ETF holdings {e}", {}).get("error", "unavailable")}
             continue
@@ -295,6 +311,7 @@ def main(argv=None) -> int:
                        "name": tmap.get(e, [e])[0]}
 
     # 6. Discovery (legal candidates + Aligned theme candidates).
+    prog.phase("discovery")
     disc = {"legal": [], "themes": [], "status": {}}
     last_runs = sorted((r.get("finished") for r in db.get("runs", []) if r.get("finished")), reverse=True)
     if last_runs:
@@ -350,7 +367,7 @@ def main(argv=None) -> int:
                                "source_url": ev.get("url"), "source_date": ev.get("doc_date")})
 
     finished = now_iso()
-    run = {"id": "run-" + started.replace(":", "").replace("-", "")[:15], "started": started, "finished": finished,
+    run = {"id": run_id, "started": started, "finished": finished,
            "duration_s": round(time.time() - t0, 1), "today": today.isoformat(), "errors": errors,
            "discovery_since": since.isoformat(),
            "legal_discovery_since": (disc.get("legal_since") or since.isoformat())}
@@ -382,6 +399,7 @@ def main(argv=None) -> int:
     (SITE / "data.json").write_text(json.dumps(data, indent=1, default=str))
     (OUT / "state.json").write_text(json.dumps({**data, "records": records}, indent=1, default=str))
     (OUT / "alerts.json").write_text(json.dumps(alerts, indent=1, default=str))
+    prog.finished()
 
     # Summary
     print(f"Laura screen run {run['id']} finished in {run['duration_s']}s")

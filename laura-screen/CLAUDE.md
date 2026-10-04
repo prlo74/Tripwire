@@ -13,6 +13,20 @@ Analytics (private, editors only): https://claude.ai/artifact/TjpvQ6RGKb3upULt9S
   (`sec_contact_email: ...`, gitignored) or the `LAURA_SEC_CONTACT` env var. Never in the page or db.
 - Optional: `COURTLISTENER_TOKEN` env var (free token) for higher CourtListener limits.
 
+## 0b. Progress bar: first action of every run
+Before anything else, so the page's progress bar leaves "Starting" quickly:
+```
+python -m pipeline.progress start
+```
+Then ArtifactData `get runs/progress` (for its version; it may not exist yet) and `set runs/progress`
+with `file_path: cache/progress_doc.json`, pinned to that version. Keep the version each write
+returns and pin the next progress write to it. Rules for every progress write in this file:
+- A failed progress write never fails or slows the run: retry it once at most, carry on, and list
+  it in the run summary.
+- At most about 15 progress writes per run. If they add more than 10% to the run's time, use
+  `wait --stages-only` (stage changes only, no counts).
+- Never write a made-up count or stage. The helper only prints what the pipeline reported.
+
 ## 1. Read the team's state from the Artifact database (ArtifactData tool)
 `list` each of `universe`, `approvals`, `runs`, `proposals`, `audit_log`, `usage` with `out_dir: cache/db`
 (use `query.limit: 1000`). The saved files hold only document data, so also write
@@ -23,9 +37,15 @@ python -m pipeline.dbsync snapshot cache/db
 ```
 
 ## 2. Run the pipeline
+Run it in the background with progress reporting, and relay its stages to the page while it runs:
 ```
-python -m pipeline.run
+python -m pipeline.run --progress        # background (run_in_background)
+python -m pipeline.progress wait         # repeat: it returns when there is something to write
 ```
+Each time `wait` prints `"write": "runs/progress"`, `set runs/progress` from
+`cache/progress_doc.json` (pinned). Stop once it says the pipeline finished (or the background
+command has exited: a crashed pipeline never says so; report it), then read the
+background command's output (its printed run summary) before step 3.
 It fetches official data (cached under `cache/`), re-opens every evidence source and checks each
 quote is really there, applies `config/rules.yaml`, and prints proposals, discovery matches and
 source problems. Any source failure is retried once and reported; never route around it with
@@ -47,7 +67,8 @@ mirrors or archives.
   - Never add DJT, NWSA/NWS, founder/CEO-identity or China/Xinjiang screens without a finding.
   - Neutral wording. Use the source's words. No adjectives about companies.
   - Unknown values stay "unknown". Never guess a date, figure, quote or URL.
-- Re-run `python -m pipeline.run` after editing evidence. Every record must show
+- Re-run `python -m pipeline.run` after editing evidence (no `--progress`: the page stays on
+  "Discovery and evidence review" until step 4). Every record must show
   `proposable: True` with verified quotes.
 
 ## 3b. Full check of new team tickers
@@ -67,6 +88,7 @@ discovery proposals per run.
 
 ## 4. Write results to the Artifact
 ```
+python -m pipeline.progress phase publish     # then set runs/progress from cache/progress_doc.json
 python -m pipeline.dbsync export
 ```
 Then one ArtifactData `batch` call with the entries in `out/db_writes/manifest.json`
@@ -87,6 +109,16 @@ list the alerts in the run summary instead. Before the first real alert ever, se
 email to Leo only, and only after he says yes. (Done: Leo approved and received the test on 2026-09-26.)
 
 ## 5b. Weekly run bookkeeping
+First close the progress bar and record how long each stage took:
+```
+python -m pipeline.progress finish [--requested-at <settings/weekly.check_requested_at>]
+```
+Pass `--requested-at` only for a Check now run (a scheduled run has no button press; the helper
+carries the previous "starting" time forward). Then, in this order: `update runs/latest` from
+`cache/run_timing.json` (it holds the whole `run` object with `timing` added; pin to the version
+the step 4 batch returned), `set runs/progress` from `cache/progress_doc.json` (state `done`),
+and finally `settings/weekly` below. The page uses `run.timing.phase_ms` to weight its bar.
+
 After every run (scheduled or Check now), update `settings/weekly` (pinned to its version) with
 `last_run_at`, a one-line `last_run_summary`, and `check_completed_at` (the current UTC time, as the
 last write of the run). The page's elapsed timer stops at `check_completed_at` and shows how long
@@ -102,8 +134,11 @@ it keeps weekly totals after the page deletes raw usage older than 8 weeks. Neve
 ids, names or per-person numbers to the analytics page, the repo or the run summary.
 
 ## 6. Print a short run summary
-What changed, what needs approval, errors/sources down, alerts sent.
+What changed, what needs approval, errors/sources down, alerts sent. Also: the number of progress
+writes, any that failed, roughly how many seconds they added (only the writes outside the
+background pipeline add time), and the recorded `phase_ms` (printed by `progress finish`).
 
 ## Tests
-`python -m pytest -q` (parser, look-through math, rule logic, financial gate, WCAG contrast; about 6s).
+`python -m pytest -q` (parser, look-through math, rule logic, financial gate, WCAG contrast, run
+progress; about 8s). `node tests/runbar.test.js` runs the progress bar's model on its own.
 `python -m pytest -m slow` runs the full pipeline end to end in a temporary copy (about 90s); it never touches the repo's outputs.

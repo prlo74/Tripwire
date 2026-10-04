@@ -253,6 +253,79 @@ dialog .dbody { padding: 16px 18px 20px; display: grid; gap: 12px; }
 .assume { font-weight: 600; padding: 8px 12px; border-left: 3px solid var(--primary); background: var(--tint-primary); }
 footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--line-strong); color: var(--muted); font-size: 0.8rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
 .toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); background: var(--ink); color: var(--card); padding: 10px 14px; font-size: 0.88rem; z-index: 30; max-width: calc(100vw - 32px); }
+/* ---- run progress ("runbar"). data-variant = bar | ring | ledger; data-state = starting | running | stalled | done ---- */
+.runbar { --rb-fill: var(--primary); position: relative; margin: 0 0 20px; padding: 22px 24px; background: var(--card);
+  border: 1px solid var(--line-strong); box-shadow: 0 1px 0 #FFFFFF inset, 0 2px 6px -2px rgba(20, 20, 26, 0.22); display: grid; gap: 18px; }
+.runbar[hidden] { display: none !important; }
+.runbar[data-state="stalled"] { --rb-fill: var(--watch-text); border-top: 3px solid var(--watch); }
+.runbar[data-state="done"] { --rb-fill: var(--aligned); border-top: 3px solid var(--aligned); }
+.rb-head { display: flex; align-items: flex-end; gap: 12px 28px; flex-wrap: wrap; }
+.rb-pct { min-width: 2.1em; font: 700 clamp(3.5rem, 9vw, 5.25rem)/0.82 var(--font-body); letter-spacing: -0.035em; font-variant-numeric: tabular-nums; color: var(--ink); }
+.rb-sign { font-size: 0.4em; font-weight: 600; letter-spacing: 0; color: var(--muted); }
+.rb-text { flex: 1 1 260px; min-width: 0; display: grid; gap: 5px; }
+.rb-eyebrow { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; color: var(--muted); }
+.runbar[data-state="stalled"] .rb-eyebrow { color: var(--watch-text); font-weight: 700; }
+.rb-title { font-size: clamp(1.2rem, 2.6vw, 1.6rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.01em; text-wrap: balance; }
+.rb-detail { font: 500 0.8rem/1.45 var(--font-mono); color: var(--muted); }
+.rb-detail:empty { display: none; }
+.rb-time { display: grid; gap: 4px; justify-items: end; text-align: right; }
+.rb-elapsed { font: 500 1.25rem/1 var(--font-mono); font-variant-numeric: tabular-nums; }
+.rb-usual { font-size: 0.82rem; color: var(--muted); }
+.rb-time:has(.rb-elapsed:empty) { display: none; }
+
+/* segmented bar */
+.rb-segs { display: flex; gap: 3px; }
+.rb-seg { flex: 1 1 0; min-width: 0; display: grid; gap: 7px; }
+.rb-track { height: 18px; background: var(--line); position: relative; overflow: hidden; }
+.rb-fill { position: absolute; inset: 0 auto 0 0; width: 0; background: var(--rb-fill); transition: width 0.9s linear; }
+.rb-lab { font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rb-seg[data-status="done"] .rb-lab, .rb-seg[data-status="now"] .rb-lab { color: var(--ink); }
+.rb-seg[data-status="now"] .rb-lab { font-weight: 700; }
+/* Before the run reports in, the percent is a time estimate: hatch the fill so it reads as provisional. */
+.runbar[data-state="starting"] .rb-seg[data-status="now"] .rb-fill {
+  background: repeating-linear-gradient(135deg, var(--primary) 0 6px, var(--primary-2) 6px 12px); background-size: 17px 100%; animation: rb-hatch 1.1s linear infinite; }
+@keyframes rb-hatch { to { background-position: 17px 0; } }
+
+/* ring (variant) */
+.rb-ring { display: none; position: relative; width: 168px; height: 168px; flex: none; }
+.rb-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.rb-ring circle { fill: none; stroke-width: 9; }
+.rb-ring-track { stroke: var(--line); }
+.rb-ring-fill { stroke: var(--rb-fill); stroke-dasharray: 100; stroke-dashoffset: 100; transition: stroke-dashoffset 0.9s linear; }
+.runbar[data-variant="ring"] .rb-ring { display: block; }
+.runbar[data-variant="ring"] .rb-head { align-items: center; position: relative; }
+.runbar[data-variant="ring"] .rb-pct { position: absolute; left: 0; top: 84px; width: 168px; min-width: 0; transform: translateY(-50%); text-align: center; font-size: 2.9rem; line-height: 1; }
+.runbar[data-variant="ring"] .rb-segs { display: none; }
+
+/* ledger (variant) */
+.rb-rows { display: none; list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-strong); }
+.runbar[data-variant="ledger"] .rb-rows { display: grid; }
+.runbar[data-variant="ledger"] .rb-lab { display: none; }
+.runbar[data-variant="ledger"] .rb-track { height: 10px; }
+.rb-row { display: grid; grid-template-columns: 20px minmax(0, 1fr) minmax(0, 1.2fr); gap: 12px; align-items: center; padding: 9px 10px; border-bottom: 1px solid var(--line); font-size: 0.95rem; }
+.rb-row[data-status="now"] { background: var(--well); font-weight: 700; }
+.rb-row[data-status="next"] { color: var(--muted); }
+.rb-row-detail { font: 500 0.78rem/1.4 var(--font-mono); }
+.rb-mark { width: 16px; height: 16px; border: 2px solid var(--rb-fill); }
+.rb-row[data-status="done"] .rb-mark { background: var(--rb-fill); }
+.rb-row[data-status="now"] .rb-mark { box-shadow: inset 0 0 0 3px var(--well), inset 0 0 0 16px var(--rb-fill); }
+.rb-row[data-status="next"] .rb-mark { border: 1.5px dashed var(--faint); }
+
+@media (max-width: 600px) {
+  .runbar { padding: 16px; gap: 14px; }
+  .rb-time { justify-items: start; text-align: left; grid-auto-flow: column; gap: 8px; align-items: baseline; }
+  .rb-seg:not([data-status="now"]) .rb-lab { visibility: hidden; }
+  .rb-seg[data-status="now"] .rb-lab { overflow: visible; }
+  .runbar[data-variant="ring"] .rb-ring, .runbar[data-variant="ring"] .rb-pct { width: 120px; }
+  .runbar[data-variant="ring"] .rb-ring { height: 120px; }
+  .runbar[data-variant="ring"] .rb-pct { top: 60px; font-size: 2.1rem; }
+  .rb-row { grid-template-columns: 20px minmax(0, 1fr); }
+  .rb-row-detail { grid-column: 2; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rb-fill, .rb-ring-fill { transition: none !important; }
+  .runbar[data-state="starting"] .rb-seg[data-status="now"] .rb-fill { animation: none; }
+}
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 </style>
 
@@ -292,6 +365,8 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
     <div class="kpi"><span class="k">Oldest data</span><span class="v" id="st-fresh">–</span><span class="d" id="st-fresh-sub"></span></div>
     <div class="kpi"><span class="k">Rule</span><span class="v" style="font-size:1rem;font-weight:600">Claude proposes, the team decides</span><span class="d">Nothing is on a list until approved here.</span></div>
   </div>
+
+  <section class="runbar" id="runbar" data-variant="bar" aria-label="Check progress" hidden></section>
 
   <div id="banner" class="banner small" role="status" hidden></div>
 
@@ -508,6 +583,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
 <script type="application/json" id="embedded-tickers">/*__TICKERS__*/</script>
 <script>/*__PARSER__*/</script>
 <script>/*__LOOKTHROUGH__*/</script>
+<script>/*__RUNBAR__*/</script>
 <script>
 (function () {
   "use strict";
@@ -519,7 +595,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
     data: JSON.parse($("embedded-data").textContent),
     fromDb: false, db: null, user: null, uid: null, canWrite: null, canAdmin: false,
     proposals: null, approvals: {}, audit: [], universe: [], weights: {}, extraRows: [],
-    mySub: null, pf: "pending", tickers: null, parse: null, choices: {}, names: {}, open: {}
+    mySub: null, progress: null, rbModel: null, pf: "pending", tickers: null, parse: null, choices: {}, names: {}, open: {}
   };
   S.proposals = S.data.proposals || [];
 
@@ -1194,6 +1270,18 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
     else if (done) { txt = "Finished " + fmtDateTime(w.check_completed_at) + (req && done - req < 3 * 3600 * 1000 ? " · took " + fmtDur(done - req) : ""); title = fmtStamp(w.check_completed_at); }
     ["wk-timer", "p-timer"].forEach(function (id) { var e = $(id); if (!e) return; e.textContent = txt; e.title = title; e.classList.toggle("run", run); });
   }
+  // Large progress bar while a check runs (site/runbar.js). Reads settings/weekly, runs/progress and
+  // the last run's measured timing; hidden when nothing is running or the database is unavailable.
+  function renderRunbar() {
+    var timing = S.data && S.data.run && S.data.run.timing;
+    S.rbModel = Runbar.compute({ now: Date.now(), weekly: S.weekly, prog: S.progress, timing: timing, prev: S.rbModel });
+    Runbar.render($("runbar"), S.rbModel, { fmtWhen: function (t) { return fmtDateTime(new Date(t).toISOString()); } });
+  }
+  // How long a check usually takes: the last run's measured time once one has been recorded.
+  function usualWait(est) {
+    var t = S.data && S.data.run && S.data.run.timing;
+    return t && t.total_ms > 0 ? "about " + fmtDur(t.total_ms) : est;
+  }
   function pendingTeamTickers() {
     return S.universe.filter(function (u) { return !u.checked_at; }).map(function (u) { return u.ticker; }).sort();
   }
@@ -1211,7 +1299,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
     $("wk-now").disabled = !ready || S.wkBusy || running;
     $("p-check").disabled = $("wk-now").disabled;
     var pend = pendingTeamTickers();
-    var nowNote = running ? "Started " + fmtDateTime(w.check_requested_at) + ". Results usually land in 5–10 minutes." :
+    var nowNote = running ? "Started " + fmtDateTime(w.check_requested_at) + ". Results usually land in " + usualWait("5–10 minutes") + "." :
       !S.db ? "Needs the live database." : !admin ? "Only the team's editors can start a check." :
       !S.mcp ? "Needs the Claude Code Remote connector in this view." :
       pend.length ? "Checks " + pend.join(", ") + " and runs the full screen." : "Runs the full screen now.";
@@ -1229,6 +1317,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
     row("Schedule", everyText(w) + " (" + (w.tz || "Asia/Tokyo") + ")" + (w.enabled ? "" : ", off"));
     row("Last run", w.last_run_at ? fmtDateTime(w.last_run_at) + (w.last_run_summary ? " · " + w.last_run_summary : "") : "none yet");
     row("Alert delay", "up to " + every + " day" + (every > 1 ? "s" : "") + " on this schedule");
+    renderRunbar();
   }
   function mcpErrorText(e, owner, what) {
     var code = e && e.code;
@@ -1283,14 +1372,14 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
       track("a", "check_now");
     } catch (e) { S.nowMsg = "Check started, but the page couldn't record it."; }
     S.wkBusy = false; renderWeekly();
-    toast("Check started. Results appear in about 5–10 minutes.");
+    toast("Check started. Results appear in " + usualWait("about 5–10 minutes") + ".");
   }
   $("wk-form").addEventListener("submit", function (e) { e.preventDefault(); saveWeekly(); });
   $("wk-on").addEventListener("change", function () { saveWeekly(); });
   $("wk-every").addEventListener("change", function () { $("wk-day").disabled = parseInt($("wk-every").value, 10) !== 7; });
   $("wk-now").addEventListener("click", checkNow);
   $("p-check").addEventListener("click", checkNow);
-  setInterval(function () { if (checkRunning(S.weekly)) renderTimer(); }, 1000);
+  setInterval(function () { if (checkRunning(S.weekly)) renderTimer(); renderRunbar(); }, 1000);
   setInterval(function () { if (S.weekly && S.weekly.check_requested_at) { var r = checkRunning(S.weekly); if (r !== S.wasRunning) { S.wasRunning = r; renderWeekly(); renderUniverse(); } } }, 5000);
 
   // ---------- usage counts (team totals only; see the Usage counts card) ----------
@@ -1531,6 +1620,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
       renderLookthrough();
     }, onErr("weights"));
     db.doc("settings/weekly").onSnapshot(function (s) { S.weekly = s.exists ? s.data() : null; renderWeekly(); renderUniverse(); }, onErr("weekly"));
+    db.doc("runs/progress").onSnapshot(function (s) { S.progress = s.exists ? s.data() : null; renderRunbar(); }, onErr("progress"));
     if (S.canAdmin) {
       try { S.mcp = await window.claude.use("mcp"); } catch (e) { S.mcp = null; }
       renderWeekly();

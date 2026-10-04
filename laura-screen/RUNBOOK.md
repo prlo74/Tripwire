@@ -34,6 +34,36 @@ fast as the run schedule: a weekly run means up to 7 days of lag.
   account, so only Leo can press them; other editors see the state. The settings live in the
   database (`settings/weekly`).
 
+## Run progress bar
+While a check runs, a large bar under the summary row (visible on every tab) shows the percent done,
+the current step and the elapsed time. It reads `settings/weekly` and `runs/progress` from the
+database, so viewers see it too; with no live database it stays hidden. To show the `ring` or
+`ledger` design instead, change `data-variant` on `#runbar` in `site/page.html`.
+
+Steps (ids are the same in `site/runbar.js` and `pipeline/progress.py`; change both together):
+
+| id | Shown as | Covers | Count |
+|---|---|---|---|
+| `starting` | Starting the run | button press until the run's first progress write (page only) | none |
+| `universe` | Ticker lists and S&P 500 | reading the database, ticker lists, SPY holdings | none |
+| `records` | Court and agency records | re-opening every evidence source | sources checked |
+| `financials` | Financial gates and new tickers | XBRL financial gate, new team ticker checks | companies |
+| `etf` | ETF holdings | issuer files / SEC N-PORT | funds |
+| `discovery` | Discovery and evidence review | agency/court/10-K discovery, then Claude reading the evidence and re-running | none |
+| `publish` | Writing results | export, database writes, alerts | none |
+
+Data contract:
+- `runs/progress`: `{state: "running"|"done", run_id, started_at, phase, phase_index, label,
+  done, total, unit, phase_started_at, updated_at}` (UTC ISO 8601). `done`/`total`/`unit` only
+  when the step has a real count; otherwise the page estimates that step from time and shows
+  "About N percent". Written by Claude Code from `python -m pipeline.progress` (see CLAUDE.md).
+- `runs/latest` → `run.timing`: `{total_ms, phase_ms: {starting, universe, ...}}`, written when
+  the run finishes. The page weights each step by the last run's `phase_ms`; until a run has
+  recorded all seven, it uses placeholder weights.
+- The percent never goes backwards and stays at 99 until the run records it finished. With no
+  update for max(90 s, 3 × the step's usual time) the bar says "Slower than usual" and holds; a run
+  that never finishes is dropped after 45 minutes, like the timer.
+
 ## Analytics (private)
 https://claude.ai/artifact/TjpvQ6RGKb3upULt9SBGP2 shows team totals for the Wharton report and
 college applications: runs, companies screened, sources re-opened, decisions and time to decide,
@@ -101,10 +131,11 @@ with no verified Tier-1 source becomes a lead and cannot be proposed.
 config/rules.yaml      thresholds, themes, source tiers (edit me)
 config/baseline.yaml   September 2026 starting lists
 evidence/*.yaml        evidence records (quotes, dates, clauses)
-pipeline/              fetchers, rule engine, financial gate, look-through, run, db sync, alerts
+pipeline/              fetchers, rule engine, financial gate, look-through, run, db sync, alerts, run progress
 site/page.html         the page template; build with python -m pipeline.build_page
 site/parser.js         paste-box parser (runs in the page; tested with pytest via node)
 site/lookthrough.js    ETF look-through math (runs in the page; tested with pytest via node)
+site/runbar.js         run progress bar model and drawing (runs in the page; tests/runbar.test.js)
 tests/                 pytest suite
 QA_LOG.md              grading rounds
 ```

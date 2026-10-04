@@ -21,7 +21,8 @@ def build() -> Path:
     out = (tpl.replace("/*__DATA__*/", safe_json(data))
               .replace("/*__TICKERS__*/", safe_json(tickers))
               .replace("/*__PARSER__*/", (SITE / "parser.js").read_text())
-              .replace("/*__LOOKTHROUGH__*/", (SITE / "lookthrough.js").read_text()))
+              .replace("/*__LOOKTHROUGH__*/", (SITE / "lookthrough.js").read_text())
+              .replace("/*__RUNBAR__*/", (SITE / "runbar.js").read_text()))
     assert "/*__" not in out, "unfilled placeholder"
     dest = SITE / "index.html"
     dest.write_text(out)

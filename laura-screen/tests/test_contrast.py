@@ -76,3 +76,11 @@ def test_no_orange_text_on_white():
     # --watch (orange) may only be a fill; text uses --watch-text.
     for m in re.finditer(r"[^-]color:\s*var\(--watch\)", PAGE):
         pytest.fail("orange --watch used as text color: " + PAGE[m.start() - 60:m.end()])
+
+
+# Run progress bar: each fill against its empty track is a non-text graphic (WCAG 1.4.11, 3:1).
+@pytest.mark.parametrize("fill", ["primary", "aligned", "watch-text"])
+def test_runbar_fill_against_track(fill):
+    card = rgba(LIGHT["card"])
+    r = ratio(over(rgba(LIGHT[fill]), card), over(rgba(LIGHT["line"]), card))
+    assert r >= 3.0, f"--{fill} fill on --line track = {r:.2f}:1 < 3"
