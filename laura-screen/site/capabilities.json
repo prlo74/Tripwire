@@ -8,5 +8,4 @@
   {"path": "usage", "read": "admin", "write": "admin"},
   {"path": "usage/{self}", "read": "interact", "write": "interact"}]},
  "user": {"scopes": ["profile"]},
- "downloads": true,
- "mcp": {"servers": [{"server": "Claude Code Remote", "tools": ["update_trigger", "fire_trigger"]}]}}
+ "downloads": true}

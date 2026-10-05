@@ -26,13 +26,11 @@ fast as the run schedule: a weekly run means up to 7 days of lag.
   filings over the 7-year window for legal proceedings. Results appear in 5–10 minutes: a proposal
   in Needs approval, "Values fit, fails the financial screen", or "Checked: no values link or
   qualifying legal finding found".
-- **Scheduled run.** The Scheduled run card turns the automatic run on or off and sets how often
-  (every 1–7 days), the weekday (7-day schedule only), time and time zone. Every 1–6 days fires
-  daily and the run skips itself until the interval has passed since the last run. Alerts can be
-  as late as the interval.
-- Both controls drive a Claude Code Remote Routine (`trig_01Qe7LfvthehDzsLRq1WmLGZ`) owned by Leo's
-  account, so only Leo can press them; other editors see the state. The settings live in the
-  database (`settings/weekly`).
+- **Runs happen on Leo's computer.** Check now only saves a request (`settings/weekly.check_requested_at`);
+  the page shows "Waiting for Leo to run it" until Leo opens Claude Code in the repo and runs
+  `/laura-screen`, which reads the pending request and waits for his go. There is no schedule and
+  no cloud routine; alerts go out only when a run happens. The old routine
+  (`trig_01Qe7LfvthehDzsLRq1WmLGZ`) must stay disabled.
 
 ## Run progress bar
 While a check runs, a large bar under the summary row (visible on every tab) shows the percent done,

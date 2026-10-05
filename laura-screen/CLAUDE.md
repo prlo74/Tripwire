@@ -126,7 +126,7 @@ and finally `settings/weekly` below. The page uses `run.timing.phase_ms` to weig
 After every run (scheduled or Check now), update `settings/weekly` (pinned to its version) with
 `last_run_at`, a one-line `last_run_summary`, and `check_completed_at` (the current UTC time, as the
 last write of the run). The page's elapsed timer stops at `check_completed_at` and shows how long
-the check took; a request with no completion after 45 minutes is shown as unfinished.
+the check took; a request with no run yet shows as "Waiting for Leo to run it" (no timeout).
 
 ## 5c. Analytics (team totals only)
 ```
