@@ -1,5 +1,5 @@
-<title>Laura Screen Analytics</title>
-<meta name="description" content="Private team-total analytics for the Laura Screen values monitor">
+<title>Tripwire Analytics</title>
+<meta name="description" content="Private team-total analytics for the Tripwire values monitor">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap">
@@ -79,7 +79,7 @@ details summary { cursor: pointer; font-size: 0.85rem; color: var(--primary); fo
 
 <div class="wrap">
   <header class="topbar">
-    <div><h1>Laura Screen Analytics</h1><p class="sub" id="asof">Waiting for data…</p></div>
+    <div><h1>Tripwire Analytics</h1><p class="sub" id="asof">Waiting for data…</p></div>
     <p class="lock">Private: only this page's editors can read the numbers.</p>
   </header>
   <p class="banner" id="banner" hidden></p>
@@ -276,12 +276,12 @@ details summary { cursor: pointer; font-size: 0.85rem; color: var(--primary); fo
       ["Median time from proposal to decision", hrs(h.median_hours_to_decision)],
       ["On-demand checks", num(h.check_now_requests)], ["Official-source uptime", h.source_uptime_pct == null ? "not yet recorded" : h.source_uptime_pct + "%"],
       ["People who used the screen", num(h.people_active_ever)], ["Visits counted", num(h.visits_total)]];
-    return "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>Laura Screen: project summary</title>" +
+    return "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>Tripwire: project summary</title>" +
       "<style>body{font:15px/1.55 'Helvetica Neue',Helvetica,Arial,sans-serif;color:#15171C;max-width:720px;margin:40px auto;padding:0 20px}" +
       "h1{font-size:22px;margin:0 0 4px}p.sub{color:#555;margin:0 0 20px;font-size:13px}table{border-collapse:collapse;width:100%;margin:12px 0 20px}" +
       "td{border-bottom:1px solid #ccc;padding:6px 4px}td:last-child{text-align:right;font-weight:600}blockquote{margin:8px 0;padding:6px 12px;border-left:3px solid #1B3470;background:#f4f4f2}" +
       "h2{font-size:15px;margin:20px 0 6px}li{margin:3px 0}@media print{body{margin:0}}</style></head><body>" +
-      "<h1>Laura Screen: project summary</h1><p class=\"sub\">Values screen built for the Wharton Global Youth Investment Competition (client: Laura Gao). Figures as of " + esc(fmtDT(M.generated_at)) + ".</p>" +
+      "<h1>Tripwire: project summary</h1><p class=\"sub\">Values screen built for the Wharton Global Youth Investment Competition (client: Laura Gao). Figures as of " + esc(fmtDT(M.generated_at)) + ".</p>" +
       "<h2>What it does</h2><p>Keeps three lists of US stocks current (exclude, watch, include) from court rulings, agency findings and company filings. Claude proposes changes with verbatim quotes from primary sources; the team approves or rejects each one.</p>" +
       "<h2>Key numbers</h2><table>" + rows.map(function (r) { return "<tr><td>" + esc(r[0]) + "</td><td>" + esc(r[1]) + "</td></tr>"; }).join("") + "</table>" +
       "<h2>In plain sentences</h2>" + quotes(h, M.weekly || []).map(function (t) { return "<blockquote>" + esc(t) + "</blockquote>"; }).join("") +
@@ -294,8 +294,8 @@ details summary { cursor: pointer; font-size: 0.85rem; color: var(--primary); fo
     catch (e) { $("dl-note").textContent = e && e.code === "declined" ? "Download cancelled." : e && e.code === "rate_limited" ? "A download prompt is already open." : "Download is not available in this view."; }
   }
   var stamp = function () { return new Date().toISOString().slice(0, 10); };
-  $("dl-summary").addEventListener("click", function () { save("laura-screen-summary-" + stamp() + ".html", new Blob([summaryHtml()], { type: "text/html" })); });
-  $("dl-csv").addEventListener("click", function () { save("laura-screen-weekly-" + stamp() + ".csv", new Blob([weeklyCsv()], { type: "text/csv" })); });
+  $("dl-summary").addEventListener("click", function () { save("tripwire-summary-" + stamp() + ".html", new Blob([summaryHtml()], { type: "text/html" })); });
+  $("dl-csv").addEventListener("click", function () { save("tripwire-weekly-" + stamp() + ".csv", new Blob([weeklyCsv()], { type: "text/csv" })); });
 
   function banner(t) { $("banner").textContent = t || ""; $("banner").hidden = !t; }
   (async function connect() {

@@ -1,6 +1,6 @@
-# Laura Screen: instructions for Claude Code
+# Tripwire: instructions for Claude Code
 
-When a teammate says **"run the Laura screen"** (or similar), do the steps below in order.
+When a teammate says **"run Tripwire"** (or the older "run the Laura screen", or similar), do the steps below in order.
 The rule behind everything: **Claude proposes, humans decide.** A wrong Black label on a
 real company is the worst failure. Accuracy and traceability beat coverage.
 

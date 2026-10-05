@@ -1,6 +1,6 @@
-# Laura Screen runbook
+# Tripwire runbook
 
-Laura Screen keeps three lists of US stocks current for the Wharton GYIC Laura Gao case:
+Tripwire keeps three lists of US stocks current for the Wharton GYIC Laura Gao case:
 **Black** (exclude), **Watch** (serious open issue, with a tripwire) and **Aligned** (passes the
 financial screen and has a documented link to Laura's values). It also checks ETFs for
 look-through exposure to Black-list stocks. The page is here:
@@ -11,7 +11,7 @@ This screen is the team's assumption about Laura's wishes. It is a research aid,
 
 ## How to run it
 1. Open Claude Code in this folder (`laura-screen/`).
-2. Say: **run the Laura screen**.
+2. Say: **run Tripwire**.
 3. Claude reads the team's saved tickers and approvals, runs the pipeline, reads the evidence for
    anything new, writes proposals to the page, sends email alerts, and prints a summary.
 4. Open the page. Approve or reject each proposal in **Needs approval**. Every decision is logged.
