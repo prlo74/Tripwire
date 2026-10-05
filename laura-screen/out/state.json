@@ -1,10 +1,10 @@
 {
  "run": {
-  "id": "run-20261004T235454",
-  "started": "2026-10-04T23:54:54+00:00",
-  "finished": "2026-10-04T23:56:00+00:00",
-  "duration_s": 66.5,
-  "today": "2026-10-04",
+  "id": "run-20261005T000227",
+  "started": "2026-10-05T00:02:27+00:00",
+  "finished": "2026-10-05T00:03:37+00:00",
+  "duration_s": 69.4,
+  "today": "2026-10-05",
   "errors": [],
   "discovery_since": "2026-10-03",
   "legal_discovery_since": "2026-10-03"
@@ -271,7 +271,7 @@
      "doc_date": "2026-09-01",
      "quote": "The EEOC's investigation found reasonable cause to believe that Ford personnel at the facility subjected numerous employees to harassment and discrimination based on race and national origin.",
      "tier": 1,
-     "opened_at": "2026-10-04T23:54:57+00:00",
+     "opened_at": "2026-10-05T00:02:30+00:00",
      "quote_found": true
     },
     {
@@ -280,7 +280,7 @@
      "doc_date": "2026-09-01",
      "quote": "Following the EEOC's investigation, the parties engaged in the EEOC's pre-litigation conciliation process, resulting in a conciliation agreement.",
      "tier": 1,
-     "opened_at": "2026-10-04T23:54:57+00:00",
+     "opened_at": "2026-10-05T00:02:30+00:00",
      "quote_found": true
     }
    ],
@@ -313,7 +313,7 @@
      "doc_date": "2026-09-14",
      "quote": "to resolve alleged violations of the False Claims Act for failing to comply with anti-discrimination requirements in federal contracts and discriminating against employees and applicants for employment because of race or sex.",
      "tier": 1,
-     "opened_at": "2026-10-04T23:54:57+00:00",
+     "opened_at": "2026-10-05T00:02:31+00:00",
      "quote_found": true
     },
     {
@@ -322,7 +322,7 @@
      "doc_date": "2026-09-14",
      "quote": "The claims resolved by the United States in the settlement are allegations only and there has been no determination of liability.",
      "tier": 1,
-     "opened_at": "2026-10-04T23:54:57+00:00",
+     "opened_at": "2026-10-05T00:02:31+00:00",
      "quote_found": true
     }
    ],
@@ -355,7 +355,7 @@
      "doc_date": "2026-02-20",
      "quote": "For the year ended December 31, 2025, ICE, USMS, and the BOP accounted for 35% ($770.7 million), 18% ($390.6 million), and 1% ($32.2 million), respectively, of our total revenue.",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:01+00:00",
+     "opened_at": "2026-10-05T00:02:35+00:00",
      "quote_found": true
     }
    ],
@@ -388,7 +388,7 @@
      "doc_date": "2026-02-25",
      "quote": "ICE accounting for 47.6% and 41.5% of our total consolidated revenues for 2025 and 2024, respectively",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:03+00:00",
+     "opened_at": "2026-10-05T00:02:38+00:00",
      "quote_found": true
     }
    ],
@@ -421,7 +421,7 @@
      "doc_date": "2026-05-12",
      "quote": "the Justice Department announced a settlement with PayPal Inc. to resolve a fair lending investigation into a discriminatory investment program created for black and minority-owned businesses.",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:06+00:00",
+     "opened_at": "2026-10-05T00:02:40+00:00",
      "quote_found": true
     }
    ],
@@ -454,7 +454,7 @@
      "doc_date": "2021-07-09",
      "quote": "Cardinal Health will pay $1.45 million to resolve a racial harassment and retaliation discrimination lawsuit filed by the U.S. Equal Employment Opportunity Commission (EEOC)",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:06+00:00",
+     "opened_at": "2026-10-05T00:02:40+00:00",
      "quote_found": true
     }
    ],
@@ -487,7 +487,7 @@
      "doc_date": "2025-01-06",
      "quote": "will pay $99,000 and provide other relief to settle a federal lawsuit for a hostile work environment based on race and national origin",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:07+00:00",
+     "opened_at": "2026-10-05T00:02:41+00:00",
      "quote_found": true
     }
    ],
@@ -520,98 +520,13 @@
      "doc_date": "2019-11-18",
      "quote": "Dollar General will pay $6 million and furnish other relief to settle a class race discrimination lawsuit brought by the U.S. Equal Employment Opportunity Commission (EEOC)",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:08+00:00",
+     "opened_at": "2026-10-05T00:02:42+00:00",
      "quote_found": true
     }
    ],
    "decision": "approve",
    "discovery": true,
    "evidence_hash": "cddf1f7cac88a230",
-   "evidence_changed": false
-  },
-  {
-   "id": "p-FOXA-FOX-black-fox-dominion-falsity-2023",
-   "tickers": [
-    "FOXA",
-    "FOX"
-   ],
-   "company": "Fox Corporation",
-   "from": "black",
-   "to": "black",
-   "record_id": "fox-dominion-falsity-2023",
-   "kind": "finding",
-   "clause": "a",
-   "clause_text": "Black (a) Knowingly spread false information to the public: Court ruling on the merits (including summary judgment on falsity), 2023-03-31 (within 7 years). Scope: court found the statements false; knowledge (actual malice) was not adjudicated",
-   "summary": "Delaware Superior Court granted Dominion summary judgment on falsity: Fox News statements about Dominion and the 2020 election were false. Fox Corp and Fox News Network settled on April 18, 2023 (about $800M including a related suit, per Fox's filing).",
-   "caveat": "The court decided falsity only. Actual malice (the \"knowingly\" part) was left for trial and never decided because the case settled. The team's rule lists summary judgment on falsity as a qualifying finding, so this is proposed; the team should confirm it accepts a falsity finding for clause (a). The ruling names Fox News Network, LLC, a Fox Corp subsidiary.",
-   "tripwire": "",
-   "confidence": "High",
-   "event_date": "2023-03-31",
-   "evidence": [
-    {
-     "publisher": "Superior Court of the State of Delaware (C.A. No. N21C-03-257 EMD)",
-     "url": "https://courts.delaware.gov/Opinions/Download.aspx?id=345820",
-     "doc_date": "2023-03-31",
-     "quote": "The evidence developed in this civil proceeding demonstrates that is CRYSTAL clear that none of the Statements relating to Dominion about the 2020 election are true. Therefore, the Court will grant summary judgment in favor of Dominion on the element of falsity.",
-     "tier": 1,
-     "opened_at": "2026-10-04T23:55:12+00:00",
-     "quote_found": true
-    },
-    {
-     "publisher": "Fox Corporation Form 10-Q (SEC EDGAR)",
-     "url": "https://www.sec.gov/Archives/edgar/data/1754301/000162828025024466/fox-20250331.htm",
-     "doc_date": "2025-05-12",
-     "quote": "On March 31, 2023, the court in the Dominion case issued its rulings on summary judgment motions that were unfavorable to the Company. Following these rulings, on April 18, 2023, the Company and its subsidiary, Fox News Network, LLC, entered into a Release and Settlement Agreement with Dominion",
-     "tier": 1,
-     "opened_at": "2026-10-04T23:55:16+00:00",
-     "quote_found": true
-    }
-   ],
-   "decision": "approve",
-   "discovery": false,
-   "evidence_hash": "afd0b9938d22cdef",
-   "evidence_changed": false
-  },
-  {
-   "id": "p-NMAX-black-newsmax-dominion-falsity-2025",
-   "tickers": [
-    "NMAX"
-   ],
-   "company": "Newsmax Inc.",
-   "from": "black",
-   "to": "black",
-   "record_id": "newsmax-dominion-falsity-2025",
-   "kind": "finding",
-   "clause": "a",
-   "clause_text": "Black (a) Knowingly spread false information to the public: Court ruling on the merits (including summary judgment on falsity), 2025-04-09 (within 7 years). Scope: court found the statements false; knowledge (actual malice) was not adjudicated",
-   "summary": "Delaware Superior Court granted Dominion summary judgment that Newsmax's statements were defamatory per se and false. Newsmax settled with Dominion for $67M on August 15, 2025.",
-   "caveat": "Actual malice and damages were left for trial and never decided because the case settled. The ruling names Newsmax Media, Inc. and Newsmax Broadcasting, LLC; Newsmax Inc. (NMAX) is their parent and reported the settlement in its own 8-K.",
-   "tripwire": "",
-   "confidence": "High",
-   "event_date": "2025-04-09",
-   "evidence": [
-    {
-     "publisher": "Superior Court of the State of Delaware (C.A. No. N21C-08-063 EMD)",
-     "url": "https://courts.delaware.gov/Opinions/Download.aspx?id=377980",
-     "doc_date": "2025-04-09",
-     "quote": "Newsmax fails to meet its rebuttal burden of showing that an issue of material fact exists as to falsity. Therefore, the Court GRANTS summary judgment in Dominion's favor regarding falsity.",
-     "tier": 1,
-     "opened_at": "2026-10-04T23:55:17+00:00",
-     "quote_found": true
-    },
-    {
-     "publisher": "Newsmax Inc. Form 8-K (SEC EDGAR)",
-     "url": "https://www.sec.gov/Archives/edgar/data/2026478/000121390025077611/ea025361001-8k_newsmax.htm",
-     "doc_date": "2025-08-18",
-     "quote": "On August 15, 2025, Newsmax Media, Inc. and Newsmax Broadcasting, LLC entered into a settlement agreement with Dominion Voting Systems, Inc. and certain of its affiliates (\"Dominion\"), pursuant to which such parties agreed to resolve the lawsuit among them for a total amount of $67 million",
-     "tier": 1,
-     "opened_at": "2026-10-04T23:55:20+00:00",
-     "quote_found": true
-    }
-   ],
-   "decision": "approve",
-   "discovery": false,
-   "evidence_hash": "c448f199a0bbe957",
    "evidence_changed": false
   },
   {
@@ -638,7 +553,7 @@
      "doc_date": "2024-04-24",
      "quote": "On October 4, 2021, in a case captioned Diaz v. Tesla, a jury in the Northern District of California returned a verdict against Tesla on claims by a former contingent worker that he was subjected to race discrimination",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:20+00:00",
+     "opened_at": "2026-10-05T00:02:48+00:00",
      "quote_found": true
     },
     {
@@ -647,7 +562,7 @@
      "doc_date": "2024-04-24",
      "quote": "the damages awarded against Tesla were reduced from an initial $ 136.9 million (October 4, 2021) down to $ 15 million (April 13, 2022), and then further down to $ 3.175 million (April 3, 2023).",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:20+00:00",
+     "opened_at": "2026-10-05T00:02:48+00:00",
      "quote_found": true
     }
    ],
@@ -680,7 +595,7 @@
      "doc_date": "2026-07-23",
      "quote": "on February 9, 2022, the California Civil Rights Department (\"CRD,\" formerly \"DFEH\") filed a civil complaint against Tesla in Alameda County, California Superior Court, alleging systemic race discrimination, hostile work environment and pay equity claims, among others.",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:21+00:00",
+     "opened_at": "2026-10-05T00:02:48+00:00",
      "quote_found": true
     },
     {
@@ -689,7 +604,7 @@
      "doc_date": "2026-07-23",
      "quote": "The first phase of the trial is currently set for September 21, 2026. Additionally, on June 1, 2022, the Equal Employment Opportunity Commission (\"EEOC\") issued a cause finding against Tesla that closely parallels the CRD's allegations.",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:21+00:00",
+     "opened_at": "2026-10-05T00:02:48+00:00",
      "quote_found": true
     }
    ],
@@ -722,7 +637,7 @@
      "doc_date": "2022-06-27",
      "quote": "this Settlement Agreement is for settlement purposes only and does not constitute an admission by Meta of any of the allegations contained in the HUD Charge or the Complaint, nor does it constitute any finding of liability against Meta",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:22+00:00",
+     "opened_at": "2026-10-05T00:02:50+00:00",
      "quote_found": true
     },
     {
@@ -731,7 +646,7 @@
      "doc_date": "2022-06-27",
      "quote": "alleged that Meta's housing advertising system discriminated against Facebook users based on their race, color, religion, sex, disability, familial status, and national origin, in violation of the Fair Housing Act (FHA).",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:23+00:00",
+     "opened_at": "2026-10-05T00:02:51+00:00",
      "quote_found": true
     }
    ],
@@ -764,7 +679,7 @@
      "doc_date": "2026-08-26",
      "quote": "all the while misleading users, their families, and the public regarding the existence and severity of these risks. Trial in this case began on August 18 in the U.S. District Court for the Northern District of California.",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:24+00:00",
+     "opened_at": "2026-10-05T00:02:52+00:00",
      "quote_found": true
     },
     {
@@ -773,7 +688,7 @@
      "doc_date": "2026-08-26",
      "quote": "Today's settlement, subject to court approval, provides for strong injunctive terms",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:24+00:00",
+     "opened_at": "2026-10-05T00:02:52+00:00",
      "quote_found": true
     },
     {
@@ -782,7 +697,7 @@
      "doc_date": "2026-08-26",
      "quote": "Today's announcement that Meta has agreed to pay up to $17.1 billion and implement reforms across Facebook and Instagram is an encouraging step forward.",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:28+00:00",
+     "opened_at": "2026-10-05T00:02:55+00:00",
      "quote_found": true
     }
    ],
@@ -815,7 +730,7 @@
      "doc_date": "2026-01-15",
      "quote": "Every asset generated with Firefly includes Content Credentials, a digital \"nutrition label\", to indicate that generative AI was used",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:28+00:00",
+     "opened_at": "2026-10-05T00:02:55+00:00",
      "quote_found": true
     },
     {
@@ -824,7 +739,7 @@
      "doc_date": "2026-01-15",
      "quote": "Our focus revolves around serving our customer audiences: business professionals, consumers, creators, creative professionals and marketing professionals.",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:28+00:00",
+     "opened_at": "2026-10-05T00:02:55+00:00",
      "quote_found": true
     }
    ],
@@ -899,7 +814,7 @@
      "doc_date": "2026-02-05",
      "quote": "YouTube provides people with entertainment, information, and opportunities to learn something new and helps support the creator economy through the YouTube Partner Program.",
      "tier": 1,
-     "opened_at": "2026-10-04T23:54:57+00:00",
+     "opened_at": "2026-10-05T00:02:31+00:00",
      "quote_found": true
     }
    ],
@@ -973,7 +888,7 @@
      "doc_date": "2026-02-27",
      "quote": "The impact of our journalism and its breadth is evident as we continue to break stories, produce investigative reports and help our audience understand a wide range of topics.",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:08+00:00",
+     "opened_at": "2026-10-05T00:02:42+00:00",
      "quote_found": true
     }
    ],
@@ -1047,7 +962,7 @@
      "doc_date": "2026-02-11",
      "quote": "We believe we can help merchants of all verticals and sizes, from aspirational entrepreneurs to companies with large-scale, direct-to-consumer or business to business (\"B2B\") operations",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:09+00:00",
+     "opened_at": "2026-10-05T00:02:44+00:00",
      "quote_found": true
     }
    ],
@@ -1121,7 +1036,7 @@
      "doc_date": "2026-03-05",
      "quote": "Reuters is committed to the Thomson Reuters Trust Principles, including that of independence, integrity and freedom from bias",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:30+00:00",
+     "opened_at": "2026-10-05T00:02:57+00:00",
      "quote_found": true
     }
    ],
@@ -1196,7 +1111,7 @@
      "doc_date": "2026-02-27",
      "quote": "WBD's Studios segment includes the Warner Bros. Motion Picture Group (\"WBMPG\"), DC Studios, Warner Bros. Television Group (\"WBTVG\"), Consumer Products, Themed Entertainment and Brand Licensing, DC Comics Publishing",
      "tier": 1,
-     "opened_at": "2026-10-04T23:54:59+00:00",
+     "opened_at": "2026-10-05T00:02:32+00:00",
      "quote_found": true
     },
     {
@@ -1205,7 +1120,7 @@
      "doc_date": "2026-08-06",
      "quote": "on February 27, 2026, in accordance with the terms of the Netflix Merger Agreement, the Company terminated the Netflix Merger Agreement in connection with entering into the PSKY Merger Agreement",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:00+00:00",
+     "opened_at": "2026-10-05T00:02:34+00:00",
      "quote_found": true
     }
    ],
@@ -1276,7 +1191,7 @@
      "doc_date": "2026-01-15",
      "quote": "Every asset generated with Firefly includes Content Credentials, a digital \"nutrition label\", to indicate that generative AI was used",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:28+00:00",
+     "opened_at": "2026-10-05T00:02:55+00:00",
      "quote_found": true
     },
     {
@@ -1285,7 +1200,7 @@
      "doc_date": "2026-01-15",
      "quote": "Our focus revolves around serving our customer audiences: business professionals, consumers, creators, creative professionals and marketing professionals.",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:28+00:00",
+     "opened_at": "2026-10-05T00:02:55+00:00",
      "quote_found": true
     }
    ],
@@ -1349,7 +1264,7 @@
      "doc_date": "2026-02-05",
      "quote": "YouTube provides people with entertainment, information, and opportunities to learn something new and helps support the creator economy through the YouTube Partner Program.",
      "tier": 1,
-     "opened_at": "2026-10-04T23:54:57+00:00",
+     "opened_at": "2026-10-05T00:02:31+00:00",
      "quote_found": true
     }
    ],
@@ -1413,7 +1328,7 @@
      "doc_date": "2026-02-05",
      "quote": "YouTube provides people with entertainment, information, and opportunities to learn something new and helps support the creator economy through the YouTube Partner Program.",
      "tier": 1,
-     "opened_at": "2026-10-04T23:54:57+00:00",
+     "opened_at": "2026-10-05T00:02:31+00:00",
      "quote_found": true
     }
    ],
@@ -1477,7 +1392,7 @@
      "doc_date": "2026-02-27",
      "quote": "The impact of our journalism and its breadth is evident as we continue to break stories, produce investigative reports and help our audience understand a wide range of topics.",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:08+00:00",
+     "opened_at": "2026-10-05T00:02:42+00:00",
      "quote_found": true
     }
    ],
@@ -1541,7 +1456,7 @@
      "doc_date": "2026-02-11",
      "quote": "We believe we can help merchants of all verticals and sizes, from aspirational entrepreneurs to companies with large-scale, direct-to-consumer or business to business (\"B2B\") operations",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:09+00:00",
+     "opened_at": "2026-10-05T00:02:44+00:00",
      "quote_found": true
     }
    ],
@@ -1605,7 +1520,7 @@
      "doc_date": "2026-03-05",
      "quote": "Reuters is committed to the Thomson Reuters Trust Principles, including that of independence, integrity and freedom from bias",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:30+00:00",
+     "opened_at": "2026-10-05T00:02:57+00:00",
      "quote_found": true
     }
    ],
@@ -1670,7 +1585,7 @@
      "doc_date": "2026-02-27",
      "quote": "WBD's Studios segment includes the Warner Bros. Motion Picture Group (\"WBMPG\"), DC Studios, Warner Bros. Television Group (\"WBTVG\"), Consumer Products, Themed Entertainment and Brand Licensing, DC Comics Publishing",
      "tier": 1,
-     "opened_at": "2026-10-04T23:54:59+00:00",
+     "opened_at": "2026-10-05T00:02:32+00:00",
      "quote_found": true
     },
     {
@@ -1679,7 +1594,7 @@
      "doc_date": "2026-08-06",
      "quote": "on February 27, 2026, in accordance with the terms of the Netflix Merger Agreement, the Company terminated the Netflix Merger Agreement in connection with entering into the PSKY Merger Agreement",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:00+00:00",
+     "opened_at": "2026-10-05T00:02:34+00:00",
      "quote_found": true
     }
    ],
@@ -1745,7 +1660,7 @@
      "doc_date": "2026-02-19",
      "quote": "Etsy operates two-sided online marketplaces that connect millions of creative entrepreneurs with buyers around the world.",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:38+00:00",
+     "opened_at": "2026-10-05T00:03:05+00:00",
      "quote_found": true
     }
    ],
@@ -1811,7 +1726,7 @@
      "doc_date": "2026-07-24",
      "quote": "The Company is the world's largest publisher and distributor of children's books and is the leading operator of school-based book clubs and school-based book fairs in the United States.",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:10+00:00",
+     "opened_at": "2026-10-05T00:02:45+00:00",
      "quote_found": true
     }
    ],
@@ -1879,7 +1794,7 @@
      "doc_date": "2026-03-05",
      "quote": "WEBTOON is a global storytelling platform where a vibrant community of creators and users discover, create and share new content.",
      "tier": 1,
-     "opened_at": "2026-10-04T23:55:37+00:00",
+     "opened_at": "2026-10-05T00:03:04+00:00",
      "quote_found": true
     }
    ],
@@ -1929,6 +1844,59 @@
   }
  ],
  "leads": [
+  {
+   "id": "fox-dominion-falsity-2023",
+   "tickers": [
+    "FOXA",
+    "FOX"
+   ],
+   "company": "Fox Corporation",
+   "summary": "Delaware Superior Court granted Dominion summary judgment on falsity: Fox News statements about Dominion and the 2020 election were false. Fox Corp and Fox News Network settled on April 18, 2023 (about $800M including a related suit, per Fox's filing).",
+   "problems": [
+    "quote not found in source: https://courts.delaware.gov/Opinions/Download.aspx?id=345820"
+   ],
+   "event_date": "2023-03-31",
+   "sources": [
+    {
+     "publisher": "Superior Court of the State of Delaware (C.A. No. N21C-03-257 EMD)",
+     "url": "https://courts.delaware.gov/Opinions/Download.aspx?id=345820",
+     "doc_date": "2023-03-31",
+     "tier": 1
+    },
+    {
+     "publisher": "Fox Corporation Form 10-Q (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/1754301/000162828025024466/fox-20250331.htm",
+     "doc_date": "2025-05-12",
+     "tier": 1
+    }
+   ]
+  },
+  {
+   "id": "newsmax-dominion-falsity-2025",
+   "tickers": [
+    "NMAX"
+   ],
+   "company": "Newsmax Inc.",
+   "summary": "Delaware Superior Court granted Dominion summary judgment that Newsmax's statements were defamatory per se and false. Newsmax settled with Dominion for $67M on August 15, 2025.",
+   "problems": [
+    "quote not found in source: https://courts.delaware.gov/Opinions/Download.aspx?id=377980"
+   ],
+   "event_date": "2025-04-09",
+   "sources": [
+    {
+     "publisher": "Superior Court of the State of Delaware (C.A. No. N21C-08-063 EMD)",
+     "url": "https://courts.delaware.gov/Opinions/Download.aspx?id=377980",
+     "doc_date": "2025-04-09",
+     "tier": 1
+    },
+    {
+     "publisher": "Newsmax Inc. Form 8-K (SEC EDGAR)",
+     "url": "https://www.sec.gov/Archives/edgar/data/2026478/000121390025077611/ea025361001-8k_newsmax.htm",
+     "doc_date": "2025-08-18",
+     "tier": 1
+    }
+   ]
+  },
   {
    "id": "meta-states-settlement-terms-lead",
    "tickers": [
@@ -2288,7 +2256,7 @@
      "tier": 1,
      "quote_words": 27,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:54:57+00:00",
+     "opened_at": "2026-10-05T00:02:30+00:00",
      "error": null
     },
     {
@@ -2299,7 +2267,7 @@
      "tier": 1,
      "quote_words": 18,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:54:57+00:00",
+     "opened_at": "2026-10-05T00:02:30+00:00",
      "error": null
     }
    ],
@@ -2334,7 +2302,7 @@
      "tier": 1,
      "quote_words": 32,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:54:57+00:00",
+     "opened_at": "2026-10-05T00:02:31+00:00",
      "error": null
     },
     {
@@ -2345,7 +2313,7 @@
      "tier": 1,
      "quote_words": 21,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:54:57+00:00",
+     "opened_at": "2026-10-05T00:02:31+00:00",
      "error": null
     }
    ],
@@ -2382,7 +2350,7 @@
      "tier": 1,
      "quote_words": 23,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:54:57+00:00",
+     "opened_at": "2026-10-05T00:02:31+00:00",
      "error": null
     }
    ],
@@ -2419,7 +2387,7 @@
      "tier": 1,
      "quote_words": 28,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:54:59+00:00",
+     "opened_at": "2026-10-05T00:02:32+00:00",
      "error": null
     },
     {
@@ -2430,7 +2398,7 @@
      "tier": 1,
      "quote_words": 30,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:00+00:00",
+     "opened_at": "2026-10-05T00:02:34+00:00",
      "error": null
     }
    ],
@@ -2469,7 +2437,7 @@
      "tier": 1,
      "quote_words": 29,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:01+00:00",
+     "opened_at": "2026-10-05T00:02:35+00:00",
      "error": null
     }
    ],
@@ -2507,7 +2475,7 @@
      "tier": 1,
      "quote_words": 16,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:03+00:00",
+     "opened_at": "2026-10-05T00:02:38+00:00",
      "error": null
     }
    ],
@@ -2543,7 +2511,7 @@
      "tier": 1,
      "quote_words": 26,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:06+00:00",
+     "opened_at": "2026-10-05T00:02:40+00:00",
      "error": null
     }
    ],
@@ -2579,7 +2547,7 @@
      "tier": 1,
      "quote_words": 24,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:06+00:00",
+     "opened_at": "2026-10-05T00:02:40+00:00",
      "error": null
     }
    ],
@@ -2615,7 +2583,7 @@
      "tier": 1,
      "quote_words": 23,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:07+00:00",
+     "opened_at": "2026-10-05T00:02:41+00:00",
      "error": null
     }
    ],
@@ -2651,7 +2619,7 @@
      "tier": 1,
      "quote_words": 26,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:08+00:00",
+     "opened_at": "2026-10-05T00:02:42+00:00",
      "error": null
     }
    ],
@@ -2683,7 +2651,7 @@
      "tier": 1,
      "quote_words": 14,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:08+00:00",
+     "opened_at": "2026-10-05T00:02:42+00:00",
      "error": null
     }
    ],
@@ -2716,7 +2684,7 @@
      "tier": 1,
      "quote_words": 27,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:09+00:00",
+     "opened_at": "2026-10-05T00:02:44+00:00",
      "error": null
     }
    ],
@@ -2750,7 +2718,7 @@
      "tier": 1,
      "quote_words": 25,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:10+00:00",
+     "opened_at": "2026-10-05T00:02:45+00:00",
      "error": null
     }
    ],
@@ -2788,8 +2756,8 @@
      "quote": "The evidence developed in this civil proceeding demonstrates that is CRYSTAL clear that none of the Statements relating to Dominion about the 2020 election are true. Therefore, the Court will grant summary judgment in favor of Dominion on the element of falsity.",
      "tier": 1,
      "quote_words": 42,
-     "quote_found": true,
-     "opened_at": "2026-10-04T23:55:12+00:00",
+     "quote_found": false,
+     "opened_at": "2026-10-05T00:02:46+00:00",
      "error": null
     },
     {
@@ -2800,16 +2768,18 @@
      "tier": 1,
      "quote_words": 48,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:16+00:00",
+     "opened_at": "2026-10-05T00:02:46+00:00",
      "error": null
     }
    ],
    "check": {
     "outcome": "black",
     "clause_text": "Black (a) Knowingly spread false information to the public: Court ruling on the merits (including summary judgment on falsity), 2023-03-31 (within 7 years). Scope: court found the statements false; knowledge (actual malice) was not adjudicated",
-    "problems": [],
-    "tier1_verified": 2,
-    "proposable": true
+    "problems": [
+     "quote not found in source: https://courts.delaware.gov/Opinions/Download.aspx?id=345820"
+    ],
+    "tier1_verified": 1,
+    "proposable": false
    }
   },
   {
@@ -2836,8 +2806,8 @@
      "quote": "Newsmax fails to meet its rebuttal burden of showing that an issue of material fact exists as to falsity. Therefore, the Court GRANTS summary judgment in Dominion's favor regarding falsity.",
      "tier": 1,
      "quote_words": 30,
-     "quote_found": true,
-     "opened_at": "2026-10-04T23:55:17+00:00",
+     "quote_found": false,
+     "opened_at": "2026-10-05T00:02:47+00:00",
      "error": null
     },
     {
@@ -2848,16 +2818,18 @@
      "tier": 1,
      "quote_words": 46,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:20+00:00",
+     "opened_at": "2026-10-05T00:02:47+00:00",
      "error": null
     }
    ],
    "check": {
     "outcome": "black",
     "clause_text": "Black (a) Knowingly spread false information to the public: Court ruling on the merits (including summary judgment on falsity), 2025-04-09 (within 7 years). Scope: court found the statements false; knowledge (actual malice) was not adjudicated",
-    "problems": [],
-    "tier1_verified": 2,
-    "proposable": true
+    "problems": [
+     "quote not found in source: https://courts.delaware.gov/Opinions/Download.aspx?id=377980"
+    ],
+    "tier1_verified": 1,
+    "proposable": false
    }
   },
   {
@@ -2884,7 +2856,7 @@
      "tier": 1,
      "quote_words": 38,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:20+00:00",
+     "opened_at": "2026-10-05T00:02:48+00:00",
      "error": null
     },
     {
@@ -2895,7 +2867,7 @@
      "tier": 1,
      "quote_words": 35,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:20+00:00",
+     "opened_at": "2026-10-05T00:02:48+00:00",
      "error": null
     }
    ],
@@ -2930,7 +2902,7 @@
      "tier": 1,
      "quote_words": 37,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:21+00:00",
+     "opened_at": "2026-10-05T00:02:48+00:00",
      "error": null
     },
     {
@@ -2941,7 +2913,7 @@
      "tier": 1,
      "quote_words": 36,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:21+00:00",
+     "opened_at": "2026-10-05T00:02:48+00:00",
      "error": null
     }
    ],
@@ -2976,7 +2948,7 @@
      "tier": 1,
      "quote_words": 39,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:22+00:00",
+     "opened_at": "2026-10-05T00:02:50+00:00",
      "error": null
     },
     {
@@ -2987,7 +2959,7 @@
      "tier": 1,
      "quote_words": 31,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:23+00:00",
+     "opened_at": "2026-10-05T00:02:51+00:00",
      "error": null
     }
    ],
@@ -3022,7 +2994,7 @@
      "tier": 1,
      "quote_words": 37,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:24+00:00",
+     "opened_at": "2026-10-05T00:02:52+00:00",
      "error": null
     },
     {
@@ -3033,7 +3005,7 @@
      "tier": 1,
      "quote_words": 11,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:24+00:00",
+     "opened_at": "2026-10-05T00:02:52+00:00",
      "error": null
     },
     {
@@ -3044,7 +3016,7 @@
      "tier": 1,
      "quote_words": 24,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:28+00:00",
+     "opened_at": "2026-10-05T00:02:55+00:00",
      "error": null
     }
    ],
@@ -3112,7 +3084,7 @@
      "tier": 1,
      "quote_words": 19,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:28+00:00",
+     "opened_at": "2026-10-05T00:02:55+00:00",
      "error": null
     },
     {
@@ -3123,7 +3095,7 @@
      "tier": 1,
      "quote_words": 17,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:28+00:00",
+     "opened_at": "2026-10-05T00:02:55+00:00",
      "error": null
     }
    ],
@@ -3158,7 +3130,7 @@
      "tier": 1,
      "quote_words": 18,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:30+00:00",
+     "opened_at": "2026-10-05T00:02:57+00:00",
      "error": null
     }
    ],
@@ -3193,7 +3165,7 @@
      "tier": 1,
      "quote_words": 29,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:08+00:00",
+     "opened_at": "2026-10-05T00:02:42+00:00",
      "error": null
     }
    ],
@@ -3229,7 +3201,7 @@
      "tier": 1,
      "quote_words": 25,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:09+00:00",
+     "opened_at": "2026-10-05T00:02:44+00:00",
      "error": null
     }
    ],
@@ -3264,7 +3236,7 @@
      "tier": 1,
      "quote_words": 29,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:10+00:00",
+     "opened_at": "2026-10-05T00:02:45+00:00",
      "error": null
     }
    ],
@@ -3300,7 +3272,7 @@
      "tier": 1,
      "quote_words": 20,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:37+00:00",
+     "opened_at": "2026-10-05T00:03:04+00:00",
      "error": null
     }
    ],
@@ -3335,7 +3307,7 @@
      "tier": 1,
      "quote_words": 16,
      "quote_found": true,
-     "opened_at": "2026-10-04T23:55:38+00:00",
+     "opened_at": "2026-10-05T00:03:05+00:00",
      "error": null
     }
    ],

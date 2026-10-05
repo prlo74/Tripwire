@@ -53,9 +53,25 @@
     "method": 8,
     "records": 3
    },
-   "runs": 9,
+   "runs": 10,
    "visits": 19,
    "week": "2026-W40"
+  },
+  {
+   "actions": {
+    "check_now": 1
+   },
+   "active_people": 1,
+   "decisions": 0,
+   "new_proposals": 0,
+   "page_views": {
+    "approvals": 1,
+    "etf": 1,
+    "home": 3
+   },
+   "runs": 0,
+   "visits": 1,
+   "week": "2026-W41"
   }
  ]
 }
