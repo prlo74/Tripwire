@@ -50,7 +50,7 @@ async function gh(env, path, init = {}) {
   const r = await fetch(`https://api.github.com/repos/${env.REPO}${path}`, {
     ...init,
     headers: {
-      Authorization: `Bearer ${env.GITHUB_TOKEN}`,
+      Authorization: `Bearer ${String(env.GITHUB_TOKEN || "").trim()}`,
       Accept: init.raw ? "application/vnd.github.raw+json" : "application/vnd.github+json",
       "User-Agent": "tripwire-relay",
       "X-GitHub-Api-Version": "2022-11-28",
@@ -160,6 +160,7 @@ export default {
       }
       return json({ error: "not_found" }, 404, h);
     } catch (e) {
+      console.log("upstream error:", e && e.message);   // e.g. "GitHub 401 on /issues?..."; never the token
       return json({ error: "upstream", message: "GitHub did not answer. Try again in a minute." }, 502, h);
     }
   },
