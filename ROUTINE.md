@@ -1,8 +1,9 @@
 # Cloud routine: "Tripwire cloud run"
 
 Tripwire runs on Claude cloud credits, not on anyone's computer. A run starts when:
-- someone opens a GitHub issue titled `Check: ...` (the public page's **Request a check** button
-  does this). A GitHub webhook trigger fires the routine right away;
+- a GitHub issue titled `Check: ...` is opened, usually by the relay when a visitor presses
+  **Run check** on the public page (see `relay/README.md`), or by hand. A GitHub webhook
+  trigger (`issues.opened` on prlo74/Tripwire) fires the routine right away;
 - the daily schedule fires (`30 22 * * *` UTC = 07:30 Tokyo). It does a full screen if the last
   run is more than 20 hours old, and picks up anything a webhook missed;
 - a team member presses Check now on the team's claude.ai copy. That request waits for the next

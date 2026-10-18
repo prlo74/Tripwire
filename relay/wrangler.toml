@@ -1,0 +1,12 @@
+name = "tripwire-relay"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+
+[vars]
+REPO = "prlo74/Tripwire"
+ALLOWED_ORIGINS = "https://prlo74.github.io"
+PAGE_URL = "https://prlo74.github.io/Tripwire/"
+
+# Secret (never in this file): GITHUB_TOKEN, a fine-grained token with
+# Issues: Read and write on prlo74/Tripwire only. Set it with:
+#   npx wrangler secret put GITHUB_TOKEN

@@ -12,7 +12,7 @@ https://claude.ai/artifact/8uEh8baXjRBYo7BYLL4SHr
 This screen is the team's assumption about Laura's wishes. It is a research aid, not investment advice.
 
 ## How to run it
-1. On the public page, press **Request a check** (a GitHub issue starts a cloud run; see below). Or, locally,
+1. On the public page, paste tickers and press **Run check** (a cloud run starts; see below). Or, locally,
    open Claude Code in this folder and say **run Tripwire**.
 2. Locally, Claude asks for your go first.
 3. Claude reads the team's saved tickers and approvals, runs the pipeline, reads the evidence for
@@ -31,8 +31,10 @@ fast as the run schedule: a weekly run means up to 7 days of lag.
   qualifying legal finding found".
 - **Runs happen in the cloud (since 2026-10-19)**, on Claude credits, from `main` of
   https://github.com/prlo74/Tripwire. See `ROUTINE.md` for the routine's prompt and triggers.
-  A run starts when someone opens a GitHub issue titled `Check: ...` (the public page's
-  **Request a check** button does this), and daily at 07:30 Tokyo time. A Check now press on the
+  A run starts when a GitHub issue titled `Check: ...` is opened, and daily at 07:30 Tokyo time.
+  On the public page, **Run check** posts to the relay (`relay/`, a Cloudflare Worker), which
+  opens that issue, so visitors need no account. Tickers the screen already knows show under
+  **Instant results** without a run. A Check now press on the
   team's claude.ai copy writes `requests/check` and waits for the next of those runs.
 - **Public page:** https://prlo74.github.io/Tripwire/ (GitHub Pages, `site/public.html`, built by
   `pipeline.build_page`). It shows the lists from the last run, the team's decisions
@@ -42,7 +44,7 @@ fast as the run schedule: a weekly run means up to 7 days of lag.
   only tickers in the ticker map (max 15 new tickers per run) and adds them to the team list;
   `record` writes results; `decisions` publishes the team's decisions.
 - **Cost guard.** One run at a time (a run in progress makes the others stop), at most 15 new
-  tickers per run. To stop cloud runs, disable the routine at https://claude.ai/code/routines.
+  tickers per run. The relay allows 3 checks per visitor and 10 overall per hour, 5 waiting. To stop cloud runs, disable the routine at https://claude.ai/code/routines.
   If issues are abused, lock issue creation in the repository settings.
 - **Alerts.** The routine has no Gmail connector, so it lists alerts in its run summary instead
   of emailing. Attach Gmail to the routine on claude.ai to send them.

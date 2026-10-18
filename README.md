@@ -22,18 +22,19 @@ It also looks through ETFs to show how much of a portfolio sits in Black-list st
 
 ## Try it
 
-1. Open https://prlo74.github.io/Tripwire/. No claude.ai account is needed.
+1. Open https://prlo74.github.io/Tripwire/. No account is needed.
 2. On **Home**, paste tickers or company names into **Paste tickers** (for example
-   `AAPL, Microsoft, brk.b`), fix any flagged chips, and press **Request a check**.
-3. GitHub opens with an issue titled `Check: AAPL, MSFT, BRK-B`. Submit it (a free GitHub account
-   is needed). The issue starts a Claude Code run in the cloud right away.
-4. In about 10 to 20 minutes the result shows under **Check requests** on the page. Each ticker is
-   either a proposal (open **Needs approval** to see the quote and source), "Values link found, but
-   fails the financial screen", or "No values link or qualifying legal finding found". If the run
-   can post on GitHub, it also replies on the issue.
+   `AAPL, Microsoft, brk.b, TSLA`) and fix any flagged chips.
+3. **Instant results** shows what the screen already knows, such as a ticker on the Black list or
+   one already checked.
+4. Press **Run check** for the rest. A Claude Code run starts in the cloud within seconds; the
+   request shows as Running under **Check requests**, and the result replaces it in about
+   7 minutes. Each ticker ends up as a proposal (open **Needs approval** for the quote and source),
+   "Values link found, but fails the financial screen", or "No values link or qualifying legal
+   finding found".
 
-A request can hold up to 15 tickers. Visitors can't approve anything: a run only proposes, and a
-team member decides on the team's private copy. Approved decisions appear here after the next run.
+A check holds up to 15 tickers, and there are a few checks an hour. Visitors can't approve
+anything: a run only proposes, and a team member decides on the team's private copy.
 
 ## How it works
 
@@ -48,7 +49,8 @@ member approves it on the page, and every decision is logged.
 - What Claude does on each run: [`CLAUDE.md`](CLAUDE.md)
 - Evidence records: [`evidence/`](evidence/)
 - Quality review rounds: [`QA_LOG.md`](QA_LOG.md)
-- The cloud run: [`ROUTINE.md`](ROUTINE.md) and [`pipeline/issues.py`](pipeline/issues.py)
+- The cloud run: [`ROUTINE.md`](ROUTINE.md), [`pipeline/issues.py`](pipeline/issues.py) and the
+  one-click relay [`relay/`](relay/README.md)
 - Tests: `python -m pytest -q`
 
 ## Important

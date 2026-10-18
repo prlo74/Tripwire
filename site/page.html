@@ -429,6 +429,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
       <label class="lbl" for="p-input">Tickers or company names</label>
       <textarea id="p-input" rows="4" spellcheck="false" autocomplete="off" placeholder="e.g. aapl, MSFT; brk.b $TSLA  Newsmax  SPY"></textarea>
       <div class="chips" id="p-chips" aria-live="polite"></div>
+      <div id="p-known" aria-live="polite"></div>
       <div class="actions"><button class="btn primary" type="button" id="p-save" disabled>Save valid tickers</button><span class="small muted" id="p-save-note"></span></div>
       <div class="actions"><button class="btn" type="button" id="p-check" disabled>Check now</button><span class="timer" id="p-timer" role="timer" aria-live="off"></span><span class="small muted" id="p-check-note"></span></div>
       <div>
@@ -969,50 +970,105 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
     }
   }
 
-  // ---------- public copy (GitHub Pages): a check request is a GitHub issue ----------
-  // The issue title "Check: AAPL, MSFT" fires the Claude cloud routine, which writes the result
-  // to requests.json next to this page. Nothing here can change a list.
-  var GH_REPO = "prlo74/Tripwire", MAX_REQ = 15;
+  // ---------- public copy (GitHub Pages) ----------
+  // A visitor starts a check with one click: the page posts the tickers to the relay (a small
+  // Cloudflare Worker, relay/worker.js, address in config.json), which opens a "Check: ..." issue
+  // that fires the Claude cloud routine, and serves the results. Without a relay the page falls
+  // back to GitHub's new-issue form. Nothing here can change a list.
+  var GH_REPO = "prlo74/Tripwire", MAX_REQ = 15, USUAL_MIN = 7;
   function issueUrl(tickers) {
     var title = "Check: " + (tickers.length ? tickers.join(", ") : "full screen");
     var body = "Opened from the Tripwire page. A Claude cloud run checks " + (tickers.length ? "these tickers" : "the full list") +
-      " and shows the result on the page, usually within 20 minutes.\n\nPlease keep the title as it is: the run reads only the tickers in the title.";
+      " and shows the result on the page.\n\nPlease keep the title as it is: the run reads only the tickers in the title.";
     return "https://github.com/" + GH_REPO + "/issues/new?title=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(body);
   }
-  function requestOnGitHub() {
-    window.open(issueUrl(resolvedTickers().slice(0, MAX_REQ)), "_blank", "noopener");
-    toast("GitHub opened in a new tab. Submit the issue there; the check starts a few minutes later.");
+  // What the screen already knows about a ticker, so no run is needed. null = not checked yet.
+  function knownResult(t) {
+    var lab = currentLabels()[t];
+    if (lab) return "On the " + LABEL[lab.to] + " list (approved by the team)";
+    var p = S.proposals.filter(function (p) { return p.tickers.indexOf(t) >= 0 && decisionOf(p) !== "reject"; })[0];
+    if (p) return "Proposed for the " + LABEL[p.to] + " list; waiting for the team's decision";
+    var vf = (S.data.valuesFail || []).filter(function (r) { return r.ticker === t || (r.tickers || []).indexOf(t) >= 0; })[0];
+    if (vf) return "Values link found, but fails the financial screen";
+    var hit = null;
+    (S.requests || []).forEach(function (r) { (r.tickers || []).forEach(function (x) { if (x.ticker === t && x.result && !/^Not checked/.test(x.result)) hit = x.result; }); });
+    return hit;
   }
-  function isCheckIssue(i) { return !i.pull_request && /^\s*check\s*:/i.test(i.title || ""); }
-  function queuedIssues() {
-    var done = {};
-    (S.requests || []).forEach(function (r) { done[r.issue] = 1; });
-    return (S.openIssues || []).filter(function (i) { return !done[i.number]; });
+  function inSp500(t) { var l = S.data.universe && S.data.universe.sp500Tickers; return !!(l && l.indexOf(t) >= 0); }
+  function toRun() { return resolvedTickers().filter(function (t) { return !knownResult(t); }).slice(0, MAX_REQ); }
+  function renderKnown() {
+    var box = clear($("p-known")), ts = S.pub ? resolvedTickers() : [];
+    if (!ts.length) return;
+    var rows = ts.map(function (t) {
+      var k = knownResult(t);
+      return el("tr", {}, [el("td", {}, [el("span", { class: "tk", text: t })]),
+        el("td", { class: "small" }, k ? [el("span", { text: k })] : [chip("none", "Needs a run", "pending"),
+          el("span", { class: "muted", text: inSp500(t) ? " In the S&P 500, so the daily screen watches it; a run adds the full 10-K and legal check." : " Not checked yet." })])]);
+    });
+    box.appendChild(el("div", { class: "eyebrow", style: "margin:4px 0 6px", text: "Instant results" }));
+    box.appendChild(el("div", { class: "tbl-wrap" }, [el("table", {}, [el("tbody", {}, rows)])]));
   }
+  async function requestCheck() {
+    var ts = toRun();
+    if (!ts.length) { S.reqMsg = resolvedTickers().length ? "Every ticker here is already checked: see Instant results." : "Paste tickers first."; renderPaste(); $("p-input").focus(); return; }
+    if (!S.relay) { window.open(issueUrl(ts), "_blank", "noopener"); toast("GitHub opened in a new tab. Submit the issue there; the check starts a few seconds later."); return; }
+    S.reqBusy = true; S.reqMsg = "Starting the check…"; renderPaste();
+    try {
+      var r = await fetch(S.relay + "/check", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ tickers: ts }) });
+      var b = await r.json().catch(function () { return {}; });
+      if (r.ok) {
+        S.reqMsg = (b.existing ? "Already running as request #" : "Check started as request #") + b.issue + ". Results appear below in about " + USUAL_MIN + " minutes; keep this page open.";
+        $("p-input").value = ""; S.parse = null; S.choices = {};
+        S.queued = (S.queued || []).filter(function (q) { return q.issue !== b.issue; }).concat([{ issue: b.issue, url: b.url, title: "Check: " + ts.join(", "), created_at: new Date().toISOString() }]);
+        track("a", "public_check");
+      } else S.reqMsg = b.message || "The check could not start. Try again in a minute.";
+    } catch (e) { S.reqMsg = "The check service did not answer. Try again in a minute."; }
+    S.reqBusy = false; renderPaste(); renderUniverse(); renderWeekly(); schedulePoll();
+  }
+  function queuedIssues() { return S.queued || []; }
+  function schedulePoll() { clearTimeout(S.pollT); S.pollT = setTimeout(loadPublic, queuedIssues().length ? 20000 : 120000); }
   async function loadPublic() {
+    if (S.relay === undefined) {
+      try { var c = await fetch("config.json", { cache: "no-store" }); S.relay = c.ok ? String((await c.json()).relay || "").replace(/\/+$/, "") : ""; } catch (e) { S.relay = ""; }
+    }
     if (!S.decisionsLoaded) {   // the team's approve/reject decisions, published by each cloud run
       try { var d = await fetch("decisions.json", { cache: "no-store" }); if (d.ok) { S.approvals = (await d.json()).approvals || {}; S.decisionsLoaded = true; renderAll(); } } catch (e) { /* lists stay as proposed */ }
     }
-    try { var r = await fetch("requests.json", { cache: "no-store" }); S.requests = r.ok ? ((await r.json()).requests || []) : []; } catch (e) { S.requests = []; }
-    try {
-      var g = await fetch("https://api.github.com/repos/" + GH_REPO + "/issues?state=open&per_page=50", { headers: { Accept: "application/vnd.github+json" } });
-      S.openIssues = g.ok ? (await g.json()).filter(isCheckIssue) : [];
-    } catch (e) { S.openIssues = []; }
-    renderUniverse(); renderWeekly();
+    var before = queuedIssues().map(function (q) { return q.issue; });
+    if (S.relay) {
+      try { var st = await (await fetch(S.relay + "/status")).json(); if (st && st.requests) { S.requests = st.requests; S.queued = st.queued || []; } } catch (e) { /* keep the last answer */ }
+    } else {
+      try { var r = await fetch("requests.json", { cache: "no-store" }); S.requests = r.ok ? ((await r.json()).requests || []) : []; } catch (e) { S.requests = []; }
+      try {
+        var g = await fetch("https://api.github.com/repos/" + GH_REPO + "/issues?state=open&per_page=50", { headers: { Accept: "application/vnd.github+json" } });
+        var done = {}; S.requests.forEach(function (x) { done[x.issue] = 1; });
+        S.queued = g.ok ? (await g.json()).filter(function (i) { return !i.pull_request && /^\s*check\s*:/i.test(i.title || "") && !done[i.number]; })
+          .map(function (i) { return { issue: i.number, url: i.html_url, title: i.title, created_at: i.created_at }; }) : [];
+      } catch (e) { S.queued = []; }
+    }
+    var finished = before.some(function (n) { return !queuedIssues().some(function (q) { return q.issue === n; }); });
+    if (finished && S.relay) {   // a run just answered: fetch the new lists so Instant results and the lists agree
+      try { var fresh = await (await fetch(S.relay + "/data")).json();
+        if (fresh && fresh.data && fresh.data.run) { S.data = fresh.data; S.proposals = fresh.data.proposals || []; if (fresh.decisions) S.approvals = fresh.decisions.approvals || {}; renderAll(); }
+      } catch (e) { /* the page keeps its copy */ }
+    }
+    renderUniverse(); renderWeekly(); renderPaste();
+    schedulePoll();
   }
   function renderRequests(box) {
     $("u-title").textContent = "Check requests";
     $("u-col3").textContent = "Request";
-    var rows = queuedIssues().map(function (i) { return { issue: i.number, url: i.html_url, queued: true, title: i.title }; })
-      .concat((S.requests || []).slice().reverse());
+    var rows = queuedIssues().map(function (q) { return Object.assign({ queued: true }, q); }).concat((S.requests || []).slice().reverse());
     $("u-count").textContent = rows.length ? "(" + rows.length + ")" : "";
-    if (!rows.length) { box.appendChild(el("tr", {}, [el("td", { colspan: "3", class: "small muted", text: "No requests yet. Paste tickers above and press Request a check." })])); return; }
+    if (!rows.length) { box.appendChild(el("tr", {}, [el("td", { colspan: "3", class: "small muted", text: "No checks yet. Paste tickers above and press Run check." })])); return; }
     rows.slice(0, 30).forEach(function (r) {
       var link = el("a", { href: r.url, target: "_blank", rel: "noopener", text: "#" + r.issue });
       if (r.queued) {
+        var mins = r.created_at ? Math.max(0, Math.round((Date.now() - Date.parse(r.created_at)) / 60000)) : null;
         box.appendChild(el("tr", {}, [
           el("td", {}, [el("span", { class: "tk", text: (r.title || "").replace(/^\s*check\s*:\s*/i, "").slice(0, 80) })]),
-          el("td", { class: "small" }, [chip("watch", "Queued", "pending"), el("span", { class: "muted", text: " A cloud run is checking it or starts in a few minutes." })]),
+          el("td", { class: "small" }, [chip("watch", "Running", "pending"), el("span", { class: "muted", text: mins == null ? " Usually about " + USUAL_MIN + " minutes." :
+            " Started " + (mins < 1 ? "just now" : mins + " min ago") + "; usually about " + USUAL_MIN + " minutes." })]),
           el("td", { class: "small" }, [link])]));
         return;
       }
@@ -1103,10 +1159,14 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
     if (items.length) b.appendChild(el("span", { class: "badge" + (need ? "" : " okb") }, [icon(need ? "warn" : "aligned"), need ? need + " need attention" : "All clear"]));
     var ts = resolvedTickers();
     if (S.pub) {
-      $("p-save").textContent = ts.length ? "Request a check of " + Math.min(ts.length, MAX_REQ) + " ticker" + (ts.length > 1 ? "s" : "") : "Request a check";
-      $("p-save").disabled = !ts.length;
-      $("p-save-note").textContent = ts.length > MAX_REQ ? "At most " + MAX_REQ + " tickers per request; the first " + MAX_REQ + " are sent." :
-        "Opens a GitHub issue (free account needed). A Claude cloud run checks the tickers and shows the result below.";
+      renderKnown();
+      var n = toRun().length, all = resolvedTickers().filter(function (t) { return !knownResult(t); }).length;
+      $("p-save").textContent = n ? "Run check (" + n + " ticker" + (n > 1 ? "s" : "") + ")" : "Run check";
+      $("p-save").disabled = !n || !!S.reqBusy;
+      $("p-save-note").textContent = S.reqMsg || (ts.length && !n ? "Every ticker here is already checked: see Instant results." :
+        all > MAX_REQ ? "At most " + MAX_REQ + " tickers per check; the first " + MAX_REQ + " are sent." :
+        S.relay ? "Starts a Claude cloud run (about " + USUAL_MIN + " minutes). No sign-in needed." :
+        "Opens a GitHub issue (free account needed). A Claude cloud run checks the tickers and shows the result below.");
       return;
     }
     $("p-save").textContent = ts.length ? "Save " + ts.length + " valid ticker" + (ts.length > 1 ? "s" : "") : "Save valid tickers";
@@ -1114,7 +1174,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
     $("p-save-note").textContent = !S.db ? "Saving needs the live database." : S.canWrite === false ? "You can view but not edit the list." : "Only valid items are saved.";
   }
   async function savePaste() {
-    if (S.pub) { requestOnGitHub(); return; }
+    if (S.pub) { requestCheck(); return; }
     var ts = resolvedTickers(), map = ensureTickers(), btn = $("p-save");
     if (!ts.length || !S.db) return;
     btn.disabled = true;
@@ -1397,19 +1457,19 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
   }
   function renderWeeklyPublic() {
     var q = queuedIssues().length, run = (S.data && S.data.run) || {};
-    $("wk-now").disabled = false; $("wk-now").textContent = "Request a check";
+    $("wk-now").disabled = !!S.reqBusy; $("wk-now").textContent = "Run check";
     $("p-check").hidden = true;
-    $("wk-now-note").textContent = "Opens a GitHub issue for the tickers pasted on the left, or a full screen if none.";
+    $("wk-now-note").textContent = "Checks the tickers pasted under Paste tickers.";
     var b = clear($("wk-badge"));
-    b.appendChild(q ? chip("watch", q + " queued", "pending") : chip("none", "Idle", "none"));
+    b.appendChild(q ? chip("watch", q + " running", "pending") : chip("none", "Idle", "none"));
     var st = clear($("wk-status"));
     function row(k, v) { st.appendChild(el("dt", { text: k })); st.appendChild(el("dd", { text: v })); }
     row("Last run", run.finished ? fmtDateTime(run.finished) + (run.id ? " · " + run.id : "") : "none yet");
-    row("How it runs", "Each check request opened on GitHub starts a Claude cloud run (about 10–20 minutes). A daily run at 07:30 Tokyo time keeps the lists fresh.");
+    row("How it runs", "Run check starts a Claude cloud run (about " + USUAL_MIN + " minutes; at most " + MAX_REQ + " tickers, a few checks an hour). A daily run at 07:30 Tokyo time keeps the lists fresh.");
     row("Who decides", "The team. A run only proposes; nothing is on a list until a team member approves it.");
   }
   async function checkNow() {
-    if (S.pub) { requestOnGitHub(); return; }
+    if (S.pub) { requestCheck(); return; }
     var w = S.weekly || {};
     if (!S.db || !S.uid || S.canWrite === false || checkRunning(w) || checkQueued(w)) return;
     var pend = pendingTeamTickers();
@@ -1641,7 +1701,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
     document.querySelectorAll("[data-pf]").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
     renderProposals();
   }); });
-  $("p-input").addEventListener("input", function () { clearTimeout(pasteT); pasteT = setTimeout(runParse, 250); });
+  $("p-input").addEventListener("input", function () { S.reqMsg = ""; clearTimeout(pasteT); pasteT = setTimeout(runParse, 250); });
   $("p-save").addEventListener("click", savePaste);
   $("lt-proposed").addEventListener("change", renderLookthrough);
   $("lt-add-btn").addEventListener("click", function () {
@@ -1686,8 +1746,8 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
     if (!window.claude || !window.claude.use) {
       // Public copy (GitHub Pages). Lists come from the last cloud run; check requests are GitHub issues.
       S.pub = true;
-      banner("Public copy. The lists come from the last cloud run. To test the screen, paste tickers under Paste tickers and press Request a check: it opens a GitHub issue, and a Claude cloud run checks them and shows the result here.");
-      renderAll(); loadPublic(); setInterval(loadPublic, 120000);   // GitHub allows 60 unauthenticated calls an hour
+      banner("Public copy. The lists come from the last cloud run. To test the screen, paste tickers under Paste tickers: known ones show a result at once, and Run check starts a Claude cloud run for the rest.");
+      renderAll(); loadPublic();   // polls itself: every 20 s while a check runs, else every 2 min
       return;
     }
     var user = null, db = null;

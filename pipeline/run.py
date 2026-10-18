@@ -451,6 +451,7 @@ def main(argv=None) -> int:
                       "themes": disc["themes"][:40], "since": disc.get("legal_since"),
                       "clauseBNew": disc.get("clause_b_new", {}), "clauseC": disc.get("clause_c", {})},
         "universe": {"sp500": sum(1 for v in universe.values() if v["origin"] == "S&P 500"),
+                     "sp500Tickers": sorted(t for t, v in universe.items() if v["origin"] == "S&P 500"),
                      "team": sum(1 for v in universe.values() if v["origin"] == "team list"),
                      "screen": sum(1 for v in universe.values() if v["origin"].startswith("screen")),
                      "screenAdded": {t: v.get("why") for t, v in universe.items() if v["origin"].startswith("screen")},
