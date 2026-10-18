@@ -1,0 +1,13 @@
+{"db": {"rules": [
+  {"path": "", "read": "view", "write": "interact"},
+  {"path": "proposals", "write": "admin"},
+  {"path": "approvals", "write": "admin"},
+  {"path": "requests", "write": "interact"},
+  {"path": "runs", "write": "admin"},
+  {"path": "settings", "write": "admin"},
+  {"path": "subscribers", "read": "admin", "write": "admin"},
+  {"path": "subscribers/{self}", "read": "interact", "write": "interact"},
+  {"path": "usage", "read": "admin", "write": "admin"},
+  {"path": "usage/{self}", "read": "interact", "write": "interact"}]},
+ "user": {"scopes": ["profile"]},
+ "downloads": true}

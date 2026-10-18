@@ -1,0 +1,693 @@
+{
+ "updated": "2026-10-18T22:50:10Z",
+ "approvals": {
+  "p-ACN-watch-accenture-doj-fca-2026": {
+   "proposal_id": "p-ACN-watch-accenture-doj-fca-2026",
+   "decision": "approve",
+   "decided_at": "2026-09-26T15:27:57.651Z",
+   "tickers": [
+    "ACN"
+   ],
+   "from": "none",
+   "to": "watch",
+   "company": "Accenture plc",
+   "clause": "Watch (b): Settlement with no admission of wrongdoing",
+   "tripwire": "A court ruling, jury verdict, or agency finding that Accenture engaged in racial discrimination -> propose Black under (b).",
+   "event_date": "2026-09-14",
+   "evidence": [
+    {
+     "doc_date": "2026-09-14",
+     "publisher": "U.S. Department of Justice, Office of Public Affairs (press release)",
+     "quote": "to resolve alleged violations of the False Claims Act for failing to comply with anti-discrimination requirements in federal contracts and discriminating against employees and applicants for employment because of race or sex.",
+     "url": "https://www.justice.gov/opa/pr/accenture-agrees-pay-25m-resolve-alleged-employment-discrimination-violations"
+    },
+    {
+     "doc_date": "2026-09-14",
+     "publisher": "U.S. Department of Justice, Office of Public Affairs (press release)",
+     "quote": "The claims resolved by the United States in the settlement are allegations only and there has been no determination of liability.",
+     "url": "https://www.justice.gov/opa/pr/accenture-agrees-pay-25m-resolve-alleged-employment-discrimination-violations"
+    }
+   ],
+   "evidence_hash": "345aa355b518be9e"
+  },
+  "p-ADBE-aligned-adbe-values": {
+   "proposal_id": "p-ADBE-aligned-adbe-values",
+   "decision": "approve",
+   "decided_at": "2026-09-26T15:28:23.419Z",
+   "tickers": [
+    "ADBE"
+   ],
+   "from": "none",
+   "to": "aligned",
+   "company": "Adobe Inc.",
+   "clause": "Aligned: passes financial gate + Aligned gate 2 (values link): Trustworthy information, Creative entrepreneurship",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [
+    {
+     "doc_date": "2026-01-15",
+     "publisher": "Adobe Inc. Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "quote": "Every asset generated with Firefly includes Content Credentials, a digital \"nutrition label\", to indicate that generative AI was used",
+     "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm"
+    },
+    {
+     "doc_date": "2026-01-15",
+     "publisher": "Adobe Inc. Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "quote": "Our focus revolves around serving our customer audiences: business professionals, consumers, creators, creative professionals and marketing professionals.",
+     "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm"
+    }
+   ],
+   "evidence_hash": "56aa98c1829d12dd"
+  },
+  "p-AVGO-nofinding-check": {
+   "proposal_id": "p-AVGO-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-13T22:52:18.651Z",
+   "tickers": [
+    "AVGO"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Broadcom Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "6b7facf8c1917402"
+  },
+  "p-CAH-watch-cardinal-health-eeoc-2021": {
+   "proposal_id": "p-CAH-watch-cardinal-health-eeoc-2021",
+   "decision": "approve",
+   "decided_at": "2026-10-04T13:32:14.780Z",
+   "tickers": [
+    "CAH"
+   ],
+   "from": "none",
+   "to": "watch",
+   "company": "Cardinal Health, Inc.",
+   "clause": "Watch (b): Settlement with no admission of wrongdoing",
+   "tripwire": "A court ruling, jury verdict, or agency finding that states a violation, or an admission in the decree -> propose Black under (b).",
+   "event_date": "2021-07-09",
+   "evidence": [
+    {
+     "doc_date": "2021-07-09",
+     "publisher": "U.S. Equal Employment Opportunity Commission (press release)",
+     "quote": "Cardinal Health will pay $1.45 million to resolve a racial harassment and retaliation discrimination lawsuit filed by the U.S. Equal Employment Opportunity Commission (EEOC)",
+     "url": "https://www.eeoc.gov/newsroom/cardinal-health-and-appleone-settle-eeoc-race-harassment-retaliation-lawsuit"
+    }
+   ],
+   "evidence_hash": "b7b26a09b64deba8"
+  },
+  "p-CMI-nofinding-check": {
+   "proposal_id": "p-CMI-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-07T02:09:04.547Z",
+   "tickers": [
+    "CMI"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CUMMINS INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CXW-black-cxw-ice-share-fy2025": {
+   "proposal_id": "p-CXW-black-cxw-ice-share-fy2025",
+   "decision": "approve",
+   "decided_at": "2026-10-04T13:31:00.646Z",
+   "tickers": [
+    "CXW"
+   ],
+   "from": "none",
+   "to": "black",
+   "company": "CoreCivic, Inc.",
+   "clause": "Black (c) At least 10% of latest fiscal-year revenue comes from immigration detention, or immigration detainee monitoring or transport, as disclosed in the company's own 10-K: 35% of fiscal-year 2025 revenue (10-K filed 2026-02-20; threshold 10%)",
+   "tripwire": "",
+   "event_date": "2026-02-20",
+   "evidence": [
+    {
+     "doc_date": "2026-02-20",
+     "publisher": "CoreCivic, Inc. Form 10-K for fiscal year 2025 (SEC EDGAR)",
+     "quote": "For the year ended December 31, 2025, ICE, USMS, and the BOP accounted for 35% ($770.7 million), 18% ($390.6 million), and 1% ($32.2 million), respectively, of our total revenue.",
+     "url": "https://www.sec.gov/Archives/edgar/data/1070985/000119312526060669/cxw-20251231.htm"
+    }
+   ],
+   "evidence_hash": "82e3897eba733b26"
+  },
+  "p-DG-watch-dollar-general-eeoc-2019": {
+   "proposal_id": "p-DG-watch-dollar-general-eeoc-2019",
+   "decision": "approve",
+   "decided_at": "2026-10-04T13:33:06.230Z",
+   "tickers": [
+    "DG"
+   ],
+   "from": "none",
+   "to": "watch",
+   "company": "Dollar General Corporation",
+   "clause": "Watch (b): Settlement with no admission of wrongdoing",
+   "tripwire": "A court ruling, jury verdict, or agency finding that states a violation, or an admission in the decree -> propose Black under (b).",
+   "event_date": "2019-11-18",
+   "evidence": [
+    {
+     "doc_date": "2019-11-18",
+     "publisher": "U.S. Equal Employment Opportunity Commission (press release)",
+     "quote": "Dollar General will pay $6 million and furnish other relief to settle a class race discrimination lawsuit brought by the U.S. Equal Employment Opportunity Commission (EEOC)",
+     "url": "https://www.eeoc.gov/newsroom/dollar-general-pay-6-million-settle-eeoc-class-race-discrimination-suit"
+    }
+   ],
+   "evidence_hash": "cddf1f7cac88a230"
+  },
+  "p-EME-nofinding-check": {
+   "proposal_id": "p-EME-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-07T02:09:15.764Z",
+   "tickers": [
+    "EME"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "EMCOR Group, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ETN-nofinding-check": {
+   "proposal_id": "p-ETN-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-07T02:09:17.764Z",
+   "tickers": [
+    "ETN"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Eaton Corp plc",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-F-watch-ford-eeoc-conciliation-2026": {
+   "proposal_id": "p-F-watch-ford-eeoc-conciliation-2026",
+   "decision": "approve",
+   "decided_at": "2026-09-26T15:28:07.118Z",
+   "tickers": [
+    "F"
+   ],
+   "from": "none",
+   "to": "watch",
+   "company": "Ford Motor Company",
+   "clause": "Watch (b): Settlement with no admission of wrongdoing",
+   "tripwire": "Team rules that EEOC cause findings qualify, or a court/agency adjudicates a violation -> propose Black under (b).",
+   "event_date": "2026-09-01",
+   "evidence": [
+    {
+     "doc_date": "2026-09-01",
+     "publisher": "U.S. Equal Employment Opportunity Commission (press release)",
+     "quote": "The EEOC's investigation found reasonable cause to believe that Ford personnel at the facility subjected numerous employees to harassment and discrimination based on race and national origin.",
+     "url": "https://www.eeoc.gov/newsroom/ford-motor-company-pay-23-million-resolve-eeoc-race-and-national-origin-harassment-charge"
+    },
+    {
+     "doc_date": "2026-09-01",
+     "publisher": "U.S. Equal Employment Opportunity Commission (press release)",
+     "quote": "Following the EEOC's investigation, the parties engaged in the EEOC's pre-litigation conciliation process, resulting in a conciliation agreement.",
+     "url": "https://www.eeoc.gov/newsroom/ford-motor-company-pay-23-million-resolve-eeoc-race-and-national-origin-harassment-charge"
+    }
+   ],
+   "evidence_hash": "baa36ea46d84c620"
+  },
+  "p-FIX-nofinding-check": {
+   "proposal_id": "p-FIX-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-07T02:09:20.847Z",
+   "tickers": [
+    "FIX"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "COMFORT SYSTEMS USA INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-FOXA-FOX-black-fox-dominion-falsity-2023": {
+   "proposal_id": "p-FOXA-FOX-black-fox-dominion-falsity-2023",
+   "decision": "approve",
+   "decided_at": "2026-09-26T13:30:13.670Z",
+   "tickers": [
+    "FOXA",
+    "FOX"
+   ],
+   "from": "black",
+   "to": "black",
+   "company": "Fox Corporation",
+   "clause": "Black (a) Knowingly spread false information to the public: Court ruling on the merits (including summary judgment on falsity), 2023-03-31 (within 7 years). Scope: court found the statements false; knowledge (actual malice) was not adjudicated",
+   "tripwire": "",
+   "event_date": "2023-03-31",
+   "evidence": [
+    {
+     "doc_date": "2023-03-31",
+     "publisher": "Superior Court of the State of Delaware (C.A. No. N21C-03-257 EMD)",
+     "quote": "The evidence developed in this civil proceeding demonstrates that is CRYSTAL clear that none of the Statements relating to Dominion about the 2020 election are true. Therefore, the Court will grant summary judgment in favor of Dominion on the element of falsity.",
+     "url": "https://courts.delaware.gov/Opinions/Download.aspx?id=345820"
+    },
+    {
+     "doc_date": "2025-05-12",
+     "publisher": "Fox Corporation Form 10-Q (SEC EDGAR)",
+     "quote": "On March 31, 2023, the court in the Dominion case issued its rulings on summary judgment motions that were unfavorable to the Company. Following these rulings, on April 18, 2023, the Company and its subsidiary, Fox News Network, LLC, entered into a Release and Settlement Agreement with Dominion",
+     "url": "https://www.sec.gov/Archives/edgar/data/1754301/000162828025024466/fox-20250331.htm"
+    }
+   ],
+   "evidence_hash": "afd0b9938d22cdef"
+  },
+  "p-GEO-black-geo-ice-share-fy2025": {
+   "proposal_id": "p-GEO-black-geo-ice-share-fy2025",
+   "decision": "approve",
+   "decided_at": "2026-10-04T13:31:42.496Z",
+   "tickers": [
+    "GEO"
+   ],
+   "from": "none",
+   "to": "black",
+   "company": "The GEO Group, Inc.",
+   "clause": "Black (c) At least 10% of latest fiscal-year revenue comes from immigration detention, or immigration detainee monitoring or transport, as disclosed in the company's own 10-K: 47.6% of fiscal-year 2025 revenue (10-K filed 2026-02-25; threshold 10%)",
+   "tripwire": "",
+   "event_date": "2026-02-25",
+   "evidence": [
+    {
+     "doc_date": "2026-02-25",
+     "publisher": "The GEO Group, Inc. Form 10-K for fiscal year 2025 (SEC EDGAR)",
+     "quote": "ICE accounting for 47.6% and 41.5% of our total consolidated revenues for 2025 and 2024, respectively",
+     "url": "https://www.sec.gov/Archives/edgar/data/923796/000119312526071747/geo-20251231.htm"
+    }
+   ],
+   "evidence_hash": "f6020aee3dde9bda"
+  },
+  "p-GOOG-GOOGL-aligned-alphabet-values": {
+   "proposal_id": "p-GOOG-GOOGL-aligned-alphabet-values",
+   "decision": "approve",
+   "decided_at": "2026-09-26T15:29:00.419Z",
+   "tickers": [
+    "GOOG",
+    "GOOGL"
+   ],
+   "from": "none",
+   "to": "aligned",
+   "company": "Alphabet Inc.",
+   "clause": "Aligned: passes financial gate + Aligned gate 2 (values link): Creative entrepreneurship",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [
+    {
+     "doc_date": "2026-02-05",
+     "publisher": "Alphabet Inc. Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "quote": "YouTube provides people with entertainment, information, and opportunities to learn something new and helps support the creator economy through the YouTube Partner Program.",
+     "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm"
+    }
+   ],
+   "evidence_hash": "e63f8ce4ac82c3bd"
+  },
+  "p-META-watch-meta-doj-fha-settlement-2022": {
+   "proposal_id": "p-META-watch-meta-doj-fha-settlement-2022",
+   "decision": "approve",
+   "decided_at": "2026-09-26T13:38:26.254Z",
+   "tickers": [
+    "META"
+   ],
+   "from": "watch",
+   "to": "watch",
+   "company": "Meta Platforms, Inc.",
+   "clause": "Watch (b): Settlement with no admission of wrongdoing",
+   "tripwire": "A new adjudicated finding (court ruling, jury verdict, or agency finding stating a violation) that Meta engaged in (a) or (b) -> propose Black.",
+   "event_date": "2022-06-27",
+   "evidence": [
+    {
+     "doc_date": "2022-06-27",
+     "publisher": "U.S. Department of Justice, Civil Rights Division (settlement agreement, 22 Civ. 5187)",
+     "quote": "this Settlement Agreement is for settlement purposes only and does not constitute an admission by Meta of any of the allegations contained in the HUD Charge or the Complaint, nor does it constitute any finding of liability against Meta",
+     "url": "https://www.justice.gov/crt/case-document/file/1516666/dl"
+    },
+    {
+     "doc_date": "2022-06-27",
+     "publisher": "U.S. Department of Justice, Civil Rights Division (case page)",
+     "quote": "alleged that Meta's housing advertising system discriminated against Facebook users based on their race, color, religion, sex, disability, familial status, and national origin, in violation of the Fair Housing Act (FHA).",
+     "url": "https://www.justice.gov/crt/case/united-states-v-meta-platforms-inc-fka-facebook-inc-sdny"
+    }
+   ],
+   "evidence_hash": "a359505a7578ace7"
+  },
+  "p-META-watch-meta-states-youth-case-2026": {
+   "proposal_id": "p-META-watch-meta-states-youth-case-2026",
+   "decision": "approve",
+   "decided_at": "2026-09-26T15:27:41.018Z",
+   "tickers": [
+    "META"
+   ],
+   "from": "watch",
+   "to": "watch",
+   "company": "Meta Platforms, Inc.",
+   "clause": "Watch (a): Open lawsuit or agency complaint on (a) or (b) that has survived a motion to dismiss",
+   "tripwire": "If the approved settlement or a court order contains an admission or finding that Meta knowingly misled the public -> propose Black under (a). If approved with no admission -> Watch (settlement with no admission).",
+   "event_date": "2026-08-26",
+   "evidence": [
+    {
+     "doc_date": "2026-08-26",
+     "publisher": "California Attorney General (press release)",
+     "quote": "all the while misleading users, their families, and the public regarding the existence and severity of these risks. Trial in this case began on August 18 in the U.S. District Court for the Northern District of California.",
+     "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-secures-transformative-17-billion-settlement-meta"
+    },
+    {
+     "doc_date": "2026-08-26",
+     "publisher": "California Attorney General (press release)",
+     "quote": "Today's settlement, subject to court approval, provides for strong injunctive terms",
+     "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-secures-transformative-17-billion-settlement-meta"
+    },
+    {
+     "doc_date": "2026-08-26",
+     "publisher": "U.S. Attorney's Office, N.D.N.Y. (statement, via DOJ press-release API)",
+     "quote": "Today's announcement that Meta has agreed to pay up to $17.1 billion and implement reforms across Facebook and Instagram is an encouraging step forward.",
+     "url": "https://www.justice.gov/usao-ndny/pr/first-assistant-us-attorney-sarcone-statement-online-safety-following-meta-settlement"
+    }
+   ],
+   "evidence_hash": "fa24492d1e417b3c"
+  },
+  "p-MSFT-nofinding-check": {
+   "proposal_id": "p-MSFT-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-13T22:52:30.751Z",
+   "tickers": [
+    "MSFT"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "MICROSOFT CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-NMAX-black-newsmax-dominion-falsity-2025": {
+   "proposal_id": "p-NMAX-black-newsmax-dominion-falsity-2025",
+   "decision": "approve",
+   "decided_at": "2026-09-26T13:32:11.221Z",
+   "tickers": [
+    "NMAX"
+   ],
+   "from": "black",
+   "to": "black",
+   "company": "Newsmax Inc.",
+   "clause": "Black (a) Knowingly spread false information to the public: Court ruling on the merits (including summary judgment on falsity), 2025-04-09 (within 7 years). Scope: court found the statements false; knowledge (actual malice) was not adjudicated",
+   "tripwire": "",
+   "event_date": "2025-04-09",
+   "evidence": [
+    {
+     "doc_date": "2025-04-09",
+     "publisher": "Superior Court of the State of Delaware (C.A. No. N21C-08-063 EMD)",
+     "quote": "Newsmax fails to meet its rebuttal burden of showing that an issue of material fact exists as to falsity. Therefore, the Court GRANTS summary judgment in Dominion's favor regarding falsity.",
+     "url": "https://courts.delaware.gov/Opinions/Download.aspx?id=377980"
+    },
+    {
+     "doc_date": "2025-08-18",
+     "publisher": "Newsmax Inc. Form 8-K (SEC EDGAR)",
+     "quote": "On August 15, 2025, Newsmax Media, Inc. and Newsmax Broadcasting, LLC entered into a settlement agreement with Dominion Voting Systems, Inc. and certain of its affiliates (\"Dominion\"), pursuant to which such parties agreed to resolve the lawsuit among them for a total amount of $67 million",
+     "url": "https://www.sec.gov/Archives/edgar/data/2026478/000121390025077611/ea025361001-8k_newsmax.htm"
+    }
+   ],
+   "evidence_hash": "c448f199a0bbe957"
+  },
+  "p-NVDA-nofinding-check": {
+   "proposal_id": "p-NVDA-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-07T02:09:25.730Z",
+   "tickers": [
+    "NVDA"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "NVIDIA CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-NXT-nofinding-check": {
+   "proposal_id": "p-NXT-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-13T22:52:34.384Z",
+   "tickers": [
+    "NXT"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Nextpower Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-NYT-aligned-nyt-values": {
+   "proposal_id": "p-NYT-aligned-nyt-values",
+   "decision": "approve",
+   "decided_at": "2026-09-26T15:28:32.385Z",
+   "tickers": [
+    "NYT"
+   ],
+   "from": "none",
+   "to": "aligned",
+   "company": "The New York Times Company",
+   "clause": "Aligned: passes financial gate + Aligned gate 2 (values link): Trustworthy information",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [
+    {
+     "doc_date": "2026-02-27",
+     "publisher": "The New York Times Company Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "quote": "The impact of our journalism and its breadth is evident as we continue to break stories, produce investigative reports and help our audience understand a wide range of topics.",
+     "url": "https://www.sec.gov/Archives/edgar/data/71691/000007169126000011/nyt-20251231.htm"
+    }
+   ],
+   "evidence_hash": "12455595c4154555"
+  },
+  "p-PYPL-watch-paypal-doj-fair-lending-2026": {
+   "proposal_id": "p-PYPL-watch-paypal-doj-fair-lending-2026",
+   "decision": "approve",
+   "decided_at": "2026-10-04T13:33:52.396Z",
+   "tickers": [
+    "PYPL"
+   ],
+   "from": "none",
+   "to": "watch",
+   "company": "PayPal Holdings, Inc.",
+   "clause": "Watch (b): Settlement with no admission of wrongdoing",
+   "tripwire": "A court ruling, jury verdict, or agency finding or consent order that states PayPal discriminated, or an admission in the settlement -> propose Black under (b).",
+   "event_date": "2026-05-12",
+   "evidence": [
+    {
+     "doc_date": "2026-05-12",
+     "publisher": "U.S. Department of Justice, Office of Public Affairs (press release)",
+     "quote": "the Justice Department announced a settlement with PayPal Inc. to resolve a fair lending investigation into a discriminatory investment program created for black and minority-owned businesses.",
+     "url": "https://www.justice.gov/opa/pr/justice-department-secures-30m-settlement-paypal-over-unlawful-dei-investment-program"
+    }
+   ],
+   "evidence_hash": "1cb183e36c05ce2c"
+  },
+  "p-SHOP-aligned-shop-values": {
+   "proposal_id": "p-SHOP-aligned-shop-values",
+   "decision": "approve",
+   "decided_at": "2026-09-26T15:28:43.085Z",
+   "tickers": [
+    "SHOP"
+   ],
+   "from": "none",
+   "to": "aligned",
+   "company": "Shopify Inc.",
+   "clause": "Aligned: passes financial gate + Aligned gate 2 (values link): Creative entrepreneurship",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [
+    {
+     "doc_date": "2026-02-11",
+     "publisher": "Shopify Inc. Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "quote": "We believe we can help merchants of all verticals and sizes, from aspirational entrepreneurs to companies with large-scale, direct-to-consumer or business to business (\"B2B\") operations",
+     "url": "https://www.sec.gov/Archives/edgar/data/1594805/000159480526000007/shop-20251231.htm"
+    }
+   ],
+   "evidence_hash": "391b219b5d7d08f2"
+  },
+  "p-SPCX-nofinding-check": {
+   "proposal_id": "p-SPCX-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-07T02:09:28.581Z",
+   "tickers": [
+    "SPCX"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "SPACE EXPLORATION TECHNOLOGIES CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-TRI-aligned-tri-values": {
+   "proposal_id": "p-TRI-aligned-tri-values",
+   "decision": "approve",
+   "decided_at": "2026-09-26T15:28:53.119Z",
+   "tickers": [
+    "TRI"
+   ],
+   "from": "none",
+   "to": "aligned",
+   "company": "Thomson Reuters Corporation",
+   "clause": "Aligned: passes financial gate + Aligned gate 2 (values link): Trustworthy information",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [
+    {
+     "doc_date": "2026-03-05",
+     "publisher": "Thomson Reuters Form 40-F FY2025, Exhibit 99.1 Annual Report (SEC EDGAR)",
+     "quote": "Reuters is committed to the Thomson Reuters Trust Principles, including that of independence, integrity and freedom from bias",
+     "url": "https://www.sec.gov/Archives/edgar/data/1075124/000119312526094222/tri-ex99_1.htm"
+    }
+   ],
+   "evidence_hash": "d41de23e14156e7a"
+  },
+  "p-TSLA-black-tesla-diaz-verdict-2021": {
+   "proposal_id": "p-TSLA-black-tesla-diaz-verdict-2021",
+   "decision": "approve",
+   "decided_at": "2026-10-04T13:19:26.585Z",
+   "tickers": [
+    "TSLA"
+   ],
+   "from": "watch",
+   "to": "black",
+   "company": "Tesla, Inc.",
+   "clause": "Black (b) Engaged in discrimination on the basis of race, ethnicity, sexual orientation or gender identity: Jury verdict, even if later reduced, 2021-10-04 (within 7 years)",
+   "tripwire": "",
+   "event_date": "2021-10-04",
+   "evidence": [
+    {
+     "doc_date": "2024-04-24",
+     "publisher": "Tesla, Inc. Form 10-Q (SEC EDGAR)",
+     "quote": "On October 4, 2021, in a case captioned Diaz v. Tesla, a jury in the Northern District of California returned a verdict against Tesla on claims by a former contingent worker that he was subjected to race discrimination",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828024017503/tsla-20240331.htm"
+    },
+    {
+     "doc_date": "2024-04-24",
+     "publisher": "Tesla, Inc. Form 10-Q (SEC EDGAR)",
+     "quote": "the damages awarded against Tesla were reduced from an initial $ 136.9 million (October 4, 2021) down to $ 15 million (April 13, 2022), and then further down to $ 3.175 million (April 3, 2023).",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828024017503/tsla-20240331.htm"
+    }
+   ],
+   "evidence_hash": "bdc5a562d9d294b8"
+  },
+  "p-TSLA-watch-tesla-crd-eeoc-open-2026": {
+   "proposal_id": "p-TSLA-watch-tesla-crd-eeoc-open-2026",
+   "decision": "approve",
+   "decided_at": "2026-09-26T13:33:16.521Z",
+   "tickers": [
+    "TSLA"
+   ],
+   "from": "watch",
+   "to": "watch",
+   "company": "Tesla, Inc.",
+   "clause": "Watch (b): Open lawsuit or agency complaint on (a) or (b) that has survived a motion to dismiss",
+   "tripwire": "A liability finding in the CRD trial or in EEOC v. Tesla (N.D. Cal.) -> propose Black under (b). If the Diaz proposal is approved, TSLA is already Black and this becomes context.",
+   "event_date": "2026-07-23",
+   "evidence": [
+    {
+     "doc_date": "2026-07-23",
+     "publisher": "Tesla, Inc. Form 10-Q (SEC EDGAR)",
+     "quote": "on February 9, 2022, the California Civil Rights Department (\"CRD,\" formerly \"DFEH\") filed a civil complaint against Tesla in Alameda County, California Superior Court, alleging systemic race discrimination, hostile work environment and pay equity claims, among others.",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm"
+    },
+    {
+     "doc_date": "2026-07-23",
+     "publisher": "Tesla, Inc. Form 10-Q (SEC EDGAR)",
+     "quote": "The first phase of the trial is currently set for September 21, 2026. Additionally, on June 1, 2022, the Equal Employment Opportunity Commission (\"EEOC\") issued a cause finding against Tesla that closely parallels the CRD's allegations.",
+     "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm"
+    }
+   ],
+   "evidence_hash": "f45e18972047e5b6"
+  },
+  "p-UAL-watch-united-airlines-eeoc-2025": {
+   "proposal_id": "p-UAL-watch-united-airlines-eeoc-2025",
+   "decision": "approve",
+   "decided_at": "2026-10-04T13:34:44.746Z",
+   "tickers": [
+    "UAL"
+   ],
+   "from": "none",
+   "to": "watch",
+   "company": "United Airlines Holdings, Inc.",
+   "clause": "Watch (b): Settlement with no admission of wrongdoing",
+   "tripwire": "A court ruling, jury verdict, or agency finding that states a violation, or an admission in the decree -> propose Black under (b).",
+   "event_date": "2025-01-06",
+   "evidence": [
+    {
+     "doc_date": "2025-01-06",
+     "publisher": "U.S. Equal Employment Opportunity Commission (press release)",
+     "quote": "will pay $99,000 and provide other relief to settle a federal lawsuit for a hostile work environment based on race and national origin",
+     "url": "https://www.eeoc.gov/newsroom/united-airlines-pay-99000-eeoc-discrimination-case"
+    }
+   ],
+   "evidence_hash": "99e715669748cbe6"
+  },
+  "p-VRT-nofinding-check": {
+   "proposal_id": "p-VRT-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-07T02:11:08.447Z",
+   "tickers": [
+    "VRT"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Vertiv Holdings Co",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "462cd4756e96b6f4"
+  },
+  "p-WBD-aligned-wbd-values": {
+   "proposal_id": "p-WBD-aligned-wbd-values",
+   "decision": "approve",
+   "decided_at": "2026-09-26T15:29:05.185Z",
+   "tickers": [
+    "WBD"
+   ],
+   "from": "none",
+   "to": "aligned",
+   "company": "Warner Bros. Discovery, Inc.",
+   "clause": "Aligned: passes financial gate + Aligned gate 2 (values link): Storytelling & education",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [
+    {
+     "doc_date": "2026-02-27",
+     "publisher": "Warner Bros. Discovery Form 10-K FY2025, Item 1 Business (SEC EDGAR)",
+     "quote": "WBD's Studios segment includes the Warner Bros. Motion Picture Group (\"WBMPG\"), DC Studios, Warner Bros. Television Group (\"WBTVG\"), Consumer Products, Themed Entertainment and Brand Licensing, DC Comics Publishing",
+     "url": "https://www.sec.gov/Archives/edgar/data/1437107/000143710726000020/wbd-20251231.htm"
+    },
+    {
+     "doc_date": "2026-08-06",
+     "publisher": "Warner Bros. Discovery Form 10-Q Q2 2026 (SEC EDGAR)",
+     "quote": "on February 27, 2026, in accordance with the terms of the Netflix Merger Agreement, the Company terminated the Netflix Merger Agreement in connection with entering into the PSKY Merger Agreement",
+     "url": "https://www.sec.gov/Archives/edgar/data/1437107/000143710726000075/wbd-20260630.htm"
+    }
+   ],
+   "evidence_hash": "eecd08788e9e0978"
+  }
+ }
+}
