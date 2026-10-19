@@ -5,6 +5,7 @@
   "p-AVGO-nofinding-check": "2026-10-13T22:49:11+00:00",
   "p-CAH-watch-cardinal-health-eeoc-2021": "2026-10-04T12:46:39+00:00",
   "p-CMI-nofinding-check": "2026-10-07T01:16:12+00:00",
+  "p-COST-nofinding-check": "2026-10-19T01:28:54+00:00",
   "p-CXW-black-cxw-ice-share-fy2025": "2026-10-04T12:46:39+00:00",
   "p-DG-watch-dollar-general-eeoc-2019": "2026-10-04T12:46:39+00:00",
   "p-EME-nofinding-check": "2026-10-07T01:16:12+00:00",
@@ -110,11 +111,11 @@
    "actions": {},
    "active_people": 1,
    "decisions": 0,
-   "new_proposals": 0,
+   "new_proposals": 1,
    "page_views": {
     "approvals": 1
    },
-   "runs": 0,
+   "runs": 1,
    "visits": 0,
    "week": "2026-W43"
   }
