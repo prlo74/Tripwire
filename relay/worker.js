@@ -13,7 +13,7 @@
 // IP keyed with the token, so the public issue body never shows an address), per hour overall,
 // and how many requests may wait at once.
 
-export const LIMITS = { maxTickers: 15, perVisitorPerHour: 3, perHour: 10, maxQueued: 5 };
+export const LIMITS = { maxTickers: 15, perVisitorPerHour: 10, perHour: 10, maxQueued: 5 };   // per visitor raised 3 -> 10 (2026-10-19): judges may share one network
 const TICKER = /^[A-Z]{1,6}(-[A-Z]{1,2})?$/;
 const TITLE = /^\s*check\s*:/i;
 const STATUS_TTL_MS = 15000, DATA_TTL_MS = 60000;

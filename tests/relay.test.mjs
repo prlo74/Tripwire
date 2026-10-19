@@ -64,18 +64,19 @@ const tests = {
   },
   "per-visitor, queue and hourly limits": async () => {
     reset();
-    for (let k = 0; k < LIMITS.perVisitorPerHour; k++) {
-      assert.equal((await call("POST", "/check", { tickers: ["A" + "BCDEF"[k]] })).status, 201);
+    const cap = Math.min(LIMITS.perVisitorPerHour, LIMITS.perHour);
+    for (let k = 0; k < cap; k++) {
+      assert.equal((await call("POST", "/check", { tickers: ["V" + String.fromCharCode(65 + k)] })).status, 201);
       files["site/requests.json"].requests.push({ issue: issues.length, checked: "x", tickers: [] }); clearCache();   // answered
     }
     const over = await call("POST", "/check", { tickers: ["XOM"] });
-    assert.equal(over.status, 429); assert.equal(over.body.error, "visitor_limit");
+    assert.equal(over.status, 429); assert.ok(["visitor_limit", "busy"].includes(over.body.error));
     reset();
     for (let k = 0; k < LIMITS.maxQueued; k++) await call("POST", "/check", { tickers: ["Q" + "ABCDE"[k]] }, "9.9.9." + k);
     assert.equal((await call("POST", "/check", { tickers: ["ZZ"] }, "8.8.8.8")).body.error, "queue_full");
     reset();
     for (let k = 0; k < LIMITS.perHour; k++) {
-      await call("POST", "/check", { tickers: ["H" + "ABCDEFGHIJ"[k]] }, "7.7.7." + k);
+      await call("POST", "/check", { tickers: ["H" + String.fromCharCode(65 + k)] }, "7.7.7." + k);
       files["site/requests.json"].requests.push({ issue: issues.length, checked: "x", tickers: [] }); clearCache();
     }
     assert.equal((await call("POST", "/check", { tickers: ["ZY"] }, "6.6.6.6")).body.error, "busy");

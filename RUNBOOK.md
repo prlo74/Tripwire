@@ -49,7 +49,7 @@ fast as the run schedule: a weekly run means up to 7 days of lag.
   only tickers in the ticker map (max 15 new tickers per run) and adds them to the team list;
   `record` writes results; `decisions` publishes the team's decisions.
 - **Cost guard.** One run at a time (a run in progress makes the others stop), at most 15 new
-  tickers per run. The relay allows 3 checks per visitor and 10 overall per hour, 5 waiting. To stop cloud runs, disable the routine at https://claude.ai/code/routines.
+  tickers per run. The relay allows 10 checks per hour (per visitor and overall), 5 waiting. To stop cloud runs, disable the routine at https://claude.ai/code/routines.
   If issues are abused, lock issue creation in the repository settings.
 - **Alerts.** The routine has no Gmail connector, so it lists alerts in its run summary instead
   of emailing. Attach Gmail to the routine on claude.ai to send them.

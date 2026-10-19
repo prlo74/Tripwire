@@ -5,8 +5,8 @@ The page posts the tickers here; the Worker opens a `Check: ...` issue with its 
 that issue fires the Claude cloud routine (see `../ROUTINE.md`). It also serves results
 (`/status`, `/data`) and closes answered issues with a reply.
 
-- `POST /check {"tickers": [...]}`: up to 15 tickers. Limits: 3 checks per visitor per hour,
-  10 per hour overall, 5 waiting at once. Visitors are told apart by an HMAC of their IP
+- `POST /check {"tickers": [...]}`: up to 15 tickers. Limits: 10 checks per visitor and 10 per
+  hour overall, 5 waiting at once. Visitors are told apart by an HMAC of their IP
   (keyed with the token), so the public issue never shows an address.
 - `GET /status`: queued requests and results (`site/requests.json`); closes answered issues.
 - `GET /data`: fresh `site/data.json` and `site/decisions.json` after a run.
