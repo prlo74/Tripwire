@@ -29,7 +29,7 @@ returns and pin the next progress write to it. Rules for every progress write in
 - Never write a made-up count or stage. The helper only prints what the pipeline reported.
 
 ## 1. Read the team's state from the Artifact database (ArtifactData tool)
-`list` each of `universe`, `approvals`, `runs`, `proposals`, `audit_log`, `usage` with `out_dir: cache/db`
+`list` each of `universe`, `sp500_checks`, `approvals`, `runs`, `proposals`, `audit_log`, `usage` with `out_dir: cache/db`
 (use `query.limit: 1000`). The saved files hold only document data, so also write
 `cache/db/versions.json` as `{"<collection>/<doc_id>": <version>}` from the versions the list
 results print (needed to pin overwrites). Then:
@@ -40,9 +40,11 @@ python -m pipeline.dbsync snapshot cache/db
 ## 2. Run the pipeline
 Run it in the background with progress reporting, and relay its stages to the page while it runs:
 ```
-python -m pipeline.run --progress        # background (run_in_background)
+python -m pipeline.run --progress        # background (run_in_background); add --rotation on the daily rotation run
 python -m pipeline.progress wait         # repeat: it returns when there is something to write
 ```
+Wait only with `pipeline.progress wait` (repeat it). Never write your own `pgrep`/`sleep` loop: it
+matches itself and never ends.
 Each time `wait` prints `"write": "runs/progress"`, `set runs/progress` from
 `cache/progress_doc.json` (pinned). Stop once it says the pipeline finished (or the background
 command has exited: a crashed pipeline never says so; report it), then read the
@@ -57,7 +59,8 @@ mirrors or archives.
   open the primary source and read it. Only if it meets a rule clause, add a record to
   `evidence/discovery-YYYY-MM.yaml` with `discovered: true`, a verbatim quote of 50 words or
   fewer, the date, the clause and a confidence (High/Medium/Low). Max 10 discovery proposals
-  per run, ranked by evidence strength.
+  per run, ranked by evidence strength. (The cap is for discovery matches only; every company in
+  a new-ticker or rotation check gets its proposal.)
 - Rules you must apply (see `config/rules.yaml`):
   - Black needs a qualifying finding (merits ruling, jury verdict, agency finding/consent order
     stating the violation, or an admitted settlement) within 7 years, on (a) knowingly false
@@ -78,20 +81,24 @@ mirrors or archives.
 
 ## 3b. Full check of new team tickers
 The run prints `NEW TICKER` lines and saves details in `site/data.json` → `newTickerChecks`
-(tickers the team pasted that were never checked). For each stock:
+(tickers the team pasted that were never checked, plus, with `--rotation`, today's share of the
+S&P 500, marked `"rotation": true`; see `sp500_rotation` in `config/rules.yaml`). For each stock:
 - Read Item 1 (Business) of its latest annual report (`annual_report.url`), starting from the
   `theme_snippets`. If it documents a link to one of the three themes in the company's own words,
   add a `values_link` record (`discovered: true`). Marketing adjectives don't count.
-- Open each `legal_hits` filing (SEC full-text hits in its own filings over the look-back window)
-  and read the legal-proceedings passage. Most hits are boilerplate; write a `finding`,
+- Read each `legal_hits` entry (SEC full-text hits in its own filings over the look-back window),
+  starting from its `passages` (the text around the search term). Open the filing only when a
+  passage may meet a rule clause or the passages are missing. Most hits are boilerplate; write a `finding`,
   `open_case` or `settlement_no_admission` record only when a primary source meets a rule clause.
 - If nothing qualifies, write nothing. The run then proposes the ticker for the neutral **No finding** list
   (`kind: no_finding`, wording in `config/rules.yaml` → `no_finding`; add a per-company note under `notes:` when the
   10-K shows something the team should read, e.g. a pending case). Never describe it as cleared. The export records "No values link or qualifying legal
   finding found" on the ticker, and the page shows it.
 Re-run `python -m pipeline.run` after writing records; `dbsync export` then marks each checked
-ticker (`universe/<T>.checked_at`, `check_summary`). New-ticker proposals count toward the 10
-discovery proposals per run.
+ticker (`universe/<T>.checked_at`, `check_summary`; rotation results go to `sp500_checks/<T>`).
+New-ticker and rotation proposals don't count toward the 10-discovery cap. A rotation day is about
+170 companies: keep each review short and factual, and write a record only when a source meets a
+rule clause.
 
 ## 4. Write results to the Artifact
 ```

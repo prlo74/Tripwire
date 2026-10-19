@@ -125,6 +125,15 @@ sources:
     - facebook.com
     - seekingalpha.com
 
+# S&P 500 rotation (added 2026-10-19, decided by Leo; 3-day trial). The daily cloud run gives
+# 1/cycle_days of the S&P 500 the same full check as a new team ticker (financial gate, 10-K values
+# link, legal search), so every member has a result at most cycle_days old and gets the same
+# proposals (Black, Watch, Aligned or No finding) for the team to decide. Members are assigned to a
+# day by a hash of the ticker, so index changes don't reshuffle the others. 7 halves the cost.
+sp500_rotation:
+  enabled: true
+  cycle_days: 3
+
 # "No finding" list (added 2026-10-07, decided by Leo; nickname まし). Team stocks that were fully
 # checked and have no Black, Watch or Aligned proposal. This is NOT a clearance: it says only that
 # the sources listed on the page showed nothing qualifying as of the check date. Claude proposes,

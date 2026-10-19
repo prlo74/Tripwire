@@ -77,6 +77,20 @@ def legal_hits(cik: int, years: int, today: date, limit: int = 8) -> list[dict]:
     return hits[:limit]
 
 
+def passages(url: str, terms: list[str], width: int = 450, per_term: int = 2, limit: int = 4) -> list[str]:
+    """The text around each search term in a filing, so Claude can judge a hit without reading
+    the whole filing (it opens the filing only when a passage may meet a rule clause)."""
+    text = doc_text(url)
+    out = []
+    for term in terms:
+        for k, m in enumerate(re.finditer(re.escape(term), text, re.I)):
+            if k >= per_term:
+                break
+            s, e = max(0, m.start() - width), min(len(text), m.end() + width)
+            out.append(("…" if s else "") + " ".join(text[s:e].split()) + ("…" if e < len(text) else ""))
+    return out[:limit]
+
+
 def check(ticker: str, info: dict, tmap: dict, rules: dict, today: date, gate_fn) -> dict:
     """info: {name, cik}. gate_fn(cik) -> financial gate dict."""
     out = {"ticker": ticker, "company": info["name"], "cik": info["cik"], "errors": []}
@@ -99,4 +113,9 @@ def check(ticker: str, info: dict, tmap: dict, rules: dict, today: date, gate_fn
         out["legal_hits"] = legal_hits(info["cik"], rules["black"]["lookback_years"], today)
     except SourceError as e:
         out["errors"].append(f"SEC full-text search: {e}")
+    for h in out.get("legal_hits", []):
+        try:
+            h["passages"] = passages(h["url"], h["terms"])
+        except SourceError as e:   # the hit stays; Claude opens the filing itself
+            h["passages_error"] = str(e)
     return out

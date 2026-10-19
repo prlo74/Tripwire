@@ -4,8 +4,10 @@ Tripwire runs on Claude cloud credits, not on anyone's computer. A run starts wh
 - a GitHub issue titled `Check: ...` is opened, usually by the relay when a visitor presses
   **Run check** on the public page (see `relay/README.md`), or by hand. A GitHub webhook
   trigger (`issues.opened` on prlo74/Tripwire) fires the routine right away;
-- the daily schedule fires (`30 22 * * *` UTC = 07:30 Tokyo). It does a full screen if the last
-  run is more than 20 hours old, and picks up anything a webhook missed;
+- the daily schedule fires (`0 7,10 * * *` UTC: 07:00 is 3am New York, when judges are unlikely to
+  be testing; 10:00 is a retry if a judge's check was running at 07:00). The first scheduled run of
+  each UTC day is the rotation run: a full screen plus the full check of today's share of the S&P
+  500 (`sp500_rotation` in `config/rules.yaml`). It also picks up anything a webhook missed;
 - a team member presses Check now on the team's claude.ai copy. That request waits for the next
   of the two above.
 
@@ -22,7 +24,9 @@ The repo root is Tripwire (github.com/prlo74/Tripwire, branch main); CLAUDE.md h
 procedure. Team database: https://claude.ai/artifact/8uEh8baXjRBYo7BYLL4SHr (ArtifactData tool).
 This run was started by a new GitHub issue, by the daily schedule, or by hand.
 
-0. Setup: pip install -q requests pyyaml beautifulsoup4 openpyxl pypdf pytest. Create
+0. Setup: `python -m pip install -q requests pyyaml beautifulsoup4 openpyxl pypdf pytest` then
+   `python -m pip install -q --ignore-installed cffi cryptography` (always `python -m pip`: plain
+   pip installs into another Python, and the system cryptography package is broken). Create
    config/local.yaml containing `sec_contact_email: <the email at the end of this prompt>`.
    It is gitignored: never commit it, print it, or write it anywhere else.
 1. Decide whether to run. `python -m pipeline.issues pending --dry` counts open "Check: ..."
@@ -31,13 +35,18 @@ This run was started by a new GitHub issue, by the daily schedule, or by hand.
    pending if later than settings/weekly.check_completed_at.
    - Stop (print "Another run is active", no writes) if runs/progress.state is "running" and its
      updated_at is less than 45 minutes ago. That run picks up new requests at its end.
-   - Run if there are pending GitHub requests, or a pending TEAM_REQ, or settings/weekly.last_run_at
-     is more than 20 hours ago. Otherwise print "Nothing to do" and stop: no writes, no commits.
+   - ROTATION = this run was NOT started by a GitHub issue (no github-trigger-context message) and
+     settings/weekly.rotation_last_date is not today's UTC date.
+   - Run if there are pending GitHub requests, a pending TEAM_REQ, or ROTATION. Otherwise print
+     "Nothing to do" and stop: no writes, no commits.
 2. CLAUDE.md step 0b (progress start) and step 1 (list collections into cache/db, write
    versions.json). Then `python -m pipeline.issues pending` (it now sees the team list); if
    cache/requests_universe/manifest.json lists writes, ArtifactData batch them (they create new
    universe docs). Then `python -m pipeline.dbsync snapshot cache/db`.
-3. CLAUDE.md steps 2 to 5c exactly, including 3b. Unattended rules:
+3. CLAUDE.md steps 2 to 5c exactly, including 3b. On a ROTATION run add `--rotation` to
+   `python -m pipeline.run --progress` (about 170 more companies to read in step 3b; keep each
+   review short). Wait for the pipeline only with `python -m pipeline.progress wait`, repeated;
+   never write your own pgrep or sleep loop. Unattended rules:
    - Unless a Gmail connector is attached, list alerts in the summary instead of sending, and do
      not write runs/alerts_ledger for alerts that were not sent.
    - Never publish or republish the claude.ai page.
@@ -45,15 +54,14 @@ This run was started by a new GitHub issue, by the daily schedule, or by hand.
    `python -m pipeline.build_page`.
 5. Bookkeeping (CLAUDE.md 5b): `python -m pipeline.progress finish` (add `--requested-at TEAM_REQ`
    if it was pending), update runs/latest, set runs/progress, then update settings/weekly last:
-   last_run_at, a one-line last_run_summary, check_requested_at = TEAM_REQ if it was pending, and
-   check_completed_at = now in UTC.
+   last_run_at, a one-line last_run_summary, check_requested_at = TEAM_REQ if it was pending,
+   rotation_last_date = today's UTC date on a ROTATION run, and check_completed_at = now in UTC.
 6. `python -m pytest -q`, then commit the changed tracked files (site/, out/, evidence/,
    analytics/history.json) with the message "Cloud run <run id>: <one line>" and push to main.
    If the push is rejected, `git pull --rebase` once (on a conflict in site/, keep the remote
    copy, then re-run steps 4 and 6) and push again; report if it still fails.
-7. Answer on GitHub: if `gh auth status` succeeds, for each cache/issue_comments/<n>.md run
-   `gh issue comment <n> --body-file cache/issue_comments/<n>.md` and `gh issue close <n>`.
-   If gh is not authenticated, skip this: the page shows results from site/requests.json.
+7. Don't reply on GitHub yourself: the relay (relay/README.md) posts each result on its issue and
+   closes it once site/requests.json has it.
 8. If `python -m pipeline.issues pending --dry` shows requests that arrived during this run,
    repeat from step 2 once.
 

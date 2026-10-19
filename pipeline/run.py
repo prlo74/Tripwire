@@ -55,6 +55,19 @@ def load_db_snapshot(path: Path | None) -> dict:
     return {"universe": [], "approvals": [], "runs": []}
 
 
+def rotation_group(universe: dict, rules: dict, today: date, skip: set) -> list[str]:
+    """Today's share of the S&P 500. Each member's day comes from a hash of its ticker, so a change
+    in the index moves only that company, and every member comes round once per cycle."""
+    import hashlib
+    cfg = rules.get("sp500_rotation") or {}
+    if not cfg.get("enabled"):
+        return []
+    n = max(1, int(cfg.get("cycle_days", 3)))
+    day = today.toordinal() % n
+    return sorted(t for t, v in universe.items() if v["origin"] == "S&P 500" and t not in skip
+                  and int(hashlib.sha1(t.encode()).hexdigest(), 16) % n == day)
+
+
 def current_labels(baseline: dict, approvals: list[dict]) -> dict:
     """Approved labels win; otherwise the starting list (marked unapproved)."""
     labels = {}
@@ -83,6 +96,8 @@ def main(argv=None) -> int:
     ap.add_argument("--no-discovery", action="store_true")
     ap.add_argument("--today", default=None)
     ap.add_argument("--progress", action="store_true", help="report stages for the page's progress bar")
+    ap.add_argument("--rotation", action="store_true",
+                    help="also give today's share of the S&P 500 the full check (rules: sp500_rotation)")
     ap.add_argument("--full-recheck", action="store_true",
                     help="after a rule change: scan the whole look-back for clause (b) and test clause (c)")
     args = ap.parse_args(argv)
@@ -147,6 +162,8 @@ def main(argv=None) -> int:
                                     "origin": "screen (rule change 2026-10-04)", "why": why})
         else:
             errors.append(f"{t}: screen-added ticker not found in the ticker map")
+    # S&P 500 rotation: today's share of the index gets the same full check as a new team ticker.
+    rotation = rotation_group(universe, rules, today, set(unchecked)) if args.rotation else []
     labels = current_labels(baseline, db.get("approvals", []))
 
     # 3. Evidence: re-open every source, verify quotes, apply rules.
@@ -203,7 +220,7 @@ def main(argv=None) -> int:
                            | set(baseline.get("rejected_financial", [])))
     aligned, values_fail = [], []
     passing: dict[str, tuple] = {}
-    prog.phase("financials", total=len(aligned_cands) + len(set(unchecked)), unit="companies")
+    prog.phase("financials", total=len(aligned_cands) + len(set(unchecked)) + len(rotation), unit="companies")
     black_like = {t for p in proposals if p["to"] == "black" for t in p["tickers"]} | \
                  {t for t, l in labels.items() if l["label"] == "black"}
     for t in aligned_cands:
@@ -246,27 +263,48 @@ def main(argv=None) -> int:
                           "decision": decided.get(pid, {}).get("decision"),
                           "discovery": bool(rec.get("discovered"))})
 
-    # 4b. Full check for team tickers added since they were last checked.
+    # 4b. Full check for team tickers added since they were last checked, and for today's share of
+    # the S&P 500 rotation (marked "rotation": their results go to sp500_checks, not the team list).
     new_checks = []
-    for t in sorted(set(unchecked)):
+    for t in sorted(set(unchecked)) + rotation:
         info = universe.get(t) or {"name": tmap[t][0], "cik": tmap[t][2]}
-        r = step(f"New ticker check {t}", newtickers.check, t, info, tmap, rules, today,
+        label = "Rotation check" if t in rotation else "New ticker check"
+        r = step(f"{label} {t}", newtickers.check, t, info, tmap, rules, today,
                  lambda cik, t=t: financial.financial_gate(cik, rules, fin_notes.get(t)))
         prog.tick()
         if r:
+            r["rotation"] = t in rotation
             new_checks.append(r)
+    for t in rotation:   # one status line for the whole rotation instead of ~170
+        status.pop(f"Rotation check {t}", None)
+    if rotation:
+        status["S&P 500 rotation"] = {"ok": all(not c.get("errors") for c in new_checks if c.get("rotation")),
+                                      "checked": sum(1 for c in new_checks if c.get("rotation")),
+                                      "cycle_days": (rules.get("sp500_rotation") or {}).get("cycle_days")}
 
     # 4c. "No finding" proposals: fully checked team stocks with no other proposal or label.
     nf_cfg = rules.get("no_finding") or {}
+    sp_checks = db.get("sp500_checks", [])
     checked_on = {canon(u["ticker"]): str(u["checked_at"])[:10] for u in db.get("universe", []) if u.get("checked_at")}
+    for s_ in sp_checks:
+        if s_.get("checked_at"):
+            checked_on.setdefault(canon(s_.get("ticker") or s_.get("_id", "")), str(s_["checked_at"])[:10])
     for c in new_checks:
         if not c.get("errors"):
             checked_on[c["ticker"]] = today.isoformat()
-    bad_summary = {canon(u["ticker"]) for u in db.get("universe", [])
+    bad_summary = {canon(u.get("ticker") or u.get("_id", "")) for u in db.get("universe", []) + sp_checks
                    if str(u.get("check_summary", "")).startswith("Check incomplete")}
+    bad_summary -= {c["ticker"] for c in new_checks if not c.get("errors")}   # rechecked cleanly today
+    # Candidates: the team list, plus S&P 500 members the rotation has checked.
+    nf_pool = [u for u in db.get("universe", [])]
+    in_pool = {canon(u.get("ticker", "")) for u in nf_pool}
+    for t in sorted({canon(s_.get("ticker") or s_.get("_id", "")) for s_ in sp_checks} |
+                    {c["ticker"] for c in new_checks if c.get("rotation")}):
+        if t not in in_pool:
+            nf_pool.append({"ticker": t, "type": "stock"})
     proposed_t = {t for p in proposals for t in p["tickers"]}
     blocked_t = proposed_t | {t for t, l in labels.items() if l['label'] != 'nofinding'} | set(aligned_cands) | black_like | bad_summary
-    for u in sorted(db.get("universe", []), key=lambda x: x.get("ticker", "")):
+    for u in sorted(nf_pool, key=lambda x: x.get("ticker", "")):
         t = canon(u.get("ticker", ""))
         if u.get("type") not in (None, "stock") or t not in tmap or tmap[t][1] != "S":
             continue
@@ -444,6 +482,8 @@ def main(argv=None) -> int:
                    "sources": [{k: s.get(k) for k in ("publisher", "url", "doc_date", "tier")} for s in r["sources"]]}
                   for r in leads],
         "newTickerChecks": new_checks,
+        "rotation": {"cycleDays": (rules.get("sp500_rotation") or {}).get("cycle_days"), "today": rotation,
+                     "checked": len(checked_on.keys() & {t for t, v in universe.items() if v["origin"] == "S&P 500"})},
         "etf": etf_data, "etfDefaults": baseline.get("default_etfs", []),
         "blackCandidates": sorted(targets),
         "discovery": {"heldBack": [{"id": p["id"], "tickers": p["tickers"], "to": p["to"], "confidence": p["confidence"]} for p in held_back],

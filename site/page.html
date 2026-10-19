@@ -1003,7 +1003,7 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
       var k = knownResult(t);
       return el("tr", {}, [el("td", {}, [el("span", { class: "tk", text: t })]),
         el("td", { class: "small" }, k ? [el("span", { text: k })] : [chip("none", "Needs a run", "pending"),
-          el("span", { class: "muted", text: inSp500(t) ? " In the S&P 500, so the daily screen watches it; a run adds the full 10-K and legal check." : " Not checked yet." })])]);
+          el("span", { class: "muted", text: inSp500(t) ? " In the S&P 500: the daily rotation gives every member a full check every " + ((S.data.rotation && S.data.rotation.cycleDays) || 3) + " days, and this one hasn't come round yet. Run check does it now." : " Not checked yet." })])]);
     });
     box.appendChild(el("div", { class: "eyebrow", style: "margin:4px 0 6px", text: "Instant results" }));
     box.appendChild(el("div", { class: "tbl-wrap" }, [el("table", {}, [el("tbody", {}, rows)])]));
@@ -1027,18 +1027,18 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
   }
   function queuedIssues() { return S.queued || []; }
   function schedulePoll() { clearTimeout(S.pollT); S.pollT = setTimeout(loadPublic, queuedIssues().length ? 20000 : 120000); }
-  async function loadPublic() {
+  async function loadPublic() {   // "?t=" skips GitHub Pages' 10-minute CDN cache
     if (S.relay === undefined) {
-      try { var c = await fetch("config.json", { cache: "no-store" }); S.relay = c.ok ? String((await c.json()).relay || "").replace(/\/+$/, "") : ""; } catch (e) { S.relay = ""; }
+      try { var c = await fetch("config.json?t=" + Date.now(), { cache: "no-store" }); S.relay = c.ok ? String((await c.json()).relay || "").replace(/\/+$/, "") : ""; } catch (e) { S.relay = ""; }
     }
     if (!S.decisionsLoaded) {   // the team's approve/reject decisions, published by each cloud run
-      try { var d = await fetch("decisions.json", { cache: "no-store" }); if (d.ok) { S.approvals = (await d.json()).approvals || {}; S.decisionsLoaded = true; renderAll(); } } catch (e) { /* lists stay as proposed */ }
+      try { var d = await fetch("decisions.json?t=" + Date.now(), { cache: "no-store" }); if (d.ok) { S.approvals = (await d.json()).approvals || {}; S.decisionsLoaded = true; renderAll(); } } catch (e) { /* lists stay as proposed */ }
     }
     var before = queuedIssues().map(function (q) { return q.issue; });
     if (S.relay) {
       try { var st = await (await fetch(S.relay + "/status")).json(); if (st && st.requests) { S.requests = st.requests; S.queued = st.queued || []; } } catch (e) { /* keep the last answer */ }
     } else {
-      try { var r = await fetch("requests.json", { cache: "no-store" }); S.requests = r.ok ? ((await r.json()).requests || []) : []; } catch (e) { S.requests = []; }
+      try { var r = await fetch("requests.json?t=" + Date.now(), { cache: "no-store" }); S.requests = r.ok ? ((await r.json()).requests || []) : []; } catch (e) { S.requests = []; }
       try {
         var g = await fetch("https://api.github.com/repos/" + GH_REPO + "/issues?state=open&per_page=50", { headers: { Accept: "application/vnd.github+json" } });
         var done = {}; S.requests.forEach(function (x) { done[x.issue] = 1; });
@@ -1465,7 +1465,8 @@ footer.foot { margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--l
     var st = clear($("wk-status"));
     function row(k, v) { st.appendChild(el("dt", { text: k })); st.appendChild(el("dd", { text: v })); }
     row("Last run", run.finished ? fmtDateTime(run.finished) + (run.id ? " · " + run.id : "") : "none yet");
-    row("How it runs", "Run check starts a Claude cloud run (about " + USUAL_MIN + " minutes; at most " + MAX_REQ + " tickers, a few checks an hour). A daily run at 07:30 Tokyo time keeps the lists fresh.");
+    var rot = S.data.rotation || {};
+    row("How it runs", "Run check starts a Claude cloud run (about " + USUAL_MIN + " minutes; at most " + MAX_REQ + " tickers, a few checks an hour). Each day at 07:00 UTC a run checks a share of the S&P 500, so every member has a result at most " + (rot.cycleDays || 3) + " days old" + (rot.checked ? " (" + rot.checked + " checked so far)" : "") + ".");
     row("Who decides", "The team. A run only proposes; nothing is on a list until a team member approves it.");
   }
   async function checkNow() {

@@ -38,9 +38,10 @@ def _load_dir(d: Path, coll: str) -> list[dict]:
 
 def snapshot(d: Path) -> Path:
     snap = {"universe": _load_dir(d, "universe"), "approvals": _load_dir(d, "approvals"),
+            "sp500_checks": _load_dir(d, "sp500_checks"),
             "runs": [r for r in _load_dir(d, "runs") if str(r.get("_id", "")).startswith("run-")],
             "proposal_ids": [r["_id"] for r in _load_dir(d, "proposals")],
-            "versions": {f"{c}/{r['_id']}": r["_version"] for c in ("runs", "proposals", "universe")
+            "versions": {f"{c}/{r['_id']}": r["_version"] for c in ("runs", "proposals", "universe", "sp500_checks")
                          for r in _load_dir(d, c) if r.get("_version")}}
     # Saved documents carry only their data; versions come from the ArtifactData list results,
     # recorded by Claude in <dir>/versions.json as {"collection/doc_id": version}.
@@ -129,10 +130,14 @@ def export() -> Path:
             g = (c.get("gate") or {}).get("result", "unknown")
             summary = "No values link or qualifying legal finding found" + (f" (financial gate: {g})" if g != "pass" else "")
         body = {"checked_at": done_at, "check_run": data["run"]["id"], "check_summary": summary}
-        f = wdir / f"universe__{t}.json"
+        # S&P 500 rotation results go to their own collection, so the team list stays the team's.
+        coll = "sp500_checks" if c.get("rotation") else "universe"
+        if coll == "sp500_checks":
+            body = {"ticker": t, "name": c.get("company"), **body}
+        f = wdir / f"{coll}__{t}.json"
         f.write_text(json.dumps(body))
-        w = {"op": "update", "collection": "universe", "doc_id": t, "file_path": str(f)}
-        v = snap.get("versions", {}).get(f"universe/{t}")
+        w = {"op": "set" if coll == "sp500_checks" else "update", "collection": coll, "doc_id": t, "file_path": str(f)}
+        v = snap.get("versions", {}).get(f"{coll}/{t}")
         if v:
             w["if_version"] = v
         writes.append(w)

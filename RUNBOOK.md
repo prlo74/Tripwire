@@ -40,6 +40,11 @@ fast as the run schedule: a weekly run means up to 7 days of lag.
   `pipeline.build_page`). It shows the lists from the last run, the team's decisions
   (`site/decisions.json`, no account ids or reasons) and check requests with results
   (`site/requests.json`). Visitors can't change anything; requests are GitHub issues.
+- **S&P 500 rotation (3-day trial from 2026-10-19):** the first scheduled run each UTC day (07:00,
+  retry 10:00) adds `--rotation`: about a third of the S&P 500 (chosen by a hash of the ticker)
+  gets the same full check as a new team ticker, and each gets a proposal for the team. Results
+  are in the database collection `sp500_checks` (not the team list). To slow it, set
+  `sp500_rotation.cycle_days: 7` in `config/rules.yaml`; to stop it, set `enabled: false`.
 - **Request handling:** `python -m pipeline.issues pending` reads open `Check:` issues, keeps
   only tickers in the ticker map (max 15 new tickers per run) and adds them to the team list;
   `record` writes results; `decisions` publishes the team's decisions.
