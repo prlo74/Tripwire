@@ -11,7 +11,8 @@ globalThis.fetch = async (url, init = {}) => {
   calls.push(`${method} ${u.pathname}`);
   const ok = (v) => new Response(typeof v === "string" ? v : JSON.stringify(v), { status: 200 });
   if (u.pathname.startsWith("/repos/o/r/contents/")) {
-    const f = files[u.pathname.replace("/repos/o/r/contents/", "")];
+    const ref = u.searchParams.get("ref") || "main";
+    const f = files[(ref === "main" ? "" : ref + ":") + u.pathname.replace("/repos/o/r/contents/", "")];
     return f ? ok(JSON.stringify(f)) : new Response("", { status: 404 });
   }
   if (u.pathname === "/repos/o/r/issues" && method === "GET") {
@@ -88,6 +89,10 @@ const tests = {
     const r = await call("GET", "/status");
     assert.equal(r.status, 200);
     assert.deepEqual(r.body.queued.map((q) => q.issue), [2]);
+    assert.equal(r.body.progress, null);
+    files["progress:progress.json"] = { state: "running", phase: "records", started_at: "2026-10-19T00:00:00Z" };
+    clearCache();
+    assert.equal((await call("GET", "/status")).body.progress.phase, "records");
     assert.equal(r.body.answered, undefined);
     await Promise.all(ctx.waits);
     assert.equal(issues[0].state, "closed"); assert.equal(issues[1].state, "open");

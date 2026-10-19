@@ -166,3 +166,14 @@ def test_missing_stage_is_reported_not_invented(cache, capsys):
     summary = json.loads(out[: out.index("\n}\n") + 2])
     assert set(summary["missing_stages"]) == {"records", "financials", "etf", "discovery"}
     assert "records" not in summary["timing"]["phase_ms"]
+
+
+def test_starting_is_capped_so_a_stale_request_cannot_swamp_the_bar():
+    from pipeline.progress import phase_ms, DEFAULT_STARTING_MS
+    hist = [{"phase": "universe", "at": "2026-10-19T01:40:50Z"}]
+    pm = phase_ms(hist, "2026-10-19T01:40:50Z", "2026-10-19T01:44:00Z", "2026-10-07T05:16:35Z", None)
+    assert pm["starting"] == DEFAULT_STARTING_MS
+    pm = phase_ms(hist, "2026-10-19T01:40:50Z", "2026-10-19T01:44:00Z", None, 581277006)
+    assert pm["starting"] == DEFAULT_STARTING_MS
+    pm = phase_ms(hist, "2026-10-19T01:40:50Z", "2026-10-19T01:44:00Z", "2026-10-19T01:40:05Z", None)
+    assert pm["starting"] == 45000

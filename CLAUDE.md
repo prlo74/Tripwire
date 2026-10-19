@@ -21,7 +21,10 @@ python -m pipeline.progress start
 ```
 Then ArtifactData `get runs/progress` (for its version; it may not exist yet) and `set runs/progress`
 with `file_path: cache/progress_doc.json`, pinned to that version. Keep the version each write
-returns and pin the next progress write to it. Rules for every progress write in this file:
+returns and pin the next progress write to it. After each progress write, also run
+`python -m pipeline.progress publish`: it copies the same doc to the repo's `progress` branch,
+which the relay shows on the public page's progress bar (best effort; it prints and ignores
+failures). Rules for every progress write in this file:
 - A failed progress write never fails or slows the run: retry it once at most, carry on, and list
   it in the run summary.
 - At most about 15 progress writes per run. If they add more than 10% to the run's time, use

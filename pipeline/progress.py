@@ -45,6 +45,7 @@ STAGES = [
 ]
 IDS = [s[0] for s in STAGES]
 LABELS = dict(STAGES)
+MAX_STARTING_MS = 15 * 60 * 1000
 DEFAULT_STARTING_MS = 60000
 COUNT_STEP = 5          # relay a count after this many more items...
 COUNT_MIN_GAP_S = 15    # ...and not more often than this
@@ -216,6 +217,8 @@ def phase_ms(history: list[dict], started_at: str, ended_at: str, requested_at: 
     previous run's value (or 60 s) is carried forward."""
     req = ms(requested_at)
     starting = ms(started_at) - req if req and req <= ms(started_at) else (prev_starting or DEFAULT_STARTING_MS)
+    if starting > MAX_STARTING_MS:   # a stale request time (or a carried bad value) would swamp the bar's weights
+        starting = DEFAULT_STARTING_MS
     first: dict[str, int] = {}
     for h in history:
         first.setdefault(h["phase"], ms(h["at"]))
@@ -225,6 +228,26 @@ def phase_ms(history: list[dict], started_at: str, ended_at: str, requested_at: 
         nxt = first[order[i + 1]] if i + 1 < len(order) else ms(ended_at)
         out[p] = max(0, nxt - first[p])
     return out
+
+
+def cmd_publish(a) -> int:
+    """Copy cache/progress_doc.json to the repo's one-commit `progress` branch. The relay serves it
+    to the public page (GitHub Pages), which can't read the claude.ai database. Best effort: a
+    failure is printed and never stops the run."""
+    import subprocess
+
+    def git(*args, inp=None):
+        return subprocess.run(["git", "-C", str(ROOT), *args], input=inp, capture_output=True, text=True,
+                              check=True, timeout=60).stdout.strip()
+    try:
+        blob = git("hash-object", "-w", str(DOC))
+        tree = git("mktree", inp=f"100644 blob {blob}\tprogress.json\n")
+        commit = git("commit-tree", tree, "-m", "Run progress for the public page")
+        git("push", "-q", "-f", "origin", f"{commit}:refs/heads/progress")
+        print("progress published to the progress branch")
+    except Exception as e:  # noqa: BLE001 - never fatal
+        print(f"progress publish failed (ignored): {getattr(e, 'stderr', '') or e}")
+    return 0
 
 
 def _prev_starting() -> int | None:
@@ -268,8 +291,10 @@ def main(argv=None) -> int:
     p.add_argument("--unit")
     f = sub.add_parser("finish")
     f.add_argument("--requested-at", default=None)
+    sub.add_parser("publish", help="push cache/progress_doc.json to the progress branch (public page)")
     a = ap.parse_args(argv)
-    return {"start": cmd_start, "wait": cmd_wait, "phase": cmd_phase, "finish": cmd_finish}[a.cmd](a)
+    return {"start": cmd_start, "wait": cmd_wait, "phase": cmd_phase, "finish": cmd_finish,
+            "publish": cmd_publish}[a.cmd](a)
 
 
 if __name__ == "__main__":

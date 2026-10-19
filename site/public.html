@@ -1674,6 +1674,7 @@ if (typeof module !== "undefined" && module.exports) module.exports = Runbar;
         S.reqMsg = (b.existing ? "Already running as request #" : "Check started as request #") + b.issue + ". Results appear below in about " + USUAL_MIN + " minutes; keep this page open.";
         $("p-input").value = ""; S.parse = null; S.choices = {};
         S.queued = (S.queued || []).filter(function (q) { return q.issue !== b.issue; }).concat([{ issue: b.issue, url: b.url, title: "Check: " + ts.join(", "), created_at: new Date().toISOString() }]);
+        publicRunState(); renderRunbar();
         track("a", "public_check");
       } else S.reqMsg = b.message || "The check could not start. Try again in a minute.";
     } catch (e) { S.reqMsg = "The check service did not answer. Try again in a minute."; }
@@ -1690,7 +1691,7 @@ if (typeof module !== "undefined" && module.exports) module.exports = Runbar;
     }
     var before = queuedIssues().map(function (q) { return q.issue; });
     if (S.relay) {
-      try { var st = await (await fetch(S.relay + "/status")).json(); if (st && st.requests) { S.requests = st.requests; S.queued = st.queued || []; } } catch (e) { /* keep the last answer */ }
+      try { var st = await (await fetch(S.relay + "/status")).json(); if (st && st.requests) { S.requests = st.requests; S.queued = st.queued || []; S.progress = st.progress || null; } } catch (e) { /* keep the last answer */ }
     } else {
       try { var r = await fetch("requests.json?t=" + Date.now(), { cache: "no-store" }); S.requests = r.ok ? ((await r.json()).requests || []) : []; } catch (e) { S.requests = []; }
       try {
@@ -1706,8 +1707,19 @@ if (typeof module !== "undefined" && module.exports) module.exports = Runbar;
         if (fresh && fresh.data && fresh.data.run) { S.data = fresh.data; S.proposals = fresh.data.proposals || []; if (fresh.decisions) S.approvals = fresh.decisions.approvals || {}; renderAll(); }
       } catch (e) { /* the page keeps its copy */ }
     }
-    renderUniverse(); renderWeekly(); renderPaste();
+    publicRunState();
+    renderUniverse(); renderWeekly(); renderPaste(); renderRunbar();
     schedulePoll();
+  }
+  // The progress bar (site/runbar.js) reads a request time, a finish time and the run's progress
+  // doc. On the public copy they come from the oldest waiting request, the last answered one and
+  // the relay's /status (the cloud run pushes its progress to the repo's progress branch).
+  function publicRunState() {
+    var q = queuedIssues().slice().sort(function (a, b) { return Date.parse(a.created_at) - Date.parse(b.created_at); })[0];
+    var last = (S.requests || []).filter(function (r) { return r.checked; }).slice(-1)[0];
+    S.weekly = q ? { check_requested_at: q.created_at, check_completed_at: last ? last.checked : null }
+      : last ? { check_requested_at: last.opened, check_completed_at: last.checked } : null;
+    noteRunState();
   }
   function renderRequests(box) {
     $("u-title").textContent = "Check requests";
@@ -2075,7 +2087,9 @@ if (typeof module !== "undefined" && module.exports) module.exports = Runbar;
   // the last run's measured timing; hidden when nothing is running or the database is unavailable.
   function renderRunbar() {
     var timing = S.data && S.data.run && S.data.run.timing;
-    var wk = checkQueued(S.weekly) ? Object.assign({}, S.weekly, { check_requested_at: null }) : S.weekly;   // a waiting request is not a running check
+    // On the team copy a waiting request is not a running check (it waits for a run); on the public
+    // copy the cloud run starts within seconds, so the bar shows from the button press.
+    var wk = !S.pub && checkQueued(S.weekly) ? Object.assign({}, S.weekly, { check_requested_at: null }) : S.weekly;
     S.rbModel = Runbar.compute({ now: Date.now(), weekly: wk, prog: S.progress, timing: timing, prev: S.rbModel });
     Runbar.render($("runbar"), S.rbModel, { fmtWhen: function (t) { return fmtDateTime(new Date(t).toISOString()); } });
   }

@@ -5,7 +5,8 @@
 // the latest results. Rate limits keep anyone from spending the owner's Claude credits.
 //
 //   POST /check  {"tickers": ["AAPL", "MSFT"]}  -> 201 {issue, url} | 200 {issue, url, existing}
-//   GET  /status -> {requests, queued, limits}   (also closes answered issues with a reply)
+//   GET  /status -> {requests, queued, progress, limits}   (also closes answered issues with a reply;
+//                   progress = the running cloud run's progress doc, from the repo's progress branch)
 //   GET  /data   -> {data, decisions}            (fresh site/data.json and site/decisions.json)
 //
 // Limits are counted from the repo's own issues (no extra storage): per visitor (an HMAC of the
@@ -79,8 +80,8 @@ export async function visitorTag(env, ip) {
   return [...new Uint8Array(sig)].slice(0, 6).map((b) => b.toString(16).padStart(2, "0")).join("");
 }
 
-async function readFile(env, path) {
-  try { return JSON.parse(await gh(env, `/contents/${path}?ref=main`, { raw: true })); } catch (e) { return null; }
+async function readFile(env, path, ref = "main") {
+  try { return JSON.parse(await gh(env, `/contents/${path}?ref=${ref}`, { raw: true })); } catch (e) { return null; }
 }
 
 async function checkIssues(env, sinceIso) {
@@ -90,12 +91,13 @@ async function checkIssues(env, sinceIso) {
 
 export async function status(env) {
   return cached("status", STATUS_TTL_MS, async () => {
-    const [store, open] = await Promise.all([readFile(env, "site/requests.json"), checkIssues(env)]);
+    const [store, open, progress] = await Promise.all([readFile(env, "site/requests.json"), checkIssues(env),
+      readFile(env, "progress.json", "progress")]);
     const done = new Map(((store && store.requests) || []).filter((r) => r.checked).map((r) => [r.issue, r]));
     const queued = open.filter((i) => !done.has(i.number))
       .map((i) => ({ issue: i.number, url: i.html_url, title: i.title, created_at: i.created_at }));
     const answered = open.filter((i) => done.has(i.number)).map((i) => done.get(i.number));
-    return { requests: ((store && store.requests) || []).slice(-30), queued, answered, limits: LIMITS, updated: new Date().toISOString() };
+    return { requests: ((store && store.requests) || []).slice(-30), queued, answered, progress, limits: LIMITS, updated: new Date().toISOString() };
   });
 }
 
