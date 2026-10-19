@@ -57,7 +57,11 @@ async function gh(env, path, init = {}) {
       ...(init.body ? { "Content-Type": "application/json" } : {}),
     },
   });
-  if (!r.ok) throw new Error(`GitHub ${r.status} on ${path}`);
+  if (!r.ok) {
+    let why = "";
+    try { why = (await r.json()).message || ""; } catch (e) { /* no body */ }
+    throw new Error(`GitHub ${r.status} on ${path}${why ? ": " + String(why).slice(0, 200) : ""}`);
+  }
   return init.raw ? r.text() : r.json();
 }
 
