@@ -57,7 +57,26 @@
    ],
    "rejected": [],
    "over_limit": []
+  },
+  {
+   "issue": 5,
+   "url": "https://github.com/prlo74/Tripwire/issues/5",
+   "by": "prlo74",
+   "opened": "2026-10-19T01:52:00Z",
+   "checked": "2026-10-19T01:54:40+00:00",
+   "run": "run-20261019T015312",
+   "full": false,
+   "tickers": [
+    {
+     "ticker": "CHE",
+     "name": "CHEMED CORP",
+     "type": "stock",
+     "result": "No finding (proposed)"
+    }
+   ],
+   "rejected": [],
+   "over_limit": []
   }
  ],
- "updated": "2026-10-19T01:43:53Z"
+ "updated": "2026-10-19T01:55:54Z"
 }

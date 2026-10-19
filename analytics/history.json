@@ -2,6 +2,7 @@
  "first_seen": {
   "p-ACN-watch-accenture-doj-fca-2026": "2026-09-26T07:01:43+00:00",
   "p-ADBE-aligned-adbe-values": "2026-09-26T07:01:43+00:00",
+  "p-AMZN-nofinding-check": "2026-10-19T01:42:57+00:00",
   "p-AVGO-nofinding-check": "2026-10-13T22:49:11+00:00",
   "p-CAH-watch-cardinal-health-eeoc-2021": "2026-10-04T12:46:39+00:00",
   "p-CMI-nofinding-check": "2026-10-07T01:16:12+00:00",
@@ -111,11 +112,11 @@
    "actions": {},
    "active_people": 1,
    "decisions": 0,
-   "new_proposals": 1,
+   "new_proposals": 2,
    "page_views": {
     "approvals": 1
    },
-   "runs": 1,
+   "runs": 2,
    "visits": 0,
    "week": "2026-W43"
   }

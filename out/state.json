@@ -1,9 +1,9 @@
 {
  "run": {
-  "id": "run-20261019T014130",
-  "started": "2026-10-19T01:41:30+00:00",
-  "finished": "2026-10-19T01:42:57+00:00",
-  "duration_s": 87.0,
+  "id": "run-20261019T015312",
+  "started": "2026-10-19T01:53:12+00:00",
+  "finished": "2026-10-19T01:54:40+00:00",
+  "duration_s": 87.7,
   "today": "2026-10-19",
   "errors": [
    "WBD: not in ticker map"
@@ -15,7 +15,7 @@
   "SEC + Nasdaq ticker lists": {
    "ok": true,
    "as_of": "2026-10-16",
-   "count": 12756
+   "count": 12757
   },
   "S&P 500 constituents (SPY holdings, State Street)": {
    "ok": true,
@@ -55,7 +55,7 @@
   "XBRL companyfacts WBTN": {
    "ok": true
   },
-  "New ticker check AMZN": {
+  "New ticker check CHE": {
    "ok": true
   },
   "ETF holdings BND": {
@@ -342,7 +342,7 @@
      "doc_date": "2026-09-01",
      "quote": "The EEOC's investigation found reasonable cause to believe that Ford personnel at the facility subjected numerous employees to harassment and discrimination based on race and national origin.",
      "tier": 1,
-     "opened_at": "2026-10-19T01:41:33+00:00",
+     "opened_at": "2026-10-19T01:53:15+00:00",
      "quote_found": true
     },
     {
@@ -351,7 +351,7 @@
      "doc_date": "2026-09-01",
      "quote": "Following the EEOC's investigation, the parties engaged in the EEOC's pre-litigation conciliation process, resulting in a conciliation agreement.",
      "tier": 1,
-     "opened_at": "2026-10-19T01:41:33+00:00",
+     "opened_at": "2026-10-19T01:53:15+00:00",
      "quote_found": true
     }
    ],
@@ -384,7 +384,7 @@
      "doc_date": "2026-09-14",
      "quote": "to resolve alleged violations of the False Claims Act for failing to comply with anti-discrimination requirements in federal contracts and discriminating against employees and applicants for employment because of race or sex.",
      "tier": 1,
-     "opened_at": "2026-10-19T01:41:34+00:00",
+     "opened_at": "2026-10-19T01:53:16+00:00",
      "quote_found": true
     },
     {
@@ -393,7 +393,7 @@
      "doc_date": "2026-09-14",
      "quote": "The claims resolved by the United States in the settlement are allegations only and there has been no determination of liability.",
      "tier": 1,
-     "opened_at": "2026-10-19T01:41:34+00:00",
+     "opened_at": "2026-10-19T01:53:16+00:00",
      "quote_found": true
     }
    ],
@@ -426,7 +426,7 @@
      "doc_date": "2026-02-20",
      "quote": "For the year ended December 31, 2025, ICE, USMS, and the BOP accounted for 35% ($770.7 million), 18% ($390.6 million), and 1% ($32.2 million), respectively, of our total revenue.",
      "tier": 1,
-     "opened_at": "2026-10-19T01:41:39+00:00",
+     "opened_at": "2026-10-19T01:53:21+00:00",
      "quote_found": true
     }
    ],
@@ -459,7 +459,7 @@
      "doc_date": "2026-02-25",
      "quote": "ICE accounting for 47.6% and 41.5% of our total consolidated revenues for 2025 and 2024, respectively",
      "tier": 1,
-     "opened_at": "2026-10-19T01:41:41+00:00",
+     "opened_at": "2026-10-19T01:53:23+00:00",
      "quote_found": true
     }
    ],
@@ -492,7 +492,7 @@
      "doc_date": "2026-05-12",
      "quote": "the Justice Department announced a settlement with PayPal Inc. to resolve a fair lending investigation into a discriminatory investment program created for black and minority-owned businesses.",
      "tier": 1,
-     "opened_at": "2026-10-19T01:41:44+00:00",
+     "opened_at": "2026-10-19T01:53:26+00:00",
      "quote_found": true
     }
    ],
@@ -525,7 +525,7 @@
      "doc_date": "2021-07-09",
      "quote": "Cardinal Health will pay $1.45 million to resolve a racial harassment and retaliation discrimination lawsuit filed by the U.S. Equal Employment Opportunity Commission (EEOC)",
      "tier": 1,
-     "opened_at": "2026-10-19T01:41:44+00:00",
+     "opened_at": "2026-10-19T01:53:26+00:00",
      "quote_found": true
     }
    ],
@@ -558,7 +558,7 @@
      "doc_date": "2025-01-06",
      "quote": "will pay $99,000 and provide other relief to settle a federal lawsuit for a hostile work environment based on race and national origin",
      "tier": 1,
-     "opened_at": "2026-10-19T01:41:45+00:00",
+     "opened_at": "2026-10-19T01:53:27+00:00",
      "quote_found": true
     }
    ],
@@ -591,7 +591,7 @@
      "doc_date": "2019-11-18",
      "quote": "Dollar General will pay $6 million and furnish other relief to settle a class race discrimination lawsuit brought by the U.S. Equal Employment Opportunity Commission (EEOC)",
      "tier": 1,
-     "opened_at": "2026-10-19T01:41:46+00:00",
+     "opened_at": "2026-10-19T01:53:28+00:00",
      "quote_found": true
     }
    ],
@@ -625,7 +625,7 @@
      "doc_date": "2023-03-31",
      "quote": "The evidence developed in this civil proceeding demonstrates that is CRYSTAL clear that none of the Statements relating to Dominion about the 2020 election are true. Therefore, the Court will grant summary judgment in favor of Dominion on the element of falsity.",
      "tier": 1,
-     "opened_at": "2026-10-19T01:41:51+00:00",
+     "opened_at": "2026-10-19T01:53:33+00:00",
      "quote_found": true
     },
     {
@@ -634,7 +634,7 @@
      "doc_date": "2025-05-12",
      "quote": "On March 31, 2023, the court in the Dominion case issued its rulings on summary judgment motions that were unfavorable to the Company. Following these rulings, on April 18, 2023, the Company and its subsidiary, Fox News Network, LLC, entered into a Release and Settlement Agreement with Dominion",
      "tier": 1,
-     "opened_at": "2026-10-19T01:41:55+00:00",
+     "opened_at": "2026-10-19T01:53:38+00:00",
      "quote_found": true
     }
    ],
@@ -667,7 +667,7 @@
      "doc_date": "2025-04-09",
      "quote": "Newsmax fails to meet its rebuttal burden of showing that an issue of material fact exists as to falsity. Therefore, the Court GRANTS summary judgment in Dominion's favor regarding falsity.",
      "tier": 1,
-     "opened_at": "2026-10-19T01:41:55+00:00",
+     "opened_at": "2026-10-19T01:53:38+00:00",
      "quote_found": true
     },
     {
@@ -676,7 +676,7 @@
      "doc_date": "2025-08-18",
      "quote": "On August 15, 2025, Newsmax Media, Inc. and Newsmax Broadcasting, LLC entered into a settlement agreement with Dominion Voting Systems, Inc. and certain of its affiliates (\"Dominion\"), pursuant to which such parties agreed to resolve the lawsuit among them for a total amount of $67 million",
      "tier": 1,
-     "opened_at": "2026-10-19T01:41:59+00:00",
+     "opened_at": "2026-10-19T01:53:42+00:00",
      "quote_found": true
     }
    ],
@@ -709,7 +709,7 @@
      "doc_date": "2024-04-24",
      "quote": "On October 4, 2021, in a case captioned Diaz v. Tesla, a jury in the Northern District of California returned a verdict against Tesla on claims by a former contingent worker that he was subjected to race discrimination",
      "tier": 1,
-     "opened_at": "2026-10-19T01:41:59+00:00",
+     "opened_at": "2026-10-19T01:53:42+00:00",
      "quote_found": true
     },
     {
@@ -718,7 +718,7 @@
      "doc_date": "2024-04-24",
      "quote": "the damages awarded against Tesla were reduced from an initial $ 136.9 million (October 4, 2021) down to $ 15 million (April 13, 2022), and then further down to $ 3.175 million (April 3, 2023).",
      "tier": 1,
-     "opened_at": "2026-10-19T01:41:59+00:00",
+     "opened_at": "2026-10-19T01:53:42+00:00",
      "quote_found": true
     }
    ],
@@ -751,7 +751,7 @@
      "doc_date": "2026-07-23",
      "quote": "on February 9, 2022, the California Civil Rights Department (\"CRD,\" formerly \"DFEH\") filed a civil complaint against Tesla in Alameda County, California Superior Court, alleging systemic race discrimination, hostile work environment and pay equity claims, among others.",
      "tier": 1,
-     "opened_at": "2026-10-19T01:42:00+00:00",
+     "opened_at": "2026-10-19T01:53:43+00:00",
      "quote_found": true
     },
     {
@@ -760,7 +760,7 @@
      "doc_date": "2026-07-23",
      "quote": "The first phase of the trial is currently set for September 21, 2026. Additionally, on June 1, 2022, the Equal Employment Opportunity Commission (\"EEOC\") issued a cause finding against Tesla that closely parallels the CRD's allegations.",
      "tier": 1,
-     "opened_at": "2026-10-19T01:42:00+00:00",
+     "opened_at": "2026-10-19T01:53:43+00:00",
      "quote_found": true
     }
    ],
@@ -793,7 +793,7 @@
      "doc_date": "2022-06-27",
      "quote": "this Settlement Agreement is for settlement purposes only and does not constitute an admission by Meta of any of the allegations contained in the HUD Charge or the Complaint, nor does it constitute any finding of liability against Meta",
      "tier": 1,
-     "opened_at": "2026-10-19T01:42:02+00:00",
+     "opened_at": "2026-10-19T01:53:45+00:00",
      "quote_found": true
     },
     {
@@ -802,7 +802,7 @@
      "doc_date": "2022-06-27",
      "quote": "alleged that Meta's housing advertising system discriminated against Facebook users based on their race, color, religion, sex, disability, familial status, and national origin, in violation of the Fair Housing Act (FHA).",
      "tier": 1,
-     "opened_at": "2026-10-19T01:42:02+00:00",
+     "opened_at": "2026-10-19T01:53:46+00:00",
      "quote_found": true
     }
    ],
@@ -835,7 +835,7 @@
      "doc_date": "2026-08-26",
      "quote": "all the while misleading users, their families, and the public regarding the existence and severity of these risks. Trial in this case began on August 18 in the U.S. District Court for the Northern District of California.",
      "tier": 1,
-     "opened_at": "2026-10-19T01:42:04+00:00",
+     "opened_at": "2026-10-19T01:53:48+00:00",
      "quote_found": true
     },
     {
@@ -844,7 +844,7 @@
      "doc_date": "2026-08-26",
      "quote": "Today's settlement, subject to court approval, provides for strong injunctive terms",
      "tier": 1,
-     "opened_at": "2026-10-19T01:42:04+00:00",
+     "opened_at": "2026-10-19T01:53:48+00:00",
      "quote_found": true
     },
     {
@@ -853,7 +853,7 @@
      "doc_date": "2026-08-26",
      "quote": "Today's announcement that Meta has agreed to pay up to $17.1 billion and implement reforms across Facebook and Instagram is an encouraging step forward.",
      "tier": 1,
-     "opened_at": "2026-10-19T01:42:08+00:00",
+     "opened_at": "2026-10-19T01:53:51+00:00",
      "quote_found": true
     }
    ],
@@ -886,7 +886,7 @@
      "doc_date": "2026-01-15",
      "quote": "Every asset generated with Firefly includes Content Credentials, a digital \"nutrition label\", to indicate that generative AI was used",
      "tier": 1,
-     "opened_at": "2026-10-19T01:42:08+00:00",
+     "opened_at": "2026-10-19T01:53:51+00:00",
      "quote_found": true
     },
     {
@@ -895,7 +895,7 @@
      "doc_date": "2026-01-15",
      "quote": "Our focus revolves around serving our customer audiences: business professionals, consumers, creators, creative professionals and marketing professionals.",
      "tier": 1,
-     "opened_at": "2026-10-19T01:42:08+00:00",
+     "opened_at": "2026-10-19T01:53:51+00:00",
      "quote_found": true
     }
    ],
@@ -970,7 +970,7 @@
      "doc_date": "2026-02-05",
      "quote": "YouTube provides people with entertainment, information, and opportunities to learn something new and helps support the creator economy through the YouTube Partner Program.",
      "tier": 1,
-     "opened_at": "2026-10-19T01:41:34+00:00",
+     "opened_at": "2026-10-19T01:53:16+00:00",
      "quote_found": true
     }
    ],
@@ -1044,7 +1044,7 @@
      "doc_date": "2026-02-27",
      "quote": "The impact of our journalism and its breadth is evident as we continue to break stories, produce investigative reports and help our audience understand a wide range of topics.",
      "tier": 1,
-     "opened_at": "2026-10-19T01:41:46+00:00",
+     "opened_at": "2026-10-19T01:53:28+00:00",
      "quote_found": true
     }
    ],
@@ -1118,7 +1118,7 @@
      "doc_date": "2026-02-11",
      "quote": "We believe we can help merchants of all verticals and sizes, from aspirational entrepreneurs to companies with large-scale, direct-to-consumer or business to business (\"B2B\") operations",
      "tier": 1,
-     "opened_at": "2026-10-19T01:41:48+00:00",
+     "opened_at": "2026-10-19T01:53:30+00:00",
      "quote_found": true
     }
    ],
@@ -1192,7 +1192,7 @@
      "doc_date": "2026-03-05",
      "quote": "Reuters is committed to the Thomson Reuters Trust Principles, including that of independence, integrity and freedom from bias",
      "tier": 1,
-     "opened_at": "2026-10-19T01:42:10+00:00",
+     "opened_at": "2026-10-19T01:53:53+00:00",
      "quote_found": true
     }
    ],
@@ -1301,6 +1301,42 @@
    "decision": "approve",
    "discovery": false,
    "evidence_hash": "6b7facf8c1917402",
+   "evidence_changed": false,
+   "coverage": {
+    "not_covered": [
+     "CourtListener releases",
+     "FTC releases"
+    ],
+    "covered": [
+     "DOJ releases",
+     "Discovery: SEC full-text search (themes)",
+     "Discovery: agencies and courts",
+     "EEOC releases"
+    ]
+   }
+  },
+  {
+   "id": "p-CHE-nofinding-check",
+   "tickers": [
+    "CHE"
+   ],
+   "company": "CHEMED CORP",
+   "from": "none",
+   "to": "nofinding",
+   "record_id": "coverage",
+   "kind": "no_finding",
+   "clause": null,
+   "clause_text": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "summary": "Fully checked on the check date. No qualifying finding under Black or Watch and no documented values link under Aligned in the sources checked.",
+   "caveat": "Absence of evidence in the sources checked is not evidence of no wrongdoing. Sources not covered are listed on this card.",
+   "tripwire": "",
+   "confidence": null,
+   "event_date": null,
+   "checked_on": "2026-10-19",
+   "evidence": [],
+   "decision": null,
+   "discovery": false,
+   "evidence_hash": "be918adf6bad9792",
    "evidence_changed": false,
    "coverage": {
     "not_covered": [
@@ -1732,7 +1768,7 @@
      "doc_date": "2026-01-15",
      "quote": "Every asset generated with Firefly includes Content Credentials, a digital \"nutrition label\", to indicate that generative AI was used",
      "tier": 1,
-     "opened_at": "2026-10-19T01:42:08+00:00",
+     "opened_at": "2026-10-19T01:53:51+00:00",
      "quote_found": true
     },
     {
@@ -1741,7 +1777,7 @@
      "doc_date": "2026-01-15",
      "quote": "Our focus revolves around serving our customer audiences: business professionals, consumers, creators, creative professionals and marketing professionals.",
      "tier": 1,
-     "opened_at": "2026-10-19T01:42:08+00:00",
+     "opened_at": "2026-10-19T01:53:51+00:00",
      "quote_found": true
     }
    ],
@@ -1805,7 +1841,7 @@
      "doc_date": "2026-02-05",
      "quote": "YouTube provides people with entertainment, information, and opportunities to learn something new and helps support the creator economy through the YouTube Partner Program.",
      "tier": 1,
-     "opened_at": "2026-10-19T01:41:34+00:00",
+     "opened_at": "2026-10-19T01:53:16+00:00",
      "quote_found": true
     }
    ],
@@ -1869,7 +1905,7 @@
      "doc_date": "2026-02-05",
      "quote": "YouTube provides people with entertainment, information, and opportunities to learn something new and helps support the creator economy through the YouTube Partner Program.",
      "tier": 1,
-     "opened_at": "2026-10-19T01:41:34+00:00",
+     "opened_at": "2026-10-19T01:53:16+00:00",
      "quote_found": true
     }
    ],
@@ -1933,7 +1969,7 @@
      "doc_date": "2026-02-27",
      "quote": "The impact of our journalism and its breadth is evident as we continue to break stories, produce investigative reports and help our audience understand a wide range of topics.",
      "tier": 1,
-     "opened_at": "2026-10-19T01:41:46+00:00",
+     "opened_at": "2026-10-19T01:53:28+00:00",
      "quote_found": true
     }
    ],
@@ -1997,7 +2033,7 @@
      "doc_date": "2026-02-11",
      "quote": "We believe we can help merchants of all verticals and sizes, from aspirational entrepreneurs to companies with large-scale, direct-to-consumer or business to business (\"B2B\") operations",
      "tier": 1,
-     "opened_at": "2026-10-19T01:41:48+00:00",
+     "opened_at": "2026-10-19T01:53:30+00:00",
      "quote_found": true
     }
    ],
@@ -2061,7 +2097,7 @@
      "doc_date": "2026-03-05",
      "quote": "Reuters is committed to the Thomson Reuters Trust Principles, including that of independence, integrity and freedom from bias",
      "tier": 1,
-     "opened_at": "2026-10-19T01:42:10+00:00",
+     "opened_at": "2026-10-19T01:53:53+00:00",
      "quote_found": true
     }
    ],
@@ -2128,7 +2164,7 @@
      "doc_date": "2026-02-19",
      "quote": "Etsy operates two-sided online marketplaces that connect millions of creative entrepreneurs with buyers around the world.",
      "tier": 1,
-     "opened_at": "2026-10-19T01:42:19+00:00",
+     "opened_at": "2026-10-19T01:54:02+00:00",
      "quote_found": true
     }
    ],
@@ -2194,7 +2230,7 @@
      "doc_date": "2026-07-24",
      "quote": "The Company is the world's largest publisher and distributor of children's books and is the leading operator of school-based book clubs and school-based book fairs in the United States.",
      "tier": 1,
-     "opened_at": "2026-10-19T01:41:49+00:00",
+     "opened_at": "2026-10-19T01:53:31+00:00",
      "quote_found": true
     }
    ],
@@ -2262,7 +2298,7 @@
      "doc_date": "2026-03-05",
      "quote": "WEBTOON is a global storytelling platform where a vibrant community of creators and users discover, create and share new content.",
      "tier": 1,
-     "opened_at": "2026-10-19T01:42:18+00:00",
+     "opened_at": "2026-10-19T01:54:01+00:00",
      "quote_found": true
     }
    ],
@@ -2333,79 +2369,82 @@
  ],
  "newTickerChecks": [
   {
-   "ticker": "AMZN",
-   "company": "AMAZON COM INC",
-   "cik": 1018724,
+   "ticker": "CHE",
+   "company": "CHEMED CORP",
+   "cik": 19584,
    "errors": [],
    "kind": "stock",
    "gate": {
-    "cik": 1018724,
+    "cik": 19584,
     "checks": {
      "market_cap": {
-      "value": 2118061430046,
+      "value": 7010301507,
       "as_of": "2025-06-30",
       "tag": "dei:EntityPublicFloat",
       "pass": true,
       "note": "Public float (non-affiliate shares) used as a floor for market cap."
      },
      "net_income": {
-      "value": 77670000000,
+      "value": 265238000,
       "as_of": "2025-12-31",
       "tag": "us-gaap:NetIncomeLoss",
       "pass": true
      },
      "fcf": {
-      "value": 7695000000,
+      "value": 325477000,
       "as_of": "2025-12-31",
-      "ocf": 139514000000,
-      "capex": 131819000000,
+      "ocf": 388272000,
+      "capex": 62795000,
       "capitalized_software": null,
-      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquireProductiveAssets",
+      "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities, us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
       "pass": true
      },
      "debt_to_equity": {
-      "value": 0.169,
-      "debt": 69291000000,
-      "equity": 411065000000,
-      "as_of": "2025-12-31",
-      "tag": "us-gaap:LongTermDebt, us-gaap:ShortTermBorrowings, us-gaap:StockholdersEquity",
-      "pass": true,
-      "note": null
+      "value": null,
+      "pass": null,
+      "equity": 979405000,
+      "note": "Unknown: no debt tags in XBRL for this year and no verified statement of zero debt."
      }
     },
-    "result": "pass",
+    "result": "unknown",
     "fy_end": "2025-12-31",
-    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000019584.json",
     "failed": [],
-    "unknown": []
+    "unknown": [
+     "debt_to_equity"
+    ]
    },
    "annual_report": {
     "form": "10-K",
-    "filed": "2026-02-06",
-    "accession": "0001018724-26-000004",
-    "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm"
+    "filed": "2026-02-27",
+    "accession": "0001562762-26-000020",
+    "url": "https://www.sec.gov/Archives/edgar/data/19584/000156276226000020/che-20251231x10k.htm"
    },
-   "theme_snippets": {
-    "storytelling_education": [
-     {
-      "term": "publishing",
-      "snippet": "product selection, across numerous product categories. We also offer other services such as compute, storage, and database offerings, fulfillment, advertising, publishing, and digital content subscriptions. Our financial focus is on long-term, sustainable growth in free cash flow. Free cash flow is driven primarily by increasing"
-     }
-    ]
-   },
+   "theme_snippets": {},
    "legal_hits": [
     {
-     "accession": "0001018724-22-000017",
-     "form": "8-K",
-     "filed": "2022-07-28",
+     "accession": "0001562762-25-000186",
+     "form": "10-Q",
+     "filed": "2025-07-31",
      "terms": [
+      "defamation",
       "Civil Rights"
      ],
-     "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872422000017/amzn-20220630xex991.htm"
+     "url": "https://www.sec.gov/Archives/edgar/data/19584/000156276225000186/che-20250630xex10_1.htm",
+     "passages": [
+      "\u2026ate or local laws or ordinances relating to or governing employment issues, contracts, torts, and restrictive covenant agreements; and \u00b7 any other common law or statutory claim, whether for damages, negligent supervision and retention, constructive or wrongful discharge, breach of contract (except breach of this Agreement), promissory estoppel, whistleblower protection, intentional or negligent infliction of emotional distress, assault, battery, defamation, fraud, costs, attorneys' fees, expenses or otherwise, arising prior to or at the time of Executive's execution of this Agreement. (b) Nothing in this Agreement is intended to waive or release any claims (i) for unemployment or workers' compensation; (ii) for vested rights under ERISA-covered employee benefit plans as applicable on the date Executive signs this Agreement; (iii) that are brought to enforce or allege breach of this Agreement; (iv)\u2026",
+      "\u2026ifferent laws, including but not limited to: \u00b7 claims that arise from, or are related in any way to his employment at the Company or the cessation of his employment by the Company; \u00b7 claims arising under federal, state, or local laws, statutes, constitutions, regulations, rules, ordinances or orders, including, but not limited to the Americans With Disabilities Act of 1990; Sections 503 and 504 of the Rehabilitation Act of 1973; Title VII of the Civil Rights Act of 1964; the Family and Medical Leave Act; 42 U.S.C. \u00a7 1981; the Age Discrimination in Employment Act (discussed further in Paragraph 20, below) ; the Employee Retirement Security Act of 1974; and all state or local laws or ordinances relating to or governing employment issues, contracts, torts, and restrictive covenant agreements; and \u00b7 any other common law or statutory claim, whether for damages, negligent supervision and retention, constr\u2026"
+     ]
     }
-   ]
+   ],
+   "rotation": false
   }
  ],
+ "rotation": {
+  "cycleDays": 3,
+  "today": [],
+  "checked": 13
+ },
  "etf": {
   "SPY": {
    "asOf": "2026-10-15",
@@ -3284,7 +3323,7 @@
    "ZBRA",
    "ZTS"
   ],
-  "team": 4,
+  "team": 5,
   "screen": 2,
   "screenAdded": {
    "GEO": "The GEO Group (listed immigration-detention operator)",
@@ -3365,7 +3404,7 @@
      "tier": 1,
      "quote_words": 27,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:33+00:00",
+     "opened_at": "2026-10-19T01:53:15+00:00",
      "error": null
     },
     {
@@ -3376,7 +3415,7 @@
      "tier": 1,
      "quote_words": 18,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:33+00:00",
+     "opened_at": "2026-10-19T01:53:15+00:00",
      "error": null
     }
    ],
@@ -3411,7 +3450,7 @@
      "tier": 1,
      "quote_words": 32,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:34+00:00",
+     "opened_at": "2026-10-19T01:53:16+00:00",
      "error": null
     },
     {
@@ -3422,7 +3461,7 @@
      "tier": 1,
      "quote_words": 21,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:34+00:00",
+     "opened_at": "2026-10-19T01:53:16+00:00",
      "error": null
     }
    ],
@@ -3459,7 +3498,7 @@
      "tier": 1,
      "quote_words": 23,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:34+00:00",
+     "opened_at": "2026-10-19T01:53:16+00:00",
      "error": null
     }
    ],
@@ -3496,7 +3535,7 @@
      "tier": 1,
      "quote_words": 28,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:36+00:00",
+     "opened_at": "2026-10-19T01:53:17+00:00",
      "error": null
     },
     {
@@ -3507,7 +3546,7 @@
      "tier": 1,
      "quote_words": 30,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:37+00:00",
+     "opened_at": "2026-10-19T01:53:19+00:00",
      "error": null
     }
    ],
@@ -3546,7 +3585,7 @@
      "tier": 1,
      "quote_words": 29,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:39+00:00",
+     "opened_at": "2026-10-19T01:53:21+00:00",
      "error": null
     }
    ],
@@ -3584,7 +3623,7 @@
      "tier": 1,
      "quote_words": 16,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:41+00:00",
+     "opened_at": "2026-10-19T01:53:23+00:00",
      "error": null
     }
    ],
@@ -3620,7 +3659,7 @@
      "tier": 1,
      "quote_words": 26,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:44+00:00",
+     "opened_at": "2026-10-19T01:53:26+00:00",
      "error": null
     }
    ],
@@ -3656,7 +3695,7 @@
      "tier": 1,
      "quote_words": 24,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:44+00:00",
+     "opened_at": "2026-10-19T01:53:26+00:00",
      "error": null
     }
    ],
@@ -3692,7 +3731,7 @@
      "tier": 1,
      "quote_words": 23,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:45+00:00",
+     "opened_at": "2026-10-19T01:53:27+00:00",
      "error": null
     }
    ],
@@ -3728,7 +3767,7 @@
      "tier": 1,
      "quote_words": 26,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:46+00:00",
+     "opened_at": "2026-10-19T01:53:28+00:00",
      "error": null
     }
    ],
@@ -3760,7 +3799,7 @@
      "tier": 1,
      "quote_words": 14,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:46+00:00",
+     "opened_at": "2026-10-19T01:53:28+00:00",
      "error": null
     }
    ],
@@ -3793,7 +3832,7 @@
      "tier": 1,
      "quote_words": 27,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:48+00:00",
+     "opened_at": "2026-10-19T01:53:30+00:00",
      "error": null
     }
    ],
@@ -3827,7 +3866,7 @@
      "tier": 1,
      "quote_words": 25,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:49+00:00",
+     "opened_at": "2026-10-19T01:53:31+00:00",
      "error": null
     }
    ],
@@ -3866,7 +3905,7 @@
      "tier": 1,
      "quote_words": 42,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:51+00:00",
+     "opened_at": "2026-10-19T01:53:33+00:00",
      "error": null
     },
     {
@@ -3877,7 +3916,7 @@
      "tier": 1,
      "quote_words": 48,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:55+00:00",
+     "opened_at": "2026-10-19T01:53:38+00:00",
      "error": null
     }
    ],
@@ -3914,7 +3953,7 @@
      "tier": 1,
      "quote_words": 30,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:55+00:00",
+     "opened_at": "2026-10-19T01:53:38+00:00",
      "error": null
     },
     {
@@ -3925,7 +3964,7 @@
      "tier": 1,
      "quote_words": 46,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:59+00:00",
+     "opened_at": "2026-10-19T01:53:42+00:00",
      "error": null
     }
    ],
@@ -3961,7 +4000,7 @@
      "tier": 1,
      "quote_words": 38,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:59+00:00",
+     "opened_at": "2026-10-19T01:53:42+00:00",
      "error": null
     },
     {
@@ -3972,7 +4011,7 @@
      "tier": 1,
      "quote_words": 35,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:59+00:00",
+     "opened_at": "2026-10-19T01:53:42+00:00",
      "error": null
     }
    ],
@@ -4007,7 +4046,7 @@
      "tier": 1,
      "quote_words": 37,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:42:00+00:00",
+     "opened_at": "2026-10-19T01:53:43+00:00",
      "error": null
     },
     {
@@ -4018,7 +4057,7 @@
      "tier": 1,
      "quote_words": 36,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:42:00+00:00",
+     "opened_at": "2026-10-19T01:53:43+00:00",
      "error": null
     }
    ],
@@ -4053,7 +4092,7 @@
      "tier": 1,
      "quote_words": 39,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:42:02+00:00",
+     "opened_at": "2026-10-19T01:53:45+00:00",
      "error": null
     },
     {
@@ -4064,7 +4103,7 @@
      "tier": 1,
      "quote_words": 31,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:42:02+00:00",
+     "opened_at": "2026-10-19T01:53:46+00:00",
      "error": null
     }
    ],
@@ -4099,7 +4138,7 @@
      "tier": 1,
      "quote_words": 37,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:42:04+00:00",
+     "opened_at": "2026-10-19T01:53:48+00:00",
      "error": null
     },
     {
@@ -4110,7 +4149,7 @@
      "tier": 1,
      "quote_words": 11,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:42:04+00:00",
+     "opened_at": "2026-10-19T01:53:48+00:00",
      "error": null
     },
     {
@@ -4121,7 +4160,7 @@
      "tier": 1,
      "quote_words": 24,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:42:08+00:00",
+     "opened_at": "2026-10-19T01:53:51+00:00",
      "error": null
     }
    ],
@@ -4189,7 +4228,7 @@
      "tier": 1,
      "quote_words": 19,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:42:08+00:00",
+     "opened_at": "2026-10-19T01:53:51+00:00",
      "error": null
     },
     {
@@ -4200,7 +4239,7 @@
      "tier": 1,
      "quote_words": 17,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:42:08+00:00",
+     "opened_at": "2026-10-19T01:53:51+00:00",
      "error": null
     }
    ],
@@ -4235,7 +4274,7 @@
      "tier": 1,
      "quote_words": 18,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:42:10+00:00",
+     "opened_at": "2026-10-19T01:53:53+00:00",
      "error": null
     }
    ],
@@ -4270,7 +4309,7 @@
      "tier": 1,
      "quote_words": 29,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:46+00:00",
+     "opened_at": "2026-10-19T01:53:28+00:00",
      "error": null
     }
    ],
@@ -4306,7 +4345,7 @@
      "tier": 1,
      "quote_words": 25,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:48+00:00",
+     "opened_at": "2026-10-19T01:53:30+00:00",
      "error": null
     }
    ],
@@ -4341,7 +4380,7 @@
      "tier": 1,
      "quote_words": 29,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:41:49+00:00",
+     "opened_at": "2026-10-19T01:53:31+00:00",
      "error": null
     }
    ],
@@ -4377,7 +4416,7 @@
      "tier": 1,
      "quote_words": 20,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:42:18+00:00",
+     "opened_at": "2026-10-19T01:54:01+00:00",
      "error": null
     }
    ],
@@ -4412,7 +4451,7 @@
      "tier": 1,
      "quote_words": 16,
      "quote_found": true,
-     "opened_at": "2026-10-19T01:42:19+00:00",
+     "opened_at": "2026-10-19T01:54:02+00:00",
      "error": null
     }
    ],
