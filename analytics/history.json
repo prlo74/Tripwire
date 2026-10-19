@@ -15,6 +15,7 @@
   "p-F-watch-ford-eeoc-conciliation-2026": "2026-09-26T07:01:43+00:00",
   "p-FIX-nofinding-check": "2026-10-07T01:16:12+00:00",
   "p-FOXA-FOX-black-fox-dominion-falsity-2023": "2026-09-26T07:01:43+00:00",
+  "p-FRTT-nofinding-check": "2026-10-19T02:17:55+00:00",
   "p-GEO-black-geo-ice-share-fy2025": "2026-10-04T12:46:39+00:00",
   "p-GOOG-GOOGL-aligned-alphabet-values": "2026-09-26T07:01:43+00:00",
   "p-META-watch-meta-doj-fha-settlement-2022": "2026-09-26T07:01:43+00:00",
@@ -113,13 +114,13 @@
    "actions": {},
    "active_people": 1,
    "decisions": 0,
-   "new_proposals": 3,
+   "new_proposals": 4,
    "page_views": {
-    "approvals": 2,
-    "home": 2
+    "approvals": 3,
+    "home": 3
    },
-   "runs": 3,
-   "visits": 1,
+   "runs": 4,
+   "visits": 2,
    "week": "2026-W43"
   }
  ]

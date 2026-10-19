@@ -1,19 +1,19 @@
 {
- "generated_at": "2026-10-19T02:19:25Z",
- "as_of_run": "run-20261019T015312",
+ "generated_at": "2026-10-19T07:48:49Z",
+ "as_of_run": "run-20261019T021634",
  "headline": {
-  "companies_screened": 508,
+  "companies_screened": 509,
   "sp500_companies": 503,
   "team_tickers": 35,
-  "runs_total": 27,
-  "runs_last_30_days": 27,
+  "runs_total": 28,
+  "runs_last_30_days": 28,
   "runs_all_sources_up": 10,
-  "source_checks": 630,
-  "source_checks_ok": 605,
-  "source_uptime_pct": 96.0,
+  "source_checks": 664,
+  "source_checks_ok": 637,
+  "source_uptime_pct": 95.9,
   "evidence_records": 27,
   "evidence_sources_opened_per_run": 37,
-  "proposals_open": 4,
+  "proposals_open": 5,
   "decisions_total": 30,
   "approved": 30,
   "rejected": 0,
@@ -30,7 +30,7 @@
   "median_minutes_check_now_to_result": 3.5,
   "check_now_timed": 13,
   "people_active_ever": 1,
-  "visits_total": 46,
+  "visits_total": 47,
   "first_activity": "2026-09-26T13:30:13.670Z"
  },
  "weekly": [
@@ -109,16 +109,16 @@
   },
   {
    "week": "2026-W43",
-   "visits": 1,
+   "visits": 2,
    "active_people": 1,
    "page_views": {
-    "approvals": 2,
-    "home": 2
+    "approvals": 3,
+    "home": 3
    },
    "actions": {},
-   "runs": 3,
+   "runs": 4,
    "decisions": 0,
-   "new_proposals": 3
+   "new_proposals": 4
   }
  ],
  "pages": [
