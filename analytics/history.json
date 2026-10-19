@@ -17,6 +17,7 @@
   "p-META-watch-meta-doj-fha-settlement-2022": "2026-09-26T07:01:43+00:00",
   "p-META-watch-meta-states-youth-case-2026": "2026-09-26T07:01:43+00:00",
   "p-MSFT-nofinding-check": "2026-10-13T22:49:11+00:00",
+  "p-NFLX-nofinding-check": "2026-10-18T23:00:48+00:00",
   "p-NMAX-black-newsmax-dominion-falsity-2025": "2026-09-26T07:01:43+00:00",
   "p-NVDA-nofinding-check": "2026-10-07T01:16:12+00:00",
   "p-NXT-nofinding-check": "2026-10-13T22:49:11+00:00",
@@ -96,14 +97,26 @@
    },
    "active_people": 1,
    "decisions": 3,
-   "new_proposals": 3,
+   "new_proposals": 4,
    "page_views": {
     "approvals": 1,
-    "home": 11
+    "home": 14
    },
-   "runs": 2,
-   "visits": 10,
+   "runs": 3,
+   "visits": 13,
    "week": "2026-W42"
+  },
+  {
+   "actions": {},
+   "active_people": 1,
+   "decisions": 0,
+   "new_proposals": 0,
+   "page_views": {
+    "approvals": 1
+   },
+   "runs": 0,
+   "visits": 0,
+   "week": "2026-W43"
   }
  ]
 }
