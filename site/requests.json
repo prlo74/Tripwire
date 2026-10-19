@@ -76,7 +76,26 @@
    ],
    "rejected": [],
    "over_limit": []
+  },
+  {
+   "issue": 6,
+   "url": "https://github.com/prlo74/Tripwire/issues/6",
+   "by": "prlo74",
+   "opened": "2026-10-19T02:15:22Z",
+   "checked": "2026-10-19T02:17:55+00:00",
+   "run": "run-20261019T021634",
+   "full": false,
+   "tickers": [
+    {
+     "ticker": "FRTT",
+     "name": "Fort Technology Inc",
+     "type": "stock",
+     "result": "No finding (proposed)"
+    }
+   ],
+   "rejected": [],
+   "over_limit": []
   }
  ],
- "updated": "2026-10-19T01:55:54Z"
+ "updated": "2026-10-19T02:18:47Z"
 }

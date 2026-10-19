@@ -5,6 +5,7 @@
   "p-AMZN-nofinding-check": "2026-10-19T01:42:57+00:00",
   "p-AVGO-nofinding-check": "2026-10-13T22:49:11+00:00",
   "p-CAH-watch-cardinal-health-eeoc-2021": "2026-10-04T12:46:39+00:00",
+  "p-CHE-nofinding-check": "2026-10-19T01:54:40+00:00",
   "p-CMI-nofinding-check": "2026-10-07T01:16:12+00:00",
   "p-COST-nofinding-check": "2026-10-19T01:28:54+00:00",
   "p-CXW-black-cxw-ice-share-fy2025": "2026-10-04T12:46:39+00:00",
@@ -112,12 +113,13 @@
    "actions": {},
    "active_people": 1,
    "decisions": 0,
-   "new_proposals": 2,
+   "new_proposals": 3,
    "page_views": {
-    "approvals": 1
+    "approvals": 2,
+    "home": 2
    },
-   "runs": 2,
-   "visits": 0,
+   "runs": 3,
+   "visits": 1,
    "week": "2026-W43"
   }
  ]
