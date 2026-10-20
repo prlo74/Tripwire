@@ -4,1271 +4,2419 @@
   "collection": "runs",
   "doc_id": "latest",
   "file_path": "/home/user/Tripwire/out/db_writes/runs__latest.json",
-  "if_version": 41
+  "if_version": 43
  },
  {
   "op": "set",
   "collection": "runs",
-  "doc_id": "run-20261019T071915",
-  "file_path": "/home/user/Tripwire/out/db_writes/runs__run-20261019T071915.json"
+  "doc_id": "run-20261020T071235",
+  "file_path": "/home/user/Tripwire/out/db_writes/runs__run-20261020T071235.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-F-watch-ford-eeoc-conciliation-2026",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-F-watch-ford-eeoc-conciliation-2026.json",
-  "if_version": 28
+  "if_version": 29
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-ACN-watch-accenture-doj-fca-2026",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ACN-watch-accenture-doj-fca-2026.json",
-  "if_version": 27
+  "if_version": 28
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-CXW-black-cxw-ice-share-fy2025",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CXW-black-cxw-ice-share-fy2025.json",
-  "if_version": 14
+  "if_version": 15
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-GEO-black-geo-ice-share-fy2025",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-GEO-black-geo-ice-share-fy2025.json",
-  "if_version": 14
+  "if_version": 15
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-PYPL-watch-paypal-doj-fair-lending-2026",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PYPL-watch-paypal-doj-fair-lending-2026.json",
-  "if_version": 13
+  "if_version": 14
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-CAH-watch-cardinal-health-eeoc-2021",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CAH-watch-cardinal-health-eeoc-2021.json",
-  "if_version": 14
+  "if_version": 15
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-UAL-watch-united-airlines-eeoc-2025",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-UAL-watch-united-airlines-eeoc-2025.json",
-  "if_version": 14
+  "if_version": 15
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-DG-watch-dollar-general-eeoc-2019",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DG-watch-dollar-general-eeoc-2019.json",
-  "if_version": 14
+  "if_version": 15
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-FOXA-FOX-black-fox-dominion-falsity-2023",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FOXA-FOX-black-fox-dominion-falsity-2023.json",
-  "if_version": 10
+  "if_version": 11
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-NMAX-black-newsmax-dominion-falsity-2025",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NMAX-black-newsmax-dominion-falsity-2025.json",
-  "if_version": 10
+  "if_version": 11
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-TSLA-black-tesla-diaz-verdict-2021",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TSLA-black-tesla-diaz-verdict-2021.json",
-  "if_version": 28
+  "if_version": 29
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-TSLA-watch-tesla-crd-eeoc-open-2026",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TSLA-watch-tesla-crd-eeoc-open-2026.json",
-  "if_version": 28
+  "if_version": 29
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-META-watch-meta-doj-fha-settlement-2022",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-META-watch-meta-doj-fha-settlement-2022.json",
-  "if_version": 18
+  "if_version": 19
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-META-watch-meta-states-youth-case-2026",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-META-watch-meta-states-youth-case-2026.json",
-  "if_version": 28
+  "if_version": 29
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-ADBE-aligned-adbe-values",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ADBE-aligned-adbe-values.json",
-  "if_version": 28
+  "if_version": 29
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-GOOG-GOOGL-aligned-alphabet-values",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-GOOG-GOOGL-aligned-alphabet-values.json",
-  "if_version": 28
+  "if_version": 29
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-NYT-aligned-nyt-values",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NYT-aligned-nyt-values.json",
-  "if_version": 28
+  "if_version": 29
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-SHOP-aligned-shop-values",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SHOP-aligned-shop-values.json",
-  "if_version": 28
+  "if_version": 29
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-TRI-aligned-tri-values",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TRI-aligned-tri-values.json",
-  "if_version": 18
+  "if_version": 19
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-A-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-A-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-AAPL-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AAPL-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AAPL-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-ABNB-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ABNB-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-ABT-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ABT-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-ACGL-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ACGL-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-ADI-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ADI-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-ADP-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ADP-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-ADSK-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ADSK-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ADSK-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-AEE-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AEE-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AEE-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-AEP-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AEP-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-AES-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AES-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AES-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-AFL-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AFL-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AFL-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-AIG-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AIG-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AIG-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-AIZ-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AIZ-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-ALB-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ALB-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ALB-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-ALGN-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ALGN-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ALGN-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-ALL-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ALL-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-ALLE-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ALLE-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-AMCR-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AMCR-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AMCR-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-AMD-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AMD-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AMD-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-AMGN-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AMGN-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AMGN-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-AMP-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AMP-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AMP-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-AMZN-nofinding-check",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AMZN-nofinding-check.json",
-  "if_version": 3
+  "if_version": 4
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-ANET-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ANET-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-AOS-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AOS-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-APA-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-APA-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-APD-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-APD-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-APD-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-APO-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-APO-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-APP-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-APP-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-APP-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-ARE-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ARE-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ARE-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-ARES-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ARES-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ARES-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-AVGO-nofinding-check",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AVGO-nofinding-check.json",
-  "if_version": 7
+  "if_version": 8
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-AWK-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AWK-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AWK-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-AXON-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AXON-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-AXP-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AXP-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-AZO-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-AZO-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-BAC-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-BAC-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-BALL-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-BALL-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-BALL-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-BAX-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-BAX-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-BAX-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-BBY-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-BBY-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-BDX-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-BDX-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-BDX-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-BE-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-BE-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-BEN-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-BEN-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-BF-B-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-BF-B-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-BF-B-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-BKNG-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-BKNG-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-BKNG-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-BKR-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-BKR-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-BKR-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-BLK-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-BLK-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-BLK-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-BNY-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-BNY-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-BNY-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-BR-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-BR-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-BRO-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-BRO-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-BSX-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-BSX-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-BXP-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-BXP-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-C-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-C-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-CARR-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CARR-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CARR-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-CASY-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CASY-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CASY-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-CAT-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CAT-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-CBOE-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CBOE-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-CBRE-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CBRE-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CBRE-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-CCI-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CCI-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-CCL-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CCL-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CCL-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-CDNS-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CDNS-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-CDW-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CDW-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CDW-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-CEG-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CEG-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-CFG-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CFG-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CFG-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-CHD-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CHD-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-CHE-nofinding-check",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CHE-nofinding-check.json",
-  "if_version": 2
+  "if_version": 3
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-CHRW-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CHRW-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-CHTR-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CHTR-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CHTR-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-CI-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CI-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-CINF-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CINF-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-CL-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CL-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-CLX-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CLX-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-CMCSA-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CMCSA-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-CMG-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CMG-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CMG-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-CMI-nofinding-check",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CMI-nofinding-check.json",
-  "if_version": 8
+  "if_version": 9
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-CMS-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CMS-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-CNC-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CNC-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-CNP-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CNP-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-COHR-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-COHR-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-COHR-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-COO-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-COO-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-COST-nofinding-check",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-COST-nofinding-check.json",
-  "if_version": 4
+  "if_version": 5
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-CPAY-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CPAY-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-CRL-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CRL-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CRL-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-CRM-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CRM-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-CRWD-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CRWD-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CRWD-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-CSX-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CSX-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-CTAS-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CTAS-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CTAS-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-CTSH-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CTSH-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CTSH-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-CVNA-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CVNA-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CVNA-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-CVS-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CVS-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-CVX-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CVX-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-DAL-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DAL-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-DASH-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DASH-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DASH-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-DD-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DD-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DD-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-DE-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DE-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DE-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-DECK-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DECK-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-DELL-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DELL-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-DGX-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DGX-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-DIS-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DIS-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DIS-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-DLR-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DLR-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DLR-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-DLTR-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DLTR-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DLTR-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-DOC-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DOC-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-DRI-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DRI-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-DUK-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DUK-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-DVA-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DVA-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-DVN-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DVN-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-DXCM-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DXCM-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DXCM-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-EBAY-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-EBAY-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-ECL-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ECL-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ECL-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-EFX-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-EFX-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-EFX-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-EIX-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-EIX-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-EIX-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-ELV-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ELV-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-EME-nofinding-check",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-EME-nofinding-check.json",
-  "if_version": 8
+  "if_version": 9
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-EOG-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-EOG-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-EOG-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-EQIX-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-EQIX-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-ES-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ES-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-ESS-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ESS-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ESS-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-ETN-nofinding-check",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ETN-nofinding-check.json",
-  "if_version": 8
+  "if_version": 9
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-ETR-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ETR-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-EW-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-EW-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-EXPD-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-EXPD-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-EXPD-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-EXPE-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-EXPE-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-EXPE-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-EXR-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-EXR-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-FANG-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FANG-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FANG-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-FAST-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FAST-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-FCX-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FCX-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FCX-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-FDS-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FDS-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FDS-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-FDXF-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FDXF-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-FERG-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FERG-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FERG-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-FFIV-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FFIV-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-FIS-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FIS-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FIS-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-FITB-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FITB-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FITB-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-FIX-nofinding-check",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FIX-nofinding-check.json",
-  "if_version": 8
+  "if_version": 9
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-FLEX-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FLEX-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-FRT-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FRT-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-FRTT-nofinding-check",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FRTT-nofinding-check.json",
-  "if_version": 1
+  "if_version": 2
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-FSLR-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FSLR-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FSLR-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-FTNT-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FTNT-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-GD-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-GD-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-GD-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-GDDY-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-GDDY-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-GE-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-GE-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-GEN-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-GEN-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-GEN-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-GIS-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-GIS-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-GLW-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-GLW-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-GNRC-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-GNRC-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-GNRC-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-GPC-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-GPC-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-GPC-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-GRMN-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-GRMN-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-GRMN-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-GS-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-GS-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-GS-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-GWW-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-GWW-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-GWW-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-HAL-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HAL-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-HAS-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HAS-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-HBAN-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HBAN-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HBAN-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-HCA-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HCA-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HCA-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-HD-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HD-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-HII-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HII-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HII-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-HLT-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HLT-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HLT-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-HON-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HON-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-HONA-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HONA-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HONA-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-HOOD-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HOOD-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HOOD-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-HPE-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HPE-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HPE-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-HPQ-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HPQ-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-HRL-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HRL-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HRL-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-HSIC-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HSIC-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-HSY-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HSY-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HSY-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-HUBB-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HUBB-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-HWM-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-HWM-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-ICE-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ICE-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ICE-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-IEX-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-IEX-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-IEX-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-IFF-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-IFF-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-IFF-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-ILMN-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ILMN-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-INCY-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-INCY-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-INCY-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-INTU-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-INTU-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-INTU-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-IQV-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-IQV-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-IQV-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-IR-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-IR-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-IRM-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-IRM-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-IRM-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-ISRG-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ISRG-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ISRG-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-IT-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-IT-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-IT-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-ITW-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ITW-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-IVZ-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-IVZ-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-IVZ-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-J-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-J-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-JBHT-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-JBHT-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-JBHT-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-JCI-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-JCI-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-JCI-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-JKHY-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-JKHY-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-JNJ-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-JNJ-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-JNJ-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-KDP-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-KDP-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-KEY-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-KEY-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-KHC-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-KHC-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-KHC-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-KIM-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-KIM-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-KIM-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-KKR-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-KKR-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-KLAC-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-KLAC-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-KMB-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-KMB-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-KMB-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-KO-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-KO-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-KR-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-KR-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-KVUE-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-KVUE-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-KVUE-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-L-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-L-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-LEN-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-LEN-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-LEN-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-LH-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-LH-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-LHX-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-LHX-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-LII-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-LII-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-LII-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-LLY-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-LLY-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-LLY-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-LMT-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-LMT-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-LMT-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-LNT-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-LNT-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-LOW-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-LOW-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-LRCX-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-LRCX-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-LULU-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-LULU-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-LUV-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-LUV-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-LVS-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-LVS-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-LVS-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-LYB-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-LYB-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-MA-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MA-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-MAA-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MAA-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-MAS-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MAS-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MAS-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-MCD-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MCD-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MCD-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-MCHP-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MCHP-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MCHP-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-MCK-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MCK-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-MCO-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MCO-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-MDT-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MDT-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MDT-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-MGM-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MGM-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-MMM-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MMM-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MMM-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-MNST-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MNST-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-MO-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MO-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MO-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-MPC-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MPC-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MPC-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-MPWR-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MPWR-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-MRK-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MRK-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MRK-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-MRSH-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MRSH-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-MRVL-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MRVL-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MRVL-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-MSCI-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MSCI-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MSCI-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-MSFT-nofinding-check",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MSFT-nofinding-check.json",
-  "if_version": 7
+  "if_version": 8
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-MTD-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MTD-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MTD-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-MU-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-MU-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-NCLH-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NCLH-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NCLH-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-NDAQ-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NDAQ-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-NEE-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NEE-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NEE-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-NFLX-nofinding-check",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NFLX-nofinding-check.json",
-  "if_version": 5
+  "if_version": 6
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-NI-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NI-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-NKE-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NKE-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-NRG-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NRG-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NRG-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-NSC-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NSC-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NSC-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-NUE-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NUE-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NUE-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-NVDA-nofinding-check",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NVDA-nofinding-check.json",
-  "if_version": 8
+  "if_version": 9
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-NVR-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NVR-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NVR-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-NWS-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NWS-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-NXT-nofinding-check",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NXT-nofinding-check.json",
-  "if_version": 7
+  "if_version": 8
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-O-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-O-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-O-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-ODFL-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ODFL-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ODFL-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-OKE-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-OKE-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-OMC-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-OMC-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-ON-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ON-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-ORCL-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ORCL-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ORCL-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-ORLY-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ORLY-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-OTIS-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-OTIS-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-OXY-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-OXY-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-OXY-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-P-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-P-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-PAYX-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PAYX-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-PCAR-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PCAR-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PCAR-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-PCG-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PCG-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-PEG-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PEG-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PEG-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-PEP-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PEP-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-PFG-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PFG-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PFG-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-PGR-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PGR-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PGR-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-PH-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PH-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-PKG-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PKG-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PKG-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-PLD-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PLD-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PLD-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-PM-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PM-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PM-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-PPG-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PPG-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-PRU-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PRU-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PRU-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-PSA-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PSA-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-PSX-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PSX-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-PTC-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PTC-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PTC-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-PWR-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PWR-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-QCOM-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-QCOM-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-RDDT-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-RDDT-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-REGN-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-REGN-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-RF-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-RF-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-RF-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-RJF-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-RJF-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-RJF-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-RL-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-RL-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-RL-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-ROK-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ROK-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ROK-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-ROP-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ROP-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ROP-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-RSG-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-RSG-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-RSG-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-RTX-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-RTX-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-RTX-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-RVTY-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-RVTY-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-RVTY-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-SBAC-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SBAC-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-SBUX-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SBUX-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-SCHW-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SCHW-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-SHW-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SHW-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-SJM-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SJM-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-SLB-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SLB-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SLB-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-SNA-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SNA-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-SNDK-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SNDK-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SNDK-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-SO-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SO-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-SOLV-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SOLV-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SOLV-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-SPCX-nofinding-check",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SPCX-nofinding-check.json",
-  "if_version": 8
+  "if_version": 9
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-SPG-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SPG-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SPG-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-SPGI-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SPGI-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SPGI-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-SRE-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SRE-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SRE-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-STE-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-STE-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-STE-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-STX-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-STX-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-STX-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-STZ-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-STZ-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-SWK-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SWK-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-SWKS-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SWKS-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SWKS-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-SYF-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SYF-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SYF-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-SYY-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SYY-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SYY-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-TDG-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TDG-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-TDY-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TDY-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TDY-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-TECH-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TECH-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-TEL-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TEL-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TEL-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-TER-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TER-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TER-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-TJX-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TJX-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TJX-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-TMO-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TMO-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TMO-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-TPL-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TPL-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TPL-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-TROW-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TROW-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-TSN-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TSN-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-TT-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TT-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-TXN-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TXN-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TXN-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-TYL-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TYL-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-UBER-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-UBER-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-UNH-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-UNH-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-UNH-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-URI-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-URI-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-URI-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-V-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-V-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-V-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-VEEV-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-VEEV-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-VEEV-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-VICI-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-VICI-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-VLO-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-VLO-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-VLO-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-VMC-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-VMC-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-VMRK-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-VMRK-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-VMRK-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-VRSK-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-VRSK-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-VRT-nofinding-check",
   "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-VRT-nofinding-check.json",
-  "if_version": 8
+  "if_version": 9
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-VRTX-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-VRTX-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-VRTX-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-VST-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-VST-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-VST-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-VTR-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-VTR-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-VTRS-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-VTRS-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-VTRS-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-VYLR-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-VYLR-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-VYLR-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-WAT-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-WAT-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-WDAY-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-WDAY-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-WDC-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-WDC-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-WFC-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-WFC-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-WFC-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-WM-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-WM-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-WMB-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-WMB-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-WMB-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-WMT-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-WMT-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-WRB-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-WRB-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-WSM-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-WSM-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-WST-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-WST-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-WTW-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-WTW-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-WY-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-WY-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-WY-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-WYNN-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-WYNN-nofinding-check.json"
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-XEL-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-XEL-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-XOM-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-XOM-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-XOM-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-XYZ-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-XYZ-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-XYZ-nofinding-check.json",
+  "if_version": 1
+ },
+ {
+  "op": "set",
+  "collection": "proposals",
+  "doc_id": "p-YUM-nofinding-check",
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-YUM-nofinding-check.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-ZTS-nofinding-check",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ZTS-nofinding-check.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ZTS-nofinding-check.json",
+  "if_version": 1
  },
  {
   "op": "delete",
@@ -1279,1081 +2427,1021 @@
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "AAPL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AAPL.json"
+  "doc_id": "A",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__A.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ADSK",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ADSK.json"
+  "doc_id": "ABNB",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ABNB.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "AEE",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AEE.json"
+  "doc_id": "ABT",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ABT.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "AES",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AES.json"
+  "doc_id": "ACGL",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ACGL.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "AFL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AFL.json"
+  "doc_id": "ACN",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ACN.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "AIG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AIG.json"
+  "doc_id": "ADI",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ADI.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ALB",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ALB.json"
+  "doc_id": "ADP",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ADP.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ALGN",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ALGN.json"
+  "doc_id": "AEP",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AEP.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "AMCR",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AMCR.json"
+  "doc_id": "AIZ",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AIZ.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "AMD",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AMD.json"
+  "doc_id": "ALL",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ALL.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "AMGN",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AMGN.json"
+  "doc_id": "ALLE",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ALLE.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "AMP",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AMP.json"
+  "doc_id": "ANET",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ANET.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "APD",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__APD.json"
+  "doc_id": "AOS",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AOS.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "APP",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__APP.json"
+  "doc_id": "APA",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__APA.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ARE",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ARE.json"
+  "doc_id": "APO",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__APO.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ARES",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ARES.json"
+  "doc_id": "AVGO",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AVGO.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "AWK",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AWK.json"
+  "doc_id": "AXON",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AXON.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "BALL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BALL.json"
+  "doc_id": "AXP",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AXP.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "BAX",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BAX.json"
+  "doc_id": "AZO",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AZO.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "BDX",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BDX.json"
+  "doc_id": "BAC",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BAC.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "BF-B",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BF-B.json"
+  "doc_id": "BBY",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BBY.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "BKNG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BKNG.json"
+  "doc_id": "BE",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BE.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "BKR",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BKR.json"
+  "doc_id": "BEN",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BEN.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "BLK",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BLK.json"
+  "doc_id": "BR",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BR.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "BNY",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BNY.json"
+  "doc_id": "BRO",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BRO.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CARR",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CARR.json"
+  "doc_id": "BSX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BSX.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CASY",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CASY.json"
+  "doc_id": "BXP",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BXP.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CBRE",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CBRE.json"
+  "doc_id": "C",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__C.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CCL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CCL.json"
+  "doc_id": "CAT",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CAT.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CDW",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CDW.json"
+  "doc_id": "CBOE",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CBOE.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CFG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CFG.json"
+  "doc_id": "CCI",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CCI.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CHTR",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CHTR.json"
+  "doc_id": "CDNS",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CDNS.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CMG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CMG.json"
+  "doc_id": "CEG",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CEG.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CMI",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CMI.json"
+  "doc_id": "CHD",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CHD.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "COHR",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__COHR.json"
+  "doc_id": "CHRW",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CHRW.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "COST",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__COST.json"
+  "doc_id": "CI",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CI.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CRL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CRL.json"
+  "doc_id": "CINF",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CINF.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CRWD",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CRWD.json"
+  "doc_id": "CL",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CL.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CTAS",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CTAS.json"
+  "doc_id": "CLX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CLX.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CTSH",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CTSH.json"
+  "doc_id": "CMCSA",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CMCSA.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CVNA",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CVNA.json"
+  "doc_id": "CMS",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CMS.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "DASH",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DASH.json"
+  "doc_id": "CNC",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CNC.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "DD",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DD.json"
+  "doc_id": "CNP",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CNP.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "DE",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DE.json"
+  "doc_id": "COO",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__COO.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "DIS",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DIS.json"
+  "doc_id": "CPAY",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CPAY.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "DLR",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DLR.json"
+  "doc_id": "CRM",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CRM.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "DLTR",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DLTR.json"
+  "doc_id": "CSX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CSX.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "DXCM",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DXCM.json"
+  "doc_id": "CVS",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CVS.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ECL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ECL.json"
+  "doc_id": "CVX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CVX.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "EFX",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__EFX.json"
+  "doc_id": "DAL",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DAL.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "EIX",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__EIX.json"
+  "doc_id": "DECK",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DECK.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "EOG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__EOG.json"
+  "doc_id": "DELL",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DELL.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ESS",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ESS.json"
+  "doc_id": "DG",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DG.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "EXPD",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__EXPD.json"
+  "doc_id": "DGX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DGX.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "EXPE",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__EXPE.json"
+  "doc_id": "DOC",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DOC.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "F",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__F.json"
+  "doc_id": "DRI",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DRI.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "FANG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FANG.json"
+  "doc_id": "DUK",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DUK.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "FCX",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FCX.json"
+  "doc_id": "DVA",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DVA.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "FDS",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FDS.json"
+  "doc_id": "DVN",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DVN.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "FERG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FERG.json"
+  "doc_id": "EBAY",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__EBAY.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "FIS",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FIS.json"
+  "doc_id": "ELV",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ELV.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "FITB",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FITB.json"
+  "doc_id": "EQIX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__EQIX.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "FIX",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FIX.json"
+  "doc_id": "ES",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ES.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "FOX",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FOX.json"
+  "doc_id": "ETR",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ETR.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "FSLR",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FSLR.json"
+  "doc_id": "EW",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__EW.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "GD",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__GD.json"
+  "doc_id": "EXR",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__EXR.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "GEN",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__GEN.json"
+  "doc_id": "FAST",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FAST.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "GNRC",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__GNRC.json"
+  "doc_id": "FDXF",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FDXF.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "GOOG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__GOOG.json"
+  "doc_id": "FFIV",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FFIV.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "GPC",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__GPC.json"
+  "doc_id": "FLEX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FLEX.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "GRMN",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__GRMN.json"
+  "doc_id": "FOXA",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FOXA.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "GS",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__GS.json"
+  "doc_id": "FRT",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FRT.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "GWW",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__GWW.json"
+  "doc_id": "FTNT",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FTNT.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "HBAN",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HBAN.json"
+  "doc_id": "GDDY",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__GDDY.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "HCA",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HCA.json"
+  "doc_id": "GE",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__GE.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "HII",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HII.json"
+  "doc_id": "GIS",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__GIS.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "HLT",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HLT.json"
+  "doc_id": "GLW",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__GLW.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "HONA",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HONA.json"
+  "doc_id": "HAL",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HAL.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "HOOD",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HOOD.json"
+  "doc_id": "HAS",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HAS.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "HPE",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HPE.json"
+  "doc_id": "HD",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HD.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "HRL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HRL.json"
+  "doc_id": "HON",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HON.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "HSY",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HSY.json"
+  "doc_id": "HPQ",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HPQ.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ICE",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ICE.json"
+  "doc_id": "HSIC",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HSIC.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "IEX",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__IEX.json"
+  "doc_id": "HUBB",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HUBB.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "IFF",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__IFF.json"
+  "doc_id": "HWM",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HWM.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "INCY",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__INCY.json"
+  "doc_id": "ILMN",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ILMN.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "INTU",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__INTU.json"
+  "doc_id": "IR",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__IR.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "IQV",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__IQV.json"
+  "doc_id": "ITW",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ITW.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "IRM",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__IRM.json"
+  "doc_id": "J",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__J.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ISRG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ISRG.json"
+  "doc_id": "JKHY",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__JKHY.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "IT",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__IT.json"
+  "doc_id": "KDP",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__KDP.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "IVZ",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__IVZ.json"
+  "doc_id": "KEY",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__KEY.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "JBHT",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__JBHT.json"
+  "doc_id": "KKR",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__KKR.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "JCI",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__JCI.json"
+  "doc_id": "KLAC",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__KLAC.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "JNJ",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__JNJ.json"
+  "doc_id": "KO",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__KO.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "KHC",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__KHC.json"
+  "doc_id": "KR",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__KR.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "KIM",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__KIM.json"
+  "doc_id": "L",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__L.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "KMB",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__KMB.json"
+  "doc_id": "LH",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LH.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "KVUE",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__KVUE.json"
+  "doc_id": "LHX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LHX.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "LEN",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LEN.json"
+  "doc_id": "LNT",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LNT.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "LII",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LII.json"
+  "doc_id": "LOW",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LOW.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "LLY",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LLY.json"
+  "doc_id": "LRCX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LRCX.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "LMT",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LMT.json"
+  "doc_id": "LULU",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LULU.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "LVS",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LVS.json"
+  "doc_id": "LUV",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LUV.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "MAS",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MAS.json"
+  "doc_id": "LYB",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LYB.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "MCD",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MCD.json"
+  "doc_id": "MA",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MA.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "MCHP",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MCHP.json"
+  "doc_id": "MAA",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MAA.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "MDT",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MDT.json"
+  "doc_id": "MCK",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MCK.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "META",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__META.json"
+  "doc_id": "MCO",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MCO.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "MMM",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MMM.json"
+  "doc_id": "MGM",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MGM.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "MO",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MO.json"
+  "doc_id": "MNST",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MNST.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "MPC",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MPC.json"
+  "doc_id": "MPWR",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MPWR.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "MRK",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MRK.json"
+  "doc_id": "MRSH",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MRSH.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "MRVL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MRVL.json"
+  "doc_id": "MU",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MU.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "MSCI",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MSCI.json"
+  "doc_id": "NDAQ",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__NDAQ.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "MSFT",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MSFT.json"
+  "doc_id": "NFLX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__NFLX.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "MTD",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MTD.json"
+  "doc_id": "NI",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__NI.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "NCLH",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__NCLH.json"
+  "doc_id": "NKE",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__NKE.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "NEE",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__NEE.json"
+  "doc_id": "NVDA",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__NVDA.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "NRG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__NRG.json"
+  "doc_id": "NWS",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__NWS.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "NSC",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__NSC.json"
+  "doc_id": "OKE",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__OKE.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "NUE",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__NUE.json"
+  "doc_id": "OMC",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__OMC.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "NVR",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__NVR.json"
+  "doc_id": "ON",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ON.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "O",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__O.json"
+  "doc_id": "ORLY",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ORLY.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ODFL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ODFL.json"
+  "doc_id": "OTIS",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__OTIS.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ORCL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ORCL.json"
+  "doc_id": "P",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__P.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "OXY",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__OXY.json"
+  "doc_id": "PAYX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PAYX.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "PCAR",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PCAR.json"
+  "doc_id": "PCG",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PCG.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "PEG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PEG.json"
+  "doc_id": "PEP",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PEP.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "PFG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PFG.json"
+  "doc_id": "PH",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PH.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "PGR",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PGR.json"
+  "doc_id": "PPG",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PPG.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "PKG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PKG.json"
+  "doc_id": "PSA",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PSA.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "PLD",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PLD.json"
+  "doc_id": "PSX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PSX.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "PM",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PM.json"
+  "doc_id": "PWR",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PWR.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "PRU",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PRU.json"
+  "doc_id": "QCOM",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__QCOM.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "PTC",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PTC.json"
+  "doc_id": "RDDT",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__RDDT.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "RF",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__RF.json"
+  "doc_id": "REGN",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__REGN.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "RJF",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__RJF.json"
+  "doc_id": "SBAC",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SBAC.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "RL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__RL.json"
+  "doc_id": "SBUX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SBUX.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ROK",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ROK.json"
+  "doc_id": "SCHW",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SCHW.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ROP",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ROP.json"
+  "doc_id": "SHW",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SHW.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "RSG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__RSG.json"
+  "doc_id": "SJM",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SJM.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "RTX",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__RTX.json"
+  "doc_id": "SNA",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SNA.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "RVTY",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__RVTY.json"
+  "doc_id": "SO",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SO.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "SLB",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SLB.json"
+  "doc_id": "STZ",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__STZ.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "SNDK",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SNDK.json"
+  "doc_id": "SWK",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SWK.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "SOLV",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SOLV.json"
+  "doc_id": "TDG",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TDG.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "SPG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SPG.json"
+  "doc_id": "TECH",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TECH.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "SPGI",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SPGI.json"
+  "doc_id": "TROW",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TROW.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "SRE",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SRE.json"
+  "doc_id": "TSLA",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TSLA.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "STE",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__STE.json"
+  "doc_id": "TSN",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TSN.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "STX",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__STX.json"
+  "doc_id": "TT",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TT.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "SWKS",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SWKS.json"
+  "doc_id": "TYL",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TYL.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "SYF",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SYF.json"
+  "doc_id": "UBER",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__UBER.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "SYY",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SYY.json"
+  "doc_id": "VICI",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__VICI.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "TDY",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TDY.json"
+  "doc_id": "VMC",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__VMC.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "TEL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TEL.json"
+  "doc_id": "VRSK",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__VRSK.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "TER",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TER.json"
+  "doc_id": "VTR",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__VTR.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "TJX",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TJX.json"
+  "doc_id": "WAT",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WAT.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "TMO",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TMO.json"
+  "doc_id": "WDAY",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WDAY.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "TPL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TPL.json"
+  "doc_id": "WDC",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WDC.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "TXN",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TXN.json"
+  "doc_id": "WM",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WM.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "UAL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__UAL.json"
+  "doc_id": "WMT",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WMT.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "UNH",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__UNH.json"
+  "doc_id": "WRB",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WRB.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "URI",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__URI.json"
+  "doc_id": "WSM",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WSM.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "V",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__V.json"
+  "doc_id": "WST",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WST.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "VEEV",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__VEEV.json"
+  "doc_id": "WTW",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WTW.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "VLO",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__VLO.json"
+  "doc_id": "WYNN",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WYNN.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "VMRK",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__VMRK.json"
+  "doc_id": "XEL",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__XEL.json"
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "VRT",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__VRT.json"
- },
- {
-  "op": "set",
-  "collection": "sp500_checks",
-  "doc_id": "VRTX",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__VRTX.json"
- },
- {
-  "op": "set",
-  "collection": "sp500_checks",
-  "doc_id": "VST",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__VST.json"
- },
- {
-  "op": "set",
-  "collection": "sp500_checks",
-  "doc_id": "VTRS",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__VTRS.json"
- },
- {
-  "op": "set",
-  "collection": "sp500_checks",
-  "doc_id": "VYLR",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__VYLR.json"
- },
- {
-  "op": "set",
-  "collection": "sp500_checks",
-  "doc_id": "WFC",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WFC.json"
- },
- {
-  "op": "set",
-  "collection": "sp500_checks",
-  "doc_id": "WMB",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WMB.json"
- },
- {
-  "op": "set",
-  "collection": "sp500_checks",
-  "doc_id": "WY",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WY.json"
- },
- {
-  "op": "set",
-  "collection": "sp500_checks",
-  "doc_id": "XOM",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__XOM.json"
- },
- {
-  "op": "set",
-  "collection": "sp500_checks",
-  "doc_id": "XYZ",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__XYZ.json"
- },
- {
-  "op": "set",
-  "collection": "sp500_checks",
-  "doc_id": "ZTS",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ZTS.json"
+  "doc_id": "YUM",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__YUM.json"
  }
 ]
