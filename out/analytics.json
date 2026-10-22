@@ -1,36 +1,36 @@
 {
- "generated_at": "2026-10-21T10:49:58Z",
- "as_of_run": "run-20261021T071927",
+ "generated_at": "2026-10-22T07:46:07Z",
+ "as_of_run": "run-20261021T101316",
  "headline": {
   "companies_screened": 509,
   "sp500_companies": 503,
   "team_tickers": 35,
-  "runs_total": 31,
-  "runs_last_30_days": 31,
+  "runs_total": 32,
+  "runs_last_30_days": 32,
   "runs_all_sources_up": 10,
-  "source_checks": 766,
-  "source_checks_ok": 734,
+  "source_checks": 800,
+  "source_checks_ok": 766,
   "source_uptime_pct": 95.8,
   "evidence_records": 27,
   "evidence_sources_opened_per_run": 37,
-  "proposals_open": 389,
-  "decisions_total": 30,
-  "approved": 30,
+  "proposals_open": 209,
+  "decisions_total": 305,
+  "approved": 305,
   "rejected": 0,
   "approved_by_list": {
+   "nofinding": 285,
    "watch": 9,
    "aligned": 6,
-   "nofinding": 10,
    "black": 5
   },
-  "median_hours_to_decision": 0.9,
-  "decisions_timed": 30,
+  "median_hours_to_decision": 15.3,
+  "decisions_timed": 305,
   "approvals_invalidated_by_new_evidence": 0,
   "check_now_requests": 14,
   "median_minutes_check_now_to_result": 3.5,
   "check_now_timed": 13,
   "people_active_ever": 1,
-  "visits_total": 47,
+  "visits_total": 49,
   "first_activity": "2026-09-26T13:30:13.670Z"
  },
  "weekly": [
@@ -109,16 +109,16 @@
   },
   {
    "week": "2026-W43",
-   "visits": 2,
+   "visits": 4,
    "active_people": 1,
    "page_views": {
-    "approvals": 3,
-    "home": 3
+    "approvals": 4,
+    "home": 5
    },
    "actions": {},
-   "runs": 7,
-   "decisions": 0,
-   "new_proposals": 388
+   "runs": 8,
+   "decisions": 275,
+   "new_proposals": 483
   }
  ],
  "pages": [

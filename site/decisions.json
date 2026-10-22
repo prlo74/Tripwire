@@ -1,6 +1,102 @@
 {
- "updated": "2026-10-21T10:49:59Z",
+ "updated": "2026-10-22T07:46:15Z",
  "approvals": {
+  "p-A-nofinding-check": {
+   "proposal_id": "p-A-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "A"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "AGILENT TECHNOLOGIES, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-AAPL-nofinding-check": {
+   "proposal_id": "p-AAPL-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "AAPL"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Apple Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ABBV-nofinding-check": {
+   "proposal_id": "p-ABBV-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ABBV"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "AbbVie Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ABNB-nofinding-check": {
+   "proposal_id": "p-ABNB-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ABNB"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Airbnb, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ABT-nofinding-check": {
+   "proposal_id": "p-ABT-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ABT"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "ABBOTT LABORATORIES",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ACGL-nofinding-check": {
+   "proposal_id": "p-ACGL-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ACGL"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "ARCH CAPITAL GROUP LTD.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
   "p-ACN-watch-accenture-doj-fca-2026": {
    "proposal_id": "p-ACN-watch-accenture-doj-fca-2026",
    "decision": "approve",
@@ -59,6 +155,582 @@
    ],
    "evidence_hash": "56aa98c1829d12dd"
   },
+  "p-ADI-nofinding-check": {
+   "proposal_id": "p-ADI-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ADI"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "ANALOG DEVICES INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ADM-nofinding-check": {
+   "proposal_id": "p-ADM-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ADM"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Archer-Daniels-Midland Co",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ADP-nofinding-check": {
+   "proposal_id": "p-ADP-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ADP"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "AUTOMATIC DATA PROCESSING INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ADSK-nofinding-check": {
+   "proposal_id": "p-ADSK-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ADSK"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Autodesk, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-AEE-nofinding-check": {
+   "proposal_id": "p-AEE-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "AEE"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "AMEREN CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-AEP-nofinding-check": {
+   "proposal_id": "p-AEP-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "AEP"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "AMERICAN ELECTRIC POWER CO INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-AES-nofinding-check": {
+   "proposal_id": "p-AES-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "AES"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "AES CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-AFL-nofinding-check": {
+   "proposal_id": "p-AFL-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "AFL"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "AFLAC INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-AIG-nofinding-check": {
+   "proposal_id": "p-AIG-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "AIG"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "AMERICAN INTERNATIONAL GROUP, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-AIZ-nofinding-check": {
+   "proposal_id": "p-AIZ-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "AIZ"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "ASSURANT, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-AJG-nofinding-check": {
+   "proposal_id": "p-AJG-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "AJG"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Arthur J. Gallagher & Co.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-AKAM-nofinding-check": {
+   "proposal_id": "p-AKAM-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "AKAM"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "AKAMAI TECHNOLOGIES INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ALB-nofinding-check": {
+   "proposal_id": "p-ALB-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ALB"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "ALBEMARLE CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ALGN-nofinding-check": {
+   "proposal_id": "p-ALGN-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ALGN"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "ALIGN TECHNOLOGY INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ALL-nofinding-check": {
+   "proposal_id": "p-ALL-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ALL"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "ALLSTATE CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ALLE-nofinding-check": {
+   "proposal_id": "p-ALLE-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ALLE"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Allegion plc",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-AMAT-nofinding-check": {
+   "proposal_id": "p-AMAT-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "AMAT"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "APPLIED MATERIALS INC /DE",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-AMCR-nofinding-check": {
+   "proposal_id": "p-AMCR-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "AMCR"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Amcor plc",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-AMD-nofinding-check": {
+   "proposal_id": "p-AMD-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "AMD"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "ADVANCED MICRO DEVICES INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-AME-nofinding-check": {
+   "proposal_id": "p-AME-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "AME"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "AMETEK INC/",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-AMGN-nofinding-check": {
+   "proposal_id": "p-AMGN-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "AMGN"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "AMGEN INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-AMP-nofinding-check": {
+   "proposal_id": "p-AMP-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "AMP"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "AMERIPRISE FINANCIAL INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-AMT-nofinding-check": {
+   "proposal_id": "p-AMT-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "AMT"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "AMERICAN TOWER CORP /MA/",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-AMZN-nofinding-check": {
+   "proposal_id": "p-AMZN-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "AMZN"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "AMAZON COM INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ANET-nofinding-check": {
+   "proposal_id": "p-ANET-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ANET"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Arista Networks, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-AON-nofinding-check": {
+   "proposal_id": "p-AON-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "AON"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Aon plc",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-AOS-nofinding-check": {
+   "proposal_id": "p-AOS-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "AOS"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "SMITH A O CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-APA-nofinding-check": {
+   "proposal_id": "p-APA-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "APA"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "APA Corp",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-APD-nofinding-check": {
+   "proposal_id": "p-APD-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "APD"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Air Products & Chemicals, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-APH-nofinding-check": {
+   "proposal_id": "p-APH-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "APH"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "AMPHENOL CORP /DE/",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-APO-nofinding-check": {
+   "proposal_id": "p-APO-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "APO"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Apollo Global Management, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-APP-nofinding-check": {
+   "proposal_id": "p-APP-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "APP"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "AppLovin Corp",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-APTV-nofinding-check": {
+   "proposal_id": "p-APTV-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "APTV"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Aptiv PLC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ARE-nofinding-check": {
+   "proposal_id": "p-ARE-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ARE"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "ALEXANDRIA REAL ESTATE EQUITIES, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ARES-nofinding-check": {
+   "proposal_id": "p-ARES-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ARES"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Ares Management Corp",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ATO-nofinding-check": {
+   "proposal_id": "p-ATO-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ATO"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "ATMOS ENERGY CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
   "p-AVGO-nofinding-check": {
    "proposal_id": "p-AVGO-nofinding-check",
    "decision": "approve",
@@ -74,6 +746,454 @@
    "event_date": null,
    "evidence": [],
    "evidence_hash": "6b7facf8c1917402"
+  },
+  "p-AVY-nofinding-check": {
+   "proposal_id": "p-AVY-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "AVY"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Avery Dennison Corp",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-AWK-nofinding-check": {
+   "proposal_id": "p-AWK-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "AWK"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "American Water Works Company, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-AXON-nofinding-check": {
+   "proposal_id": "p-AXON-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "AXON"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "AXON ENTERPRISE, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-AXP-nofinding-check": {
+   "proposal_id": "p-AXP-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "AXP"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "AMERICAN EXPRESS CO",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-AZO-nofinding-check": {
+   "proposal_id": "p-AZO-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "AZO"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "AUTOZONE INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-BA-nofinding-check": {
+   "proposal_id": "p-BA-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "BA"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "BOEING CO",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-BAC-nofinding-check": {
+   "proposal_id": "p-BAC-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "BAC"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "BANK OF AMERICA CORP /DE/",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-BALL-nofinding-check": {
+   "proposal_id": "p-BALL-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "BALL"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "BALL Corp",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-BAX-nofinding-check": {
+   "proposal_id": "p-BAX-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "BAX"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "BAXTER INTERNATIONAL INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-BBY-nofinding-check": {
+   "proposal_id": "p-BBY-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "BBY"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "BEST BUY CO INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-BDX-nofinding-check": {
+   "proposal_id": "p-BDX-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "BDX"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "BECTON DICKINSON & CO",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-BE-nofinding-check": {
+   "proposal_id": "p-BE-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "BE"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Bloom Energy Corp",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-BEN-nofinding-check": {
+   "proposal_id": "p-BEN-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "BEN"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "FRANKLIN TEMPLETON INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-BF-B-nofinding-check": {
+   "proposal_id": "p-BF-B-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "BF-B"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "BROWN FORMAN CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-BG-nofinding-check": {
+   "proposal_id": "p-BG-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "BG"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Bunge Global SA",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-BIIB-nofinding-check": {
+   "proposal_id": "p-BIIB-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "BIIB"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "BIOGEN INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-BKNG-nofinding-check": {
+   "proposal_id": "p-BKNG-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "BKNG"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Booking Holdings Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-BKR-nofinding-check": {
+   "proposal_id": "p-BKR-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "BKR"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Baker Hughes Co",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-BLK-nofinding-check": {
+   "proposal_id": "p-BLK-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "BLK"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "BlackRock, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-BMY-nofinding-check": {
+   "proposal_id": "p-BMY-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "BMY"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "BRISTOL MYERS SQUIBB CO",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-BNY-nofinding-check": {
+   "proposal_id": "p-BNY-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "BNY"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Bank of New York Mellon Corp",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-BR-nofinding-check": {
+   "proposal_id": "p-BR-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "BR"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "BROADRIDGE FINANCIAL SOLUTIONS, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-BRK-B-nofinding-check": {
+   "proposal_id": "p-BRK-B-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "BRK-B"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "BERKSHIRE HATHAWAY INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-BRO-nofinding-check": {
+   "proposal_id": "p-BRO-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "BRO"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "BROWN & BROWN, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-BSX-nofinding-check": {
+   "proposal_id": "p-BSX-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "BSX"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "BOSTON SCIENTIFIC CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-BX-nofinding-check": {
+   "proposal_id": "p-BX-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "BX"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Blackstone Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-BXP-nofinding-check": {
+   "proposal_id": "p-BXP-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "BXP"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "BXP, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-C-nofinding-check": {
+   "proposal_id": "p-C-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "C"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CITIGROUP INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
   },
   "p-CAH-watch-cardinal-health-eeoc-2021": {
    "proposal_id": "p-CAH-watch-cardinal-health-eeoc-2021",
@@ -98,6 +1218,406 @@
    ],
    "evidence_hash": "b7b26a09b64deba8"
   },
+  "p-CARR-nofinding-check": {
+   "proposal_id": "p-CARR-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CARR"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CARRIER GLOBAL Corp",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CASY-nofinding-check": {
+   "proposal_id": "p-CASY-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CASY"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CASEYS GENERAL STORES INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CAT-nofinding-check": {
+   "proposal_id": "p-CAT-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CAT"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CATERPILLAR INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CB-nofinding-check": {
+   "proposal_id": "p-CB-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CB"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Chubb Ltd",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CBOE-nofinding-check": {
+   "proposal_id": "p-CBOE-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CBOE"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Cboe Global Markets, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CBRE-nofinding-check": {
+   "proposal_id": "p-CBRE-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CBRE"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CBRE GROUP, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CCI-nofinding-check": {
+   "proposal_id": "p-CCI-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CCI"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CROWN CASTLE INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CCL-nofinding-check": {
+   "proposal_id": "p-CCL-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CCL"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Carnival Corp Ltd.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CDNS-nofinding-check": {
+   "proposal_id": "p-CDNS-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CDNS"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CADENCE DESIGN SYSTEMS INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CDW-nofinding-check": {
+   "proposal_id": "p-CDW-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CDW"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CDW Corp",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CEG-nofinding-check": {
+   "proposal_id": "p-CEG-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CEG"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Constellation Energy Corp",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CF-nofinding-check": {
+   "proposal_id": "p-CF-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CF"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CF Industries Holdings, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CFG-nofinding-check": {
+   "proposal_id": "p-CFG-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CFG"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CITIZENS FINANCIAL GROUP INC/RI",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CHD-nofinding-check": {
+   "proposal_id": "p-CHD-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CHD"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CHURCH & DWIGHT CO INC /DE/",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CHE-nofinding-check": {
+   "proposal_id": "p-CHE-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CHE"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CHEMED CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CHRW-nofinding-check": {
+   "proposal_id": "p-CHRW-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CHRW"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "C. H. ROBINSON WORLDWIDE, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CHTR-nofinding-check": {
+   "proposal_id": "p-CHTR-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CHTR"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CHARTER COMMUNICATIONS, INC. /MO/",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CI-nofinding-check": {
+   "proposal_id": "p-CI-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CI"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Cigna Group",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CIEN-nofinding-check": {
+   "proposal_id": "p-CIEN-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CIEN"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CIENA CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CINF-nofinding-check": {
+   "proposal_id": "p-CINF-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CINF"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CINCINNATI FINANCIAL CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CL-nofinding-check": {
+   "proposal_id": "p-CL-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CL"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "COLGATE PALMOLIVE CO",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CLX-nofinding-check": {
+   "proposal_id": "p-CLX-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CLX"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CLOROX CO /DE/",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CMCSA-nofinding-check": {
+   "proposal_id": "p-CMCSA-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CMCSA"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "COMCAST CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CME-nofinding-check": {
+   "proposal_id": "p-CME-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CME"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CME GROUP INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CMG-nofinding-check": {
+   "proposal_id": "p-CMG-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CMG"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CHIPOTLE MEXICAN GRILL INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
   "p-CMI-nofinding-check": {
    "proposal_id": "p-CMI-nofinding-check",
    "decision": "approve",
@@ -108,6 +1628,406 @@
    "from": "none",
    "to": "nofinding",
    "company": "CUMMINS INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CMS-nofinding-check": {
+   "proposal_id": "p-CMS-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CMS"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CMS ENERGY CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CNC-nofinding-check": {
+   "proposal_id": "p-CNC-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CNC"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CENTENE CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CNP-nofinding-check": {
+   "proposal_id": "p-CNP-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CNP"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CENTERPOINT ENERGY INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-COF-nofinding-check": {
+   "proposal_id": "p-COF-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "COF"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CAPITAL ONE FINANCIAL CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-COHR-nofinding-check": {
+   "proposal_id": "p-COHR-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "COHR"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "COHERENT CORP.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-COIN-nofinding-check": {
+   "proposal_id": "p-COIN-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "COIN"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Coinbase Global, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-COO-nofinding-check": {
+   "proposal_id": "p-COO-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "COO"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "COOPER COMPANIES, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-COP-nofinding-check": {
+   "proposal_id": "p-COP-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "COP"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CONOCOPHILLIPS",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-COR-nofinding-check": {
+   "proposal_id": "p-COR-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "COR"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Cencora, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-COST-nofinding-check": {
+   "proposal_id": "p-COST-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "COST"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "COSTCO WHOLESALE CORP /NEW",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CPAY-nofinding-check": {
+   "proposal_id": "p-CPAY-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CPAY"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CORPAY, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CPRT-nofinding-check": {
+   "proposal_id": "p-CPRT-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CPRT"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "COPART INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CPT-nofinding-check": {
+   "proposal_id": "p-CPT-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CPT"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CAMDEN PROPERTY TRUST",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CRH-nofinding-check": {
+   "proposal_id": "p-CRH-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CRH"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CRH PUBLIC LTD CO",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CRL-nofinding-check": {
+   "proposal_id": "p-CRL-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CRL"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CHARLES RIVER LABORATORIES INTERNATIONAL, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CRM-nofinding-check": {
+   "proposal_id": "p-CRM-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CRM"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Salesforce, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CRWD-nofinding-check": {
+   "proposal_id": "p-CRWD-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CRWD"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CrowdStrike Holdings, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CSCO-nofinding-check": {
+   "proposal_id": "p-CSCO-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CSCO"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CISCO SYSTEMS, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CSGP-nofinding-check": {
+   "proposal_id": "p-CSGP-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CSGP"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "COSTAR GROUP, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CSX-nofinding-check": {
+   "proposal_id": "p-CSX-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CSX"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CSX CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CTAS-nofinding-check": {
+   "proposal_id": "p-CTAS-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CTAS"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CINTAS CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CTSH-nofinding-check": {
+   "proposal_id": "p-CTSH-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CTSH"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "COGNIZANT TECHNOLOGY SOLUTIONS CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CVNA-nofinding-check": {
+   "proposal_id": "p-CVNA-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CVNA"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CARVANA CO.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CVS-nofinding-check": {
+   "proposal_id": "p-CVS-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CVS"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CVS HEALTH Corp",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-CVX-nofinding-check": {
+   "proposal_id": "p-CVX-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "CVX"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CHEVRON CORP",
    "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
    "tripwire": "",
    "event_date": null,
@@ -137,6 +2057,134 @@
    ],
    "evidence_hash": "82e3897eba733b26"
   },
+  "p-D-nofinding-check": {
+   "proposal_id": "p-D-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "D"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "DOMINION ENERGY, INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-DAL-nofinding-check": {
+   "proposal_id": "p-DAL-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "DAL"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "DELTA AIR LINES, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-DASH-nofinding-check": {
+   "proposal_id": "p-DASH-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "DASH"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "DoorDash, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-DD-nofinding-check": {
+   "proposal_id": "p-DD-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "DD"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "DuPont de Nemours, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-DDOG-nofinding-check": {
+   "proposal_id": "p-DDOG-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "DDOG"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Datadog, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-DE-nofinding-check": {
+   "proposal_id": "p-DE-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "DE"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "DEERE & CO",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-DECK-nofinding-check": {
+   "proposal_id": "p-DECK-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "DECK"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "DECKERS OUTDOOR CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-DELL-nofinding-check": {
+   "proposal_id": "p-DELL-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "DELL"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Dell Technologies Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
   "p-DG-watch-dollar-general-eeoc-2019": {
    "proposal_id": "p-DG-watch-dollar-general-eeoc-2019",
    "decision": "approve",
@@ -160,6 +2208,406 @@
    ],
    "evidence_hash": "cddf1f7cac88a230"
   },
+  "p-DGX-nofinding-check": {
+   "proposal_id": "p-DGX-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "DGX"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "QUEST DIAGNOSTICS INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-DHI-nofinding-check": {
+   "proposal_id": "p-DHI-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "DHI"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "HORTON D R INC /DE/",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-DHR-nofinding-check": {
+   "proposal_id": "p-DHR-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "DHR"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "DANAHER CORP /DE/",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-DIS-nofinding-check": {
+   "proposal_id": "p-DIS-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "DIS"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Walt Disney Co",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-DLR-nofinding-check": {
+   "proposal_id": "p-DLR-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "DLR"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "DIGITAL REALTY TRUST, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-DLTR-nofinding-check": {
+   "proposal_id": "p-DLTR-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "DLTR"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "DOLLAR TREE, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-DOC-nofinding-check": {
+   "proposal_id": "p-DOC-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "DOC"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "HEALTHPEAK PROPERTIES, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-DOV-nofinding-check": {
+   "proposal_id": "p-DOV-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "DOV"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "DOVER Corp",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-DOW-nofinding-check": {
+   "proposal_id": "p-DOW-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "DOW"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "DOW INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-DPZ-nofinding-check": {
+   "proposal_id": "p-DPZ-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "DPZ"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "DOMINOS PIZZA INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-DRI-nofinding-check": {
+   "proposal_id": "p-DRI-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "DRI"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "DARDEN RESTAURANTS INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-DTE-nofinding-check": {
+   "proposal_id": "p-DTE-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "DTE"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "DTE ENERGY CO",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-DUK-nofinding-check": {
+   "proposal_id": "p-DUK-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "DUK"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Duke Energy CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-DVA-nofinding-check": {
+   "proposal_id": "p-DVA-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "DVA"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "DAVITA INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-DVN-nofinding-check": {
+   "proposal_id": "p-DVN-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "DVN"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "DEVON ENERGY CORP/DE",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-DXCM-nofinding-check": {
+   "proposal_id": "p-DXCM-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "DXCM"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "DEXCOM INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-EBAY-nofinding-check": {
+   "proposal_id": "p-EBAY-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "EBAY"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "EBAY INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ECHO-nofinding-check": {
+   "proposal_id": "p-ECHO-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ECHO"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "EchoStar CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ECL-nofinding-check": {
+   "proposal_id": "p-ECL-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ECL"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "ECOLAB INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ED-nofinding-check": {
+   "proposal_id": "p-ED-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ED"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CONSOLIDATED EDISON INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-EFX-nofinding-check": {
+   "proposal_id": "p-EFX-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "EFX"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "EQUIFAX INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-EG-nofinding-check": {
+   "proposal_id": "p-EG-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "EG"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "EVEREST GROUP, LTD.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-EIX-nofinding-check": {
+   "proposal_id": "p-EIX-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "EIX"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "EDISON INTERNATIONAL",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-EL-nofinding-check": {
+   "proposal_id": "p-EL-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "EL"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "ESTEE LAUDER COMPANIES INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ELV-nofinding-check": {
+   "proposal_id": "p-ELV-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ELV"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Elevance Health, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
   "p-EME-nofinding-check": {
    "proposal_id": "p-EME-nofinding-check",
    "decision": "approve",
@@ -176,6 +2624,118 @@
    "evidence": [],
    "evidence_hash": "be918adf6bad9792"
   },
+  "p-EMR-nofinding-check": {
+   "proposal_id": "p-EMR-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "EMR"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "EMERSON ELECTRIC CO",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-EOG-nofinding-check": {
+   "proposal_id": "p-EOG-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "EOG"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "EOG RESOURCES INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-EQIX-nofinding-check": {
+   "proposal_id": "p-EQIX-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "EQIX"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "EQUINIX INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-EQT-nofinding-check": {
+   "proposal_id": "p-EQT-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "EQT"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "EQT Corp",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ERIE-nofinding-check": {
+   "proposal_id": "p-ERIE-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ERIE"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "ERIE INDEMNITY CO",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ES-nofinding-check": {
+   "proposal_id": "p-ES-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ES"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "EVERSOURCE ENERGY",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ESS-nofinding-check": {
+   "proposal_id": "p-ESS-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ESS"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "ESSEX PROPERTY TRUST, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
   "p-ETN-nofinding-check": {
    "proposal_id": "p-ETN-nofinding-check",
    "decision": "approve",
@@ -186,6 +2746,134 @@
    "from": "none",
    "to": "nofinding",
    "company": "Eaton Corp plc",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ETR-nofinding-check": {
+   "proposal_id": "p-ETR-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ETR"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "ENTERGY CORP /DE/",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-EVRG-nofinding-check": {
+   "proposal_id": "p-EVRG-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "EVRG"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Evergy, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-EW-nofinding-check": {
+   "proposal_id": "p-EW-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "EW"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Edwards Lifesciences Corp",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-EXC-nofinding-check": {
+   "proposal_id": "p-EXC-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "EXC"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "EXELON CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-EXE-nofinding-check": {
+   "proposal_id": "p-EXE-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "EXE"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "EXPAND ENERGY Corp",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-EXPD-nofinding-check": {
+   "proposal_id": "p-EXPD-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "EXPD"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "EXPEDITORS INTERNATIONAL OF WASHINGTON INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-EXPE-nofinding-check": {
+   "proposal_id": "p-EXPE-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "EXPE"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Expedia Group, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-EXR-nofinding-check": {
+   "proposal_id": "p-EXR-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "EXR"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Extra Space Storage Inc.",
    "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
    "tripwire": "",
    "event_date": null,
@@ -221,6 +2909,214 @@
    ],
    "evidence_hash": "baa36ea46d84c620"
   },
+  "p-FANG-nofinding-check": {
+   "proposal_id": "p-FANG-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "FANG"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Diamondback Energy, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-FAST-nofinding-check": {
+   "proposal_id": "p-FAST-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "FAST"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "FASTENAL CO",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-FCX-nofinding-check": {
+   "proposal_id": "p-FCX-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "FCX"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "FREEPORT-MCMORAN INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-FDS-nofinding-check": {
+   "proposal_id": "p-FDS-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "FDS"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "FACTSET RESEARCH SYSTEMS INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-FDX-nofinding-check": {
+   "proposal_id": "p-FDX-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "FDX"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "FEDEX CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-FDXF-nofinding-check": {
+   "proposal_id": "p-FDXF-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "FDXF"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "FedEx Freight Holding Company, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-FE-nofinding-check": {
+   "proposal_id": "p-FE-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "FE"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "FIRSTENERGY CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-FERG-nofinding-check": {
+   "proposal_id": "p-FERG-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "FERG"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Ferguson Enterprises Inc. /DE/",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-FFIV-nofinding-check": {
+   "proposal_id": "p-FFIV-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "FFIV"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "F5, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-FICO-nofinding-check": {
+   "proposal_id": "p-FICO-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "FICO"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "FAIR ISAAC CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-FIS-nofinding-check": {
+   "proposal_id": "p-FIS-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "FIS"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Fidelity National Information Services, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-FISV-nofinding-check": {
+   "proposal_id": "p-FISV-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "FISV"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "FISERV INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-FITB-nofinding-check": {
+   "proposal_id": "p-FITB-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "FITB"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "FIFTH THIRD BANCORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
   "p-FIX-nofinding-check": {
    "proposal_id": "p-FIX-nofinding-check",
    "decision": "approve",
@@ -231,6 +3127,22 @@
    "from": "none",
    "to": "nofinding",
    "company": "COMFORT SYSTEMS USA INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-FLEX-nofinding-check": {
+   "proposal_id": "p-FLEX-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "FLEX"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "FLEX LTD.",
    "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
    "tripwire": "",
    "event_date": null,
@@ -267,6 +3179,166 @@
    ],
    "evidence_hash": "afd0b9938d22cdef"
   },
+  "p-FRT-nofinding-check": {
+   "proposal_id": "p-FRT-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "FRT"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "FEDERAL REALTY INVESTMENT TRUST",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-FRTT-nofinding-check": {
+   "proposal_id": "p-FRTT-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "FRTT"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Fort Technology Inc",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-FSLR-nofinding-check": {
+   "proposal_id": "p-FSLR-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "FSLR"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "FIRST SOLAR, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-FTNT-nofinding-check": {
+   "proposal_id": "p-FTNT-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "FTNT"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Fortinet, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-FTV-nofinding-check": {
+   "proposal_id": "p-FTV-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "FTV"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Fortive Corp",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-GD-nofinding-check": {
+   "proposal_id": "p-GD-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "GD"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "GENERAL DYNAMICS CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-GDDY-nofinding-check": {
+   "proposal_id": "p-GDDY-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "GDDY"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "GoDaddy Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-GE-nofinding-check": {
+   "proposal_id": "p-GE-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "GE"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "GENERAL ELECTRIC CO",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-GEHC-nofinding-check": {
+   "proposal_id": "p-GEHC-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "GEHC"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "GE HealthCare Technologies Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-GEN-nofinding-check": {
+   "proposal_id": "p-GEN-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "GEN"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Gen Digital Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
   "p-GEO-black-geo-ice-share-fy2025": {
    "proposal_id": "p-GEO-black-geo-ice-share-fy2025",
    "decision": "approve",
@@ -289,6 +3361,118 @@
     }
    ],
    "evidence_hash": "f6020aee3dde9bda"
+  },
+  "p-GEV-nofinding-check": {
+   "proposal_id": "p-GEV-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "GEV"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "GE Vernova Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-GILD-nofinding-check": {
+   "proposal_id": "p-GILD-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "GILD"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "GILEAD SCIENCES, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-GIS-nofinding-check": {
+   "proposal_id": "p-GIS-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "GIS"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "GENERAL MILLS INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-GL-nofinding-check": {
+   "proposal_id": "p-GL-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "GL"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "GLOBE LIFE INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-GLW-nofinding-check": {
+   "proposal_id": "p-GLW-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "GLW"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "CORNING INC /NY",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-GM-nofinding-check": {
+   "proposal_id": "p-GM-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "GM"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "General Motors Co",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-GNRC-nofinding-check": {
+   "proposal_id": "p-GNRC-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "GNRC"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "GENERAC HOLDINGS INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
   },
   "p-GOOG-GOOGL-aligned-alphabet-values": {
    "proposal_id": "p-GOOG-GOOGL-aligned-alphabet-values",
@@ -313,6 +3497,1222 @@
     }
    ],
    "evidence_hash": "e63f8ce4ac82c3bd"
+  },
+  "p-GPC-nofinding-check": {
+   "proposal_id": "p-GPC-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "GPC"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "GENUINE PARTS CO",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-GPN-nofinding-check": {
+   "proposal_id": "p-GPN-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "GPN"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "GLOBAL PAYMENTS INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-GRMN-nofinding-check": {
+   "proposal_id": "p-GRMN-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "GRMN"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "GARMIN LTD",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-GS-nofinding-check": {
+   "proposal_id": "p-GS-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "GS"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "GOLDMAN SACHS GROUP INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-GWW-nofinding-check": {
+   "proposal_id": "p-GWW-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "GWW"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "W.W. GRAINGER, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-HAL-nofinding-check": {
+   "proposal_id": "p-HAL-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "HAL"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "HALLIBURTON CO",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-HAS-nofinding-check": {
+   "proposal_id": "p-HAS-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "HAS"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "HASBRO, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-HBAN-nofinding-check": {
+   "proposal_id": "p-HBAN-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "HBAN"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "HUNTINGTON BANCSHARES INC /MD/",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-HCA-nofinding-check": {
+   "proposal_id": "p-HCA-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "HCA"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "HCA Healthcare, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-HD-nofinding-check": {
+   "proposal_id": "p-HD-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "HD"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "HOME DEPOT, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-HIG-nofinding-check": {
+   "proposal_id": "p-HIG-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "HIG"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "HARTFORD INSURANCE GROUP, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-HII-nofinding-check": {
+   "proposal_id": "p-HII-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "HII"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "HUNTINGTON INGALLS INDUSTRIES, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-HLT-nofinding-check": {
+   "proposal_id": "p-HLT-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "HLT"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Hilton Worldwide Holdings Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-HON-nofinding-check": {
+   "proposal_id": "p-HON-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "HON"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "HONEYWELL INTERNATIONAL INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-HONA-nofinding-check": {
+   "proposal_id": "p-HONA-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "HONA"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Honeywell Aerospace Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-HOOD-nofinding-check": {
+   "proposal_id": "p-HOOD-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "HOOD"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Robinhood Markets, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-HPE-nofinding-check": {
+   "proposal_id": "p-HPE-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "HPE"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Hewlett Packard Enterprise Co",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-HPQ-nofinding-check": {
+   "proposal_id": "p-HPQ-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "HPQ"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "HP INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-HRL-nofinding-check": {
+   "proposal_id": "p-HRL-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "HRL"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "HORMEL FOODS CORP /DE/",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-HSIC-nofinding-check": {
+   "proposal_id": "p-HSIC-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "HSIC"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "HENRY SCHEIN INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-HST-nofinding-check": {
+   "proposal_id": "p-HST-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "HST"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "HOST HOTELS & RESORTS, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-HSY-nofinding-check": {
+   "proposal_id": "p-HSY-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "HSY"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "HERSHEY CO",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-HUBB-nofinding-check": {
+   "proposal_id": "p-HUBB-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "HUBB"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "HUBBELL INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-HUM-nofinding-check": {
+   "proposal_id": "p-HUM-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "HUM"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "HUMANA INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-HWM-nofinding-check": {
+   "proposal_id": "p-HWM-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "HWM"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Howmet Aerospace Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-IBKR-nofinding-check": {
+   "proposal_id": "p-IBKR-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "IBKR"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Interactive Brokers Group, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-IBM-nofinding-check": {
+   "proposal_id": "p-IBM-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "IBM"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "INTERNATIONAL BUSINESS MACHINES CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ICE-nofinding-check": {
+   "proposal_id": "p-ICE-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ICE"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Intercontinental Exchange, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-IDXX-nofinding-check": {
+   "proposal_id": "p-IDXX-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "IDXX"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "IDEXX LABORATORIES INC /DE",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-IEX-nofinding-check": {
+   "proposal_id": "p-IEX-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "IEX"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "IDEX CORP /DE/",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-IFF-nofinding-check": {
+   "proposal_id": "p-IFF-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "IFF"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "INTERNATIONAL FLAVORS & FRAGRANCES INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ILMN-nofinding-check": {
+   "proposal_id": "p-ILMN-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ILMN"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "ILLUMINA, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-INCY-nofinding-check": {
+   "proposal_id": "p-INCY-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "INCY"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "INCYTE CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-INTC-nofinding-check": {
+   "proposal_id": "p-INTC-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "INTC"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "INTEL CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-INTU-nofinding-check": {
+   "proposal_id": "p-INTU-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "INTU"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "INTUIT INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-INVH-nofinding-check": {
+   "proposal_id": "p-INVH-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "INVH"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Invitation Homes Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-IP-nofinding-check": {
+   "proposal_id": "p-IP-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "IP"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "INTERNATIONAL PAPER CO /NEW/",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-IQV-nofinding-check": {
+   "proposal_id": "p-IQV-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "IQV"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "IQVIA HOLDINGS INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-IR-nofinding-check": {
+   "proposal_id": "p-IR-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "IR"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Ingersoll Rand Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-IRM-nofinding-check": {
+   "proposal_id": "p-IRM-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "IRM"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "IRON MOUNTAIN INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ISRG-nofinding-check": {
+   "proposal_id": "p-ISRG-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ISRG"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "INTUITIVE SURGICAL INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-IT-nofinding-check": {
+   "proposal_id": "p-IT-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "IT"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "GARTNER INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-ITW-nofinding-check": {
+   "proposal_id": "p-ITW-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "ITW"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "ILLINOIS TOOL WORKS INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-IVZ-nofinding-check": {
+   "proposal_id": "p-IVZ-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "IVZ"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Invesco Ltd.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-J-nofinding-check": {
+   "proposal_id": "p-J-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "J"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "JACOBS SOLUTIONS INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-JBHT-nofinding-check": {
+   "proposal_id": "p-JBHT-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "JBHT"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "HUNT J B TRANSPORT SERVICES INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-JBL-nofinding-check": {
+   "proposal_id": "p-JBL-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "JBL"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "JABIL INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-JCI-nofinding-check": {
+   "proposal_id": "p-JCI-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "JCI"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Johnson Controls International plc",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-JKHY-nofinding-check": {
+   "proposal_id": "p-JKHY-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "JKHY"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "JACK HENRY & ASSOCIATES INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-JNJ-nofinding-check": {
+   "proposal_id": "p-JNJ-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "JNJ"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "JOHNSON & JOHNSON",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-JPM-nofinding-check": {
+   "proposal_id": "p-JPM-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "JPM"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "JPMORGAN CHASE & CO",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-KDP-nofinding-check": {
+   "proposal_id": "p-KDP-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "KDP"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Keurig Dr Pepper Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-KEY-nofinding-check": {
+   "proposal_id": "p-KEY-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "KEY"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "KEYCORP /NEW/",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-KEYS-nofinding-check": {
+   "proposal_id": "p-KEYS-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "KEYS"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Keysight Technologies, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-KHC-nofinding-check": {
+   "proposal_id": "p-KHC-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "KHC"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Kraft Heinz Co",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-KIM-nofinding-check": {
+   "proposal_id": "p-KIM-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "KIM"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "KIMCO REALTY CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-KKR-nofinding-check": {
+   "proposal_id": "p-KKR-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "KKR"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "KKR & Co. Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-KLAC-nofinding-check": {
+   "proposal_id": "p-KLAC-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "KLAC"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "KLA CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-KMB-nofinding-check": {
+   "proposal_id": "p-KMB-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "KMB"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "KIMBERLY CLARK CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-KMI-nofinding-check": {
+   "proposal_id": "p-KMI-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "KMI"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "KINDER MORGAN, INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-KO-nofinding-check": {
+   "proposal_id": "p-KO-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "KO"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "COCA COLA CO",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-KR-nofinding-check": {
+   "proposal_id": "p-KR-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "KR"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "KROGER CO",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-KVUE-nofinding-check": {
+   "proposal_id": "p-KVUE-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "KVUE"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Kenvue Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-L-nofinding-check": {
+   "proposal_id": "p-L-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "L"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "LOEWS CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-LDOS-nofinding-check": {
+   "proposal_id": "p-LDOS-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "LDOS"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Leidos Holdings, Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-LEN-nofinding-check": {
+   "proposal_id": "p-LEN-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "LEN"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "LENNAR CORP /NEW/",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-LH-nofinding-check": {
+   "proposal_id": "p-LH-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "LH"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "LABCORP HOLDINGS INC.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-LHX-nofinding-check": {
+   "proposal_id": "p-LHX-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "LHX"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "L3HARRIS TECHNOLOGIES, INC. /DE/",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-LII-nofinding-check": {
+   "proposal_id": "p-LII-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "LII"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "LENNOX INTERNATIONAL INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-LIN-nofinding-check": {
+   "proposal_id": "p-LIN-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "LIN"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "LINDE PLC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-LITE-nofinding-check": {
+   "proposal_id": "p-LITE-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "LITE"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "Lumentum Holdings Inc.",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-LLY-nofinding-check": {
+   "proposal_id": "p-LLY-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "LLY"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "ELI LILLY & Co",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-LMT-nofinding-check": {
+   "proposal_id": "p-LMT-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "LMT"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "LOCKHEED MARTIN CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-LNT-nofinding-check": {
+   "proposal_id": "p-LNT-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "LNT"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "ALLIANT ENERGY CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-LOW-nofinding-check": {
+   "proposal_id": "p-LOW-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "LOW"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "LOWES COMPANIES INC",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
+  },
+  "p-LRCX-nofinding-check": {
+   "proposal_id": "p-LRCX-nofinding-check",
+   "decision": "approve",
+   "decided_at": "2026-10-21T23:05:40.000Z",
+   "tickers": [
+    "LRCX"
+   ],
+   "from": "none",
+   "to": "nofinding",
+   "company": "LAM RESEARCH CORP",
+   "clause": "No finding: no values link and no qualifying legal finding in the sources checked. Not a clearance.",
+   "tripwire": "",
+   "event_date": null,
+   "evidence": [],
+   "evidence_hash": "be918adf6bad9792"
   },
   "p-META-watch-meta-doj-fha-settlement-2022": {
    "proposal_id": "p-META-watch-meta-doj-fha-settlement-2022",
