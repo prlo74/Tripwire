@@ -592,14 +592,14 @@
   {
    "actions": {},
    "active_people": 1,
-   "decisions": 275,
+   "decisions": 484,
    "new_proposals": 483,
    "page_views": {
     "approvals": 4,
-    "home": 5
+    "home": 9
    },
-   "runs": 8,
-   "visits": 4,
+   "runs": 9,
+   "visits": 8,
    "week": "2026-W43"
   }
  ]
