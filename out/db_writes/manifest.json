@@ -4,127 +4,146 @@
   "collection": "runs",
   "doc_id": "latest",
   "file_path": "/home/user/Tripwire/out/db_writes/runs__latest.json",
-  "if_version": 58
+  "if_version": 60
  },
  {
   "op": "set",
   "collection": "runs",
-  "doc_id": "run-20261028T071656",
-  "file_path": "/home/user/Tripwire/out/db_writes/runs__run-20261028T071656.json"
+  "doc_id": "run-20261029T071455",
+  "file_path": "/home/user/Tripwire/out/db_writes/runs__run-20261029T071455.json"
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-F-watch-ford-eeoc-conciliation-2026",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-F-watch-ford-eeoc-conciliation-2026.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-F-watch-ford-eeoc-conciliation-2026.json",
+  "if_version": 36
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-ACN-watch-accenture-doj-fca-2026",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ACN-watch-accenture-doj-fca-2026.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ACN-watch-accenture-doj-fca-2026.json",
+  "if_version": 35
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-CXW-black-cxw-ice-share-fy2025",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CXW-black-cxw-ice-share-fy2025.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CXW-black-cxw-ice-share-fy2025.json",
+  "if_version": 22
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-GEO-black-geo-ice-share-fy2025",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-GEO-black-geo-ice-share-fy2025.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-GEO-black-geo-ice-share-fy2025.json",
+  "if_version": 22
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-PYPL-watch-paypal-doj-fair-lending-2026",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PYPL-watch-paypal-doj-fair-lending-2026.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-PYPL-watch-paypal-doj-fair-lending-2026.json",
+  "if_version": 21
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-CAH-watch-cardinal-health-eeoc-2021",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CAH-watch-cardinal-health-eeoc-2021.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-CAH-watch-cardinal-health-eeoc-2021.json",
+  "if_version": 22
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-UAL-watch-united-airlines-eeoc-2025",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-UAL-watch-united-airlines-eeoc-2025.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-UAL-watch-united-airlines-eeoc-2025.json",
+  "if_version": 22
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-DG-watch-dollar-general-eeoc-2019",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DG-watch-dollar-general-eeoc-2019.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-DG-watch-dollar-general-eeoc-2019.json",
+  "if_version": 22
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-FOXA-FOX-black-fox-dominion-falsity-2023",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FOXA-FOX-black-fox-dominion-falsity-2023.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-FOXA-FOX-black-fox-dominion-falsity-2023.json",
+  "if_version": 18
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-NMAX-black-newsmax-dominion-falsity-2025",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NMAX-black-newsmax-dominion-falsity-2025.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NMAX-black-newsmax-dominion-falsity-2025.json",
+  "if_version": 18
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-TSLA-black-tesla-diaz-verdict-2021",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TSLA-black-tesla-diaz-verdict-2021.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TSLA-black-tesla-diaz-verdict-2021.json",
+  "if_version": 36
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-TSLA-watch-tesla-crd-eeoc-open-2026",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TSLA-watch-tesla-crd-eeoc-open-2026.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TSLA-watch-tesla-crd-eeoc-open-2026.json",
+  "if_version": 36
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-META-watch-meta-doj-fha-settlement-2022",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-META-watch-meta-doj-fha-settlement-2022.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-META-watch-meta-doj-fha-settlement-2022.json",
+  "if_version": 26
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-META-watch-meta-states-youth-case-2026",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-META-watch-meta-states-youth-case-2026.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-META-watch-meta-states-youth-case-2026.json",
+  "if_version": 36
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-ADBE-aligned-adbe-values",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ADBE-aligned-adbe-values.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-ADBE-aligned-adbe-values.json",
+  "if_version": 36
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-GOOG-GOOGL-aligned-alphabet-values",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-GOOG-GOOGL-aligned-alphabet-values.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-GOOG-GOOGL-aligned-alphabet-values.json",
+  "if_version": 36
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-NYT-aligned-nyt-values",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NYT-aligned-nyt-values.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-NYT-aligned-nyt-values.json",
+  "if_version": 36
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-SHOP-aligned-shop-values",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SHOP-aligned-shop-values.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-SHOP-aligned-shop-values.json",
+  "if_version": 36
  },
  {
   "op": "set",
   "collection": "proposals",
   "doc_id": "p-TRI-aligned-tri-values",
-  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TRI-aligned-tri-values.json"
+  "file_path": "/home/user/Tripwire/out/db_writes/proposals__p-TRI-aligned-tri-values.json",
+  "if_version": 26
  },
  {
   "op": "set",
@@ -3093,1086 +3112,1197 @@
  {
   "op": "delete",
   "collection": "proposals",
-  "doc_id": "p-WBD-aligned-wbd-values"
+  "doc_id": "p-WBD-aligned-wbd-values",
+  "if_version": 21
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "AAPL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AAPL.json"
+  "doc_id": "A",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__A.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ADSK",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ADSK.json"
+  "doc_id": "ABNB",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ABNB.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "AEE",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AEE.json"
+  "doc_id": "ABT",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ABT.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "AES",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AES.json"
+  "doc_id": "ACGL",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ACGL.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "AFL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AFL.json"
+  "doc_id": "ACN",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ACN.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "AIG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AIG.json"
+  "doc_id": "ADI",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ADI.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ALB",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ALB.json"
+  "doc_id": "ADP",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ADP.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ALGN",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ALGN.json"
+  "doc_id": "AEP",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AEP.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "AMCR",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AMCR.json"
+  "doc_id": "AIZ",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AIZ.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "AMD",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AMD.json"
+  "doc_id": "ALL",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ALL.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "AMGN",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AMGN.json"
+  "doc_id": "ALLE",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ALLE.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "AMP",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AMP.json"
+  "doc_id": "ANET",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ANET.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "APD",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__APD.json"
+  "doc_id": "AOS",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AOS.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "APP",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__APP.json"
+  "doc_id": "APA",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__APA.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ARE",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ARE.json"
+  "doc_id": "APO",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__APO.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ARES",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ARES.json"
+  "doc_id": "AVGO",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AVGO.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "AWK",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AWK.json"
+  "doc_id": "AXON",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AXON.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "BALL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BALL.json"
+  "doc_id": "AXP",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AXP.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "BAX",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BAX.json"
+  "doc_id": "AZO",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__AZO.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "BDX",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BDX.json"
+  "doc_id": "BAC",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BAC.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "BF-B",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BF-B.json"
+  "doc_id": "BBY",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BBY.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "BKNG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BKNG.json"
+  "doc_id": "BE",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BE.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "BKR",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BKR.json"
+  "doc_id": "BEN",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BEN.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "BLK",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BLK.json"
+  "doc_id": "BR",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BR.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "BNY",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BNY.json"
+  "doc_id": "BRO",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BRO.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CARR",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CARR.json"
+  "doc_id": "BSX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BSX.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CASY",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CASY.json"
+  "doc_id": "BXP",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__BXP.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CBRE",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CBRE.json"
+  "doc_id": "C",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__C.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CCL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CCL.json"
+  "doc_id": "CAT",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CAT.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CDW",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CDW.json"
+  "doc_id": "CBOE",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CBOE.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CFG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CFG.json"
+  "doc_id": "CCI",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CCI.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CHTR",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CHTR.json"
+  "doc_id": "CDNS",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CDNS.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CMG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CMG.json"
+  "doc_id": "CEG",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CEG.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CMI",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CMI.json"
+  "doc_id": "CHD",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CHD.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "COHR",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__COHR.json"
+  "doc_id": "CHRW",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CHRW.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "COST",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__COST.json"
+  "doc_id": "CI",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CI.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CRL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CRL.json"
+  "doc_id": "CINF",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CINF.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CRWD",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CRWD.json"
+  "doc_id": "CL",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CL.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CTAS",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CTAS.json"
+  "doc_id": "CLX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CLX.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CTSH",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CTSH.json"
+  "doc_id": "CMCSA",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CMCSA.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "CVNA",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CVNA.json"
+  "doc_id": "CMS",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CMS.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "DASH",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DASH.json"
+  "doc_id": "CNC",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CNC.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "DD",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DD.json"
+  "doc_id": "CNP",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CNP.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "DE",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DE.json"
+  "doc_id": "COO",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__COO.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "DIS",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DIS.json"
+  "doc_id": "CPAY",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CPAY.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "DLR",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DLR.json"
+  "doc_id": "CRM",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CRM.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "DLTR",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DLTR.json"
+  "doc_id": "CSX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CSX.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "DXCM",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DXCM.json"
+  "doc_id": "CVS",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CVS.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ECL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ECL.json"
+  "doc_id": "CVX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__CVX.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "EFX",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__EFX.json"
+  "doc_id": "DAL",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DAL.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "EIX",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__EIX.json"
+  "doc_id": "DECK",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DECK.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "EOG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__EOG.json"
+  "doc_id": "DELL",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DELL.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ESS",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ESS.json"
+  "doc_id": "DG",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DG.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "EXPD",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__EXPD.json"
+  "doc_id": "DGX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DGX.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "EXPE",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__EXPE.json"
+  "doc_id": "DOC",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DOC.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "F",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__F.json"
+  "doc_id": "DRI",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DRI.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "FANG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FANG.json"
+  "doc_id": "DUK",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DUK.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "FCX",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FCX.json"
+  "doc_id": "DVA",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DVA.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "FDS",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FDS.json"
+  "doc_id": "DVN",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__DVN.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "FERG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FERG.json"
+  "doc_id": "EBAY",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__EBAY.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "FIS",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FIS.json"
+  "doc_id": "ELV",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ELV.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "FITB",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FITB.json"
+  "doc_id": "EQIX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__EQIX.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "FIX",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FIX.json"
+  "doc_id": "ES",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ES.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "FOX",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FOX.json"
+  "doc_id": "ETR",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ETR.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "FSLR",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FSLR.json"
+  "doc_id": "EW",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__EW.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "GD",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__GD.json"
+  "doc_id": "EXR",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__EXR.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "GEN",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__GEN.json"
+  "doc_id": "FAST",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FAST.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "GNRC",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__GNRC.json"
+  "doc_id": "FDXF",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FDXF.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "GOOG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__GOOG.json"
+  "doc_id": "FFIV",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FFIV.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "GPC",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__GPC.json"
+  "doc_id": "FLEX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FLEX.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "GRMN",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__GRMN.json"
+  "doc_id": "FOXA",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FOXA.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "GS",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__GS.json"
+  "doc_id": "FRT",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FRT.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "GWW",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__GWW.json"
+  "doc_id": "FTNT",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__FTNT.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "HBAN",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HBAN.json"
+  "doc_id": "GDDY",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__GDDY.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "HCA",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HCA.json"
+  "doc_id": "GE",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__GE.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "HII",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HII.json"
+  "doc_id": "GIS",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__GIS.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "HLT",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HLT.json"
+  "doc_id": "GLW",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__GLW.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "HONA",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HONA.json"
+  "doc_id": "HAL",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HAL.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "HOOD",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HOOD.json"
+  "doc_id": "HAS",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HAS.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "HPE",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HPE.json"
+  "doc_id": "HD",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HD.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "HRL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HRL.json"
+  "doc_id": "HON",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HON.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "HSY",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HSY.json"
+  "doc_id": "HPQ",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HPQ.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ICE",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ICE.json"
+  "doc_id": "HSIC",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HSIC.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "IEX",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__IEX.json"
+  "doc_id": "HUBB",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HUBB.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "IFF",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__IFF.json"
+  "doc_id": "HWM",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__HWM.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "INCY",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__INCY.json"
+  "doc_id": "ILMN",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ILMN.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "INTU",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__INTU.json"
+  "doc_id": "IR",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__IR.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "IQV",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__IQV.json"
+  "doc_id": "ITW",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ITW.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "IRM",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__IRM.json"
+  "doc_id": "J",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__J.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ISRG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ISRG.json"
+  "doc_id": "JKHY",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__JKHY.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "IT",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__IT.json"
+  "doc_id": "KDP",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__KDP.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "IVZ",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__IVZ.json"
+  "doc_id": "KEY",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__KEY.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "JBHT",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__JBHT.json"
+  "doc_id": "KKR",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__KKR.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "JCI",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__JCI.json"
+  "doc_id": "KLAC",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__KLAC.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "JNJ",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__JNJ.json"
+  "doc_id": "KO",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__KO.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "KHC",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__KHC.json"
+  "doc_id": "KR",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__KR.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "KIM",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__KIM.json"
+  "doc_id": "L",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__L.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "KMB",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__KMB.json"
+  "doc_id": "LH",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LH.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "KVUE",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__KVUE.json"
+  "doc_id": "LHX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LHX.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "LEN",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LEN.json"
+  "doc_id": "LNT",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LNT.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "LII",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LII.json"
+  "doc_id": "LOW",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LOW.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "LLY",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LLY.json"
+  "doc_id": "LRCX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LRCX.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "LMT",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LMT.json"
+  "doc_id": "LULU",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LULU.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "LVS",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LVS.json"
+  "doc_id": "LUV",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LUV.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "MAS",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MAS.json"
+  "doc_id": "LYB",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__LYB.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "MCD",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MCD.json"
+  "doc_id": "MA",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MA.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "MCHP",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MCHP.json"
+  "doc_id": "MAA",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MAA.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "MDT",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MDT.json"
+  "doc_id": "MCK",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MCK.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "META",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__META.json"
+  "doc_id": "MCO",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MCO.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "MMM",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MMM.json"
+  "doc_id": "MGM",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MGM.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "MO",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MO.json"
+  "doc_id": "MNST",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MNST.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "MPC",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MPC.json"
+  "doc_id": "MPWR",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MPWR.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "MRK",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MRK.json"
+  "doc_id": "MRSH",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MRSH.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "MRVL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MRVL.json"
+  "doc_id": "MU",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MU.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "MSCI",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MSCI.json"
+  "doc_id": "NDAQ",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__NDAQ.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "MSFT",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MSFT.json"
+  "doc_id": "NFLX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__NFLX.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "MTD",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__MTD.json"
+  "doc_id": "NI",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__NI.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "NCLH",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__NCLH.json"
+  "doc_id": "NKE",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__NKE.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "NEE",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__NEE.json"
+  "doc_id": "NVDA",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__NVDA.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "NRG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__NRG.json"
+  "doc_id": "NWS",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__NWS.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "NSC",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__NSC.json"
+  "doc_id": "OKE",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__OKE.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "NUE",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__NUE.json"
+  "doc_id": "OMC",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__OMC.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "NVR",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__NVR.json"
+  "doc_id": "ON",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ON.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "O",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__O.json"
+  "doc_id": "ORLY",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ORLY.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ODFL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ODFL.json"
+  "doc_id": "OTIS",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__OTIS.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ORCL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ORCL.json"
+  "doc_id": "P",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__P.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "OXY",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__OXY.json"
+  "doc_id": "PAYX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PAYX.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "PCAR",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PCAR.json"
+  "doc_id": "PCG",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PCG.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "PEG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PEG.json"
+  "doc_id": "PEP",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PEP.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "PFG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PFG.json"
+  "doc_id": "PH",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PH.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "PGR",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PGR.json"
+  "doc_id": "PPG",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PPG.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "PKG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PKG.json"
+  "doc_id": "PSA",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PSA.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "PLD",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PLD.json"
+  "doc_id": "PSX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PSX.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "PM",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PM.json"
+  "doc_id": "PWR",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PWR.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "PRU",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PRU.json"
+  "doc_id": "QCOM",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__QCOM.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "PTC",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__PTC.json"
+  "doc_id": "RDDT",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__RDDT.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "RF",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__RF.json"
+  "doc_id": "REGN",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__REGN.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "RJF",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__RJF.json"
+  "doc_id": "SBAC",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SBAC.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "RL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__RL.json"
+  "doc_id": "SBUX",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SBUX.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ROK",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ROK.json"
+  "doc_id": "SCHW",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SCHW.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "ROP",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ROP.json"
+  "doc_id": "SHW",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SHW.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "RSG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__RSG.json"
+  "doc_id": "SJM",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SJM.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "RTX",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__RTX.json"
+  "doc_id": "SNA",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SNA.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "RVTY",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__RVTY.json"
+  "doc_id": "SO",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SO.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "SLB",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SLB.json"
+  "doc_id": "STZ",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__STZ.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "SNDK",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SNDK.json"
+  "doc_id": "SWK",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SWK.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "SOLV",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SOLV.json"
+  "doc_id": "TDG",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TDG.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "SPG",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SPG.json"
+  "doc_id": "TECH",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TECH.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "SPGI",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SPGI.json"
+  "doc_id": "TROW",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TROW.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "SRE",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SRE.json"
+  "doc_id": "TSLA",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TSLA.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "STE",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__STE.json"
+  "doc_id": "TSN",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TSN.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "STX",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__STX.json"
+  "doc_id": "TT",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TT.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "SWKS",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SWKS.json"
+  "doc_id": "TYL",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TYL.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "SYF",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SYF.json"
+  "doc_id": "UBER",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__UBER.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "SYY",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__SYY.json"
+  "doc_id": "VICI",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__VICI.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "TDY",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TDY.json"
+  "doc_id": "VMC",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__VMC.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "TEL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TEL.json"
+  "doc_id": "VRSK",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__VRSK.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "TER",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TER.json"
+  "doc_id": "VTR",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__VTR.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "TJX",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TJX.json"
+  "doc_id": "WAT",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WAT.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "TMO",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TMO.json"
+  "doc_id": "WDAY",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WDAY.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "TPL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TPL.json"
+  "doc_id": "WDC",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WDC.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "TXN",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__TXN.json"
+  "doc_id": "WM",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WM.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "UAL",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__UAL.json"
+  "doc_id": "WMT",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WMT.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "UNH",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__UNH.json"
+  "doc_id": "WRB",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WRB.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "URI",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__URI.json"
+  "doc_id": "WSM",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WSM.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "V",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__V.json"
+  "doc_id": "WST",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WST.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "VEEV",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__VEEV.json"
+  "doc_id": "WTW",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WTW.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "VLO",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__VLO.json"
+  "doc_id": "WYNN",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WYNN.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "VMRK",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__VMRK.json"
+  "doc_id": "XEL",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__XEL.json",
+  "if_version": 3
  },
  {
   "op": "set",
   "collection": "sp500_checks",
-  "doc_id": "VRT",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__VRT.json"
- },
- {
-  "op": "set",
-  "collection": "sp500_checks",
-  "doc_id": "VRTX",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__VRTX.json"
- },
- {
-  "op": "set",
-  "collection": "sp500_checks",
-  "doc_id": "VST",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__VST.json"
- },
- {
-  "op": "set",
-  "collection": "sp500_checks",
-  "doc_id": "VTRS",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__VTRS.json"
- },
- {
-  "op": "set",
-  "collection": "sp500_checks",
-  "doc_id": "VYLR",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__VYLR.json"
- },
- {
-  "op": "set",
-  "collection": "sp500_checks",
-  "doc_id": "WFC",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WFC.json"
- },
- {
-  "op": "set",
-  "collection": "sp500_checks",
-  "doc_id": "WMB",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WMB.json"
- },
- {
-  "op": "set",
-  "collection": "sp500_checks",
-  "doc_id": "WY",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__WY.json"
- },
- {
-  "op": "set",
-  "collection": "sp500_checks",
-  "doc_id": "XOM",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__XOM.json"
- },
- {
-  "op": "set",
-  "collection": "sp500_checks",
-  "doc_id": "XYZ",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__XYZ.json"
- },
- {
-  "op": "set",
-  "collection": "sp500_checks",
-  "doc_id": "ZTS",
-  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__ZTS.json"
+  "doc_id": "YUM",
+  "file_path": "/home/user/Tripwire/out/db_writes/sp500_checks__YUM.json",
+  "if_version": 3
  }
 ]
