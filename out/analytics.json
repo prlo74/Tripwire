@@ -1,16 +1,16 @@
 {
- "generated_at": "2026-10-29T07:38:43Z",
- "as_of_run": "run-20261028T071656",
+ "generated_at": "2026-10-30T07:39:40Z",
+ "as_of_run": "run-20261029T071455",
  "headline": {
   "companies_screened": 509,
   "sp500_companies": 503,
   "team_tickers": 35,
-  "runs_total": 38,
+  "runs_total": 39,
   "runs_last_30_days": 28,
   "runs_all_sources_up": 10,
-  "source_checks": 1004,
-  "source_checks_ok": 963,
-  "source_uptime_pct": 95.9,
+  "source_checks": 1038,
+  "source_checks_ok": 996,
+  "source_uptime_pct": 96.0,
   "evidence_records": 27,
   "evidence_sources_opened_per_run": 37,
   "proposals_open": 0,
@@ -126,7 +126,7 @@
    "active_people": 0,
    "page_views": {},
    "actions": {},
-   "runs": 3,
+   "runs": 4,
    "decisions": 0,
    "new_proposals": 0
   }
